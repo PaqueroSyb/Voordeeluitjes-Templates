@@ -1,1 +1,1 @@
-// Connecting Git to VS Code succesfull
+// Connecting Git to VS Code succesfull 2
