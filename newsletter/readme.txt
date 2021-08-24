@@ -1,2 +1,1 @@
-// Dit is een test Text file.
-<!-- Update 19:56
+// Connecting Git to VS Code succesfull
