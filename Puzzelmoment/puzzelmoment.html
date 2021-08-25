@@ -18,7 +18,7 @@
 
 <div class="content-container">
   <div class="title-container h1-custom">
-   Vul uw gegevens in
+   Vul uw oplossing en gegevens in
   </div>
   <div class="form-container content-470px">
     <iframe name="redirectoff" id="redirectoff" style="display: none;"></iframe>
@@ -30,17 +30,24 @@
     <input type="hidden" name="cdmaccount" value="7032"/>
     <input type="hidden" name="database" value="2"/>
     <input type="hidden" name="dbfields" value="8,9,48,50,52,55,56,90,180,184,220,328,578"/>
-    <div class="form-group row">
+    <div class="form-group row m-b-20">
       <div class="col-sm-12">
-       <label class="col-form-label">Voornaam <span style="font-weight: 400; color: #707070;">*</span></label>
-       <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield441" id="voornaamcheck" oninput="voornaamTonen()" required> 
+       <label class="col-form-label">Oplossing van de puzzel <span class="required">*</span></label>
+       <input type="text" class="form-control" placeholder="Vul hier uw oplossing in" name="dbfield441" required> 
        <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
       </div>
     </div>
     <div class="form-group row">
       <div class="col-sm-12">
-       <label class="col-form-label">E-mailadres <span style="font-weight: 400; color: #707070;">*</span></label>
-       <input type="email" class="form-control" placeholder="Voorbeeld@mail.com" name="dbfield440" id="emailcheck" oninput="emailTonen()" required>
+       <label class="col-form-label">Voornaam <span class="required">*</span></label>
+       <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield441" required> 
+       <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-12">
+       <label class="col-form-label">E-mailadres <span class="required">*</span></label>
+       <input type="email" class="form-control" placeholder="Voorbeeld@mail.com" name="dbfield440" required>
        <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
       </div>
     </div>
@@ -138,6 +145,10 @@
    padding-bottom: 0px!important;
  }
 
+.m-b-20 {
+  margin-bottom: 20px!important;
+}
+
  .content-650px {
   max-width: 650px;
   margin: 0 auto;
@@ -225,6 +236,11 @@
  
  label {
   margin-bottom: 5px;
+ }
+
+ .required {
+  font-weight: 400;
+  color: #707070;
  }
  
  .form-control {
