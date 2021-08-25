@@ -30,19 +30,45 @@
     <input type="hidden" name="cdmaccount" value="7032"/>
     <input type="hidden" name="database" value="2"/>
     <input type="hidden" name="dbfields" value="8,9,48,50,52,55,56,90,180,184,220,328,578"/>
-    <div class="form-group row m-b-20">
+    <div class="form-group row m-b-30">
       <div class="col-sm-12">
        <label class="col-form-label">Oplossing van de puzzel <span class="required">*</span></label>
        <input type="text" class="form-control" placeholder="Vul hier uw oplossing in" name="dbfield441" required> 
        <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
       </div>
     </div>
+    <div class="f-border"></div>
     <div class="form-group row">
-      <div class="col-sm-12">
+      <div class="col-sm-4">
        <label class="col-form-label">Voornaam <span class="required">*</span></label>
-       <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield441" required> 
+       <input type="text" class="form-control" placeholder="Voornaam" name="dbfield441" required> 
        <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
       </div>
+      <div class="col-sm-4">
+        <label class="col-form-label">Tussenvoegsel <span class="required">*</span></label>
+        <input type="text" class="form-control" placeholder="Tussenvoegsel" name="dbfield441" required> 
+        <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
+       </div>
+       <div class="col-sm-4">
+        <label class="col-form-label">Achternaam <span class="required">*</span></label>
+        <input type="text" class="form-control" placeholder="Achternaam" name="dbfield441" required> 
+        <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
+       </div>
+    </div>
+    <label class="col-form-label">Geboortedatum <span class="required">*</span></label>
+    <div class="form-group row birthdate">
+      <div class="birthdate c2">
+       <input type="text" class="form-control" placeholder="DD" name="dbfield441" required> 
+       <div class="error-message">Dit veld is verplicht</div>
+      </div>
+      <div class="birthdate c2">
+        <input type="text" class="form-control" placeholder="MM" name="dbfield441" required> 
+        <div class="error-message">Dit veld is verplicht</div>
+       </div>
+       <div class="birthdate c4">
+        <input type="text" class="form-control" placeholder="JJJJ" name="dbfield441" required> 
+        <div class="error-message">Dit veld is verplicht</div>
+       </div>
     </div>
     <div class="form-group row">
       <div class="col-sm-12">
@@ -51,6 +77,12 @@
        <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
       </div>
     </div>
+    <div class="p-conditions">
+      <input  id="voorwaardencheck" type="checkbox" value="Ja" required>
+      <label for="voorwaardencheck" style="margin-top: 5px; margin-bottom: 0px; font-weight: 400;">
+      <div class="checkbox-check"></div>Ik ga akkoord met de <a href=" target="_blank" style="color: #EC008C; text-decoration: underline;">Algemene Voorwaarden</a></label>
+      <div class="error-message">Dit veld is verplicht</div>
+     </div>
     <div class="form-group row submit-button">
       <input type="submit" id="submit-button" value="nu kans maken"/>
     </div>
@@ -145,8 +177,18 @@
    padding-bottom: 0px!important;
  }
 
-.m-b-20 {
-  margin-bottom: 20px!important;
+.m-b-30 {
+  margin-bottom: 30px!important;
+}
+
+.p-conditions {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.f-border {
+  border-bottom: 1px solid #C5C5C5;
+  margin-bottom: 20px;
 }
 
  .content-650px {
@@ -266,27 +308,53 @@
  .form-control[readonly],.form-control[readonly]:focus {
   border: none;
  }
- 
+
  .form-control.textarea {
   font-size: 16px !important;
   height: 100px;
   border: 1px solid #707070;
  }
- 
+
  .form-control.textarea:focus {
-  border: 1px solid #00AEEF;
+  border: 1px solid #c4c6c7;
   outline: none !important;
   box-shadow: none !important;
   transition: all 0.15s ease-in-out 0s;
  }
- 
+.form-group.birthdate {
+  padding: 0px 15px;
+}
+.c2, .c4 {
+  display: inline-block;
+}
+.c2 {
+  width: 55px;
+}
+.c4 {
+  width: 75px;
+}
+.c2:nth-of-type(2) {
+  margin: 0px 10px;
+}
  @media (max-width: 768px) {
   .col-form-label {
    padding-top: 15px!important;
   }
- 
   .form-group {
    margin-bottom: 0px!important;
+   text-align: left;
+  }
+  .birthdate {
+    display: inline-block;
+  }
+  .birthdate-2 {
+    width: 85px!important;
+  }
+  .birthdate-4 {
+    width: 110px!important;
+  }
+  .birthdate .form-control {
+    text-align: center;
   }
  }
  
@@ -585,13 +653,10 @@
    text-align: center;
   }
 
-  .content-470px {
-   text-align: center!important;
-  }
-
   .title-container.aanmeldformulier {
    text-align: center!important;
   }
+
   .inschrijving-container {
    -webkit-flex-wrap: wrap;
    flex-wrap: wrap;
