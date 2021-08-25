@@ -1,0 +1,319 @@
+/* Form styling */
+.form-group {
+ margin-bottom: 1rem;
+}
+
+.col-form-label {
+ padding-top: 10px !important;
+ font-weight: 700;
+}
+
+label {
+ margin-bottom: 5px;
+}
+
+.form-control {
+ font-size: 16px !important;
+ height: 40px;
+ border: 1px solid #707070;
+}
+
+select.form-control {
+ width: auto!important;
+ height: 40px!important;
+}
+
+.form-control:focus {
+ border: 1px solid #00AEEF;
+ outline: none !important;
+ box-shadow: none!important;
+ transition: all 0.15s ease-in-out 0s;
+}
+
+.form-control[readonly],.form-control[readonly]:focus {
+ border: none;
+}
+
+.form-control.textarea {
+ font-size: 16px !important;
+ height: 100px;
+ border: 1px solid #707070;
+}
+
+.form-control.textarea:focus {
+ border: 1px solid #00AEEF;
+ outline: none !important;
+ box-shadow: none !important;
+ transition: all 0.15s ease-in-out 0s;
+}
+
+@media (max-width: 768px) {
+ .col-form-label {
+  padding-top: 15px!important;
+ }
+
+ .form-group {
+  margin-bottom: 0px!important;
+ }
+}
+
+.col-form-label.textarea {
+ padding-top: 6px !important;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+ .col-form-label.textarea {
+  padding-top: 8px !important;
+ }
+}
+
+/* Button styling */
+input[type=submit], .button, button {
+ position: relative;
+ background: #95C121 0% 0% no-repeat padding-box;
+ border-radius: 4px;
+ border: none;
+ color: white;
+ font-family: Calibri, "Helvetica", "Arial", sans-serif !important;
+ padding: 9px 23px;
+ text-align: center;
+ text-decoration: none;
+ display: block;
+ font-size: 16px;
+ line-height: 22px;
+ font-weight: 700;
+ cursor: pointer;
+ box-shadow: 0 1px 3px rgba(0,0,0,.26);
+ margin-top: 20px;
+}
+
+input[type="submit"]:hover, .button:hover {
+ background-color: #7ca400;
+ box-shadow: 1px 3px 3px rgba(0,0,0,.26);
+ color: #FFF;
+}
+
+input[type="submit"]:focus, .button:focus {
+ outline: none;
+ box-shadow: 1px 3px 3px rgba(0,0,0,.26);
+ background-color: #7ca400;
+}
+
+/* Checkbox styling */
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+ position: absolute;
+ left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
+ position: relative;
+ padding-left: 2.2em;
+ cursor: pointer;
+}
+
+[type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before {
+ content: '';
+ position: absolute;
+ width: 18px;
+ height: 18px;
+ background: #FFFFFF 0% 0% no-repeat padding-box;
+ border: 1px solid #707070;
+ border-radius: 1px;
+ top: 2px;
+ left: 2px;
+ -webkit-transition: all 0.2s ease;
+ transition: all 0.2s ease;
+}
+
+[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
+ content: '';
+ width: 18px;
+ height: 18px;
+ color: #FFF;
+ background: #707070 0% 0% no-repeat padding-box;
+ border-radius: 1px;
+ position: absolute;
+ top: 3px;
+ left: 2px;
+ transition: all .2s;
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+ opacity: 0;
+ transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+ opacity: 1;
+ transform: scale(1);
+}
+
+.checkbox-check {
+ position: absolute;
+ top: 5px;
+ left: 8px;
+ z-index: 10;
+ -webkit-transform: rotate(40deg); 
+ transform: rotate(40deg);
+ border-bottom: 2px solid #FFF;
+ border-right: 2px solid #FFF;
+ height: 10px;
+ width: 6px;
+}
+
+/* Radiobutton styling */
+[type="radio"]:not(:checked), [type="radio"]:checked {
+ position: absolute;
+ left: -9999px;
+}
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+ position: relative;
+ padding-left: 2.2em;
+ cursor: pointer;
+}
+
+[type="radio"]:not(:checked) + label:before, [type="radio"]:checked + label:before {
+ content: '';
+ position: absolute;
+ width: 18px;
+ height: 18px;
+ border: 2px solid #707070;
+ border-radius: 100%;
+ background: white;
+ top: 0px;
+ left: 0px;
+ -webkit-transition: all 0.2s ease;
+ transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after, [type="radio"]:checked + label:after {
+ content: '';
+ width: 10px;
+ height: 10px;
+ background: #707070;
+ border-radius: 100%;
+ position: absolute;
+ top: 4px;
+ left: 4px;
+ transition: all .2s;
+}
+
+[type="radio"]:not(:checked) + label:after {
+ opacity: 0;
+ transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+ opacity: 1;
+ transform: scale(1);
+}
+
+/* Radiobutton list styles */
+.list-unstyled {
+ margin-bottom: 0px;
+}
+
+.radio-horizontal li {
+ display: inline-block;
+ padding-left: 0 !important;
+ width: 130px;
+}
+
+.radio-horizontal-small li {
+ display: inline-block;
+ padding-left: 0 !important;
+ width: 60px;
+}
+
+.radio-horizontal.radio-numbers li {
+ display: inline-block;
+ padding-left: 0 !important;
+ padding-right: 25px;
+ width: auto;
+}
+
+/* Removes red outline from firefox when field is invalid */
+input:required {
+ box-shadow: none;
+}
+
+@media (max-width: 768px) {
+ .col-form-label.textarea {
+  padding-top: 17px !important;
+ }
+}
+
+@media (max-width:768px) {
+ input[type="text"]:not(:placeholder-shown):valid ~ .input-valid, input[type="email"]:not(:placeholder-shown):valid ~ .input-valid, textarea:not(:placeholder-shown):valid  ~ .input-valid {
+  top: 53px!important;
+ }
+
+ .submitted-form-invalid input:invalid ~ .input-valid, .submitted-form-invalid textarea:invalid ~ .input-valid {
+  top: 53px!important;
+ }
+}
+
+/* Succes and invalid states */
+.submitted-form-invalid input:invalid, .submitted-form-invalid textarea:invalid {
+ border: 1px solid red;
+ background-color: #FF555526;
+}
+
+.submitted-form-invalid input:invalid + label:before {
+ border: 1px solid red;
+ background-color: #FF555526;
+}
+
+.submitted-form-invalid input:invalid + label .checkbox-check {
+ display: none;
+}
+
+input[type="text"]:not(:placeholder-shown):valid, input[type="email"]:not(:placeholder-shown):valid, textarea:not(:placeholder-shown):valid {
+ border: 1px solid #95C121;
+}
+
+.error-message {
+ padding-top: 5px;
+ color: #FF5555;
+ font-size: 12px;
+ display: none;
+}
+
+.submitted-form-invalid input:invalid ~ .error-message, .submitted-form-invalid textarea:invalid ~ .error-message {
+ display: block;
+}
+
+.submitted-form-invalid input[type="checkbox"]:not(:checked) ~ .error-message {
+ display: block;
+}
+
+input[type="text"]:not(:placeholder-shown):valid ~ .input-valid, input[type="email"]:not(:placeholder-shown):valid ~ .input-valid, textarea:not(:placeholder-shown):valid  ~ .input-valid {
+ position: absolute;
+ top: 54px;
+ right: 28px;
+ z-index: 10;
+ transform: rotate(42deg);
+ border-bottom: 3px solid #95C121;
+ border-right: 3px solid #95C121;
+ height: 14px;
+ width: 8px;
+}
+
+.submitted-form-invalid input:invalid ~ .input-valid, .submitted-form-invalid textarea:invalid ~ .input-valid {
+ position: absolute;
+ top: 44px;
+ right: 28px;
+ z-index: 10;
+ background-image: url(voordeeluitjes/error-message-icon.png);
+ width: 4px;
+ height: 16px;
+ background-size: 4px 16px;
+}
+
+.gegevens-opgeslagen {
+ color: #EC008C;
+ display: flex;
+ align-items: center;
+ padding-left: 30px;
+}
