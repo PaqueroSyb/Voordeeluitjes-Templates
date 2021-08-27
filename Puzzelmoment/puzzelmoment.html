@@ -18,11 +18,11 @@
 
 <div class="content-container">
   <div class="title-container h1-custom">
-   Vul uw oplossing en gegevens in
+   Vul uw oplossing in
   </div>
   <div class="form-container content-470px">
     <iframe name="redirectoff" id="redirectoff" style="display: none;"></iframe>
-    <form name="subscribe" method="post" action="https://publisher.copernica.com/" target="redirectoff">
+    <form name="subscribe" id="form-puzzelmoment" method="post" action="https://publisher.copernica.com/" target="redirectoff">
     <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/> 
 
     <input type="hidden" name="wizard" value="subscribe"/> 
@@ -34,39 +34,44 @@
       <div class="col-sm-12">
        <label class="col-form-label">Oplossing van de puzzel <span class="required">*</span></label>
        <input type="text" class="form-control" placeholder="Vul hier uw oplossing in" name="dbfield441" required> 
-       <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
+       <div class="error-message">Dit veld is verplicht</div>
       </div>
     </div>
-    <div class="f-border"></div>
+    <div class="title-container h1-custom">
+      Vul uw gegevens in
+    </div>
     <div class="form-group row">
-      <div class="col-sm-4">
+      <div class="col-sm-4 fname">
        <label class="col-form-label">Voornaam <span class="required">*</span></label>
        <input type="text" class="form-control" placeholder="Voornaam" name="dbfield441" required> 
        <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
       </div>
-      <div class="col-sm-4">
-        <label class="col-form-label">Tussenvoegsel <span class="required">*</span></label>
-        <input type="text" class="form-control" placeholder="Tussenvoegsel" name="dbfield441" required> 
+      <div class="col-sm-3 mname">
+        <label class="col-form-label">Tussenvoegsel</label>
+        <input type="text" class="form-control" placeholder="Tussenv." name="dbfield441" required> 
         <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
        </div>
-       <div class="col-sm-4">
+       <div class="col-sm-5 lname">
         <label class="col-form-label">Achternaam <span class="required">*</span></label>
         <input type="text" class="form-control" placeholder="Achternaam" name="dbfield441" required> 
         <div class="error-message">Dit veld is verplicht</div><div class="input-valid"></div>
        </div>
     </div>
-    <label class="col-form-label">Geboortedatum <span class="required">*</span></label>
+    <label class="col-form-label">
+      Geboortedatum <span class="required">*</span><br>
+      <span style="font-weight: 400;">Om te controleren of u 18 jaar of ouder bent (wettelijk vereist).</span>
+    </label>
     <div class="form-group row birthdate">
       <div class="birthdate c2">
-       <input type="text" class="form-control" placeholder="DD" name="dbfield441" required> 
+       <input type="number" class="form-control bd bddd" placeholder="DD" name="dbfield441" required> 
        <div class="error-message">Dit veld is verplicht</div>
       </div>
       <div class="birthdate c2">
-        <input type="text" class="form-control" placeholder="MM" name="dbfield441" required> 
+        <input type="number" class="form-control bd bdmm" placeholder="MM" name="dbfield441" required> 
         <div class="error-message">Dit veld is verplicht</div>
        </div>
        <div class="birthdate c4">
-        <input type="text" class="form-control" placeholder="JJJJ" name="dbfield441" required> 
+        <input type="number" class="form-control bd bdyy" placeholder="JJJJ" name="dbfield441" required> 
         <div class="error-message">Dit veld is verplicht</div>
        </div>
     </div>
@@ -83,8 +88,13 @@
       <div class="checkbox-check"></div>Ik ga akkoord met de <a href=" target="_blank" style="color: #EC008C; text-decoration: underline;">Algemene Voorwaarden</a></label>
       <div class="error-message">Dit veld is verplicht</div>
      </div>
+     <div>
+      <input  id="nbcheck" type="checkbox" value="Ja" required>
+      <label for="nbcheck" style="margin-top: 5px; margin-bottom: 0px; font-weight: 400;">
+      <div class="checkbox-check"></div>Ja, ik wil de Voordeeluitjes.nl nieuwsbrief met top aanbiedingen ontvangen</label>
+     </div>
     <div class="form-group row submit-button">
-      <input type="submit" id="submit-button" value="nu kans maken"/>
+      <div class="button" id="submit-button">nu kans maken</div>
     </div>
     </form>
   </div>
@@ -130,6 +140,80 @@
    •   Mogelijk om tegen bijbetaling een groter formaat te kiezen <br>
  </div>
 </div>
+
+<script type="text/javascript">
+var bdDDMMYYYY = document.querySelectorAll('.bd');
+var bdDD = document.querySelector('.bddd');
+var bdMM = document.querySelector('.bdmm');
+var bdYY = document.querySelector('.bdyy');
+var countDD = 0;
+var countMM = 0;
+
+Array.prototype.forEach.call(bdDDMMYYYY, function (bdfield) {
+  bdfield.addEventListener('keydown', function (event) {	
+    var maxLength;
+    if (this.matches('.bdyy')) {
+      maxLength = 3;
+    } else {
+      maxLength = 1;
+    }
+    if (this.matches('.bddd')) {
+      if (event.keyCode != '8' && event.keyCode != '9') {
+        countDD++;
+      } else {
+        countDD--;
+        if (countDD < 0) {
+          countDD = 0;
+        }
+      }
+      if (countDD == '2') {
+        setTimeout(function() { bdMM.focus(); }, 100);
+      }
+    } else if (this.matches('.bdmm')) {
+      if (event.keyCode != '8' && event.keyCode != '9') {
+        countMM++;
+      } else {
+        countMM--;
+        if (countMM < 0) {
+          countMM = 0;
+        }
+      }
+      if (countMM == '2') {
+        setTimeout(function() { bdYY.focus(); }, 100);
+      }
+    }
+    if (this.value.length > maxLength) {
+      if (event.keyCode != '8' && event.keyCode != '9') {
+        event.preventDefault();
+      }
+    }
+  });
+});
+
+document.getElementById('submit-button').addEventListener('click', function(event) {
+  document.getElementById('form-puzzelmoment').submit();
+});
+
+document.getElementById("form-puzzelmoment").addEventListener("invalid", function(event) {
+  event.preventDefault();
+  console.log('invalid');
+}, true );
+
+if (!Element.prototype.matches) {
+  Element.prototype.matches =
+    Element.prototype.matchesSelector ||
+    Element.prototype.mozMatchesSelector ||
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.oMatchesSelector ||
+    Element.prototype.webkitMatchesSelector ||
+    function (s) {
+      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+        i = matches.length;
+      while (--i >= 0 && matches.item(i) !== this) {}
+      return i > -1;
+    };
+}
+</script>
 
 <style type="text/css">
 .container-breadcrumbs .breadcrumb {
@@ -257,7 +341,6 @@
   line-height: 24px;
   letter-spacing: 0px;
  }
-
  .submit-button {
   display: -webkit-flex;
   display: flex;
@@ -265,17 +348,17 @@
   justify-content: center;
   margin: 0 auto;
  }
-
  /* Form styling */
  .form-group {
   margin-bottom: 1rem;
  }
- 
  .col-form-label {
   padding-top: 10px !important;
   font-weight: 700;
  }
- 
+ .col-form-label.textarea {
+  padding-top: 6px !important;
+ }
  label {
   margin-bottom: 5px;
  }
@@ -284,7 +367,6 @@
   font-weight: 400;
   color: #707070;
  }
- 
  .form-control {
   font-size: 16px !important;
   height: 40px;
@@ -292,35 +374,37 @@
   background-color: #FFF;
   border-radius: 4px;
  }
- 
  select.form-control {
   width: auto!important;
   height: 40px!important;
  }
- 
  .form-control:focus {
   border: 1px solid #00AEEF;
   outline: none !important;
   box-shadow: none!important;
   transition: all 0.15s ease-in-out 0s;
  }
- 
  .form-control[readonly],.form-control[readonly]:focus {
   border: none;
  }
-
  .form-control.textarea {
   font-size: 16px !important;
   height: 100px;
   border: 1px solid #707070;
  }
-
  .form-control.textarea:focus {
   border: 1px solid #c4c6c7;
   outline: none !important;
   box-shadow: none !important;
   transition: all 0.15s ease-in-out 0s;
  }
+ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .form-group.birthdate {
   padding: 0px 15px;
 }
@@ -357,17 +441,22 @@
     text-align: center;
   }
  }
- 
- .col-form-label.textarea {
-  padding-top: 6px !important;
+ @media (min-width: 768px) {
+  .fname {
+    padding-right: 10px;
+  }
+  .mname {
+    padding: 0px 4px;
+  }
+  .lname {
+    padding-left: 10px;
+  }
  }
- 
  @media (min-width: 768px) and (max-width: 1200px) {
   .col-form-label.textarea {
    padding-top: 8px !important;
   }
  }
- 
  /* Button styling */
  input[type=submit], .button {
   position: relative;
@@ -570,7 +659,7 @@
   display: none;
  }
  
- input[type="text"]:not(:placeholder-shown):valid, input[type="email"]:not(:placeholder-shown):valid, textarea:not(:placeholder-shown):valid {
+ input[type="text"]:not(:placeholder-shown):valid, input[type="email"]:not(:placeholder-shown):valid, textarea:not(:placeholder-shown):valid, input[type="number"]:not(:placeholder-shown):valid {
   border: 1px solid #95C121;
  }
  
