@@ -1,6 +1,6 @@
 { "athletes" : [
     {
-        "name": "Sybren Bos",
+        "name": "Mister Boss",
         "year": 2021,
         "lift": {
             "deadlift": "180kg",
@@ -9,7 +9,7 @@
             }
     },
     {
-        "name": "Simon Braak",
+        "name": "Mister Brake",
         "year": 2020,
         "lift": {
             "deadlift": "No PR",
