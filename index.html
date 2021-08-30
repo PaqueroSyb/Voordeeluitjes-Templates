@@ -24,7 +24,8 @@
     <div id="test-data"></div>
 
     <script type="text/javascript">
-    var json = function () {
+    window.onload = function() {
+      var json = function () {
     var jsonTemp = null;
     $.ajax({
         'async': false,
@@ -37,6 +38,7 @@
 }(); 
 
 document.getElementById('test-data').innerText(json);
+    };
     </script>
   </body>
 </html>
