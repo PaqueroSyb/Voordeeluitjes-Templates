@@ -29,7 +29,7 @@
           if (this.readyState == 4 && this.status == 200) {
             // Typical action to be performed when the document is ready:
             var response = JSON.parse(xhttp.responseText);
-            document.getElementById("test-data").innerText = response.employees[0].name;
+            document.getElementById("test-data").innerText = response.employers[0].name;
           }
         };
         xhttp.open("GET", "data.json", true);
