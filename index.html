@@ -26,9 +26,9 @@
       window.onload = function() {
         fetch("data.json")
         .then(response => response.json())
-        .then(json => console.log(json)); 
-        document.getElementById('test-data').innerText(json);
-        console.log(json);
+        .then(json =>
+        document.getElementById('test-data').innerText(json); 
+        console.log(json)); 
       };
       </script>
   </body>
