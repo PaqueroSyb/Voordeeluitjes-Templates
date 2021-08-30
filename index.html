@@ -26,23 +26,19 @@
     <script type="text/javascript">
     window.onload = function() {
       var json = function () {
-    var jsonTemp = null;
-    $.ajax({
+      var jsonTemp = null;
+      $.ajax({
         'async': false,
         'url': data.json,
         'success': function (data) {
             jsonTemp = data;
         }
-    });
-    return jsonTemp;
-}(); 
-
-document.getElementById('test-data').innerText(json);
-<<<<<<< HEAD
-    };
-=======
+      });
+      return jsonTemp;
+      }(); 
+      document.getElementById('test-data').innerText(json);
       console.log(json);
->>>>>>> 5008de574e1dc5efd10a258b144eca98ad8f2524
+    };
     </script>
   </body>
 </html>
