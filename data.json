@@ -1,22 +1,21 @@
-{
-    "athletes": {
-        "athlete": {
-            "name": "Example name",
-            "year": 2021,
-            "lift": {
-                "Deadlift": "180kg",
-                "Squat": "120kg",
-                "Benchpress": "100kg"
+{ "athletes" : [
+    {
+        "name": "Sybren Bos",
+        "year": 2021,
+        "lift": {
+            "deadlift": "180kg",
+            "squat": "120kg",
+            "benchpress": "100kg"
             }
-        },
-        "athlete": {
-            "name": "Nice example name",
-            "year": 2020,
-            "lift": {
-                "Deadlift": "80kg",
-                "Squat": "100kg",
-                "Benchpress": "140kg"
-            }
+    },
+    {
+        "name": "Simon Braak",
+        "year": 2020,
+        "lift": {
+            "deadlift": "<s>No PR</s>",
+            "squat": "100kg",
+            "benchpress": "150kg"
         }
     }
+]
 }
