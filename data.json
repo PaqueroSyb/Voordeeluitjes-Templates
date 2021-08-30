@@ -1,12 +1,14 @@
-
-   {"data":[ 
-       {"employees":[    
-            {"name":"Ram", "email":"ram@gmail.com", "age":23},    
-            {"name":"Shyam", "email":"shyam23@gmail.com", "age":28},  
-            {"name":"John", "email":"john@gmail.com", "age":33},    
-            {"name":"Bob", "email":"bob32@gmail.com", "age":41}   
-       ]},
-       {"employers":[    
-            {"name":"Sybren", "email":"sybrenboss@gmail.com", "age":24}      
-       ]}  
-    ]}
+{
+    "book": {
+        "name": "Harry Potter and the Goblet of Fire",
+        "author": "J. K. Rowling",
+        "year": 2000,
+        "genre": "Fantasy Fiction"
+    },
+    "book2": {
+        "name": "Sybren Bos en bos",
+        "author": "Sybren Bos",
+        "year": 1997,
+        "genre": "Fitness"
+    }
+}
