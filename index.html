@@ -24,17 +24,9 @@
     <div id="test-data"></div>
     <script type="text/javascript">
       window.onload = function() {
-        var json = function () {
-        var jsonTemp = null;
-        $.ajax({
-          'async': false,
-          'url': 'data.json',
-          'success': function (data) {
-              jsonTemp = data;
-          }
-        });
-        return jsonTemp;
-        }();  
+        fetch("data.json")
+        .then(response => response.json())
+        .then(json => console.log(json)); 
         document.getElementById('test-data').innerText(json);
         console.log(json);
       };
