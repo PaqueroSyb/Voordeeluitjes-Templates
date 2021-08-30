@@ -12,7 +12,7 @@
         "name": "Simon Braak",
         "year": 2020,
         "lift": {
-            "deadlift": "<s>No PR</s>",
+            "deadlift": "No PR",
             "squat": "100kg",
             "benchpress": "150kg"
         }
