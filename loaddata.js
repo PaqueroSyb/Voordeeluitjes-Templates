@@ -5,7 +5,7 @@ window.onload = function() {
         // Typical action to be performed when the document is ready:
         var response = JSON.parse(xhttp.responseText);
         for (let i = 0; i < response.athletes.length; i++) {
-            document.getElementById("test-data").innerHTML += "<b>" + response.athletes[i].name + "</b><br> Deadlift: " + response.athletes[i].lift.deadlift + "<br> Squat: " + response.athletes[i].lift.squat  + "<br> Benchpress: " + response.athletes[i].lift.benchpress + "<br><br>";
+            document.getElementById("test-data").innerHTML += "<b>" + response.athletes[i].name + "</b><br>Deadlift: " + response.athletes[i].lift.deadlift + "<br>Squat: " + response.athletes[i].lift.squat  + "<br>Benchpress: " + response.athletes[i].lift.benchpress + "<br><br>";
         }
       }
     };
