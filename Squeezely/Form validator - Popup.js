@@ -2,7 +2,7 @@ let submitButton = document.querySelector('.sqzly-form-submit');
 let inputEmail = document.querySelector('.sqzly-emailfield');
 let inputContainer = document.querySelector('.sqzly-fields');
 let emailValue;
-let patern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
 inputEmail.addEventListener('input', function() {
     let showErrorMessage = document.querySelector('.error-message');
