@@ -1,0 +1,222 @@
+{# ! NOTE ! #}
+{# Always read this wiki carefully before making/modifing a template : https://squeezely.atlassian.net/wiki/spaces/KB/pages/1484980225/Personalization+template+requirements #}
+
+{% if (designerPreviewMode) or (not variantId) or (not revision) or (not cssPrefixEnabled)  %}
+    {% set cssPrefix = '' %}
+{% else %}
+    {% set cssPrefix %}#sqzl_div-{{ variantId }}-{{ revision }}{% endset %}
+{% endif %}
+
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700,700i&#038;ver=4.9.5' type='text/css' media='all' />
+<style>
+    {{ cssPrefix }} .sqzly-modal { font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 16px; line-height: 19px; padding-top: 20px; padding-bottom: 20px; max-width: 480px; }
+    {{ cssPrefix }} .sqzly-modal.home { padding-top: 39px; padding-bottom: 36px; }
+    {{ cssPrefix }} .sqzly-personalization { width: 100%; font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 16px; line-height: 19px; color: #252525; margin: 0; }
+    {{ cssPrefix }} .sqzly-modal h3 { font-size: 25px; border: 0px; line-height: 31px; color: #252525; font-weight: 700; font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; margin: 0 }
+    {{ cssPrefix }} .sqzly-fields { margin-top: 10px; }
+    {{ cssPrefix }} .sqzly-fields label { font-weight: bold; }
+    {{ cssPrefix }} .sqzl-clearer { clear: both; }
+    {{ cssPrefix }} .sqzly-header {  width: 100%; }
+
+    {{ cssPrefix }} .sqzly-fields {display: flex; margin-top: 17px; position: relative; flex-wrap: wrap;}
+    {{ cssPrefix }} .sqzly-fields label { font-weight: bold; }
+    {{ cssPrefix }} .sqzly-fields input[type="text"], .sqzly-fields input[type="email"] { border: 1px solid #707070; color: #707070; font-size: 16px; line-height: 19px; height: 40px; width: 100%; padding: 9px 35px 11px 12px;
+        border-radius: 4px 0 0 4px; font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; }
+    {{ cssPrefix }} .sqzly-fields input[type="text"]:focus, .sqzly-fields input[type="email"]:focus { outline: 0; border: 1px solid #00AEEF; border-radius: 4px 0 0 4px; }
+    {{ cssPrefix }} .sqzl-clearer { clear: both; }
+    .flatpickr-calendar.open { z-index: 9999999; font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    {{ cssPrefix }} .sqzly-error { border-color: #707070 !important; }
+    {{ cssPrefix }} .sqzly-checkbox-error { color: #eb7053 !important; }
+    {{ cssPrefix }} .sqzly-collapse { display: none !important; }
+
+    {{ cssPrefix }} .sqzly-thankyou {
+        display: none;
+        padding: 18px 22px 40px 20px;
+    }
+
+    {{ cssPrefix }} .sqzly-thankyou.sqzly-in { display: block; }
+    {{ cssPrefix }} input[type="checkbox"].sqzly-checkbox { display: inline !important; visibility: visible !important; height: 13px !important;}
+
+    {{ cssPrefix }} a.sqzly-btn{ border-radius: 0 4px 4px 0; color: {% if color_2.value %}{{ color_2.value }}{% else %}#ffffff{% endif %};
+        background-color:{% if color_1.value %}{{ color_1.value }}{% else %}#2e74f5{% endif %}; font-size: 18px; line-height: 24px; min-width: 144px; width: 100%; display: inline-block;
+        padding: 7px 0 0 20px; height: 40px; font-weight: 700; }
+    {{ cssPrefix }} a:focus, a:hover{ text-decoration: none!important; }
+    {{ cssPrefix }} a.sqzly-btn.sqzly-btn-fullwidth { width: 100%; }
+    {{ cssPrefix }} .sqzly-modal-close{  font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 400; color: #666;  top: 15px; right: 12px; line-height: 1; width: 24px; height: 24px; font-weight: 700; }
+    {{ cssPrefix }} .sqzly-description{ padding: 18px 20px; }
+    {{ cssPrefix }} .sqzly-body.discount { color: #252525; padding-top:12px; }
+    {{ cssPrefix }} .count-customers{ color: #0ab21b; line-height: 20px; padding: 0;  text-align: right; margin-top: 12px; font-size: 14px; }
+    {{ cssPrefix }} .preferences{ width: 100%; margin-bottom:12px; }
+    {{ cssPrefix }} .preferences-title{ font-weight: 700; margin-bottom: 8px; color: #707070;}
+    {{ cssPrefix }} .checkbox-container{ position: relative; display: inline-block; }
+    {{ cssPrefix }} .checkbox-container label{ font-weight: 400; cursor: pointer; }
+    {{ cssPrefix }} .preferences .checkbox-container:last-child{ padding-left: 20px; }
+    {{ cssPrefix }} input[type=checkbox]{ position: absolute; cursor: pointer; -webkit-appearance: none; -moz-appearance: none; appearance: none; margin-left: 0; }
+    {{ cssPrefix }} input[type="checkbox"] + span{ padding-left: 28px; line-height: 22px; }
+    {{ cssPrefix }} input[type="checkbox"]:before{ content: ""; position: absolute; top: 0; left: 0; background-color: #fff; display: inline-block; box-sizing: border-box; margin: -2px 11px 3px 0px; 
+        border: 2px solid #666; border-radius: 2px; width: 18px; height: 18px; transition: border-color .2s,background-color .2s; } 
+    {{ cssPrefix }} input[type=checkbox]:checked:before{ background-color: #ec008c; border: 2px solid #ec008c; }
+    {{ cssPrefix }} input[type=checkbox]:checked:after{ content: ""; display:  block; position: absolute; top: -2px; left: 1px; width: 11px; height: 6px; border: solid 2px transparent; border-right: none;
+        border-top: none; transform: translate(3px,4px) rotate(-45deg); border-color: #FFF; }
+    {{ cssPrefix }} .input-group{ display: -webkit-flex; display: flex; width: 100%; }
+    {{ cssPrefix }} .flex-email{ -webkit-flex: 1; flex: 1; }
+    {{ cssPrefix }} .error-message{ font-size: 11px; line-height: 16px; color: #f55;  margin-top: 3px; position: absolute; display: none; }
+    {{ cssPrefix }} .error-message.hide{ display: none !important; }
+    {{ cssPrefix }} .active-block{  display: block !important; }
+    {{ cssPrefix }} .icon-vu-thick-arrow-right{  position: absolute;  color: #FFF; top: 16px;  right: 20px; font-size: 10px; }
+    {{ cssPrefix }} .form-control-feedback{ top: 2px; right: 150px; display: none; }
+    {{ cssPrefix }} .icon-vu-exclamation{ color: #FF5555; }
+    {{ cssPrefix }} .icon-vu-check1{ color: #95C121; font-size: 24px; }
+    {{ cssPrefix }} .input-invalid input:invalid{ border: 1px solid #FF5555 !important; background: #FF555526 0% 0% no-repeat padding-box; }
+    {{ cssPrefix }} .input-invalid .icon.icon-vu-exclamation.form-control-feedback{ display: block !important; }
+    {{ cssPrefix }} .input-invalid + .error-message{ display: block; }
+    {{ cssPrefix }} .input-invalid input[type="email"]:not(:placeholder-shown):valid ~ .error-message{ display: none !important; }
+    {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid{ border-bottom: 1px solid #95C121 !important; border: 1px solid #707070; }
+    {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid ~ .icon.icon-vu-exclamation.form-control-feedback{ display: none !important; }
+    {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid ~ .icon.icon-vu-check1.form-control-feedback{ display: block !important; }
+    {{ cssPrefix }} .status-list{ margin-top: 12px; margin-bottom: 0px; list-style: none; padding: 0; font-size: 16px; color: #707070; line-height: 19px; position: relative; }
+    {{ cssPrefix }} .status-list li{ padding-left: 32px; padding-bottom: 18px; position: relative; }
+    {{ cssPrefix }} .status-list li:before{ content: ""; position: absolute; background: #c5c5c5 0 0 no-repeat padding-box; border: 2px solid #fff; border-radius: 12px; width: 16px; height: 16px;
+        left: 0px; top: 4px; z-index: 1; }
+    {{ cssPrefix }} .status-list li:after { content: ""; position: absolute; border-radius: 12px; width: 4px; height: 30px; left: 6px; top: 16px; background: #c5c5c5; }
+    {{ cssPrefix }} .status-list li:first-child:before, .status-list li:first-child:after{ background: #ec008c !important; }
+    {{ cssPrefix }} .status-list li:last-child:after{ width: 0px; }
+    {{ cssPrefix }} .status-list li:last-child{ padding-bottom: 0px; }
+    @media( max-width : 450px ){
+        {{ cssPrefix }} .sqzly-top-left, .sqzly-top-center, .sqzly-top-right, .sqzly-center, .sqzly-bottom-left, .sqzly-bottom-center, .sqzly-bottom-right { top: auto; bottom: 10px; left: 10px; right: 10px; }
+    }
+
+    @media all and (max-width:30em){
+        {{ cssPrefix }} a.sqzly-btn{ display:block; margin:0.2em auto; }
+    }
+    @media( max-width : 767px ){
+        {{ cssPrefix }} .sqzly-modal { padding-top: 45px; padding-bottom: 27px; }
+    }
+
+</style>
+<style>
+    {{ css }}
+</style>
+
+{% for parsedItem in items %}
+    <div class="sqzly-modal {{ updateclass }}">
+        <div class="sqzly-modal-content">
+
+            {% for element, elementSettings in elements %}
+
+                {% if element == 'header' and elementSettings.enabled and parsedItem.header %}
+
+                    <div class="sqzly-header">
+                        {{ parsedItem.header }}
+                    </div>
+                    <div style="clear: both"></div>
+
+                {% elseif element == 'title' and elementSettings.enabled %}
+
+                    <h3>
+                        {% if parsedItem.title %}
+                            {{ parsedItem.title }}
+                        {% else %}
+                            Title
+                        {% endif %}
+                    </h3>
+
+                {% elseif element == 'body' and elementSettings.enabled %}
+
+                    <div class="sqzly-body discount">
+                        {% if parsedItem.body %}
+                            {{ parsedItem.body }}
+                        {% else %}
+                            Enter your own HTML body text here.
+                        {% endif %}
+                    </div>
+
+                {% elseif element == 'button' and elementSettings.enabled %}
+
+                <div class="sqzly-fields">
+                    <div class="preferences">
+                        <div class="preferences-title">Ik wil aanbiedingen voor:</div>
+                        <div class="checkbox-container">
+                            <label>
+                                <input type="checkbox" data-field-id="custom_email_preference_hotel" data-value-checked="Ja" data-value-unchecked="Nee" checked />
+                                <span>Hotels</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-container">
+                            <label>
+                                <input type="checkbox" data-field-id="custom_email_preference_vakantieparken" data-value-checked="Ja" data-value-unchecked="Nee" checked />  
+                                <span>Vakantieparken</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        {% for field in fields %}
+                            {% if field.type == 'checkbox' %}
+                                <label>
+                                    <input type="checkbox" data-field-id="{{ field.id }}" class="sqzly-checkbox{{ cssRequired }}"  data-value-checked="{{ field.checkbox_option_checked }}" data-value-unchecked="{{ field.checkbox_option_unchecked }}" />  {{ field.label }}
+                                </label>
+                            {% elseif field.type == 'gender' %}
+                                <label for="sqzly_field_{{ field.id }}" >{{ field.label }}</label><br />
+                                <select class="sqzly-input sqzly-gender{{ cssRequired }}" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}">
+                                    <option value="U"></option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            {% elseif field.type == 'text' %}
+
+                            {% if field.display == 'select' %}
+                                        
+                                <select id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-textfield">
+                                    {% for option in field.select_options %}
+                                        <option value="{{ option }}">{{ option }}</option>
+                                    {% endfor %}
+                                </select>
+                            {% elseif field.display == 'checkbox' %}
+                                    <label>
+                                        <input type="checkbox" id="sqzly_field_{{ field.id }}" data-value-checked="{{ field.checkbox_option_checked }}" data-value-unchecked="{{ field.checkbox_option_unchecked }}" data-field-id="{{ field.id }}" class="sqzly-checkbox{{ cssRequired }}" />  {{ field.label }}
+                                    </label>
+                            {% elseif field.display == 'hidden' %}
+                                    <input type="hidden" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-hiddenfield{{ cssRequired }}" value="{{ field.hidden_value }}" />
+                            {% else %}
+                                    <label for="sqzly_field_{{ field.id }}" >{{ field.label }}</label><br />
+                                    <input type="text" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-textfield{{ cssRequired }}" placeholder="{{ field.placeholder }}" />
+                            {% endif %}
+
+                            {% elseif field.type == 'date' %}
+                                <label for="sqzly_field_{{ field.id }}" >{{ field.label }}</label><br />
+                                <input type="text" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-datepicker{{ cssRequired }}" />
+                            {% elseif field.type == 'email' %}
+                                <input type="email" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-emailfield{{ cssRequired }}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="{{ field.placeholder }}" />
+                            {% endif %}
+                        {% endfor %}
+
+                            <span class="icon icon-vu-exclamation form-control-feedback"></span>
+                            <span class="icon icon-vu-check1 form-control-feedback"></span>
+                            <div style="position: relative">
+                                <a href="javascript:" class="sqzly-form-submit sqzly-btn {% if elements.button.full_width %}sqzly-btn-fullwidth{% endif %}">{% if parsedItem.button %}{{ parsedItem.button }}{% else %}CTA text{% endif %}</a>
+                                <i class="icon-vu-thick-arrow-right"></i>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="error-message">
+                            dit veld is verplicht
+                        </div>
+                        <div class="count-customers">
+                            800.000+ klanten gingen u al voor!
+                        </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+        <div class="sqzly-thankyou">
+            {% if parsedItem.thankyou %}
+                {{ parsedItem.thankyou }}
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
+
+
+        
