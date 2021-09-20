@@ -7,27 +7,24 @@
   <span class="header-title">
 	Kruidvat hotelactie
   </span>
-  <span class="header-subtitle"> 
-   Help ons de website te verbeteren!
-  </span>
  </div>
  <img class="show-desktop" src="https://www.voordeeluitjes.nl/Images/freeValues/gebruikerspanel_header_desktop.png" alt="Voordeeluitjes gebruikerspanel" width="100%" height="auto">
  <img class="show-mobile" src="https://www.voordeeluitjes.nl/Images/freeValues/gebruikerspanel_header_mobile.png" alt="Voordeeluitjes gebruikerspanel" width="100%" height="200">
 </div>
 
 <div class="content-container-first">
- <div class="content-580px content-text">
-   Bij Voordeeluitjes.nl zijn we constant bezig met het verbeteren
-   van onze website, en daarbij kunnen we uw hulp goed gebruiken.
-   Hierom organiseren wij regelmatig interviews en onderzoeken over
-   de gebruiksvriendelijkheid van de website. Helpt u mee? Dat kan nu
-   online op een veilige afstand, en straks ook bij ons op kantoor.
+ <div class="content-720px content-text">
+ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+ invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+ accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+ sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+ elitr, sed diam nonumy eirmod tempor invidunt ut labore et
  </div>
 </div>
 
 <div class="content-container">
  <div class="title-container h1-custom">
-  Na uw inschrijving
+  Hoe het werkt
  </div>
  <div class="inschrijving-container">
   <div class="inschrijving-item">
@@ -52,10 +49,18 @@
 </div>
 
 <div class="content-container">
- <div class="content-580px">
-  <p class="content-text">
-   * Hier ruimte vrij houden voor de: <Voorwaarden gratis verblijf actie>
-  </p>
+  <img src="https://raw.githubusercontent.com/PaqueroSyb/Voordeeluitjes-Templates/main/Kruidvat/kruidvat-hotelactie-desktop.png" 
+  width="720" height="480" alt="Bekijk alle deelnemende hotels" class="img-hotels show-desktop"/>
+  <img src="https://raw.githubusercontent.com/PaqueroSyb/Voordeeluitjes-Templates/main/Kruidvat/kruidvat-hotelactie-desktop.png" 
+  width="290" height="296" alt="Bekijk alle deelnemende hotels" class="img-hotels show-mobile"/>
+</div>
+
+<div class="content-container">
+ <div class="title-container h1-custom">
+  Voorwaarden Kruidvat actie
+ </div>
+ <div class="content-720px content-text">
+   * Hier ruimte vrij houden voor de voorwaarden
  </div>
 </div>
 
@@ -79,16 +84,6 @@
  .show-mobile {
   display: none;
   object-fit: cover;
- }
- .button-2 {
-  box-shadow: 0px 1px 3px #00000026;
-  border: 2px solid #707070;
-  border-radius: 4px;
-  color: #707070!important;
-  padding: 8px 20px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
  }
  .header-relative {
   position: relative;
@@ -117,59 +112,21 @@
   display: block;
   padding-bottom: 5px;
  }
- .header-subtitle {
-  font-family: 'Roboto Slab',Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 40px;
-  color: #FFF;
-  text-shadow: 0px 3px 6px #00000094;
-  letter-spacing: 0;
-  display: block;
-  margin-bottom: 60px;
- }
- .header-button {
-  background: #95C121 0% 0% no-repeat padding-box;
-  box-shadow: 0px 1px 3px #00000026;
-  border-radius: 4px;
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: 0px;
-  color: #FFFFFF;
-  font-weight: 700;
-  padding: 8px 0px; 
-  cursor: pointer;
-  max-width: 335px;
-  text-align: center;
- }
- .header-button.show-mobile {
-  max-width: 200px!important;
-  text-align: center;
-  padding: 8px 0px!important;
- }
- .header-button:hover, .header-button:focus {
-  color: #FFFFFF;
- }
  .content-container-first {
-  padding: 60px 0px 30px 0px;
+  padding: 50px 0px 25px 0px;
  }
  .content-container {
-  padding: 30px 0px;
+  padding: 25px 0px;
  }
- .content-580px {
-  max-width: 580px;
-  margin: 0 auto;
-  text-align: left;
- }
- .content-470px {
-  max-width: 470px;
+ .content-720px {
+  max-width: 720px;
   margin: 0 auto;
   text-align: left;
  }
  .title-container {
   margin: 0 auto;
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
  }
  .content-text {
   color: #252525;
@@ -217,20 +174,11 @@
   .grey-bg {
    background-color: #707070!important; 
   }
-  .icon-vu-info {
-   font-size: 14px;
-   color: #C5C5C5;
-   cursor: pointer;
-  }
   .active {
    display: block;
   }
-  .info {
-   text-align: center;
-   padding-bottom: 30px;
-  }
-  .height-52 {
-   height: 52px;
+  .img-hotels {
+    margin: 0 auto;
   }
  @media (min-width: 992px) and (max-width: 1199px) {
   .header-container {
