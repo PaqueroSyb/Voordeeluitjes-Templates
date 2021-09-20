@@ -2,14 +2,9 @@
 	<title culture="nl-NL"><![CDATA[Kruidvat hotelactie]]></title>
 	<content culture="nl-NL">
 		<![CDATA[
-<div class="header-relative">
- <div class="header-container">
-  <span class="header-title">
-	Kruidvat hotelactie
-  </span>
- </div>
- <img class="show-desktop" src="https://www.voordeeluitjes.nl/Images/freeValues/gebruikerspanel_header_desktop.png" alt="Voordeeluitjes gebruikerspanel" width="100%" height="auto">
- <img class="show-mobile" src="https://www.voordeeluitjes.nl/Images/freeValues/gebruikerspanel_header_mobile.png" alt="Voordeeluitjes gebruikerspanel" width="100%" height="200">
+ <div>
+  <img class="show-desktop" src="https://raw.githubusercontent.com/PaqueroSyb/Voordeeluitjes-Templates/main/Kruidvat/kruidvat_hotelactie_header_desktop.jpg" alt="Kruidvat hotelactie afbeelding" width="100%" height="auto">
+  <img class="show-mobile" src="https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Kruidvat/kruidvat_hotelactie_header_mobile.jpg?raw=true" alt="Kruidvat hotelactie afbeelding" width="100%" height="200">
 </div>
 
 <div class="content-container-first">
@@ -49,9 +44,9 @@
 </div>
 
 <div class="content-container">
-  <img src="https://raw.githubusercontent.com/PaqueroSyb/Voordeeluitjes-Templates/main/Kruidvat/kruidvat-hotelactie-desktop.png" 
+  <img src="https://raw.githubusercontent.com/PaqueroSyb/Voordeeluitjes-Templates/main/Kruidvat/kruidvat_hotelactie_kaartje_desktop.png" 
   width="720" height="480" alt="Bekijk alle deelnemende hotels" class="img-hotels show-desktop"/>
-  <img src="https://raw.githubusercontent.com/PaqueroSyb/Voordeeluitjes-Templates/main/Kruidvat/kruidvat-hotelactie-desktop.png" 
+  <img src="https://raw.githubusercontent.com/PaqueroSyb/Voordeeluitjes-Templates/main/Kruidvat/kruidvat_hotelactie_kaartje_mobile.png" 
   width="290" height="296" alt="Bekijk alle deelnemende hotels" class="img-hotels show-mobile"/>
 </div>
 
@@ -179,6 +174,9 @@
   }
   .img-hotels {
     margin: 0 auto;
+  }
+  .container-breadcrumbs .breadcrumb {
+    margin-bottom: 0px;
   }
  @media (min-width: 992px) and (max-width: 1199px) {
   .header-container {
