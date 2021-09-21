@@ -1,0 +1,21 @@
+{ "athletes" : [
+    {
+        "name": "Mister Boss",
+        "year": 2021,
+        "lift": {
+            "deadlift": "180kg",
+            "squat": "120kg",
+            "benchpress": "100kg"
+            }
+    },
+    {
+        "name": "Mister Brake",
+        "year": 2020,
+        "lift": {
+            "deadlift": "No PR",
+            "squat": "100kg",
+            "benchpress": "150kg"
+        }
+    }
+]
+}
