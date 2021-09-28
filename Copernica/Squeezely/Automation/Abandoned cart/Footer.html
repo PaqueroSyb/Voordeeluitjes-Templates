@@ -1,0 +1,39 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="items">
+    <xsl:call-template name="item" />
+  </xsl:template>
+  <xsl:template name="item">
+    <xsl:for-each select="item">
+      <xsl:if test="position() = '1'">
+        <a target="_blank" href="https://www.voordeeluitjes.nl">
+          <xsl:choose>
+            <xsl:when test="custom_fields/location_type = 'Hotel'">
+              <img alt="Voordeeluitjes.nl - Kampioen in arrangementen" border="0" class="hide-for-small" src="voordeeluitjes/Image-footer_grijze_achtergrond_HT_DT.gif"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <img alt="Voordeeluitjes.nl - Kampioen in arrangementen" border="0" class="hide-for-small" src="voordeeluitjes/Image-footer_grijze_achtergrond_VP_DT.gif"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </a>
+        <xsl:text disable-output-escaping="yes">
+          <![CDATA[ <!--[if !true]><!--> ]]>
+        </xsl:text>
+        <span class="show-for-small" style="display: none;margin: 0;padding: 0">
+          <a target="_blank" href="https://www.voordeeluitjes.nl">
+            <xsl:choose>
+              <xsl:when test="custom_fields/location_type = 'Hotel'">
+                <img alt="Voordeeluitjes.nl - Kampioen in arrangementen" border="0" class="responsive-img" src="voordeeluitjes/Image-footer_grijze_achtergrond_HT_MB.gif" width="560" height="705"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <img alt="Voordeeluitjes.nl - Kampioen in arrangementen" border="0" class="responsive-img" src="voordeeluitjes/Image-footer_grijze_achtergrond_VP_MB.gif"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </a>
+        </span>
+        <xsl:text disable-output-escaping="yes">
+          <![CDATA[<!--<![endif]-->]]>
+        </xsl:text>
+      </xsl:if>
+    </xsl:for-each>
+  </xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,106 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="items">
+    <xsl:call-template name="item" />
+  </xsl:template>
+  <xsl:template name="item">
+    <xsl:for-each select="item">
+      <xsl:if test="position() = '1'">
+        <xsl:variable name="colorInStyle">
+          <xsl:choose>
+            <xsl:when test="custom_fields/location_type = 'Hotel'">#EC008C</xsl:when>
+            <xsl:otherwise>#F58220</xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <tr>
+          <td style="padding-top: 11px;">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+              <tr>
+                <th width="60%" align="left" valign="middle" class="pu">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                    <tr>
+                      <td align="left" valign="middle">
+                        <table cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                          <tr>
+                            <td>
+                              <p class="font-content c" style="color: #252525;font-family: Calibri,Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 400!important;line-height: 20px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                                Uw verblijf bij 
+                                <b style="color: {$colorInStyle}">
+                                  <xsl:value-of select="custom_fields/hotel_name" />
+                                </b>
+                                is zo geboekt, nog maar een paar stappen!
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th width="40%" align="left" valign="middle" class="pu">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                    <tr>
+                      <td align="right" class="text-left-m padding-top-15-m padding-bottom-10-m">
+                        <a target="_blank" style="margin:0;padding:0;">
+                          <xsl:attribute name="href">
+                            <xsl:value-of select="url"/>
+                          </xsl:attribute>
+                          <img alt="Voltooi boeking" border="0" width="200" src="voordeeluitjes/Button_DT_1_column_voltooi_boeking.jpg"/>
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" style="padding-top: 16px; padding-bottom: 20px;">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0;">
+              <td valign="top">
+                <a target="_blank">
+                  <xsl:attribute name="href">
+                    <xsl:value-of select="url"/>
+                  </xsl:attribute>
+                  <xsl:text disable-output-escaping="yes">
+                    <![CDATA[ <!--[if true]>
+                      <table width="700" align="center" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:seperate;margin:0;mso-table-lspace:0pt;mso-table-rspace:0pt;padding:0;">
+                      <tr>
+                      <td align="center">
+                      <![endif]--> ]]>
+                  </xsl:text>
+                  <xsl:text disable-output-escaping="yes">
+                    <![CDATA[ <!--[if !true]><!-->]]>
+                  </xsl:text>
+                  <div style="overflow: hidden; max-height: 300px;">
+                    <xsl:text disable-output-escaping="yes">
+                      <![CDATA[ <!--<![endif]-->]]>
+                    </xsl:text>
+                    <img alt="Uw hotel" border="0" class="img-auto" width="700" style="max-width: 700px; width: 100%; height: 100%; max-height: 300px; object-fit: cover; border-radius: 6px;">
+                    <xsl:attribute name="src">
+                      <xsl:value-of select="image" />
+                    </xsl:attribute>
+                    </img>
+                    <xsl:text disable-output-escaping="yes">
+                      <![CDATA[ <!--[if !true]><!-->]]>
+                    </xsl:text>
+                  </div>
+                  <xsl:text disable-output-escaping="yes">
+                    <![CDATA[<!--<![endif]-->]]>
+                  </xsl:text>
+                  <xsl:text disable-output-escaping="yes">
+                    <![CDATA[<!--[if true]>
+                      </td>
+                      </tr>
+                      </table>
+                       <![endif]-->  ]]>
+                  </xsl:text>
+                </a>
+              </td>
+            </table>
+          </td>
+        </tr>
+      </xsl:if>
+    </xsl:for-each>
+  </xsl:template>
+</xsl:stylesheet>

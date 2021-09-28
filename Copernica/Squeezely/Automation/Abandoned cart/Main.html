@@ -1,0 +1,526 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   <xsl:template match="items">
+      <xsl:call-template name="item" />
+   </xsl:template>
+   <xsl:template name="item">
+      <xsl:for-each select="item">
+         <xsl:if test="position() = '1'">
+            <xsl:variable name="colorInStyle">
+               <xsl:choose>
+                  <xsl:when test="custom_fields/location_type = 'Hotel'">#EC008C</xsl:when>
+                  <xsl:otherwise>#F58220</xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable>
+            <xsl:variable name="bgColorInStyle">
+               <xsl:choose>
+                  <xsl:when test="custom_fields/location_type = 'Hotel'">#FBE6F0</xsl:when>
+                  <xsl:otherwise>#FFDDC0</xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable>
+            <xsl:variable name="iconColor">
+               <xsl:text>voordeeluitjes/</xsl:text>
+               <xsl:choose>
+                  <xsl:when test="custom_fields/location_type = 'Hotel'">icon-check-favicon.png</xsl:when>
+                  <xsl:otherwise>icon-check-favicon-vp.png</xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable>
+           <xsl:variable name="accoType">
+               <xsl:choose>
+                  <xsl:when test="custom_fields/location_type = 'Hotel'">kamers</xsl:when>
+                  <xsl:otherwise>accommodaties</xsl:otherwise>
+               </xsl:choose>
+            </xsl:variable>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0;">
+               <tr>
+                  <td align="left">
+                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0;">
+                        <tr>
+                           <td align="left">
+                              <xsl:text disable-output-escaping="yes">
+                                 <![CDATA[<!--[if true]>]]>
+                              </xsl:text>
+                              <table width="700" align="center" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:seperate;margin:0;mso-table-lspace:0pt;mso-table-rspace:0pt;padding:0;">
+                                 <tr>
+                                    <td style="display:table-cell;vertical-align:top;width:50%;">
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<![endif]-->]]>
+                                       </xsl:text>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--[if !true]><!-->]]>
+                                       </xsl:text>
+                                       <div class="hv cf" style="display:table-cell;vertical-align:top;width:50%">
+                                          <xsl:text disable-output-escaping="yes">
+                                             <![CDATA[<!--<![endif]-->]]>
+                                          </xsl:text>
+                                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                             <tr>
+                                                <td valign="top">
+                                                   <table class="ab" width="330" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                      <xsl:text disable-output-escaping="yes">
+                                                         <![CDATA[<!--[if !true]><!-->]]>
+                                                      </xsl:text>
+                                                      <tr class="show-for-small" style="display: none;">
+                                                         <td class="wa show-for-small" valign="top" style="padding-bottom: 10px; display: none;">
+                                                            <p class="font-content-bold a line-height-24-m" style="color:#000;font-family:'Roboto slab',Helvetica,Arial,sans-serif!important;font-size:18px;font-weight:600!important;line-height:22px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                               <xsl:value-of select="custom_fields/hotel_name" />
+                                                               <sup style="font-size: 16px; color: #252525;padding-right:4px;">
+                                                                  <xsl:if test="custom_fields/ratings = '1 ster'">&#160;&#160;★</xsl:if>
+                                                                  <xsl:if test="custom_fields/ratings = '2 sterren'">&#160;&#160;★★</xsl:if>
+                                                                  <xsl:if test="custom_fields/ratings = '3 sterren'">&#160;&#160;★★★</xsl:if>
+                                                                  <xsl:if test="custom_fields/ratings = '4 sterren'">&#160;&#160;★★★★</xsl:if>
+                                                                  <xsl:if test="custom_fields/ratings = '5 sterren'">&#160;&#160;★★★★★</xsl:if>
+                                                               </sup>
+                                                              <xsl:variable name="newreview" select="translate(custom_fields/review_average, '.',',')"/>
+                                                              <xsl:if test="custom_fields/ratings &gt; 0">
+                                                               &#160;<span class="j font-content-bold f" style="background-color:{$colorInStyle};border-radius:4px;color:#fff;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:700!important;line-height:20px;margin:0;mso-line-height-rule:exactly;padding:0;padding-left:3px;padding-right:3px; padding-top: 2px; padding-bottom: 3px;">&#160;<xsl:value-of select="substring($newreview, 1,3)" />&#160;</span>
+                                                              </xsl:if>
+                                                            </p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr class="show-for-small" style="display: none">
+                                                         <td valign="top" class="show-for-small" style="padding-bottom: 20px; display: none; mso-hide:all">
+                                                            <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                               <tr>
+                                                                  <td width="24" valign="top" style="margin-top:6px;padding-top:6px;"><img alt="Vinkje" border="0" src="https://vicinity.picsrv.net/image/7032/0/131806/0df923b7f3fb2f38a2f2db4d33fb1569/vu-check.png" width="15" height="15"/></td>
+                                                                  <td valign="top">
+                                                                     <p class="font-content c" style="color:#707070;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:400!important;line-height:28px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                                        <xsl:value-of select="custom_fields/usp_location1" />
+                                                                     </p>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td width="24" valign="top" style="margin-top:6px;padding-top:6px;"><img alt="Vinkje" border="0" src="https://vicinity.picsrv.net/image/7032/0/131806/0df923b7f3fb2f38a2f2db4d33fb1569/vu-check.png" width="15" height="15"/></td>
+                                                                  <td valign="top">
+                                                                     <p class="font-content c" style="color:#707070;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:400!important;line-height:28px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                                        <xsl:value-of select="custom_fields/usp_location2" />
+                                                                     </p>
+                                                                  </td>
+                                                               </tr>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                      <xsl:text disable-output-escaping="yes">
+                                                         <![CDATA[ <!--<![endif]-->]]>
+                                                      </xsl:text>
+                                                      <tr>
+                                                         <td valign="top" style="border: 1px solid #C5C5C5; border-radius: 4px; padding: 18px 15px; display: block;box-shadow:0px 0px 4px -1px #c5c5c5;">
+                                                            <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                               <tr>
+                                                                  <td valign="top" style="padding-bottom: 15px;">
+                                                                     <p class="font-content a font-size-19-m" style="color:#000;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:20px;font-weight:400!important;line-height:21px;margin:0;mso-line-height-rule:exactly;padding:0">
+                                                                        <xsl:value-of select="title"/>
+                                                                     </p>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td valign="top">
+                                                                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                        <xsl:for-each select="custom_fields/*[starts-with(name(),'description')]">
+                                                                           <xsl:if test="position() &lt; '5'">
+                                                                              <xsl:if test="not(contains(./text(), 'x overnachten')) and ./text() != ''">
+                                                                                 <tr>
+                                                                                    <td width="33" valign="top" style="margin-top:6px;padding-bottom:0px;"><img alt="Vinkje" border="0" src="{$iconColor}" width="24" height="24"/></td>
+                                                                                    <td valign="top">
+                                                                                       <p class="font-content c" style="color:#707070;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:400!important;line-height:28px;margin:0;mso-line-height-rule:exactly;padding:0">
+                                                                                          <xsl:value-of select="."/>
+                                                                                       </p>
+                                                                                    </td>
+                                                                                 </tr>
+                                                                              </xsl:if>
+                                                                           </xsl:if>
+                                                                        </xsl:for-each>
+                                                                        <tr>
+                                                                           <td width="33" valign="top" style="margin-top:4px;padding-bottom:0px;">
+                                                                              <xsl:choose>
+                                                                                 <xsl:when test="custom_fields/location_type = 'Hotel'">
+                                                                                    <img alt="Bekijk alle details" border="0" src="voordeeluitjes/icon-details.jpg" width="24" height="24"/>
+                                                                                 </xsl:when>
+                                                                                 <xsl:otherwise>
+                                                                                    <img alt="Bekijk alle details" border="0" src="voordeeluitjes/icon-details-vp.jpg" width="24" height="24"/>
+                                                                                 </xsl:otherwise>
+                                                                              </xsl:choose>
+                                                                           </td>
+                                                                           <td valign="top">
+                                                                              <p class="font-content c" style="color:{$colorInStyle};font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:400!important;line-height:28px;margin:0;mso-line-height-rule:exactly;padding:0;text-decoration:underline;">
+                                                                                 <a target="_blank" style="color: {$colorInStyle}; text-decoration: underline;">
+                                                                                    <xsl:attribute name="href">
+                                                                                       <xsl:value-of select="url"/>
+                                                                                    </xsl:attribute>
+                                                                                    Bekijk alle details
+                                                                                 </a>
+                                                                              </p>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </table>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td valign="top" class="padding-top-15-m" style="padding-top:23px;">
+                                                                     <p class="font-content a" style="color:#707070;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:400!important;line-height:20px;margin:0;mso-line-height-rule:exactly;padding:0">
+                                                                        Per persoon vanaf
+                                                                     </p>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td valign="top" style="padding-top:3px;">
+                                                                     <p class="font-content-bold a" style="color:#252525;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:24px;font-weight:600!important;line-height:30px;margin:0;mso-line-height-rule:exactly;padding:0">
+                                                                        <xsl:variable name="forPrice">
+                             <xsl:value-of select='format-number(custom_fields/for_price, "#.00")' />
+                             </xsl:variable>
+                           <xsl:variable name="fromPrice">
+                             <xsl:value-of select='format-number(custom_fields/from_price, "#.00")' />
+                          </xsl:variable>
+                                                                        {capture assign="forPrice"}
+                                                                        <xsl:value-of select="($forPrice)"/>
+                                                                        {/capture}{assign var="forPriceSplit" value="."|explode:$forPrice}{$forPriceSplit[0]},<span style="font-size:13px;">{$forPriceSplit[1]}&#160;&#160;</span>
+                                                                        <span style="font-size: 15px; color:#707070;text-decoration:line-through;font-weight:400!important;">
+                                                                           <xsl:value-of select="translate($fromPrice, '.',',')"/>
+                                                                        </span>
+                                                                     </p>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td valign="top" class="padding-top-10-m" style="padding-top:17px;">
+                                                                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                        <tr>
+                                                                           <td align="left">
+                                                                              <a target="_blank">
+                                                                                 <xsl:attribute name="href">
+                                                                                    <xsl:value-of select="url"/>
+                                                                                 </xsl:attribute>
+                                                                                 <img alt="Voltooi boeking" border="0" width="200" src="voordeeluitjes/Button_DT_1_column_voltooi_boeking.jpg"/>
+                                                                              </a>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </table>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td valign="top" class="padding-top-15-m" style="padding-top:22px;">
+                                                                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                        <tr>
+                                                                           <td width="52" valign="middle" style="margin-top:0px;padding-bottom:0px;">
+                                                                              <xsl:choose>
+                                                                                 <xsl:when test="custom_fields/location_type = 'Hotel'">
+                                                                                    <img alt="Vinkje" border="0" src="voordeeluitjes/urgency.jpg" width="41" height="28"/>
+                                                                                 </xsl:when>
+                                                                                 <xsl:otherwise>
+                                                                                    <img alt="Vinkje" border="0" src="voordeeluitjes/urgency-vp.jpg" width="41" height="28"/>
+                                                                                 </xsl:otherwise>
+                                                                              </xsl:choose>
+                                                                           </td>
+                                                                           <td class="ab padding-top-4-m" width="235" valign="middle" style="display: block;">
+                                                                              <p class="font-content-bold c font-size-16-m" style="color:{$colorInStyle};font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:17px;font-weight:700!important;line-height:19px;margin:0;mso-line-height-rule:exactly;padding:0;"><i>Profiteer voordat alle <xsl:value-of select="$accoType"/> vol geboekt zijn!</i></p>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </table>
+                                                                  </td>
+                                                               </tr>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <xsl:text disable-output-escaping="yes">
+                                             <![CDATA[<!--[if !true]><!-->]]>
+                                          </xsl:text>
+                                       </div>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--<![endif]-->]]>
+                                       </xsl:text>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--[if true]>]]>
+                                       </xsl:text>
+                                    </td>
+                                    <td width="40" style="display:table-cell;min-width:40px;width:8.33333%;">
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<![endif]-->]]>
+                                       </xsl:text>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--[if !true]><!-->]]>
+                                       </xsl:text>
+                                       <div class="su" style="display:table-cell;min-width:40px;width:8.33333%"></div>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--<![endif]-->]]>
+                                       </xsl:text>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--[if true]>]]>
+                                       </xsl:text>
+                                    </td>
+                                    <td style="display:table-cell;vertical-align:top;width:50%;">
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<![endif]-->]]>
+                                       </xsl:text>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--[if !true]><!-->]]>
+                                       </xsl:text>
+                                       <div class="hv" style="display:table-cell;vertical-align:top;width:50%">
+                                          <xsl:text disable-output-escaping="yes">
+                                             <![CDATA[<!--<![endif]-->]]>
+                                          </xsl:text>
+                                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                             <tr>
+                                                <td valign="top" style="padding-bottom:10px;display:table-cell;">
+                                                   <table class="ab" width="330" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                      <tr>
+                                                         <td valign="top" class="padding-top-0-m" style="padding: 12px 0px 0px 0px; display: block;">
+                                                            <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                               <tr class="hide-for-small">
+                                                                  <td class="hide-for-small" valign="top" style="padding-bottom: 10px; display: block;">
+                                                                     <p class="font-content-bold a line-height-24-m" style="color:#000;font-family:'Roboto slab',Helvetica,Arial,sans-serif!important;font-size:18px;font-weight:600!important;line-height:22px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                                        <xsl:value-of select="custom_fields/hotel_name" />
+                                                                        <sup style="font-size: 16px; color: #252525;padding-right:4px;">
+                                                                           <xsl:if test="custom_fields/ratings = '1 ster'">&#160;&#160;★</xsl:if>
+                                                                           <xsl:if test="custom_fields/ratings = '2 sterren'">&#160;&#160;★★</xsl:if>
+                                                                           <xsl:if test="custom_fields/ratings = '3 sterren'">&#160;&#160;★★★</xsl:if>
+                                                                           <xsl:if test="custom_fields/ratings = '4 sterren'">&#160;&#160;★★★★</xsl:if>
+                                                                           <xsl:if test="custom_fields/ratings = '5 sterren'">&#160;&#160;★★★★★</xsl:if>
+                                                                        </sup>
+                                                                        <xsl:variable name="newreview" select="translate(custom_fields/review_average, '.',',')"/>
+                                                                 <xsl:if test="custom_fields/ratings &gt; 0">
+                                                                   &#160;<span class="j font-content-bold f" style="background-color:{$colorInStyle};border-radius:4px;color:#fff;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:700!important;line-height:20px;margin:0;mso-line-height-rule:exactly;padding:0;padding-left:3px;padding-right:3px; padding-top: 2px; padding-bottom: 3px;">&#160;<xsl:value-of select="substring($newreview, 1,3)" />&#160;</span>
+                                                                 </xsl:if>
+                                                                     </p>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr class="hide-for-small">
+                                                                  <td valign="top" class="hide-for-small" style="padding-bottom: 10px;">
+                                                                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                        <tr>
+                                                                           <td width="24" valign="top" style="margin-top:6px;padding-top:6px;"><img alt="Vinkje" border="0" src="https://vicinity.picsrv.net/image/7032/0/131806/0df923b7f3fb2f38a2f2db4d33fb1569/vu-check.png" width="15" height="15"/></td>
+                                                                           <td valign="top">
+                                                                              <p class="font-content c" style="color:#707070;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:400!important;line-height:28px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                                                 <xsl:value-of select="custom_fields/usp_location1" />
+                                                                              </p>
+                                                                           </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                           <td width="24" valign="top" style="margin-top:6px;padding-top:6px;"><img alt="Vinkje" border="0" src="https://vicinity.picsrv.net/image/7032/0/131806/0df923b7f3fb2f38a2f2db4d33fb1569/vu-check.png" width="15" height="15"/></td>
+                                                                           <td valign="top">
+                                                                              <p class="font-content c" style="color:#707070;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:400!important;line-height:28px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                                                 <xsl:value-of select="custom_fields/usp_location2" />
+                                                                              </p>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </table>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr class="hide-for-small">
+                                                                  <td class="hide-for-small" height="12" align="left" valign="middle" style="border-top:1px solid #d8d8d8;"></td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td align="left" style="padding-bottom: 10px;">
+                                                                     <p class="font-content-bold a font-size-19-m" style="color:#252525;font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:20px;font-weight:600!important;line-height:26px;margin:0;mso-line-height-rule:exactly;padding:0">
+                                                                        Redenen om te boeken
+                                                                     </p>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td align="left" style="padding-bottom: 12px;">
+                                                                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                        <tr>
+                                                                           <td align="left" style="background-color: {$bgColorInStyle}; padding: 13px 16px; border-radius: 4px;">
+                                                                              <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                                 <tr>
+                                                                                    <td width="45" valign="middle" style="margin-top:4px;">
+                                                                                       <xsl:choose>
+                                                                                          <xsl:when test="custom_fields/pay_type = 'Pay at Location'">
+                                                                                             <xsl:choose>
+                                                                                                <xsl:when test="custom_fields/location_type = 'Hotel'">
+                                                                                                   <img alt="Vinkje" border="0" src="voordeeluitjes/icon-betaal-later.png" width="30" height="30"/>
+                                                                                                </xsl:when>
+                                                                                                <xsl:otherwise>
+                                                                                                   <img alt="Vinkje" border="0" src="voordeeluitjes/icon-betaal-later-vp.png" width="30" height="30"/>
+                                                                                                </xsl:otherwise>
+                                                                                             </xsl:choose>
+                                                                                          </xsl:when>
+                                                                                          <xsl:otherwise>
+                                                                                             <xsl:choose>
+                                                                                                <xsl:when test="custom_fields/location_type = 'Hotel'">
+                                                                                                   <img alt="Vinkje" border="0" src="voordeeluitjes/icon-beoordeling.png" width="30" height="30"/>
+                                                                                                </xsl:when>
+                                                                                                <xsl:otherwise>
+                                                                                                   <img alt="Vinkje" border="0" src="voordeeluitjes/icon-beoordeling-vp.png" width="30" height="30"/>
+                                                                                                </xsl:otherwise>
+                                                                                             </xsl:choose>
+                                                                                          </xsl:otherwise>
+                                                                                       </xsl:choose>
+                                                                                    </td>
+                                                                                    <td valign="middle">
+                                                                                       <p class="font-content-semi c font-size-16-m" style="color:{$colorInStyle};font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:18px;font-weight:600!important;line-height:21px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                                                          <xsl:choose>
+                                                                                             <xsl:when test="custom_fields/pay_type = 'Pay at Location'">
+                                                                                                Betaal pas
+                                                                                                <xsl:choose>
+                                                                                                <xsl:when test="custom_fields/location_type = 'Hotel'">
+                                                                                                   in het hotel!
+                                                                                                </xsl:when>
+                                                                                                <xsl:otherwise>
+                                                                                                   op het vakantiepark!
+                                                                                                </xsl:otherwise>
+                                                                                             </xsl:choose>
+                                                                                             </xsl:when>
+                                                                                             <xsl:otherwise>
+                                                                                                96% van de klanten beveelt ons aan!
+                                                                                             </xsl:otherwise>
+                                                                                          </xsl:choose>
+                                                                                       </p>
+                                                                                    </td>
+                                                                                 </tr>
+                                                                              </table>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </table>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td align="left" style="padding-bottom: 12px;">
+                                                                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                        <tr>
+                                                                           <td align="left" style="background-color: {$bgColorInStyle}; padding: 13px 16px; border-radius: 4px;">
+                                                                              <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                                 <tr>
+                                                                                    <td width="45" valign="middle" style="margin-top:4px">
+                                                                                       <xsl:choose>
+                                                                                          <xsl:when test="custom_fields/location_type = 'Hotel'">
+                                                                                             <img alt="Vinkje" border="0" src="voordeeluitjes/icon-beker.png" width="30" height="30"/>
+                                                                                          </xsl:when>
+                                                                                          <xsl:otherwise>
+                                                                                             <img alt="Vinkje" border="0" src="voordeeluitjes/icon-beker-vp.png" width="30" height="30"/>
+                                                                                          </xsl:otherwise>
+                                                                                       </xsl:choose>
+                                                                                    </td>
+                                                                                    <td valign="middle">
+                                                                                       <p class="font-content-semi c font-size-16-m" style="color:{$colorInStyle};font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:18px;font-weight:600!important;line-height:21px;margin:0;mso-line-height-rule:exactly;padding:0;">De beste prijs boekt u op dit moment!</p>
+                                                                                    </td>
+                                                                                 </tr>
+                                                                              </table>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </table>
+                                                                  </td>
+                                                               </tr>
+                                                               <tr>
+                                                                  <td align="left" style="padding-bottom: 0px;">
+                                                                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                        <tr>
+                                                                           <td align="left" style="background-color: {$bgColorInStyle}; padding: 13px 16px; border-radius: 4px;">
+                                                                              <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                                 <tr>
+                                                                                    <td width="45" valign="middle" style="margin-top:4px;">
+                                                                                      <xsl:choose>
+                                                                                          <xsl:when test="custom_fields/freecancellationuntildays = 1 or custom_fields/freecancellationuntildays = 2 or custom_fields/freecancellationuntildays = 3">
+                                                                                             <xsl:choose>
+                                                                                                <xsl:when test="custom_fields/location_type = 'Hotel'">
+                                                                                                   <img alt="Vinkje" border="0" src="voordeeluitjes/icon-annuleren.png" width="30" height="30"/>
+                                                                                                </xsl:when>
+                                                                                                <xsl:otherwise>
+                                                                                                   <img alt="Vinkje" border="0" src="voordeeluitjes/icon-annuleren-vp.png" width="30" height="30"/>
+                                                                                                </xsl:otherwise>
+                                                                                             </xsl:choose>
+                                                                                          </xsl:when>
+                                                                                          <xsl:otherwise>
+                                                                                             <xsl:choose>
+                                                                                                <xsl:when test="custom_fields/location_type = 'Hotel'">
+                                                                                                   <img alt="Vinkje" border="0" src="voordeeluitjes/icon-specialist.png" width="30" height="30"/>
+                                                                                                </xsl:when>
+                                                                                                <xsl:otherwise>
+                                                                                                   <img alt="Vinkje" border="0" src="voordeeluitjes/icon-specialist-vp.png" width="30" height="30"/>
+                                                                                                </xsl:otherwise>
+                                                                                             </xsl:choose>
+                                                                                          </xsl:otherwise>
+                                                                                       </xsl:choose>
+                                                                                    </td>
+                                                                                    <td valign="middle">
+                                                                                      <xsl:choose>
+                                                                                       <xsl:when test="custom_fields/freecancellationuntildays = 1 or custom_fields/freecancellationuntildays = 2 or custom_fields/freecancellationuntildays = 3">
+                                                                                        <xsl:variable name="freeCancellation">
+                                                                                         <xsl:value-of select="custom_fields/freecancellationuntildays" />
+                                                                                         <xsl:choose>
+                                                                                          <xsl:when test="custom_fields/freecancellationuntildays = 1"> dag</xsl:when>
+                                                                                          <xsl:otherwise> dagen</xsl:otherwise>
+                                                                                            </xsl:choose>
+                                                                                        </xsl:variable>
+                                                                                          <p class="font-content-semi c font-size-16-m" style="color:{$colorInStyle};font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:18px;font-weight:600!important;line-height:21px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                                                        Gratis annuleren tot <xsl:value-of select="($freeCancellation)" /> voor aankomst!
+                                                                                          </p>
+                                                                                        </xsl:when>
+                                                                                        <xsl:otherwise>
+                                                                                          <p class="font-content-semi c font-size-16-m" style="color:{$colorInStyle};font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:18px;font-weight:600!important;line-height:21px;margin:0;mso-line-height-rule:exactly;padding:0;">
+                                                                                        Meer dan 10 jaar dé specialist!
+                                                                                          </p>    
+                                                                                        </xsl:otherwise>
+                                                                                      </xsl:choose>
+                                                                                    </td>
+                                                                                 </tr>
+                                                                              </table>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </table>
+                                                                  </td>
+                                                               </tr>
+                                                               <xsl:text disable-output-escaping="yes">
+                                                                  <![CDATA[<!--[if !true]><!-->]]>
+                                                               </xsl:text>
+                                                               <tr class="show-for-small" style="display: none;">
+                                                                  <td valign="top" class="show-for-small padding-top-25-m" style="padding-top:17px; display: none;">
+                                                                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0">
+                                                                        <tr>
+                                                                           <td align="left">
+                                                                              <a target="_blank">
+                                                                                 <xsl:attribute name="href">
+                                                                                    <xsl:value-of select="url"/>
+                                                                                 </xsl:attribute>
+                                                                                 <img alt="Voltooi boeking" border="0" width="200" src="voordeeluitjes/Button_DT_1_column_voltooi_boeking.jpg"/>
+                                                                              </a>
+                                                                           </td>
+                                                                        </tr>
+                                                                     </table>
+                                                                  </td>
+                                                               </tr>
+                                                               <xsl:text disable-output-escaping="yes">
+                                                                  <![CDATA[ <!--<![endif]-->]]>
+                                                               </xsl:text>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                          <xsl:text disable-output-escaping="yes">
+                                             <![CDATA[<!--[if !true]><!--> ]]>
+                                          </xsl:text>
+                                       </div>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--<![endif]--> ]]>
+                                       </xsl:text>
+                                       <xsl:text disable-output-escaping="yes">
+                                          <![CDATA[<!--[if true]>]]>
+                                       </xsl:text>
+                                    </td>
+                                 </tr>
+                              </table>
+                              <xsl:text disable-output-escaping="yes">
+                                 <![CDATA[<![endif]-->]]>
+                              </xsl:text>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="center" style="padding-top: 25px;">
+                              <p class="font-content c" style="color: #707070;font-family: Calibri,Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 400!important;line-height: 20px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                                 Heeft u vragen omtrent het boeken, <a href="https://www.voordeeluitjes.nl/info/hotels/veelgestelde-vragen" target="_blank" style="color: {$colorInStyle}; text-decoration: underline;">bekijk hier</a> de veelgestelde vragen. Wilt  u liever persoonlijk contact, ons contact center helpt u graag een handje verder. <br/>Neem contact met ons op via:<br/>
+                                 E-mail: <a href="mailto:team@voordeeluitjes.nl" style="color: {$colorInStyle}; text-decoration: underline;" target="_top">team@voordeeluitjes.nl</a> | Tel: <a href="tel:09006677788" style="color: {$colorInStyle}; text-decoration: underline;" >0900 66 777 88</a> (25 c/m)
+                              </p>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </xsl:if>
+      </xsl:for-each>
+   </xsl:template>
+</xsl:stylesheet>

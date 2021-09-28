@@ -1,0 +1,10 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="items">
+  <xsl:call-template name="item" />
+</xsl:template>
+<xsl:template name="item">
+  <xsl:for-each select="item">
+    <span>Uw verblijf bij <xsl:value-of select="custom_fields/hotel_name" /> is zo geboekt!</span> | 96% van de klanten beveelt Voordeeluitjes.nl aan | Meer dan 10 jaar dé specialist!
+  </xsl:for-each>
+</xsl:template>
+</xsl:stylesheet>
