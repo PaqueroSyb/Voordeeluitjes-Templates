@@ -1,5 +1,12 @@
+<link rel="stylesheet" href="https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Squeezely/Websitevanhetjaar/Cocon-Bold-Font.otf?raw=true" />
+
 <div class="wvhj-container">
-    <img src="" alt="Website van het jaar 2021"/>
+    <img src="https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Squeezely/Websitevanhetjaar/wvhj_desktop_banner_image?raw=true"
+     alt="Website van het jaar 2021" class="wvhj-show-desktop"/>
+    <img src="https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Squeezely/Websitevanhetjaar/wvhj_tablet_banner_image?raw=true"
+     alt="Website van het jaar 2021" class="wvhj-show-tablet"/>
+    <img src="https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Squeezely/Websitevanhetjaar/wvhj_mobile_banner_image?raw=true"
+     alt="Website van het jaar 2021" class="wvhj-show-mobile"/>
     <div class="wvhj-text-container">
         <div class="wvhj-title">
             Help ons weer winnen!
@@ -16,3 +23,49 @@
         </a>
     </div>
 </div>
+
+<style type="text/css">
+    .wvhj-container {
+    width: 100%;
+    max-width: 750px;
+    border-radius:4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .wvhj-text-container {
+     padding: 0px 50px 0px 25px;
+    }
+    .wvhj-title {
+     font-size: 20px;
+     line-height: 24px;
+     font-weight: 700;
+     color: #ec008c;
+     font-family: 'CoconPro','Roboto Slab',Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    }
+    .wvhj-text {
+     font-size: 18px;
+     line-height: 24px;
+     font-weight: 400;
+     color: #252525;
+    }
+    .wvhj-show-tablet, .wvhj-show-mobile {
+        display: hide;
+    }
+    @media (min-width: 768px) and (max-width: 1199px) {
+        .wvhj-show-tablet {
+            display: block !important;
+        }
+        .wvhj-show-desktop {
+            display: hide !important;
+        }
+    }
+    @media (max-width: 767px) {
+        .wvhj-show-tablet, .wvhj-show-desktop {
+            display: hide !important;
+        }
+        .wvhj-show-mobile {
+            display: block !important;
+        }
+    }
+    </style>
