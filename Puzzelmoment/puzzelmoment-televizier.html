@@ -28,10 +28,10 @@
       <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/> 
 
       <input type="hidden" name="wizard" value="subscribe"/> 
-      <input type="hidden" name="check" value="a44843a24f9a405d5e7193a0f4ac459dab2dc77ddb3930671127166464b94b79"/> 
+      <input type="hidden" name="check" value="428cc7922dac2a28340513c9cb77d18b49067e2347a2cb9e3f87a090b24b6308"/> 
       <input type="hidden" name="cdmaccount" value="7032"/>
       <input type="hidden" name="database" value="33"/>
-      <input type="hidden" name="dbfields" value="581,582,583,584,585,586,587,588,589,590,591,592,593,594"/>
+      <input type="hidden" name="dbfields" value="581,582,583,584,585,586,587,588,589,590,591,592,593,594,598"/>
       <input type="hidden" name="dbfield582" value=""/>
       <input type="hidden" name="dbfield587" value=""/>
       <input type="hidden" name="dbfield588" value=""/>
@@ -41,6 +41,7 @@
       <input type="hidden" name="dbfield592" value=""/>
       <input type="hidden" name="dbfield593" value=""/>
       <input type="hidden" name="dbfield594" value="nb-ex"/>
+      <input type="hidden" name="dbfield598" value="Televizier"/>
     <div class="form-group row m-b-30">
       <div class="col-sm-12">
        <label class="col-form-label">Oplossing van de puzzel <span class="required">*</span></label>
@@ -48,7 +49,7 @@
        <div class="error-message">Dit veld is verplicht</div>
       </div>
     </div>
-    <div class="title-container h1-custom">
+    <div class="title-container h1-custom title-gegevens">
       Vul uw gegevens in
     </div>
     <div class="form-group row">
@@ -105,6 +106,11 @@
       <div class="button buttonSubmit">nu kans maken</div>
     </div>
     </form>
+    <div id="succesvol">
+        <div class="bevestiging-balk">
+            Uw inzending met uw oplossing is succesvol opgeslagen. De winnaar ontvangt uiterlijk eind oktober 2021 een mail!
+        </div>
+    </div>
   </div>
 </div>
 
@@ -245,6 +251,8 @@ document.querySelector('.buttonSubmit').addEventListener('click', function () {
   });
   if (invalid == false && conditionChecked == true) {
     document.getElementById('form-puzzelmoment').submit();
+    document.getElementById('form-puzzelmoment').setAttribute('class', 'hide');
+    document.getElementById('succesvol').setAttribute('class', 'active');
   } else {
     formPuzzelmoment.setAttribute('class', 'submitted-form-invalid');
   }
@@ -471,6 +479,25 @@ input[type=number] {
 .c2:nth-of-type(2) {
   margin: 0px 10px;
 }
+.active {
+    display: block!important;
+}
+.hide {
+    display: none!important;
+}
+#succesvol {
+    display: none;
+}
+.bevestiging-balk {
+    width: 100%;
+    background-color: #95C12126;
+    color: #252525;
+    padding: 20px;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #95C121;
+}
  @media (max-width: 768px) {
   .col-form-label {
    padding-top: 15px!important;
@@ -490,6 +517,10 @@ input[type=number] {
   }
   .birthdate .form-control {
     text-align: center;
+  }
+  .title-gegevens {
+      padding-top: 30px;
+      padding-bottom: 10px;
   }
  }
  @media (min-width: 768px) {
