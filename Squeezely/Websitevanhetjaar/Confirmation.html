@@ -15,7 +15,7 @@
             Stem en maak kans op leuke prijzen!
         </div>
     </div>
-    <div class="button-container">
+    <div class="wvhj-button-container">
         <a href="https://www.voordeeluitjes.nl/" target="_blank">
             <div class="btn btn-primary">
                 stem op ons
@@ -26,15 +26,19 @@
 
 <style type="text/css">
     .wvhj-container {
-    width: 100%;
-    max-width: 750px;
-    border-radius:4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+     width: 100%;
+     max-width: 750px;
+     border-radius:4px;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-justify-content: flex-start;
+     justify-content: flex-start;
+     -webkit-align-items: center;
+     align-items: center;
+     box-shadow: 0px 1px 3px #00000029;
     }
     .wvhj-container {
-        background-image: url(https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Squeezely/Websitevanhetjaar/wvhj_desktop_confetti.png?raw=true)
+     background-image: url(https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Squeezely/Websitevanhetjaar/wvhj_desktop_confetti.png?raw=true)
     }
     .wvhj-text-container {
      padding: 0px 50px 0px 25px;
@@ -56,19 +60,36 @@
         display: none;
     }
     @media (min-width: 768px) and (max-width: 1199px) {
+        .wvhj-container {
+            background-image: url(https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Squeezely/Websitevanhetjaar/wvhj_tablet_confetti.png?raw=true) !important;
+        }
         .wvhj-show-tablet {
             display: block !important;
         }
         .wvhj-show-desktop {
             display: none !important;
         }
+        .wvhj-text-container {
+            padding: 0px 36px 0px 17px;
+        }
     }
     @media (max-width: 767px) {
+        .wvhj-container {
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            background-image: url(https://github.com/PaqueroSyb/Voordeeluitjes-Templates/blob/main/Squeezely/Websitevanhetjaar/wvhj_tablet_mobile.png?raw=true) !important;
+        }
         .wvhj-show-tablet, .wvhj-show-desktop {
             display: none !important;
         }
         .wvhj-show-mobile {
             display: block !important;
+        }
+        .wvhj-text-container {
+            padding: 8px 0px 16px 0px;
+        }
+        .wvhj-button-container {
+            padding-bottom: 24px;
         }
     }
     </style>
