@@ -1,0 +1,1729 @@
+{capture assign="PackageID"}{$smarty.get.pid}{/capture}
+{capture assign="ExtraID"}{$smarty.get.pid}{/capture}
+<!-- Laadt informatie van het geboekte arrangement in -->
+{loadprofile source="Hotel_Feed" Package_ID={$PackageID} assign=geladenhotel multiple=true}
+{foreach $geladenhotel as $gh}
+{capture assign="Hotelimage"}{$gh.Hotel_Image}{/capture}
+{capture assign="HotelName"}{$gh.Hotel_Naam}{/capture}
+{capture assign="HotelStad"}{$gh.Stad}{/capture}
+{capture assign="HotelProvincie"}{$gh.Provincie}{/capture}
+{capture assign="HotelLand"}{$gh.Land}{/capture}
+{capture assign="PackageTitle"}{$gh.Package_Name}{/capture}
+{capture assign="USP1"}{$gh.USP1}{/capture}
+{capture assign="USP2"}{$gh.USP2}{/capture}
+{capture assign="USP3"}{$gh.USP3}{/capture}
+{capture assign="USP4"}{$gh.USP4}{/capture}
+{capture assign="USP5"}{$gh.USP5}{/capture}
+{capture assign="USP6"}{$gh.USP6}{/capture}
+{capture assign="USP7"}{$gh.USP7}{/capture}
+{capture assign="USP8"}{$gh.USP8}{/capture}
+{capture assign="USP9"}{$gh.USP9}{/capture}
+{capture assign="USP10"}{$gh.USP10}{/capture}
+{capture assign="AantalSterren"}{$gh.C}{/capture}
+{capture assign="CheckinTime"}{$gh.Checkin_time}{/capture}
+{capture assign="CheckoutTime"}{$gh.Checkout_time}{/capture}
+{/foreach}
+<!-- Wordt gebruikt om te bepalen of het gebruikte arrangement al een diner inbegrepen heeft -->
+{capture assign="USP1Diner"}{if $USP1|strstr:'diner' || $USP1|strstr:'3-' || $USP1|strstr:'menu' || $USP1|strstr:'gangen' || $USP1|strstr:'keuze'}Yes{/if}{/capture}
+{capture assign="USP2Diner"}{if $USP2|strstr:'diner' || $USP2|strstr:'3-' || $USP2|strstr:'menu' || $USP2|strstr:'gangen' || $USP2|strstr:'keuze'}Yes{/if}{/capture}
+{capture assign="USP3Diner"}{if $USP3|strstr:'diner' || $USP3|strstr:'3-' || $USP3|strstr:'menu' || $USP3|strstr:'gangen' || $USP3|strstr:'keuze'}Yes{/if}{/capture}
+{capture assign="USP4Diner"}{if $USP4|strstr:'diner' || $USP4|strstr:'3-' || $USP4|strstr:'menu' || $USP4|strstr:'gangen' || $USP4|strstr:'keuze'}Yes{/if}{/capture}
+{capture assign="USP5Diner"}{if $USP5|strstr:'diner' || $USP5|strstr:'3-' || $USP5|strstr:'menu' || $USP5|strstr:'gangen' || $USP5|strstr:'keuze'}Yes{/if}{/capture}
+{capture assign="USP6Diner"}{if $USP6|strstr:'diner' || $USP6|strstr:'3-' || $USP6|strstr:'menu' || $USP6|strstr:'gangen' || $USP6|strstr:'keuze'}Yes{/if}{/capture}
+<!-- Haal beschikbare extra's uit de extra's database op -->
+{loadprofile source="Extras_feed" Extra_ID={$ExtraID} assign=geladenextras multiple=true}
+<!-- Haal informatie van de boeking op -->
+{loadsubprofile source="Voordeeluitjes DB:Boekingen" Boekingsnummer={$smarty.get.bid} assign=geladenboekingen multiple=true}
+{foreach $geladenboekingen as $gb}
+{capture assign="bookedAddons"}{$gb.Addons|lower}{/capture}
+{/foreach}
+<!-- Als er bevestigd is, laadt de bedankt pagina -->
+{if $smarty.get.confirmed == "yes"}
+<div class="main-container">
+  <div id="thanks-page" class="margin-center">
+    <div class="upgrades-container-inner left column padding-inner padding-small">
+      <div class="header-line">
+        <h1 class="header-title">
+          Aanvraag gelukt{if $Aanhef eq 'Dhr.'}, meneer {$Tussenvoegsel} {$Achternaam}!{elseif $Aanhef eq 'Mevr.'}, mevrouw {$Tussenvoegsel} {$Achternaam}!{else}!{/if}
+        </h1>
+      </div>
+      <div>
+        Wij gaan direct voor u aan de slag! U ontvangt binnen één minuut via de mail een bevestiging van uw aanvraag. Binnen enkele seconden wordt u teruggeleid naar onze homepage. 
+      </div>
+      <div class="button-thanks">
+        <a href="http://www.voordeeluitjes.nl/" class="button" target="_parent" rev="document_link_293">naar homepage</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function(){
+  	setTimeout(function() {
+  		window.parent.location.href = "https://www.voordeeluitjes.nl/"; 
+  	}, 9000);
+  };
+</script>
+{else}
+<div class="main-container">
+  <div class="upgrades-container-left">
+    <div class="upgrades-container-inner left column padding-inner padding-small">
+      <div class="header-line">
+        <h1 class="header-title">
+          Kies uw extra's{if $Aanhef eq 'Dhr.'}, meneer {$Tussenvoegsel} {$Achternaam}!{elseif $Aanhef eq 'Mevr.'}, mevrouw {$Tussenvoegsel} {$Achternaam}!{else}!{/if}
+        </h1>
+      </div>
+      <div>
+        Wilt u van uw verblijf écht iets bijzonders maken? Boek dan een leuke extra bij, of ga voor een upgrade.
+      </div>
+    </div>
+    <div class="upgrades-container-inner left padding-inner padding-small row-flex persuasion">
+      <div class="persuasion-icon-desktop">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 21.24" height="28" width="35">
+          <defs>
+            <style>.cls-1{fill:#FFFFFF;}</style>
+          </defs>
+          <g id="Layer_2" data-name="Layer 2">
+            <g id="Layer_2-2" data-name="Layer 2">
+              <path class="cls-1" d="M21.38,0a10.58,10.58,0,0,0-6.31,2.1H6.16a.74.74,0,0,0-.74.74.75.75,0,0,0,.74.75h7.3a10.55,10.55,0,0,0,.59,14.7H8.83a.74.74,0,0,0,0,1.48H16A10.61,10.61,0,1,0,21.38,0Zm.74,19.56v-1a.74.74,0,1,0-1.48,0v1a9,9,0,0,1-8.2-8.2h1a.74.74,0,0,0,0-1.48h-1a9,9,0,0,1,8.2-8.2v1a.74.74,0,0,0,1.48,0v-1a9,9,0,0,1,8.2,8.2H29.26a.74.74,0,0,0,0,1.48h1.06A9,9,0,0,1,22.12,19.56Z"/>
+              <path class="cls-1" d="M26.06,11,21.92,9.9,19.33,5.5a.82.82,0,0,0-1.12-.29.81.81,0,0,0-.29,1.11L20.68,11a.83.83,0,0,0,.5.38l4.47,1.16.2,0a.8.8,0,0,0,.79-.61A.81.81,0,0,0,26.06,11Z"/>
+              <path class="cls-1" d="M4.25,10a.74.74,0,0,0-.74.74.75.75,0,0,0,.74.75H8.7a.75.75,0,0,0,.74-.75A.74.74,0,0,0,8.7,10Z"/>
+              <path class="cls-1" d="M10.6,15.39a.75.75,0,0,0-.75-.74H2.63a.74.74,0,1,0,0,1.48H9.85A.75.75,0,0,0,10.6,15.39Z"/>
+              <path class="cls-1" d="M10.36,6.4a.74.74,0,0,0-.74-.74H.74A.74.74,0,0,0,0,6.4a.75.75,0,0,0,.74.75H9.62A.75.75,0,0,0,10.36,6.4Z"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="persuasion-icon-mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 21.24" height="125" width="90">
+          <defs>
+            <style>.cls-2{fill:#252525;}</style>
+          </defs>
+          <g id="Layer_2" data-name="Layer 2">
+            <g id="Layer_2-2" data-name="Layer 2">
+              <path class="cls-2" d="M21.38,0a10.58,10.58,0,0,0-6.31,2.1H6.16a.74.74,0,0,0-.74.74.75.75,0,0,0,.74.75h7.3a10.55,10.55,0,0,0,.59,14.7H8.83a.74.74,0,0,0,0,1.48H16A10.61,10.61,0,1,0,21.38,0Zm.74,19.56v-1a.74.74,0,1,0-1.48,0v1a9,9,0,0,1-8.2-8.2h1a.74.74,0,0,0,0-1.48h-1a9,9,0,0,1,8.2-8.2v1a.74.74,0,0,0,1.48,0v-1a9,9,0,0,1,8.2,8.2H29.26a.74.74,0,0,0,0,1.48h1.06A9,9,0,0,1,22.12,19.56Z"/>
+              <path class="cls-2" d="M26.06,11,21.92,9.9,19.33,5.5a.82.82,0,0,0-1.12-.29.81.81,0,0,0-.29,1.11L20.68,11a.83.83,0,0,0,.5.38l4.47,1.16.2,0a.8.8,0,0,0,.79-.61A.81.81,0,0,0,26.06,11Z"/>
+              <path class="cls-2" d="M4.25,10a.74.74,0,0,0-.74.74.75.75,0,0,0,.74.75H8.7a.75.75,0,0,0,.74-.75A.74.74,0,0,0,8.7,10Z"/>
+              <path class="cls-2" d="M10.6,15.39a.75.75,0,0,0-.75-.74H2.63a.74.74,0,1,0,0,1.48H9.85A.75.75,0,0,0,10.6,15.39Z"/>
+              <path class="cls-2" d="M10.36,6.4a.74.74,0,0,0-.74-.74H.74A.74.74,0,0,0,0,6.4a.75.75,0,0,0,.74.75H9.62A.75.75,0,0,0,10.36,6.4Z"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div class="persuasion-title">Wacht niet langer en verzeker uzelf van de laagste prijs!</div>
+        <div class="persuasion-text">Mogelijk betaalt u later meer.</div>
+      </div>
+    </div>
+    <iframe name="redirectoff" id="redirectoff" style="display: none;"></iframe>
+    <form name="subscribe" method="post" action="https://publisher.copernica.com/" target="redirectoff">
+      <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+      <input type="hidden" name="wizard" value="subscribe"/>
+      <input type="hidden" name="check" value="e2c4b990122c69f064a2e7fd81d87e81b3baf9f64b473416c52e0459d2846904"/>
+      <input type="hidden" name="cdmaccount" value="7032"/>
+      <input type="hidden" name="match_key" value="dbfield8"/>
+      <input type="hidden" name="collection" value="532"/>
+      <input type="hidden" name="dbfields" value="8"/>
+      <input type="hidden" name="colfields" value="363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386"/>
+      <input type="hidden" name="dbfield8" value="{$profile.Emailadres}">
+      <input type="hidden" name="colfield363" value="{$smarty.get.bid}"/>
+      <input type="hidden" name="colfield381" value="{$PackageID}"/>
+      <input id="saveTotalPrice" type="hidden" name="colfield380"/>
+      <div class="saveExtraVariables">
+        <input type="hidden" class="saveExtraInfo" name="colfield364" value="-"/>
+        <input type="hidden" class="saveExtraPrice" name="colfield365" value="-"/>
+        <input type="hidden" class="saveExtraVariable1" name="colfield366" value="-"/>
+        <input type="hidden" class="saveExtraVariable2" name="colfield367" value="-"/>
+      </div>
+      <div class="saveExtraVariables">
+        <input type="hidden" class="saveExtraInfo" name="colfield369" value="-"/>
+        <input type="hidden" class="saveExtraPrice" name="colfield370" value="-"/>
+        <input type="hidden" class="saveExtraVariable1" name="colfield371" value="-"/>
+        <input type="hidden" class="saveExtraVariable2" name="colfield372" value="-"/>
+      </div>
+      <div class="saveExtraVariables">
+        <input type="hidden" class="saveExtraInfo" name="colfield374" value="-"/>
+        <input type="hidden" class="saveExtraPrice" name="colfield375" value="-"/>
+        <input type="hidden" class="saveExtraVariable1" name="colfield376" value="-"/>
+        <input type="hidden" class="saveExtraVariable2" name="colfield377" value="-"/>
+      </div>
+      <div class="saveExtraVariables">
+        <input type="hidden" class="saveExtraInfo" name="colfield382" value="-"/>
+        <input type="hidden" class="saveExtraPrice" name="colfield383" value="-"/>
+        <input type="hidden" class="saveExtraVariable1" name="colfield384" value="-"/>
+        <input type="hidden" class="saveExtraVariable2" name="colfield385" value="-"/>
+      </div>
+      {foreach $geladenextras as $ge name=geladenextras}
+      {capture assign="PackageIsDiner"}{if $PackageTitle|strstr:'Halfpension' ||$PackageTitle|strstr:'halfpension' || $PackageTitle|strstr:'All inclusive' || $PackageTitle|strstr:'all inclusive'}Yes{/if}{/capture}
+      {capture assign="ExtraDiner"}{if $ge.Extra_name|strstr:'diner' || $ge.Extra_name|strstr:'3-' || $ge.Extra_name|strstr:'menu' || $ge.Extra_name|strstr:'buffet' || $ge.Extra_name|strstr:'gangen' || $ge.Extra_name|strstr:'keuze'}Yes{/if}{/capture}
+      {capture assign="PackageDinerExtraDiner"}{if $PackageIsDiner == "Yes" && $ExtraDiner == "Yes"}Yes{else}No{/if}{/capture}
+      <!-- Toon extra niet wanneer deze al in de boeking zit -->
+      {capture assign="addonLower"}{$ge.Extra_name|lower}{/capture}
+      {assign var="checkAddons" value=" "|explode:$addonLower}
+      {if !$bookedAddons|strstr:$checkAddons[0] && !$bookedAddons|strstr:$checkAddons[1]}
+      <!-- Toon extra alleen wanneer dit geen diner in een halfpension of all inclusive arrangement betreft -->
+      {if $PackageDinerExtraDiner == "No"}
+      <!-- Toon extra alleen wanneer er niet meer dan 4 iteraties zijn -->
+      {if $smarty.foreach.geladenextras.iteration lte 4 && $ge.Show_extra == 'Yes'}  
+      {capture assign="PackageContainsDiner"}{if $USP1Diner == 'Yes' || $USP2Diner == 'Yes' || $USP3Diner == 'Yes' || $USP4Diner == 'Yes' || $USP5Diner == 'Yes' || $USP6Diner == 'Yes'}Yes{/if}{/capture}
+      {capture assign="ShowDinerNotification"}{if $ExtraDiner == 'Yes' && $PackageContainsDiner == 'Yes'}Yes{/if}{/capture}
+      {capture assign="saveExtra1Question"}{if $smarty.foreach.geladenextras.iteration == 1}colfield368{/if}{/capture}
+      {capture assign="saveExtra2Question"}{if $smarty.foreach.geladenextras.iteration == 2}colfield373{/if}{/capture}
+      {capture assign="saveExtra3Question"}{if $smarty.foreach.geladenextras.iteration == 3}colfield378{/if}{/capture}
+      {capture assign="saveExtra4Question"}{if $smarty.foreach.geladenextras.iteration == 4}colfield386{/if}{/capture}
+      <div class="upgrades-container-inner left row-flex setIndex">
+        <div class="extraInfo">{$ge.Extra_name}</div>
+        <div class="extraPrice">{$ge.For_price}</div>
+        <div class="extraSuffix">{$ge.Suffix}</div>
+        {$saveExtra1}{$saveExtra2}{$saveExtra3}{$saveExtra4}
+        <div class="wrap-mobile open-extra">
+          <div class="extra-image">
+            <img src="{$ge.Image_URL}" alt="Afbeelding {$ge.Extra_name}" width="102" height="100%"/>
+          </div>
+          <div class="extra-container-padding row-flex">
+            <div class="extra-container">
+              <div class="extra-description-container">
+                <div class="extra-title">
+                  {$ge.Extra_name}
+                </div>
+                <div class="extra-description">
+                  {$ge.Extra_description}
+                </div>
+              </div>
+              <div class="extra-price-container">
+                {if $ge.Discount != '0.00' || $ge.Discount == ''}
+                <div class="extra-price-old">{if $ge.From_price|strstr:'.'}{$ge.From_price|replace:'.':','}{else}{$ge.From_price},00{/if}</div>
+                {/if}
+                <div class="extra-price">{capture assign="voorPrijs"}{if $ge.For_price|strstr:'.'}{$ge.For_price|replace:'.':','}{else}{$ge.For_price},00{/if}{/capture}{assign var="voorPrijsSplit" value=","|explode:$voorPrijs}{$voorPrijsSplit[0]},<span class="extra-price-small">{$voorPrijsSplit[1]}</span></div>
+                <div class="extra-suffix">{$ge.Suffix}</div>
+              </div>
+              <div class="toggle-extra">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          {if $ShowDinerNotification == 'Yes'}
+          <div class="diner-notification">
+            Uw arrangement heeft al een diner inbegrepen. Het gaat hier om een extra diner buiten het arrangement.
+          </div>
+          {/if}
+          <div class="item-width">
+            <label class="col-form-label">{if $ge.Variable1 != '-'}{$ge.Variable1}{else}{$ge.Suffix|ucfirst}{/if}</label>
+            <div class="show-extra-container">
+              <div class="change-extra min extra-min"></div>
+              <div class="extra-aantal count extra-count1">1</div>
+              <div class="change-extra plus extra-plus">+</div>
+            </div>
+          </div>
+          {if $ge.Variable2 != '-'}
+          <div class="item-width margin-min-10">
+            <label class="col-form-label">{$ge.Variable2}</label>
+            <div class="show-extra-container">
+              <div class="change-extra min extra2-min"></div>
+              <div class="extra-aantal count extra-count2">1</div>
+              <div class="change-extra plus extra2-plus">+</div>
+            </div>
+          </div>
+          {/if}
+          {if $ge.Ask_question == 'Yes'}
+          <div class="ask-question">
+            <label class="col-form-label">{$ge.Question}{if $ge.Question_mandatory == 'Yes'} <small>*Veld verplicht</small>{/if}</label>
+            <input type="text" class="form-control" name="{$saveExtra1Question}{$saveExtra2Question}{$saveExtra3Question}{$saveExtra4Question}">  
+          </div>
+          {/if}
+        </div>
+      </div>
+      {/if}
+      {/if}
+      {/if}
+      {/foreach}
+      <div class="upgrades-container-inner left row-flex container-room-upgrade">
+        <div class="wrap-mobile flex-wrap-mobile" >
+          <div class="extra-image-upgrade">
+            <img src="voordeeluitjes/extra-image-upgrade.jpg" alt="Afbeelding kamer upgrade" width="100%" height="auto"/>
+          </div>
+          <div class="extra-container-padding padding-small">
+            <div class="header-line">
+              <h1 class="header-title small">Upgrade uw kamer</h1>
+            </div>
+            <div>Ga voor extra luxe en comfort met een kamerupgrade!</div>
+            <div>
+              <input id="mogelijkheden-upgrade" name="colfield379" type="checkbox" value="Ja">
+              <label for="mogelijkheden-upgrade" style="margin-top: 25px;">
+                <div class="checkbox-check"></div>
+                Ja, ik wil graag met een medewerker de mogelijkheden bespreken voor een luxere kamer.
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="desktop" class="upgrades-container-inner left padding-inner noExtrasSelected desktop hide">
+        <div class="no-extras-title">Extra's aanvragen is niet gelukt.</div>
+        <div>U heeft nog geen extra’s geselecteerd. Selecteer deze hierboven voor u een aanvraag indient.</div>
+      </div>
+      <!-- De button voor het bevestigen op desktop -->
+      <div class="upgrades-container-inner left padding-inner upgrades-container-inner-button hide-button-mobile">
+        <div class="button-persuasion">
+          Tijdens openingstijden binnen 2 uur bericht na uw aanvraag
+        </div>
+        <div>
+          <div class="button buttonSubmit">extra's aanvragen</div>
+        </div>
+      </div>
+      <div class="safe-connection hide-button-mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Laag_1" x="0px" y="0px" viewbox="0 0 10 14" style="enable-background:new 0 0 10 14;" xml:space="preserve" height="15" width="10">
+          <style type="text/css">
+            .st0{fill:#707070;}
+          </style>
+          <path id="Path_2355" class="st0" d="M8.6,5.6H8.4V2.8C8.4,1.3,7.1,0,5.6,0H3.7C2.2,0,0.9,1.3,0.9,2.8l0,0v2.8H0.7  C0.3,5.6,0,5.9,0,6.3v7C0,13.7,0.3,14,0.7,14h7.9c0.4,0,0.7-0.3,0.7-0.7v-7C9.3,5.9,9,5.6,8.6,5.6z M2.8,2.8c0-0.5,0.4-0.9,0.9-0.9  h1.9c0.5,0,0.9,0.4,0.9,0.9v2.8H2.8V2.8z"/>
+        </svg>
+        <span class="safe-connection-text">
+        Aanvraag verloopt via een veilige verbinding
+        </span>
+      </div>
+    </form>
+  </div>
+  <!-- Dit is de kassabon aan de rechterkant-->
+  <div class="upgrades-container-right">
+    <div class="upgrades-container-inner right">
+      <div class="package-info-container">
+        <div class="package-image">
+          <img src="{$Hotelimage}" alt="Afbeelding {$HotelName}" width="100%" height="auto"/>
+        </div>
+        <div class="package-container">
+          <h1 class="hotel-naam">
+            {$HotelName}&nbsp; 
+            {if $AantalSterren|strstr:'1'}<span class="glyphicon glyphicon-star" aria-hidden="true"></span>{/if}
+            {if $AantalSterren|strstr:'2'}<span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span>{/if}
+            {if $AantalSterren|strstr:'3'}<span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span>{/if}
+            {if $AantalSterren|strstr:'4'}<span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span>{/if}
+          </h1>
+          <div class="hotel-geolocatie">{$HotelStad}, {$HotelProvincie}, {$HotelLand}</div>
+          <div class="package-title black">
+            Boekingsnummer: {$smarty.get.bid}
+          </div>
+          <div id="package-title" class="package-title">
+            <div>{$PackageTitle}</div>
+            <div id="arrow-title" class="arrow-magenta down"></div>
+          </div>
+          <div id="package-title-info" class="package-usps">
+            <ul>
+              {if $USP1 != ""}
+              <li>{$USP1}</li>
+              {/if}{if $USP2 != ""}
+              <li>{$USP2}</li>
+              {/if}{if $USP3 != ""}
+              <li>{$USP3}</li>
+              {/if}{if $USP4 != ""}
+              <li>{$USP4}</li>
+              {/if}{if $USP5 != ""}
+              <li>{$USP5}</li>
+              {/if}{if $USP6 != ""}
+              <li>{$USP6}</li>
+              {/if}{if $USP7 != ""}
+              <li>{$USP7}</li>
+              {/if}{if $USP8 != ""}
+              <li>{$USP8}</li>
+              {/if}{if $USP9 != ""}
+              <li>{$USP9}</li>
+              {/if}
+            </ul>
+          </div>
+          <div id="package-date" class="package-title">
+            <div>Check-in / Check-out</div>
+            <div id="arrow-date" class="arrow-magenta down"></div>
+          </div>
+          <div id="package-date-info" class="package-date">
+            <div class="package-flex">
+              <div>Check-in:</div>
+              <div>{foreach $geladenboekingen as $gb}{$gb.Checkin|date_format:"%a %d %b %Y"|ucfirst}{/foreach} {$CheckinTime|truncate:5:""}</div>
+            </div>
+            <div class="package-flex">
+              <div>Check-out:</div>
+              <div>{foreach $geladenboekingen as $gb}{$gb.Checkout|date_format:"%a %d %b %Y"|ucfirst}{/foreach} {$CheckoutTime|truncate:5:""}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="upgrades-container-inner-inner">
+        <h1 class="list-total-title">
+          Extra's
+        </h1>
+        <div class="list-total">
+          <div class="noExtras"></div>
+          <div class="showExtra"></div>
+          <div class="showExtra"></div>
+          <div class="showExtra"></div>
+          <div class="showExtra"></div>
+          <h1 id="showKamerUpgradeTitle" class="list-total-title kamerupgrade hide">Overig</h1>
+          <div id="showKamerUpgrade" class="hide">We nemen z.s.m. contact op over de mogelijkheid voor een luxere kamer.</div>
+          <div id="totalPrice"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mobile" class="upgrades-container-inner left padding-inner column noExtrasSelected mobile hide">
+    <div class="no-extras-title">Extra's aanvragen is niet gelukt.</div>
+    <div>U heeft nog geen extra’s geselecteerd. Selecteer deze hierboven voor u een aanvraag indient.</div>
+  </div>
+  <!-- De button voor het bevestigen op mobiel -->
+  <div class="upgrades-container-inner left padding-inner upgrades-container-inner-button show-button-mobile">
+    <div class="button-mobile">
+      <div class="button buttonSubmit">extra's aanvragen</div>
+    </div>
+    <div class="button-persuasion">
+      Tijdens openingstijden binnen 2 uur bericht na uw aanvraag
+    </div>
+  </div>
+  <div class="show-button-mobile safe-connection">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-save" x="0px" y="0px" viewbox="0 0 10 14" style="enable-background:new 0 0 10 14;" xml:space="preserve" height="15" width="10">
+      <style type="text/css">
+        .st0{fill:#707070;}
+      </style>
+      <path id="svg-save-path" class="st0" d="M8.6,5.6H8.4V2.8C8.4,1.3,7.1,0,5.6,0H3.7C2.2,0,0.9,1.3,0.9,2.8l0,0v2.8H0.7  C0.3,5.6,0,5.9,0,6.3v7C0,13.7,0.3,14,0.7,14h7.9c0.4,0,0.7-0.3,0.7-0.7v-7C9.3,5.9,9,5.6,8.6,5.6z M2.8,2.8c0-0.5,0.4-0.9,0.9-0.9  h1.9c0.5,0,0.9,0.4,0.9,0.9v2.8H2.8V2.8z"/>
+    </svg>
+    <span class="safe-connection-text">
+    Aanvraag verloopt via een veilige verbinding
+    </span>
+  </div>
+</div>
+{/if}
+<script type = "text/javascript">
+  var openExtras = document.querySelectorAll(".open-extra");
+  var closeExtras = document.querySelectorAll(".toggle-extra");
+  var minExtras = document.querySelectorAll(".extra-min");
+  var plusExtras = document.querySelectorAll(".extra-plus");
+  var minExtras2 = document.querySelectorAll(".extra2-min");
+  var plusExtras2 = document.querySelectorAll(".extra2-plus");
+  var selectKamerUpgrade = document.getElementById("mogelijkheden-upgrade");
+  var totalPrice = document.getElementById("totalPrice");
+  var saveTotalPrice = document.getElementById("saveTotalPrice");
+  var saveExtraVariablesContainer = document.querySelectorAll(".saveExtraVariables");
+  var submitFormButtons = document.querySelectorAll(".buttonSubmit");
+  var mediaQueryMobile = window.matchMedia('(max-width: 768px)');
+  	
+  var totalPrice = document.getElementById("totalPrice");
+  totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>0,<span class='price-small'>00</span></div></div>";	
+  	
+  var noExtras = document.querySelector(".noExtras");
+  noExtras.innerText = "Geen extra's gekozen.";		
+  	
+  // Op dit moment staan er 3 extra's live, wanneer dit er meer worden moet er een extra ,false worden toegevoegd 
+  var itemOpened = [false, false, false, false];
+  
+  var calculatedPrice = 0;
+  	
+  var setDataIndexes = document.querySelectorAll(".setIndex");
+  var indexStart = 0;
+  Array.prototype.forEach.call(setDataIndexes, function (setDataIndex) {
+  	setDataIndex.setAttribute("data-index", indexStart);
+  	indexStart++
+  });
+  	
+  Array.prototype.forEach.call(openExtras, function (openExtra, index) {
+  	openExtra.addEventListener('click', function (event) {	
+  		var mainContainer = openExtra.closest(".upgrades-container-inner");
+  		var showExtras = mainContainer.querySelector(".item");
+  		var changeToggleExtra = mainContainer.querySelector(".toggle-extra");
+  		var extraInfo = mainContainer.querySelector(".extraInfo").innerText;
+  		var extraPrice = mainContainer.querySelector(".extraPrice").innerText;
+  		var extraSuffix = mainContainer.querySelector(".extraSuffix").innerText;
+  		var saveExtraVariables = saveExtraVariablesContainer[index];
+  		var saveExtraInfo = saveExtraVariables.querySelector(".saveExtraInfo");
+  		var saveExtraPrice = saveExtraVariables.querySelector(".saveExtraPrice");
+  		var saveExtraVariable1 = saveExtraVariables.querySelector(".saveExtraVariable1");
+  		var saveExtraVariable2 = saveExtraVariables.querySelector(".saveExtraVariable2");
+  		var count1 = mainContainer.querySelector(".extra-count1");
+  		var count2 = mainContainer.querySelector(".extra-count2");
+  		var showKassabon = document.querySelectorAll(".showExtra")[index];
+  
+  		if (showExtras.matches('.active-flex')) {
+  			return false;
+  		} else {
+  			showKassabon.innerHTML = "<div class='extra-kassabon-container'><div class='extra-kassabon-title'>1x " + extraInfo + "</div><div class='extra-kassabon-price'><div>" + extraPrice.replace(/\./g, ',') + "</div><div class='extra-kassabon-suffix'>" + extraSuffix + "</div></div></div>";
+  			
+  			calculatedPrice += parseFloat(extraPrice);
+  			var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  			totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  			saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  		}
+  		
+  		changeToggleExtra.setAttribute("class", "toggle-extra toggle-checked");
+  		openExtra.setAttribute("class", "wrap-mobile open-extra extra-opened");
+  		showExtras.setAttribute("class", "item active-flex");
+  		mainContainer.setAttribute("class", "upgrades-container-inner left row-flex active-border");
+  		
+  		saveExtraInfo.value = extraInfo;
+  		saveExtraPrice.value = extraPrice;
+  		saveExtraVariable1.value = "1";
+  		if (count2) {
+  			saveExtraVariable2.value = "1";
+  		}
+  		itemOpened[index] = true;
+  		
+  		// Toon 'Geen extra's gekozen.' onder extra's niet meer
+  		if (itemOpened.indexOf(true) !== -1) {
+  			noExtras.innerText = "";
+  		}
+  		
+  		var stateCheck = true;
+  		invalidState(stateCheck);
+  	})
+  });
+  
+  Array.prototype.forEach.call(closeExtras, function (closeExtra, index) {
+  	closeExtra.addEventListener('click', function (event) {
+  		if (itemOpened[index] === true) {
+  			var mainContainer = closeExtra.closest(".upgrades-container-inner");
+  			var showExtras = mainContainer.querySelector(".item");
+  			var changeOpenExtra = mainContainer.querySelector(".open-extra");
+  			var extraInfo = mainContainer.querySelector(".extraInfo").innerText;
+  			var extraPrice = mainContainer.querySelector(".extraPrice").innerText;
+  			var extraSuffix = mainContainer.querySelector(".extraSuffix").innerText;
+  			var saveExtraVariables = saveExtraVariablesContainer[index];
+  			var saveExtraInfo = saveExtraVariables.querySelector(".saveExtraInfo");
+  			var saveExtraPrice = saveExtraVariables.querySelector(".saveExtraPrice");
+  			var saveExtraVariable1 = saveExtraVariables.querySelector(".saveExtraVariable1");
+  			var saveExtraVariable2 = saveExtraVariables.querySelector(".saveExtraVariable2");
+  			var count1 = mainContainer.querySelector(".extra-count1");
+  			var count2 = mainContainer.querySelector(".extra-count2");
+  			var colorMin1 = mainContainer.querySelector(".extra-min");
+  			var colorMin2 = mainContainer.querySelector(".extra2-min");
+  			var showKassabon = document.querySelectorAll(".showExtra")[index];
+  		
+  			closeExtra.setAttribute("class", "toggle-extra");
+  			showExtras.setAttribute("class", "item");
+  			changeOpenExtra.setAttribute("class", "wrap-mobile open-extra");
+  			mainContainer.setAttribute("class", "upgrades-container-inner left row-flex");
+  			showKassabon.innerHTML = "";
+  			colorMin1.setAttribute("class", "change-extra min extra-min");
+  		
+  			if (count2) {
+  				var countExtra1 = count1.innerText;
+  				var countExtra2 = count2.innerText;
+  				var totalExtraPrice = extraPrice * (countExtra1 * countExtra2);
+  				calculatedPrice -= parseFloat(totalExtraPrice);
+  				var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  				
+  				count1.innerText = "1";
+  				count2.innerText = "1";
+  				colorMin2.setAttribute("class", "change-extra min extra2-min");
+  				
+  				totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  				saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  			} else {
+  				var countExtra1 = count1.innerText;
+  				var totalExtraPrice = extraPrice * countExtra1;
+  				calculatedPrice -= parseFloat(totalExtraPrice);
+  				var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  				
+  				count1.innerText = "1";
+  				
+  				totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  				saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  			}
+  
+  			event.stopPropagation();
+  			saveExtraInfo.value = "-";
+  			saveExtraPrice.value = "-";
+  			saveExtraVariable1.value = "-";
+  			saveExtraVariable2.value = "-";
+  			itemOpened[index] = false;
+  			
+  			// Toon 'Geen extra's gekozen.' onder extra's
+  			if (itemOpened.indexOf(true) === -1) {
+  				noExtras.innerText = "Geen extra's gekozen.";
+  			}
+  		}
+  	})
+  });
+  
+  Array.prototype.forEach.call(minExtras, function (minExtra, index) {
+  	minExtra.addEventListener('click', function () {
+  		var mainContainer = minExtra.closest(".upgrades-container-inner");
+  		var extraInfo = mainContainer.querySelector(".extraInfo").innerText;
+  		var extraPrice = mainContainer.querySelector(".extraPrice").innerText;
+  		var extraSuffix = mainContainer.querySelector(".extraSuffix").innerText;
+  		var saveExtraVariables = saveExtraVariablesContainer[index];
+  		var saveExtraVariable1 = saveExtraVariables.querySelector(".saveExtraVariable1");
+  		var count1 = mainContainer.querySelector(".extra-count1");
+  		var count2 = mainContainer.querySelector(".extra-count2");
+  		var showKassabon = document.querySelectorAll(".showExtra")[index];
+  
+  		// Functie alleen uitvoeren wanneer het huidige aantal niet 1 is, want 1 = minimaal
+  		if (count1.innerText !== "1") {
+  			var newCount = count1.innerText - 1;
+  			count1.innerText = newCount;
+  			saveExtraVariable1.value = newCount;
+  		} else {
+  			return;
+  		};
+  		
+  		// Als het aantal naar 1 wordt veranderd, zet dan de kleur op grijs
+  		var colorMin = minExtra.parentElement.querySelector('.extra-min');
+  		if (newCount === 1) {
+  			colorMin.setAttribute("class", "change-extra min extra-min");
+  		}
+  
+  		// Zijn er 2 variabelen of slechts 1 variabele om mee te nemen in de totaal berekening? Bij 2 moet hij elkaar vermenigvuldigen
+  		if (count2) {
+  			var countExtra2 = count2.innerText;
+  			var extraTotalPrice = extraPrice * (newCount * countExtra2);
+  			showKassabon.innerHTML = "<div class='extra-kassabon-container'><div class='extra-kassabon-title'>" + newCount * countExtra2 + "x " + extraInfo + "</div><div class='extra-kassabon-price'><div>" + extraPrice.replace(/\./g, ',') + "</div><div class='extra-kassabon-suffix'>" + extraSuffix + "</div></div></div>";
+  
+  			var newExtraPrice = extraPrice * countExtra2;
+  			calculatedPrice -= parseFloat(newExtraPrice);
+  			
+  			var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  			totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  			saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  		} else {
+  			var extraTotalPrice = extraPrice * newCount;
+  			showKassabon.innerHTML = "<div class='extra-kassabon-container'><div class='extra-kassabon-title'>" + newCount + "x " + extraInfo + "</div><div class='extra-kassabon-price'><div>" + extraPrice.replace(/\./g, ',') + "</div><div class='extra-kassabon-suffix'>" + extraSuffix + "</div></div></div>";
+  
+  			calculatedPrice -= parseFloat(extraPrice);
+  			var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  			totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  			saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  		}
+  	})
+  });
+  
+  Array.prototype.forEach.call(plusExtras, function (plusExtra, index) {
+  	plusExtra.addEventListener('click', function () {
+  		var mainContainer = plusExtra.closest(".upgrades-container-inner");
+  		var extraInfo = mainContainer.querySelector(".extraInfo").innerText;
+  		var extraPrice = mainContainer.querySelector(".extraPrice").innerText;
+  		var extraSuffix = mainContainer.querySelector(".extraSuffix").innerText;
+  		var saveExtraVariables = saveExtraVariablesContainer[index];
+  		var saveExtraVariable1 = saveExtraVariables.querySelector(".saveExtraVariable1");
+  		var count1 = mainContainer.querySelector(".extra-count1");
+  		var count2 = mainContainer.querySelector(".extra-count2");
+  		var showKassabon = document.querySelectorAll(".showExtra")[index];
+  
+  		// Verander het geselecteerde aantal met +1
+  		var newCount = +count1.innerText + +1;
+  		count1.innerText = newCount;
+  		saveExtraVariable1.value = newCount;
+  
+  		// Als het aantal naar groter dan 1 wordt veranderd, zet dan de kleur op magenta
+  		var colorMin = plusExtra.parentElement.querySelector('.extra-min');
+  		if (newCount !== 1) {
+  			colorMin.setAttribute("class", "change-extra min extra-min color");
+  		} else {
+  			colorMin.setAttribute("class", "change-extra min extra-min");
+  		}
+  
+  		// Zijn er 2 variabelen of slechts 1 variabele om mee te nemen in de totaal berekening? Bij 2 moet hij elkaar vermenigvuldigen
+  		if (count2) {
+  			var countExtra2 = count2.innerText;
+  			var extraTotalPrice = extraPrice * (newCount * countExtra2);
+  			showKassabon.innerHTML = "<div class='extra-kassabon-container'><div class='extra-kassabon-title'>" + newCount * countExtra2 + "x " + extraInfo + "</div><div class='extra-kassabon-price'><div>" + extraPrice.replace(/\./g, ',') + "</div><div class='extra-kassabon-suffix'>" + extraSuffix + "</div></div></div>";
+  
+  			var newExtraPrice = extraPrice * countExtra2;
+  			calculatedPrice += parseFloat(newExtraPrice);
+  			var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  			totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  			saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  		} else {
+  			var extraTotalPrice = extraPrice * newCount;
+  			showKassabon.innerHTML = "<div class='extra-kassabon-container'><div class='extra-kassabon-title'>" + newCount + "x " + extraInfo + "</div><div class='extra-kassabon-price'><div>" + extraPrice.replace(/\./g, ',') + "</div><div class='extra-kassabon-suffix'>" + extraSuffix + "</div></div></div>";
+  
+  			calculatedPrice += parseFloat(extraPrice);
+  			var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  			totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  			saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  		}
+  	})
+  });
+  
+  Array.prototype.forEach.call(minExtras2, function (minExtra2) {
+  	minExtra2.addEventListener('click', function () {
+  		var mainContainer = minExtra2.closest(".upgrades-container-inner");
+  		var extraInfo = mainContainer.querySelector(".extraInfo").innerText;
+  		var extraPrice = mainContainer.querySelector(".extraPrice").innerText;
+  		var extraSuffix = mainContainer.querySelector(".extraSuffix").innerText;
+  		var count1 = mainContainer.querySelector(".extra-count1");
+  		var count2 = mainContainer.querySelector(".extra-count2");
+  		
+  		// Haal de index van de parent container op, deze moet op de kassabon worden gewijzigd
+  		var clickedIndex = mainContainer.getAttribute("data-index");
+  		var showKassabon = document.querySelectorAll(".showExtra")[clickedIndex];
+  		var saveExtraVariables = saveExtraVariablesContainer[clickedIndex];
+  		var saveExtraVariable2 = saveExtraVariables.querySelector(".saveExtraVariable2");
+  
+  		// Functie alleen uitvoeren wanneer het huidige aantal niet 1 is, want 1 = minimaal
+  		if (count2.innerText !== "1") {
+  			var newCount = count2.innerText - 1;
+  			count2.innerText = newCount;
+  			saveExtraVariable2.value = newCount;
+  		} else {
+  			return;
+  		};
+  		
+  		// Als het aantal naar 1 wordt veranderd, zet dan de kleur op grijs
+  		var colorMin = minExtra2.parentElement.querySelector('.extra2-min');
+  		if (newCount === 1) {
+  			colorMin.setAttribute("class", "change-extra min extra2-min");
+  		}
+  
+  		var countExtra1 = count1.innerText;
+  		var extraTotalPrice = extraPrice * (newCount * countExtra1);
+  		showKassabon.innerHTML = "<div class='extra-kassabon-container'><div class='extra-kassabon-title'>" + newCount * countExtra1 + "x " + extraInfo + "</div><div class='extra-kassabon-price'><div>" + extraPrice.replace(/\./g, ',') + "</div><div class='extra-kassabon-suffix'>" + extraSuffix + "</div></div></div>";
+  	
+  		var newExtraPrice = extraPrice * countExtra1;
+  		calculatedPrice -= parseFloat(newExtraPrice);
+  		var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  		totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  		saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  	})
+  });
+  
+  Array.prototype.forEach.call(plusExtras2, function (plusExtra2) {
+  	plusExtra2.addEventListener('click', function () {
+  		var mainContainer = plusExtra2.closest(".upgrades-container-inner");
+  		var extraInfo = mainContainer.querySelector(".extraInfo").innerText;
+  		var extraPrice = mainContainer.querySelector(".extraPrice").innerText;
+  		var extraSuffix = mainContainer.querySelector(".extraSuffix").innerText;
+  		var count1 = mainContainer.querySelector(".extra-count1");
+  		var count2 = mainContainer.querySelector(".extra-count2");
+  		
+  		// Haal de index van de parent container op, deze wordt gebruikt voor zowel het opslaan van de variabele als de kassabon
+  		var clickedIndex = mainContainer.getAttribute("data-index");
+  		var showKassabon = document.querySelectorAll(".showExtra")[clickedIndex];
+  		var saveExtraVariables = saveExtraVariablesContainer[clickedIndex];
+  		var saveExtraVariable2 = saveExtraVariables.querySelector(".saveExtraVariable2");
+  
+  		// Verander het geselecteerde aantal met +1
+  		var newCount = +count2.innerText + +1;
+  		count2.innerText = newCount;
+  		saveExtraVariable2.value = newCount;
+  
+  		// Als het aantal naar groter dan 1 wordt veranderd, zet dan de kleur op magenta
+  		var colorMin = plusExtra2.parentElement.querySelector('.extra2-min');
+  		if (newCount !== 1) {
+  			colorMin.setAttribute("class", "change-extra min extra2-min color");
+  		} else {
+  			colorMin.setAttribute("class", "change-extra min extra2-min");
+  		}
+  		
+  		var countExtra1 = count1.innerText;
+  		var extraTotalPrice = extraPrice * (newCount * countExtra1);
+  		showKassabon.innerHTML = "<div class='extra-kassabon-container'><div class='extra-kassabon-title'>" + newCount * countExtra1 + "x " + extraInfo + "</div><div class='extra-kassabon-price'><div>" + extraPrice.replace(/\./g, ',') + "</div><div class='extra-kassabon-suffix'>" + extraSuffix + "</div></div></div>";
+  
+  		var newExtraPrice = extraPrice * countExtra1;
+  		calculatedPrice += parseFloat(newExtraPrice);
+  		var showCalculatedPriceArray = calculatedPrice.toFixed(2).replace(/\./g, ',').split(",");
+  		totalPrice.innerHTML = "<div class='extra-kassabon-total-container'><div class='extra-kassabon-total-title'>Totaalprijs</div><div class='extra-kassabon-total-price'>" + showCalculatedPriceArray[0] + ",<span class='price-small'>" + showCalculatedPriceArray[1] + "</span></div></div>";
+  		saveTotalPrice.value = calculatedPrice.toFixed(2).replace(/\./g, ',');
+  	})
+  });
+  
+  selectKamerUpgrade.addEventListener('change', function () {
+  	var showKamerUpgradeTitle = document.getElementById("showKamerUpgradeTitle");
+  	var showKamerUpgrade = document.getElementById("showKamerUpgrade");
+  	if (showKamerUpgradeTitle.matches('.hide')) {
+  		showKamerUpgradeTitle.setAttribute("class", "list-total-title kamerupgrade");
+  		showKamerUpgrade.setAttribute("class", "");
+  	} else {
+  		showKamerUpgradeTitle.setAttribute("class", "list-total-title kamerupgrade hide");
+  		showKamerUpgrade.setAttribute("class", "hide");
+  	}
+  	var stateCheck = true;
+  	invalidState(stateCheck);
+  });
+  
+  Array.prototype.forEach.call(submitFormButtons, function (submitFormButton) {
+  	submitFormButton.addEventListener('click', function () {	
+  		var checkExtrasSelected = document.querySelectorAll(".active-flex").length;
+  		if (checkExtrasSelected > 0 || selectKamerUpgrade.checked) {
+  			document.forms[0].submit();
+  			var currentUrl = window.parent.location;
+  			window.parent.location.href = "https://www.voordeeluitjes.nl/info/hotels/klant-extras?confirmed=yes";
+  		} else {
+  			var stateCheck = false;
+  			invalidState(stateCheck);
+  		}
+  	})
+  });
+  
+  function invalidState(whichState) {
+  	if (mediaQueryMobile.matches) {
+  		var noExtrasSelected = document.querySelectorAll("#mobile.noExtrasSelected");
+  	} else {
+  		var noExtrasSelected = document.querySelectorAll("#desktop.noExtrasSelected");
+  	}
+  	if (whichState === false) {
+  		Array.prototype.forEach.call(noExtrasSelected, function (invalidNotification) {
+  			invalidNotification.setAttribute("class", "upgrades-container-inner left padding-inner column noExtrasSelected");
+  		});
+  	} else {
+  		Array.prototype.forEach.call(noExtrasSelected, function (hideInvalidNotification) {
+  			hideInvalidNotification.setAttribute("class", "upgrades-container-inner left padding-inner column noExtrasSelected hide");
+  		});
+  	}
+  }
+  
+  var packageTitle = document.getElementById("package-title");
+  var packageTitleInfo = document.getElementById("package-title-info");
+  var packageDate = document.getElementById("package-date");
+  var packageDateInfo = document.getElementById("package-date-info");
+  var arrowTitle = document.getElementById("arrow-title");
+  var arrowDate = document.getElementById("arrow-date");
+  
+  packageTitle.addEventListener('click', function () {
+  	if (packageTitleInfo.matches('.active')) {
+  		packageTitleInfo.setAttribute("class", "package-usps");
+  		arrowTitle.setAttribute("class", "arrow-magenta down");
+  	} else {
+  		packageTitleInfo.setAttribute("class", "package-usps active");
+  		arrowTitle.setAttribute("class", "arrow-magenta up");
+  	}
+  });
+  
+  packageDate.addEventListener('click', function () {
+  	if (packageDateInfo.matches('.active')) {
+  		packageDateInfo.setAttribute("class", "package-date");
+  		arrowDate.setAttribute("class", "arrow-magenta down");
+  	} else {
+  		packageDateInfo.setAttribute("class", "package-date active");
+  		arrowDate.setAttribute("class", "arrow-magenta up");
+  	}
+  });
+  
+  // Polyfill voor het checken of een element een specifieke class bevat met behulp van .matches
+  if (!Element.prototype.matches) {
+  	Element.prototype.matches =
+  		Element.prototype.matchesSelector ||
+  		Element.prototype.mozMatchesSelector ||
+  		Element.prototype.msMatchesSelector ||
+  		Element.prototype.oMatchesSelector ||
+  		Element.prototype.webkitMatchesSelector ||
+  		function (s) {
+  			var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+  				i = matches.length;
+  			while (--i >= 0 && matches.item(i) !== this) {}
+  			return i > -1;
+  		};
+  }
+  
+  // Polyfill voor het vinden van de dichtsbijzijnde class met behulp van .closest
+  if (!Element.prototype.matches) {
+  	Element.prototype.matches =
+  		Element.prototype.msMatchesSelector ||
+  		Element.prototype.webkitMatchesSelector;
+  }
+  
+  if (!Element.prototype.closest) {
+  	Element.prototype.closest = function (s) {
+  		var el = this;
+  
+  		do {
+  			if (Element.prototype.matches.call(el, s)) return el;
+  			el = el.parentElement || el.parentNode;
+  		} while (el !== null && el.nodeType === 1);
+  		return null;
+  	};
+  }
+</script>
+<style type="text/css">
+  .main-container {
+     display: -webkit-flex;
+     display: flex;
+     -webkit-justify-content: space-between;
+     justify-content: space-between;
+     margin: 2px 4px;
+}
+ .upgrades-container-inner {
+     background: #fff 0% 0% no-repeat padding-box;
+     box-shadow: 0px 1px 3px rgba(0,0,0,0.29);
+     border-radius: 4px;
+     display: flex;
+     position: relative;
+}
+ .upgrades-container-left {
+     margin: 0px 15px 0px 2px;
+     -webkit-flex-basis: 774px;
+     flex-basis: 774px;
+}
+ .upgrades-container-inner.left.padding-inner {
+     padding: 20px 24px;
+}
+ .upgrades-container-right {
+     margin: 0px 2px 0px 0px;
+     -webkit-flex-basis: 382px;
+     flex-basis: 382px;
+     padding-left: 16px;
+}
+ .upgrades-container-inner.left.column {
+     -webkit-flex-direction: column;
+     flex-direction: column;
+}
+ .upgrades-container-inner.right {
+     display: -webkit-flex;
+     display: flex;
+     -flex-direction: column;
+     flex-direction: column;
+}
+ .upgrades-container-inner-button {
+     margin-top: 20px;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-justify-content: space-between;
+     justify-content: space-between;
+     -webkit-flex-direction: row!important;
+     flex-direction: row!important;
+     -webkit-align-items: center;
+     align-items: center;
+     -webkit-flex-wrap: wrap;
+     flex-wrap: wrap;
+}
+ .upgrades-container-inner.left.persuasion {
+     background-color: #EC008C;
+     color: #FFF;
+     -webkit-align-items: center;
+     align-items: center;
+     position: relative;
+     overflow: hidden;
+     -webkit-flex-direction: row;
+     flex-direction: row;
+     -webkit-flex-wrap: nowrap;
+     flex-wrap: nowrap;
+}
+ .persuasion.padding-small {
+     padding: 15px 24px 16px 24px!important;
+}
+ .persuasion-icon-desktop {
+     padding-right: 24px;
+}
+ .persuasion-icon-mobile {
+     display: none;
+}
+ .persuasion-title {
+     font-weight: 700;
+     font-size: 20px;
+     line-height: 21px;
+     font-family: Calibri, 'Helvetica', 'Arial', sans-serif !important;
+     padding-bottom: 4px;
+}
+ .persuasion-text {
+     line-height: 21px;
+     font-family: Calibri, 'Helvetica', 'Arial', sans-serif !important;
+}
+ #thanks-page > .upgrades-container-inner.left.padding-inner {
+     width: 100%;
+     max-width: 750px;
+     margin: 0 auto;
+}
+ .button-thanks {
+     max-width: 150px;
+     padding-top: 10px;
+}
+ .submit-form {
+     margin-top: 0px!important;
+}
+ .button-persuasion {
+     max-width: 75%;
+     color: #0AB21B;
+     font-weight: 700;
+}
+ input[type=submit], .button {
+     position: relative;
+     background: #95C121 0% 0% no-repeat padding-box;
+     border-radius: 4px;
+     border: none;
+     color: white;
+     font-family: Calibri, "Helvetica", "Arial", sans-serif !important;
+     padding: 9px 23px;
+     text-align: center;
+     text-decoration: none;
+     display: block;
+     font-size: 16px;
+     line-height: 22px;
+     font-weight: 700;
+     cursor: pointer;
+     box-shadow: 0 1px 3px rgba(0,0,0,.26);
+     margin-top: 0px;
+}
+ input[type="submit"]:hover, .button:hover {
+     background-color: #7ca400;
+     box-shadow: 1px 3px 3px rgba(0,0,0,.26);
+     color: #FFF;
+}
+ input[type="submit"]:focus, .button:focus {
+     outline: none;
+     box-shadow: 1px 3px 3px rgba(0,0,0,.26);
+     background-color: #7ca400;
+}
+ .upgrades-container-inner-inner {
+     padding: 16px;
+     width: 100%;
+}
+ .header-line {
+     margin-bottom: 19px;
+     padding-bottom: 11px;
+     border-bottom: 1px solid #C5C5C5;
+}
+ .header-title {
+     color: #252525;
+     font-weight: 700;
+     font-size: 20px;
+     line-height: 26px;
+     font-family: Calibri, 'Helvetica', 'Arial', sans-serif !important;
+}
+ .header-title.extra-price-small {
+     color: #252525;
+     font-weight: 700;
+     font-size: 18px;
+     line-height: 24px;
+}
+ .header-line.small {
+     margin-bottom: 10px;
+     padding-bottom: 10px;
+     border-bottom: 1px solid #C5C5C5;
+}
+ .row-flex {
+     display: -webkit-flex;
+     display: flex;
+     -webkit-flex-wrap: wrap;
+     flex-wrap: wrap;
+     margin-top: 20px;
+}
+ .container-room-upgrade {
+     position: relative;
+}
+ .container-room-upgrade::before {
+     content: 'Meest gekozen';
+     position: absolute;
+     top: 24px;
+     left: -6px;
+     color: #FFFFFF;
+     background: #0AB21B 0% 0% no-repeat padding-box;
+     box-shadow: 0px 2px 4px #00000029;
+     border-radius: 4px 4px 4px 0px;
+     padding: 4px 10px;
+     font-size: 13px;
+     line-height: 16px;
+     font-weight: 700;
+}
+ .container-room-upgrade::after {
+     content: '';
+     position: absolute;
+     top: 48px;
+     left: -8px;
+     width: 0;
+     height: 0;
+     border-style: solid;
+     border-width: 0 8px 8px 0;
+     border-color: transparent #0D7B18 transparent transparent;
+}
+ .open-extra {
+     cursor: pointer;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+}
+ .open-extra.extra-opened {
+     cursor: default;
+     -webkit-user-select: auto;
+     -ms-user-select: auto;
+     user-select: auto;
+}
+ .toggle-extra {
+     position: relative;
+     cursor: pointer;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     margin-bottom: 18px;
+     padding-right: 8px;
+}
+ .toggle-extra.toggle-checked::before {
+     display: none;
+}
+ .toggle-extra.toggle-checked::after {
+     background-image: url(voordeeluitjes/remove-extra.jpg);
+     background-color: #FFFFFF;
+     background-size: 15px 18px;
+     width: 15px;
+     height: 18px;
+     position: absolute;
+     right: -3px;
+}
+ .toggle-extra::before {
+     content: '';
+     position: absolute;
+     width: 3px;
+     height: 16px;
+     -webkit-transform: rotate(90deg);
+     transform: rotate(90deg);
+     background: #707070 0% 0% no-repeat padding-box;
+}
+ .toggle-extra::after {
+     content: '';
+     position: absolute;
+     width: 3px;
+     height: 16px;
+     background: #707070 0% 0% no-repeat padding-box;
+}
+ .extra-container-padding {
+     padding: 16px 24px;
+     -webkit-flex: 1 1 auto;
+     flex: 1 1 auto;
+     margin-top: 0px!important;
+}
+ .extra-container-padding.padding-small, .upgrades-container-inner.left.padding-inner.padding-small {
+     padding: 13px 24px 20px 24px;
+}
+ .extra-image {
+     min-width: 180px;
+     width: 180px;
+}
+ .extra-image > img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     border-radius: 4px 0px 0px 4px;
+}
+ .extra-image-upgrade {
+     min-width: 279px;
+     max-width: 280px;
+     max-height: 222px;
+}
+ .extra-image-upgrade > img {
+     border-radius: 4px 0px 0px 4px;
+}
+ .extraInfo, .extraPrice, .extraSuffix {
+     display: none;
+}
+ .wrap-mobile {
+     display: -webkit-flex;
+     display: flex;
+     width: 100%;
+}
+ .extra-container {
+     display: -webkit-flex;
+     display: flex;
+     -webkit-justify-content: space-between;
+     justify-content: space-between;
+     -webkit-flex: 1 1 auto;
+     flex: 1 1 auto;
+     -webkit-align-items: center;
+     align-items: center;
+}
+ .extra-description-container {
+     max-width: 63%;
+}
+ .extra-title {
+     font-weight: 700;
+     font-size: 18px;
+     line-height: 22px;
+     padding-bottom: 9px;
+}
+ .extra-description {
+     color: #707070;
+     line-height: 19px;
+}
+ .extra-price-container {
+     text-align: right;
+     -webkit-flex: 1 1 0px;
+     flex: 1 1 0px;
+     padding-right: 30px;
+     padding-left: 5px;
+}
+ .extra-price-old {
+     display: inline-block;
+     font-size: 14px;
+     line-height: 17px;
+     color: #707070;
+     padding-right: 6px;
+     text-decoration: line-through;
+}
+ .extra-price {
+     display: inline-block;
+     font-family: 'Roboto Slab', 'Helvetica', 'Arial', sans-serif!important;
+     font-weight: 700;
+     font-size: 20px;
+     line-height: 24px;
+}
+ .extra-price-small {
+     font-size: 13px;
+}
+ .extra-suffix {
+     font-size: 14px;
+     line-height: 17px;
+     color: #707070;
+}
+ .diner-notification {
+     background-color: #F1F1F1;
+     border-radius: 4px;
+     padding: 15px;
+     margin-bottom: 5px;
+     font-size: 15px;
+}
+ .item {
+     margin-bottom: 10px;
+     display: none;
+     padding-top: 21px;
+     padding-left: 25px;
+     padding-bottom: 10px;
+}
+ .item-width {
+     width: 26%;
+}
+ .ask-question {
+     width: 100%;
+     padding: 10px 23px 0px 0px;
+}
+ .show-extra-container {
+     display: -webkit-flex;
+     display: flex;
+     -justify-content: flex-start;
+     justify-content: flex-start;
+     -webkit-align-items: center;
+     align-items: center;
+}
+ .extra-aantal {
+     font-weight: 700;
+     font-size: 16px;
+     line-height: 29px;
+     padding-top: 1px;
+     padding-right: 7px;
+}
+ .change-extra {
+     font-weight: 700;
+     font-size: 28px;
+     color: #EC008C;
+     cursor: pointer;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     height: 30px;
+     width: 30px;
+}
+ .change-extra.min {
+     position: relative;
+}
+ .change-extra.min::before {
+     position: absolute;
+     content: '';
+     width: 14px;
+     height: 3px;
+     border-radius: 4px;
+     background-color: #C5C5C5;
+     top: 50%;
+}
+ .change-extra.min.color::before {
+     background-color: #EC008C;
+}
+ .change-extra.plus {
+     text-align: center;
+     line-height: 29px;
+}
+ .package-info-container {
+     display: -webkit-flex;
+     display: flex;
+     -webkit-flex-direction: column;
+     flex-direction: column;
+     -webkit-flex: 0 0 auto;
+     flex: 0 0 auto;
+}
+ .package-container {
+     -webkit-flex: 0 0 auto;
+     flex: 0 0 auto;
+     padding-bottom: 20px;
+     border-bottom: 1px solid #C5C5C5;
+     margin: 19px 16px 0px 16px;
+}
+ .package-image {
+     -webkit-flex: 0 0 auto;
+     flex: 0 0 auto;
+}
+ .package-image > img {
+     border-radius: 4px 4px 0px 0px;
+}
+ .hotel-naam {
+     color: #252525;
+     font-weight: 700;
+     font-size: 17px;
+     padding-bottom: 2px;
+}
+ .hotel-geolocatie {
+     font-size: 14px;
+     line-height: 17px;
+}
+ .list-total {
+     display: -webkit-flex;
+     display: flex;
+     -webkit-flex-direction: column;
+     flex-direction: column;
+     height: 100%;
+     padding-bottom: 5px;
+     width: 100%;
+}
+ .list-total-title {
+     color: #252525;
+     font-weight: 700;
+     font-size: 16px;
+     line-height: 19px;
+     margin-bottom: 5px;
+     font-family: Calibri, 'Helvetica', 'Arial', sans-serif !important;
+}
+ .list-total-title.kamerupgrade {
+     padding-top: 10px;
+}
+ .package-title {
+     color: #EC008C;
+     font-size: 16px;
+     line-height: 24px;
+     margin-top: 10px;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-justify-content: space-between;
+     justify-content: space-between;
+     -webkit-align-items: center;
+     align-items: center;
+     cursor: pointer;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     position: relative;
+}
+ .arrow-magenta.down::before {
+     content: '';
+     position: absolute;
+     width: 5px;
+     height: 12px;
+     right: 6px;
+     bottom: 5px;
+     -webkit-transform: rotate(45deg) scaleX(0.75);
+     transform: rotate(45deg) scaleX(0.75);
+     background: #EC008C 0% 0% no-repeat padding-box;
+     border-radius: 4px;
+}
+ .arrow-magenta.down::after {
+     content: '';
+     position: absolute;
+     width: 5px;
+     height: 12px;
+     right: 12px;
+     bottom: 5px;
+     -webkit-transform: rotate(-45deg) scaleX(0.75);
+     transform: rotate(-45deg) scaleX(0.75);
+     background: #EC008C 0% 0% no-repeat padding-box;
+     border-radius: 4px;
+}
+ .arrow-magenta.up::before {
+     content: '';
+     position: absolute;
+     width: 5px;
+     height: 12px;
+     right: 6px;
+     bottom: 5px;
+     -webkit-transform: rotate(-45deg) scaleX(0.75);
+     transform: rotate(-45deg) scaleX(0.75);
+     background: #EC008C 0% 0% no-repeat padding-box;
+     border-radius: 4px;
+}
+ .arrow-magenta.up::after {
+     content: '';
+     position: absolute;
+     width: 5px;
+     height: 12px;
+     right: 12px;
+     bottom: 5px;
+     -webkit-transform: rotate(45deg) scaleX(0.75);
+     transform: rotate(45deg)scaleX(0.75);
+     background: #EC008C 0% 0% no-repeat padding-box;
+     border-radius: 4px;
+}
+ .package-title.black {
+     color: #252525;
+     cursor: default!important;
+     -webkit-user-select: auto;
+     -ms-user-select: auto;
+     user-select: auto;
+}
+ .package-usps {
+     padding: 10px 0px 0px 0px;
+     margin-bottom: 25px;
+     display: none;
+}
+ .package-date {
+     padding: 10px 0px 0px 0px;
+     display: none;
+}
+ .package-flex {
+     display: -webkit-flex;
+     display: flex;
+     -webkit-justify-content: space-between;
+     justify-content: space-between;
+}
+ .package-usps ul {
+     padding-left: 20px;
+}
+ .showExtra {
+     overflow: hidden;
+}
+ .extra-kassabon-container {
+     display: -webkit-flex;
+     display: flex;
+     -justify-content: space-between;
+     justify-content: space-between;
+     margin-bottom: 5px;
+}
+ .extra-kassabon-title {
+     width: 64%;
+}
+ .extra-kassabon-price {
+     color: #252525;
+     font-size: 16px;
+     -webkit-flex: 1 1 0px;
+     flex: 1 1 0px;
+}
+ .extra-kassabon-suffix {
+     font-size: 11px;
+     line-height: 16px;
+     color: #707070;
+}
+ .extra-kassabon-total-container {
+     display: -webkit-flex;
+     display: flex;
+     -justify-content: space-between;
+     justify-content: space-between;
+     margin-top: 26px;
+     padding-top: 24px;
+     border-top: 1px solid #C5C5C5;
+     font-size: 18px;
+     line-height: 28px;
+}
+ .extra-kassabon-total-title {
+     width: 64%;
+     font-weight: 700;
+}
+ .extra-kassabon-total-price {
+     color: #EC008C;
+     font-weight: 700;
+     font-size: 22px;
+     line-height: 28px;
+     font-family: 'Roboto Slab', 'Helvetica', 'Arial', sans-serif!important;
+     -webkit-flex: 1 1 0px;
+     flex: 1 1 0px;
+}
+ .price-small {
+     font-size: 13px;
+     line-height: 22px;
+     padding-left: 1px;
+}
+ .hide {
+     display: none!important;
+}
+ .col-form-label {
+     font-weight: 400!important;
+     width: 100%;
+}
+ .active-flex {
+     display: -webkit-flex!important;
+     display: flex!important;
+     -webkit-flex-wrap: wrap;
+     flex-wrap: wrap;
+     -webkit-flex: 1 1 auto;
+     flex: 1 1 auto;
+     padding-bottom: 15px;
+}
+ .active-border {
+     margin-bottom: 30px;
+}
+ .active-border::before {
+     content: '';
+     position: absolute;
+     border: 3px solid #EC008C;
+     width: 100%;
+     height: 100%;
+     border-radius: 4px;
+     pointer-events: none!important;
+     z-index: 10;
+}
+ .active-border::after {
+     content: 'Geselecteerd';
+     position: absolute;
+     bottom: -10px;
+     left: 50%;
+     -webkit-transform: translateX(-50%);
+     transform: translateX(-50%);
+     background-color: #EC008C;
+     color: #FFF;
+     font-size: 14px;
+     line-height: 24px;
+     font-weight: 700;
+     text-align: center;
+     height: 24px;
+     width: 98px;
+     border-radius: 4px;
+     z-index: 20;
+}
+ .show-button-mobile {
+     display: block;
+}
+ .safe-connection {
+     margin-top: 10px;
+     font-size: 13px;
+     color: #707070;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-align-items: center;
+     align-items: center;
+}
+ .safe-connection-text {
+     padding-left: 10px;
+     padding-top: 2px;
+}
+ .glyphicon-star {
+     font-size: 10px;
+     top: 0px;
+     padding-right: 4px;
+}
+ input[type="text"]:not(:placeholder-shown):valid, input[type="email"]:not(:placeholder-shown):valid, textarea:not(:placeholder-shown):valid {
+     border: 1px solid #707070!important;
+}
+ small {
+     color: #707070;
+}
+ .margin-center {
+     margin: 0 auto;
+}
+ .noExtrasSelected {
+     border: 1px solid #FF5555;
+     background: #FFE5E5 0% 0% no-repeat padding-box;
+     margin-top: 20px;
+     color: #252525;
+}
+ .no-extras-title {
+     line-height: 24px;
+     font-weight: 700;
+     padding-bottom: 5px;
+}
+ @media (min-width: 768px) {
+     .show-button-mobile {
+         display: none!important;
+    }
+}
+ @media (max-width: 940px) {
+     .diner-notification {
+         margin: 0px 23px 5px 0px;
+    }
+}
+ @media (max-width: 940px) and (min-width: 768px) {
+     .button-persuasion {
+         max-width: 55%;
+    }
+     .button-mobile {
+         order: 2;
+    }
+}
+ @media (max-width: 768px) {
+     .main-container {
+         -webkit-flex-wrap: wrap;
+         flex-wrap: wrap;
+         margin: 2px;
+    }
+     .upgrades-container-left {
+         margin: 0px 0px 20px 0px;
+    }
+     .upgrades-container-right {
+         margin: 0px 0px 0px 0px;
+    }
+     .upgrades-container-left, .upgrades-container-right {
+         -webkit-flex-basis: 100%;
+         flex-basis: 100%;
+         padding-left: 0px;
+    }
+     .upgrades-container-inner.right {
+         -webkit-flex-wrap: wrap;
+         flex-wrap: wrap;
+    }
+     .upgrades-container-inner.left, .upgrades-container-right, .safe-connection {
+         max-width: 720px;
+         margin-left: auto;
+         margin-right: auto;
+    }
+     .flex-wrap-mobile {
+         -webkit-flex-wrap: wrap;
+         flex-wrap: wrap;
+    }
+     .list-total {
+         height: auto;
+         padding-bottom: 0px;
+    }
+     .extra-kassabon-title {
+         width: 74%;
+    }
+     .extra-kassabon-total-title {
+         width: 74%;
+    }
+     .button-persuasion {
+         max-width: 55%;
+    }
+     .main-container {
+         display: block!important;
+    }
+     .extra-image-upgrade {
+         max-height: 215px;
+         width: 100%;
+         max-width: none;
+         overflow: hidden;
+    }
+     .extra-image-upgrade > img {
+         border-radius: 4px 4px 0px 0px;
+         height: 100%;
+         object-fit: cover;
+    }
+     .margin-min-10 {
+         margin-top: -10px;
+    }
+     .container-room-upgrade::after {
+         left: -7px;
+    }
+     .hide-button-mobile {
+         display: none!important;
+    }
+     .show-button-mobile {
+         display: flex!important;
+    }
+     .button {
+         margin-top: 0px;
+    }
+     .package-image {
+         height: 150px;
+         overflow: hidden;
+         position: relative;
+         border-radius: 4px 4px 0px 0px;
+    }
+     .package-image > img {
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         right: 50%;
+         width: 100%;
+         height: auto;
+         -webkit-transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+         transform: translate(-50%, -50%);
+    }
+     .package-info-container {
+         width: 100%;
+    }
+}
+ @media (max-width: 768px) and (min-width: 640px) {
+     .button-mobile {
+         order: 2;
+    }
+}
+ @media (max-width: 640px) {
+     .row-flex {
+         margin-top: 16px;
+    }
+     .header-line {
+         margin-bottom: 16px;
+    }
+     .persuasion-icon-desktop {
+         display: none;
+    }
+     .persuasion-icon-mobile {
+         display: block;
+         position: absolute;
+         right: -11px;
+         bottom: 4px;
+         width: 96px;
+         height: 77px;
+         opacity: 0.1;
+    }
+     .persuasion-title {
+         line-height: 24px;
+         font-family: Calibri, 'Helvetica', 'Arial', sans-serif !important;
+         padding-bottom: 8px;
+    }
+     .extra-container-padding {
+         padding: 16px 20px;
+    }
+     .extra-container {
+         -webkit-flex-wrap: wrap;
+         flex-wrap: wrap;
+    }
+     .extra-image {
+         -webkit-flex: 1 0 auto;
+         flex: 1 0 auto;
+         min-height: 100%;
+         overflow: hidden;
+         border-radius: 4px 0px 0px 4px;
+         width: 102px;
+         min-width: 102px;
+         max-width: 102px;
+         position: relative;
+    }
+     .extra-image > img {
+         position: absolute;
+    }
+     .extra-description-container {
+         max-width: 90%;
+         -webkit-flex: 1 1 auto;
+         flex: 1 1 auto;
+         padding-bottom: 14px;
+    }
+     .extra-price-container {
+         -webkit-order: 2;
+         order: 2;
+         -webkit-flex: none;
+         flex: none;
+         text-align: left;
+         width: 100%;
+         padding-left: 0px;
+    }
+     .toggle-extra {
+         -webkit-order: 1;
+         order: 1;
+         margin-top: -34px;
+         width: 100%;
+         text-align: right;
+    }
+     .item-width {
+         width: 100%;
+         display: -webkit-flex;
+         display: flex;
+         padding-right: 24px;
+    }
+     .container-room-upgrade::before {
+         left: 0px;
+         border-radius: 0px 4px 4px 0px;
+         padding: 2px 6px;
+         font-weight: 700;
+    }
+     .container-room-upgrade::after {
+         display: none;
+    }
+     .button-mobile {
+         width: 100%;
+    }
+     .button-persuasion {
+         max-width: none;
+         padding-top: 15px;
+         font-weight: 400;
+    }
+     .safe-connection {
+         padding-left: 24px;
+    }
+     .button-thanks {
+         max-width: none;
+    }
+}
+ @media (max-width: 500px) {
+     .extra-image-upgrade {
+         max-height: 160px;
+    }
+}
+ @media (max-width: 335px) {
+     .toggle-extra {
+         padding-right: 0px;
+    }
+}
+</style>
