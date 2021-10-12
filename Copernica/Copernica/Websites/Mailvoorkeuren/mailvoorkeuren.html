@@ -36,7 +36,56 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <!-- Select2 javascript -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+      function setAangemeld() {
+        var aangemeldWaarde = document.getElementById('tellafriendaangemeld');
+        aangemeldWaarde.value = "Ja";
+    } 
+    </script>
+    <!-- Wordt gebruikt voor de tell a friend campagne: maak een nieuw profiel aan direct nadat de klant bevestigt -->   
+    <script type="text/javascript">
+      function submitProfielForm(){
+      document.subscribe.submit();
+    }
+    </script> 
+    <!-- Toon error meldingen bij forms -->  
+    <script type="text/javascript">[literal]      
+      window.onload = function() {
+        document.querySelector("[type=submit]").addEventListener("click", checkrequired);
+        document.querySelector("form").addEventListener("invalid", function(event) {
+          event.preventDefault();
+        }, true );
+      }
+
+      function checkrequired() {
+        var elements = document.querySelectorAll('[required]');
+        elements.forEach(element => {
+          if (element.value === "" || element.checked === false) {
+            document.forms[0].classList.add('submitted-form-invalid');
+          } else {
+            return true;
+         }
+        });
+      }
+    [/literal]
+    </script>
+    <!-- Wordt gebruikt voor de profielverrijking mail, haalt de waardes op uit de URL en voegt ze in de input field -->   
+    <script type="text/javascript">
+      function getURLwaardes(){
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+       var aanhef = url.searchParams.get("aanhef");
+       var voornaam = url.searchParams.get("voornaam");
+       var tussenvoegsel = url.searchParams.get("tussenvoegsel");
+       var achternaam = url.searchParams.get("achternaam");
+       var aanhef_input = document.getElementById('profiel-aanhef'); var voornaam_input = document.getElementById('profiel-voornaam'); var tussenvoegsel_input = document.getElementById('profiel-tussenvoegsel'); var achternaam_input = document.getElementById('profiel-achternaam');
+        aanhef_input.value = aanhef; 
+        voornaam_input.value = voornaam;
+        tussenvoegsel_input.value = tussenvoegsel;
+        achternaam_input.value = achternaam;
+      }
+    </script> 
   </head>
   <!-- Verschillende smarty functies om te kijken welke pagina er geladen wordt, op basis hiervan wordt een script gerund die nodig is voor die specifieke pagina. -->   
   {if $smarty.get.page eq 'succesvol'}
@@ -678,94 +727,93 @@
                   var menu_ks = document.getElementById('ks-container'); 
                   
                   document.querySelectorAll('#menu-link-topbestemmingen').forEach(el => el.addEventListener('mouseover', function() {
-                     topbestemmingen.classList.add('active');
-                  menu_bg.classList.add('active');
-                  arrow_1.classList.add('menu-hover');
-                   }))
+                    topbestemmingen.classList.add('active');
+                    menu_bg.classList.add('active');
+                    arrow_1.classList.add('menu-hover');
+                  }))
                   
                   document.querySelectorAll('#menu-link-topbestemmingen').forEach(el => el.addEventListener('mouseout', function() {
-                     topbestemmingen.classList.remove('active');
-                  menu_bg.classList.remove('active');
-                  arrow_1.classList.remove('menu-hover');
-                   }))
+                    topbestemmingen.classList.remove('active');
+                    menu_bg.classList.remove('active');
+                    arrow_1.classList.remove('menu-hover');
+                  }))
                   
                   document.querySelectorAll('#menu-link-aanbiedingen').forEach(el => el.addEventListener('mouseover', function() {
-                     aanbiedingen.classList.add('active');
-                  menu_bg.classList.add('active');
-                  arrow_2.classList.add('menu-hover');
-                   }))
+                    aanbiedingen.classList.add('active');
+                    menu_bg.classList.add('active');
+                    arrow_2.classList.add('menu-hover');
+                  }))
                   
                   document.querySelectorAll('#menu-link-aanbiedingen').forEach(el => el.addEventListener('mouseout', function() {
-                      aanbiedingen.classList.remove('active');
-                  menu_bg.classList.remove('active');
-                  arrow_2.classList.remove('menu-hover');
-                   })) 
+                    aanbiedingen.classList.remove('active');
+                    menu_bg.classList.remove('active');
+                    arrow_2.classList.remove('menu-hover');
+                  })) 
                   
                   document.querySelectorAll('#menu-link-themas').forEach(el => el.addEventListener('mouseover', function() {
-                     themas.classList.add('active');
-                  menu_bg.classList.add('active');
-                  arrow_3.classList.add('menu-hover');
+                    themas.classList.add('active');
+                    menu_bg.classList.add('active');
+                    arrow_3.classList.add('menu-hover');
                    }))
                   
                   document.querySelectorAll('#menu-link-themas').forEach(el => el.addEventListener('mouseout', function() {
-                     themas.classList.remove('active');
-                  menu_bg.classList.remove('active');
-                  arrow_3.classList.remove('menu-hover');
+                    themas.classList.remove('active');
+                    menu_bg.classList.remove('active');
+                    arrow_3.classList.remove('menu-hover');
                    })) 
                   
                   document.querySelectorAll('#menu-topbestemmingen').forEach(el => el.addEventListener('mouseover', function() {
-                     topbestemmingen.classList.add('active');
-                  menu_bg.classList.add('active');
-                  arrow_1.classList.add('menu-hover');
+                    topbestemmingen.classList.add('active');
+                    menu_bg.classList.add('active');
+                    arrow_1.classList.add('menu-hover');
                   }))
                   
                   document.querySelectorAll('#menu-topbestemmingen').forEach(el => el.addEventListener('mouseout', function() {
-                     topbestemmingen.classList.remove('active');
-                  menu_bg.classList.remove('active');
-                  arrow_1.classList.remove('menu-hover');
+                    topbestemmingen.classList.remove('active');
+                    menu_bg.classList.remove('active');
+                    arrow_1.classList.remove('menu-hover');
                   }))
                   
                   document.querySelectorAll('#menu-aanbiedingen').forEach(el => el.addEventListener('mouseover', function() {
-                     aanbiedingen.classList.add('active');
-                  menu_bg.classList.add('active');
-                  arrow_2.classList.add('menu-hover');
+                    aanbiedingen.classList.add('active');
+                    menu_bg.classList.add('active');
+                    arrow_2.classList.add('menu-hover');
                   }))
                   
                   document.querySelectorAll('#menu-aanbiedingen').forEach(el => el.addEventListener('mouseout', function() {
-                     aanbiedingen.classList.remove('active');
-                  menu_bg.classList.remove('active');
-                  arrow_2.classList.remove('menu-hover');
+                    aanbiedingen.classList.remove('active');
+                    menu_bg.classList.remove('active');
+                    arrow_2.classList.remove('menu-hover');
                   }))
                   
                   document.querySelectorAll('#menu-themas').forEach(el => el.addEventListener('mouseover', function() {
                     themas.classList.add('active');
-                  menu_bg.classList.add('active');
-                  arrow_3.classList.add('menu-hover');
+                    menu_bg.classList.add('active');
+                    arrow_3.classList.add('menu-hover');
                   }))
                   
                   document.querySelectorAll('#menu-themas').forEach(el => el.addEventListener('mouseout', function() {
-                     themas.classList.remove('active');
-                  menu_bg.classList.remove('active');
-                  arrow_3.classList.remove('menu-hover');
+                    themas.classList.remove('active');
+                    menu_bg.classList.remove('active');
+                    arrow_3.classList.remove('menu-hover');
                   }))
                   
                 </script> 
                 <script type="text/javascript">
                   function zoekenWebsite() {
-                      var datum_waarde = document.getElementById('search-datum').value;
-                      var datum_waarde_formatted = datum_waarde.split('-').reverse().join('-');
-                   var zoekterm = "q=" + document.getElementById('search-bestemming').value + "&text=" + document.getElementById('search-bestemming').value;
-                   if (document.getElementById('search-datum').value !== '') {
-                     var datum = "&arrivalDate=" + datum_waarde_formatted;
-                   } else {
-                     var datum = "&arrivalDate=na"
-                   }
-                      
-                   if (document.getElementById('select-test').value !== 'Aantal dagen') {
-                        var aantal_dagen = "&totalDays=" + document.getElementById('select-test').value;
-                   } else {
-                     var aantal_dagen = "&totalDays=na"; 
-                   }
+                    var datum_waarde = document.getElementById('search-datum').value;
+                    var datum_waarde_formatted = datum_waarde.split('-').reverse().join('-');
+                    var zoekterm = "q=" + document.getElementById('search-bestemming').value + "&text=" + document.getElementById('search-bestemming').value;
+                    if (document.getElementById('search-datum').value !== '') {
+                      var datum = "&arrivalDate=" + datum_waarde_formatted;
+                    } else {
+                      var datum = "&arrivalDate=na"
+                    }
+                    if (document.getElementById('select-test').value !== 'Aantal dagen') {
+                      var aantal_dagen = "&totalDays=" + document.getElementById('select-test').value;
+                    } else {
+                      var aantal_dagen = "&totalDays=na"; 
+                    }
                    window.location = `https://www.voordeeluitjes.nl/ZoekHotels?${zoekterm + datum + aantal_dagen}`;
                   }
                 </script> 
@@ -774,20 +822,19 @@
                   var search_box_bg =  document.querySelector('#search-box-top-bg');
                   var search_box_close =  document.querySelector('#search-box-top-close');
                   
-                  
                   document.querySelectorAll('#close-search-box').forEach(el => el.addEventListener('click', function() {
-                   search_box.classList.remove('active');
-                  search_box_bg.classList.remove('active');
+                    search_box.classList.remove('active');
+                    search_box_bg.classList.remove('active');
                   }))
                   
                   document.querySelectorAll('#open-search-box').forEach(el => el.addEventListener('click', function() {
-                   search_box.classList.add('active');
-                  search_box_bg.classList.add('active');
+                    search_box.classList.add('active');
+                    search_box_bg.classList.add('active');
                   })) 
                   
                   document.querySelectorAll('#search-box-top-close').forEach(el => el.addEventListener('click', function() {
-                   search_box.classList.remove('active');
-                  search_box_bg.classList.remove('active');
+                    search_box.classList.remove('active');
+                    search_box_bg.classList.remove('active');
                   })) 
                 </script>
                 {if $smarty.server.REQUEST_URI|strstr:'/uitschrijven'}
@@ -804,25 +851,25 @@
                   
                   uitschrijfradios.forEach(function(radio) {
                     radio.addEventListener('change', function(e) {
-                     if (e.target.value === "Uitgeschreven") {
-                   nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=uitschrijving&oldvalue=${oldvalue}`;
-                     } else if (e.target.value === "3 maanden" || e.target.value === "6 maanden") {
-                   var newvalue = e.target.value;      
-                   nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
-                     } else if (e.target.value === "Dagelijks" || e.target.value === "Wekelijks" || e.target.value === "Maandelijks") {
-                      var newvalue = e.target.value;   
-                   nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${wijziging}&oldvalue=${oldvalue}&newvalue=${newvalue}`;
-                     }
+                      if (e.target.value === "Uitgeschreven") {
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=uitschrijving&oldvalue=${oldvalue}`;
+                      } else if (e.target.value === "3 maanden" || e.target.value === "6 maanden") {
+                        var newvalue = e.target.value;      
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
+                      } else if (e.target.value === "Dagelijks" || e.target.value === "Wekelijks" || e.target.value === "Maandelijks") {
+                        var newvalue = e.target.value;   
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${wijziging}&oldvalue=${oldvalue}&newvalue=${newvalue}`;
+                      }
                     })
                   });
                   
                   variabelepauze.addEventListener('change', function(pauze) {
-                     if (pauze.target.value !== "") {
-                   var newvalue = pauze.target.value;   
-                   nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
-                     }
+                    if (pauze.target.value !== "") {
+                      var newvalue = pauze.target.value;   
+                      nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
+                    }
                   });
-                  [/literal]
+                [/literal]
                 </script>
                 {/if} 
                 {if $smarty.server.REQUEST_URI|strstr:'/mailvoorkeuren'}
@@ -838,19 +885,19 @@
                   
                   uitschrijfradios.forEach(function(radio) {
                     radio.addEventListener('change', function(e) {
-                     if (e.target.value === "Uitgeschreven") {
-                   nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=uitschrijving&oldvalue=${oldvalue}`;
-                     } else if (e.target.value === "2 weken" || e.target.value === "1 maand" || e.target.value === "6 maanden") {
-                   var newvalue = e.target.value;      
-                   nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
-                     } else if (e.target.value === "Dagelijks" || e.target.value === "Wekelijks" || e.target.value === "Maandelijks") {
-                      var newvalue = e.target.value;   
-                   nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=wijziging-pauze&gebeurtenis=${wijziging}&oldvalue=${oldvalue}&newvalue=${newvalue}`;
-                     }
+                      if (e.target.value === "Uitgeschreven") {
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=uitschrijving&oldvalue=${oldvalue}`;
+                      } else if (e.target.value === "2 weken" || e.target.value === "1 maand" || e.target.value === "6 maanden") {
+                        var newvalue = e.target.value;      
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
+                      } else if (e.target.value === "Dagelijks" || e.target.value === "Wekelijks" || e.target.value === "Maandelijks") {
+                        var newvalue = e.target.value;   
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=wijziging-pauze&gebeurtenis=${wijziging}&oldvalue=${oldvalue}&newvalue=${newvalue}`;
+                      }
                     })
                   });
                   
-                  [/literal]
+                [/literal]
                 </script>
                 {/if}   
                 <!-- Bootstrap tooltip script --> 
