@@ -1,0 +1,833 @@
+<!doctype html>
+<html ⚡4email>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="VU.nl | Sybren Bos">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <style amp4email-boilerplate>body{visibility:hidden}</style>
+    <style amp-custom>
+      body {
+      width: 100%;
+      margin: 0 auto;
+      background-color: #FFF;
+      color: #000000;
+      font-size: 14px;
+      line-height: 16px;
+      padding: 0;
+      }
+      .body-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #FFF;
+      }
+      .footer {
+      width: 100%;
+      margin: 0 auto;
+      background-color: #F9F9F9;
+      }
+      .footer-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #F9F9F9;
+      }
+      h1, h2, h3 {
+      font-family:"Roboto Slab","Open Sans","Helvetica","Arial",sans-serif;
+      font-weight:700;
+      font-size: 30px;
+      line-height: 40px;
+      margin: 0;
+      }
+      h2 {
+      font-size: 17px;
+      }
+      h3 {
+      color: #000;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 26px;
+      }
+      p, span {
+      font-family:"Open Sans","Helvetica","Arial",sans-serif;
+      font-weight:400;
+      line-height: 30px;
+      margin: 0px;
+      padding: 0px;
+      }
+      a {
+      text-decoration: none;
+      }
+      .menu-text {
+      font-family:"Roboto Slab","Open Sans","Helvetica","Arial",sans-serif;
+      padding-left: 5px;
+      color: #808285;
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: none;
+      }
+      .menu-item {
+      align-items: center;
+      display: flex;
+      }
+      .menu-container {
+      padding: 15px 0px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top: 1px solid #D9D9D9;
+      border-bottom: 1px solid #D9D9D9;
+      }
+      .logo-container {
+      padding: 20px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      }
+      .content-block {
+      padding: 30px 0px;
+      }
+      .carousel-preview {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      }
+      .carousel-preview-image {
+      margin: 10px 5px 0px 5px;
+      padding: 0px;
+      border: 2px solid #BBBBBB;
+      flex: 1 1 92px;
+      max-width: 92px;
+      }
+      .carousel-preview-image:first-child {
+      margin-left: 0px;
+      }
+      .carousel-preview [literal] [selected] [/literal] {
+      opacity: 1;
+      outline: none;
+      border: 2px solid #EC008C;
+      }
+      .carousel-preview img {
+      object-fit: cover;
+      object-position: center;
+      }
+      .link-alle-fotos {
+      padding-left: 10px;
+      }
+      .title-option-3 {
+      display: flex;
+      justify-content: space-between;
+      }
+      .hotel-name {
+      display: flex;
+      align-items: center;
+      padding-bottom: 20px;
+      }
+      .info-block {
+      display: flex;
+      justify-content: space-between;
+      }
+      .info-block-column {
+      flex-basis: 340px;
+      }
+      .info-block-item {
+      display: flex;
+      align-items: center;
+      }
+      .headline {
+      padding-bottom: 30px;
+      }
+      .seperator {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d8d8d8;
+      }
+      .button-column {
+      margin: 0;
+      padding-right: 10px;
+      display: flex;
+      align-items: center;
+      }
+      .arrangement-block-column {
+      width: 50%;
+      }
+      .arrangement-block-persuasive {
+      border-top: 1px solid #D9D9D9;
+      border-bottom: 1px solid #D9D9D9;
+      padding: 10px 0px;
+      margin: 10px 0px;
+      }
+      .padding-top-bottom-20 {
+      padding: 20px 0px;
+      }
+      .inspiratie-subtitle {
+      font-family:"Roboto Slab","Open Sans","Helvetica","Arial",sans-serif;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      }
+      .inspiratie-block-persuasive {
+      padding-bottom: 10px;
+      }
+      .footer-social {
+      text-align: center;
+      }
+      .footer-social-images amp-img {
+      margin-right: 10px;
+      }
+      .footer-links {
+      display: flex;
+      justify-content: space-around;
+      }
+      .footer-link {
+      color: #808285;
+      font-size: 11px;
+      line-height: 20px;
+      font-family:"Open Sans","Helvetica","Arial",sans-serif;
+      font-weight: 500;
+      text-decoration: underline;
+      }
+      .thumb-click-1 {
+      background-image: url(https://www.google-analytics.com/collect?v=1&tid=UA-159061594-1&t=event&cid={$profile.HashedEmailadres}&ec=interactive-header&ea=click-thumbnail-amp&el=thumb-1-amp&cn=wk43_VU_VK_Pelikaan&cs=email);
+      }
+      .thumb-click-2 {
+      background-image: url(https://www.google-analytics.com/collect?v=1&tid=UA-159061594-1&t=event&cid=123456asd56&ec=interactive-header&ea=click-thumbnail-amp&el=thumb-2-amp&cn=wk43_VU_VK_Pelikaan&cs=email);
+      }
+      .thumb-click-3 {
+      background-image: url(https://www.google-analytics.com/collect?v=1&tid=UA-159061594-1&t=event&cid=123456asd56&ec=interactive-header&ea=click-thumbnail-amp&el=thumb-3-amp&cn=wk43_VU_VK_Pelikaan&cs=email);
+      }
+      .thumb-click-4 {
+      background-image: url(https://www.google-analytics.com/collect?v=1&tid=UA-159061594-1&t=event&cid=123456asd56&ec=interactive-header&ea=click-thumbnail-amp&el=thumb-4-amp&cn=wk43_VU_VK_Pelikaan&cs=email);
+      }
+      .thumb-click-5 {
+      background-image: url(https://www.google-analytics.com/collect?v=1&tid=UA-159061594-1&t=event&cid=123456asd56&ec=interactive-header&ea=click-thumbnail-amp&el=thumb-5-amp&cn=wk43_VU_VK_Pelikaan&cs=email);
+      }
+      .custom-button .amp-carousel-button-prev {
+      left: 3%;
+      background-image: url('voordeeluitjes/arrow-button-left.png');
+      background-size: 35px 35px;
+      background-color: transparent;
+      }
+      .custom-button .amp-carousel-button-next {
+      right: 3%;
+      background-image: url('voordeeluitjes/arrow-button-right.png');
+      background-size: 35px 35px;
+      background-color: transparent;
+      }
+      .title-option-3-title {
+        flex-basis: 50%;
+      }
+      .border-round {
+        border-radius: 4px;
+      }
+      @media screen and (max-width:700px) {
+      .flex-mobile {
+      flex-wrap: wrap;
+      background-color: #F9F9F9;
+      padding: 20px;
+      margin-top: 20px;
+      }
+      .body-container, .footer-container {
+      margin: 0px 10px;
+      }
+      .body-container.menu-mobile {
+      margin: 0px;
+      }
+      .mobile-hide {
+      display: none;
+      }
+      .logo-container {
+      justify-content: center;
+      padding: 10px 0px 20px 0px;
+      } 
+      .content-block {
+      padding: 25px 0px;
+      }
+      .info-block-column {
+      flex-basis: 100%;
+      } 
+      .headline {
+      padding-bottom: 25px;
+      }
+      .arrangement-usps {
+      flex-direction: column;
+      }
+      .arrangement-block-column {
+      width: 100%;
+      }
+      .inspiratie-block-fullwidth-mobile {
+      flex-basis: 100%;
+      }  
+      .image-mobile {
+      display: block;
+      }
+      .image-desktop {
+      display: none;
+      }
+      .margin-top-10-m {
+      margin-top: 10px;
+      }
+      .padding-bottom-10-m {
+      padding-bottom: 10px;
+      }
+      .padding-bottom-15-m {
+      padding-bottom: 15px;
+      }
+      .padding-bottom-25-m {
+      padding-bottom: 25px;
+      }
+      .padding-top-10-m {
+      padding-top: 10px;
+      }
+      .button-column {
+      padding-right: 0px;
+      padding-bottom: 10px;
+      } 
+      .preheader {
+      display: none;
+      }
+      .title-option-3 {
+      flex-wrap: wrap; 
+      }
+      .title-option-3-title {
+      flex-basis: 100%;
+      }
+      .hotel-name-text {
+        flex: 100%
+      } 
+      }
+      @media screen and (min-width:700px) {
+      .image-mobile {
+      display: none;
+      }
+      .image-desktop {
+      display: block;
+      }
+      .flex-mobile { 
+      display: flex;
+      justify-content: space-between;
+      background-color: #F9F9F9;
+      padding: 20px;
+      align-items:center;
+      margin-top: 20px;
+      }
+      .preheader {
+      background-color: #F9F9F9;
+      width: 100%;
+      padding: 5px 0px;
+      color: #000;
+      }
+      .preheader-container {
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      }
+      }
+      @media screen and (max-width:596px) {
+      .link-alle-fotos {
+      padding-left: 0px;
+      } 
+      }
+      @media screen and (max-width:586px) {
+      .link-alle-fotos {
+      padding-top: 10px;
+      } 
+      }
+      @media screen and (max-width:477px) {
+      .carousel-preview-image {
+      flex: 1 1 40%;
+      max-width: none;
+      min-height: 75px;
+      }
+      .thumb:nth-child(2), .thumb:nth-child(4) {
+      margin-right: 0px;
+      }
+      .thumb:nth-child(3) {
+      margin-left: 0px;
+      } 
+      }
+      @media screen and (max-width:330px) {
+      .carousel-preview-image {
+      min-height: 60px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="background-image: url(https://www.google-analytics.com/collect?v=1&tid=UA-159061594-1&t=event&cid=123456asd56&ec=interactive-header&ea=show-interactive-amp&el=open-mail-amp&cn=wk43_VU_VK_Pelikaan&cs=email);"></div>
+    <div class="preheader">
+      <div class="preheader-container">
+        <div style="padding: 6px 0px;">
+          <span style="font-size: 13px; color: #808285; line-height: 18px;">
+          [text name="preheader"]
+          </span>
+        </div>
+      </div>
+    </div>
+    [loop name="header" min="0"]
+    <div class="body-container menu-mobile">
+      <div class="logo-container">
+        <div class="mobile-center">
+          <a href="[text name='header-logo-link']" target="_blank">
+            <amp-img src="https://pic.vicinity.nl/image/7032/0/92728/419aaecd1e9292779a8ab9ac3d862c78/VU_logo_new@2x.jpg" width="238" height="46" layout="fixed"></amp-img>
+          </a>
+        </div>
+        <div class="mobile-hide">
+          <amp-img src="https://vicinity.picsrv.net/image/7032/0/138151/e1a714ef1ee0feb0297123ad6e98f7da/website_jaar_logo_NB_new.png" width="232" height="55" layout="fixed"></amp-img>
+        </div>
+      </div>
+      <div class="menu-container">
+        <div class="menu-item">
+          <amp-img src="https://pic.vicinity.nl/image/7032/0/5909/c3b53f8929970df27373eb26d373f08f/vu_icon_hotels.png" width="16" height="16" layout="fixed"></amp-img>
+          <a href="[text name='header-nav-item-1-link']" target="_blank">
+          <span class="menu-text">
+          [text name="header-nav-item-1-title"]
+          </span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <amp-img src="https://pic.vicinity.nl/image/7032/0/6086/d760d6694d35aaf18cbc6fc995251e4b/vu_icon_vakantieparken@2x.png" width="16" height="16" layout="fixed"></amp-img>
+          <a href="[text name='header-nav-item-2-link']" target="_blank">
+          <span class="menu-text">
+          [text name="header-nav-item-2-title"]
+          </span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <amp-img src="https://pic.vicinity.nl/image/7032/0/6134/20152f2af4ef855f6fee1aee2c583c92/vu_icon_lastminutes@2x.png" width="16" height="16" layout="fixed"></amp-img>
+          <a href="[text name='header-nav-item-3-link']" target="_blank">
+          <span class="menu-text">
+          [text name="header-nav-item-3-title"]
+          </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    [/loop]
+    [loop name="main" min="0"]
+    <div class="body-container">
+      [loop name="interactive-carousel" min="0"]
+      {capture assign="paddingtop"}[text name="padding-top"]{/capture}{capture assign="paddingbottom"}[text name="padding-bottom"]{/capture}
+      <div class="content-block" style="padding-top: {$paddingtop}px; padding-bottom: {$paddingbottom}px;">
+        <div class="image-header">
+          <amp-carousel id="carouselheader" class="custom-button border-round" width="700" height="394" layout="responsive" type="slides" on="slideChange:carouselheaderSelector.toggle(index=event.index, value=true)">
+            <a href="[text name='URL afbeelding 1']" target="_blank">
+              <amp-img src="[text name='Afbeelding 1']" layout="fill" alt="Afbeelding 1"></amp-img>
+            </a>
+            <a href="[text name='URL afbeelding 2']" target="_blank">
+              <amp-img src="[text name='Afbeelding 2']" layout="fill" alt="Afbeelding 2"></amp-img>
+            </a>
+            <a href="[text name='URL afbeelding 3']" target="_blank">
+              <amp-img src="[text name='Afbeelding 3']" layout="fill" alt="Afbeelding 3"></amp-img>
+            </a>
+            <a href="[text name='URL afbeelding 4']" target="_blank">
+              <amp-img src="[text name='Afbeelding 4']" layout="fill" alt="Afbeelding 4"></amp-img>
+            </a>
+            <a href="[text name='URL afbeelding 5']" target="_blank">
+              <amp-img src="[text name='Afbeelding 5']" layout="fill" alt="Afbeelding 5"></amp-img>
+            </a>
+          </amp-carousel>
+          <amp-selector id="carouselheaderSelector" class="carousel-preview" on="select:carouselheader.goToSlide(index=event.targetOption)" layout="container" style="flex-wrap: wrap;">
+            <amp-img option="0" selected src="[text name='Thumbnail 1']" [literal] on="tap:AMP.setState({ thumb1: 'thumb-click-1', })"[/literal] role="layout" tabindex="1" width="92" height="52" class="carousel-preview-image thumb border-round"></amp-img>
+            <amp-img option="1" src="[text name='Thumbnail 2']" [literal] on="tap:AMP.setState({ thumb2: 'thumb-click-2', })" [/literal] role="layout" tabindex="1" width="92" height="52" class="carousel-preview-image thumb border-round"></amp-img>
+            <amp-img option="2" src="[text name='Thumbnail 3']" [literal] on="tap:AMP.setState({ thumb3: 'thumb-click-3', })" [/literal] role="layout" tabindex="1" width="92" height="52" class="carousel-preview-image thumb border-round"></amp-img>
+            <amp-img option="3" src="[text name='Thumbnail 4']" [literal] on="tap:AMP.setState({ thumb4: 'thumb-click-4', })" [/literal] role="layout" tabindex="1" width="92" height="52" class="carousel-preview-image thumb border-round"></amp-img>
+            <amp-img option="4" src="[text name='Thumbnail 5']" [literal] on="tap:AMP.setState({ thumb5: 'thumb-click-5', })" [/literal] role="layout" tabindex="1" width="92" height="52" class="carousel-preview-image mobile-hide thumb border-round"></amp-img>
+            <a href="[text name='URL all images']" target="_blank" class="link-alle-fotos" style="color: #EC008C; text-decoration: underline;"><span style="font-size: 14px; line-height: 14px;">[text name='Tekst all images']</span></a>
+          </amp-selector>
+        </div>
+        [literal]
+        <div [class]="thumb1"></div>
+        <div [class]="thumb2"></div>
+        <div [class]="thumb3"></div>
+        <div [class]="thumb4"></div>
+        <div [class]="thumb5"></div>
+        [/literal]
+        [loop name="headline" min="0"]
+        <div style="padding-top: 10px;">
+          <span style="line-height: 24px;">[text name="title"]</span>
+          [loop name="seperator" min="0"]
+          <div class="seperator"></div>
+          [/loop]
+        </div>
+        [/loop]
+      </div>
+      [/loop]
+      [loop name="1-column" min="0"]
+      {capture assign="paddingtop"}[text name="padding-top"]{/capture}{capture assign="paddingbottom"}[text name="padding-bottom"]{/capture}
+      <div class="content-block" style="padding-top: {$paddingtop}px; padding-bottom: {$paddingbottom}px;">
+        [loop name="title-block-option-1" min="0"]
+        <div class="title-option-3">
+          <div>
+            <h1 style="text-align: left; margin: 0px 0px 10px 0px; font-size: 30px;">[text name="title"]</h1>
+          </div>
+        </div>
+        [/loop]
+        [loop name="title-block-option-3" min="0"]
+        <div class="title-option-3">
+          <div class="title-option-3-title">
+            <h1 style="text-align: left; margin: 0px 0px 10px 0px; font-size: 30px;">[text name="title"]</h1>
+          </div>
+          <div>
+            <a href="[text name='url']" target="_blank">
+              <amp-img src="[text name='logo']" width="252" height="80" layout="fixed"></amp-img>
+            </a>
+          </div>
+        </div>
+        [/loop]
+        [loop name="seperator-block" min="0"]
+        <div style="border-bottom: 1px solid #d8d8d8; margin: 10px 0px 15px 0px;"></div>
+        [/loop]
+        [loop name="subtitle-block" min="0"]
+        <div style="border-bottom: 1px solid #d8d8d8; margin: 10px 0px 15px 0px;"></div>
+        <h2 style="margin: 0px; color: #808285; font-size: 14px; line-height: 20px;">[text name="title"]</h2>
+        <div style="border-bottom: 1px solid #d8d8d8; margin: 15px 0px 20px 0px;"></div>
+        [/loop]
+        [loop name="hotel-block" min="0"]
+        <div class="hotel-name">
+          <amp-img src="[text name='icon']" width="16" height="16" layout="fixed" style="margin: 0px; margin-top: 3px;"></amp-img>
+          <span class="hotel-name-text" style="color: #808285; padding-left: 8px; padding-right: 10px; font-size: 14; line-height: 16px;">[text name="text"]</span>
+          [loop name="rating-block" min="0"]
+          <span style="background-color:#ec008c; border-radius: 2px; color: #FFF; padding: 4px 6px; font-weight: 700; line-height: 14px; font-size: 14px;">[text name="text-rating"]</span>
+          [/loop]
+        </div>
+        [/loop]
+        [loop name="info-block" min="0"]
+        <div class="info-block">
+          [loop name="usp-block" min="0"]
+          <div class="info-block-column">
+            [loop name="item" min="0"]
+            <div class="info-block-item">
+              <amp-img src="[text name='icon']" width="18" height="18" layout="fixed" style="margin: 0;"></amp-img>
+              <span style="color: #000; padding-left: 8px; font-size: 14; line-height: 30px;">[text name="content"]</span>
+            </div>
+            [/loop]
+          </div>
+          [/loop]
+          <div class="info-block-column mobile-hide">
+            <p style="color: #000; font-size: 14; line-height: 30px; margin: 0;">
+              [text name="content"]
+            </p>
+          </div>
+        </div>
+        [/loop]
+        [loop name="cta-block" min="0"]
+        <div class="flex-mobile">
+          [loop name="price-block" min="0"]
+          [loop name="option-1" min="0"]
+          <div class="button-column">
+            <span style="color: #EC008C; font-size: 14px; font-weight: 400; line-height: 27px;">[text name="text-before"]</span>
+            <span style="color: #EC008C; font-size: 20px; font-weight: 700; line-height: 27px;">[text name="price"]</span>
+            <span style="color: #EC008C; font-size: 14px; font-weight: 400; line-height: 27px;">[text name="text-after"]</span>
+          </div>
+          [/loop]
+          [/loop]
+          [loop name="cta-button" min="0"]
+          <div style="margin: 0;">
+            <a href="[text name='url']" target="_blank">
+              <amp-img src="[text name='desktop']" width="200" height="40" layout="fixed" style="margin: 0;" class="image-desktop"></amp-img>
+              <amp-img src="[text name='mobile']" width="200" height="40" layout="fixed" style="margin: 0;" class="image-mobile"></amp-img>
+            </a>
+          </div>
+          [/loop]
+        </div>
+        [/loop]
+      </div>
+      [/loop]
+      [loop name="arrangement" min="0"]
+      {capture assign="paddingtop"}[text name="padding-top"]{/capture}{capture assign="paddingbottom"}[text name="padding-bottom"]{/capture}
+      <div class="content-block" style="padding-top: {$paddingtop}px; padding-bottom: {$paddingbottom}px;">
+        [loop name="headline" min="0"]
+        <div class="headline padding-bottom-15-m">
+          <h1>[text name="title"]</h1>
+          [loop name="seperator" min="0"]
+          <div class="seperator"></div>
+          [/loop]
+        </div>
+        [/loop]
+        [loop name="item"]
+        <div class="arrangement-block padding-bottom-25-m" style="display: flex; justify-content: space-between; padding-bottom: 30px;">
+          [loop name="image-block" min="0"]
+          <div class="mobile-hide" style="flex-basis: 160px;">
+            <a href="[text name='url']" target="_blank">
+              <amp-img src="[text name='desktop']" layout="responsive" height="285" width="160" class="border-round">
+              </amp-img>
+            </a>
+          </div>
+          [/loop]
+          <div style="flex-basis: 520px;">
+            [loop name="title-block" min="0"]
+            <h3>
+              [text name="content"]
+            </h3>
+            [/loop]
+            [loop name="persuasive-block" min="0"]
+            <div class="arrangement-block-persuasive">
+              <span style="color: #EC008C; font-weight: 400;">
+              [text name="content"]
+              </span>
+            </div>
+            [/loop]
+            [loop name="usp-block-bottom" min="0"]
+            <div class="arrangement-usps" style="display: flex;">
+              [loop name="block-left" min="0"]
+              <div class="arrangement-block-column">
+                [loop name="item" min="0"]
+                <div class="info-block-item">
+                  <amp-img src="[text name='icon']" width="18" height="18" layout="fixed" style="margin: 0;"></amp-img>
+                  <span style="color: #000; padding-left: 8px; font-size: 14px; line-height: 30px;">[text name="content"]</span>
+                </div>
+                [/loop]
+              </div>
+              [/loop]
+              [loop name="block-right" min="0"]
+              <div class="arrangement-block-column">
+                [loop name="item" min="0"]
+                <div class="info-block-item">
+                  <amp-img src="[text name='icon']" width="18" height="18" layout="fixed" style="margin: 0;"></amp-img>
+                  <span style="color: #000; padding-left: 8px; font-size: 14px; line-height: 30px;">[text name="content"]</span>
+                </div>
+                [/loop]
+              </div>
+              [/loop]
+            </div>
+            [/loop]
+            [loop name="cta-block" min="0"]
+            <div class="flex-mobile margin-top-10-m">
+              [loop name="price-block-option-4" min="0"]
+              <div class="button-column">
+                <span style="color: #808285; font-size: 12px; font-weight: 400; line-height: 27px; text-decoration: line-through; padding-right: 10px;">[text name="strike-price"]</span>
+                <span style="color: #EC008C; font-size: 11px; font-weight: 400; line-height: 27px;">[text name="text-before"]&nbsp;&nbsp;</span>
+                <span style="color: #EC008C; font-size: 20px; font-weight: 700; line-height: 27px;">[text name="price"]&nbsp;</span>
+                <span style="color: #EC008C; font-size: 11px; font-weight: 400; line-height: 27px; padding-right: 10px;">[text name="text-after"]</span>
+                <span style="color: #EC008C; font-size: 14px; font-weight: 600; line-height: 27px;">[text name="text-discount"]</span>
+              </div>
+              [/loop]
+              [loop name="price-block-option-7" min="0"]
+              <div class="button-column">
+                <div style="text-align: center; padding-right: 10px;">
+                  <span style="color: #808285; font-size: 11px; font-weight: 400; line-height: 18px;">[text name="text-strike-price"]</span><br>
+                  <span style="color: #808285; font-size: 11px; font-weight: 400; line-height: 18px; text-decoration: line-through;">[text name="strike-price"]</span>
+                </div>
+                <div style="text-align: center; padding: 0px 10px; border-left: 1px solid #d8d8d8; border-right: 1px solid #d8d8d8;">
+                  <span style="color: #EC008C; font-size: 20px; font-weight: 700; line-height: 27px;">[text name="price"]</span>
+                  <span style="color: #EC008C; font-size: 11px; font-weight: 400; line-height: 27px;">[text name="text-after"]</span>
+                </div>
+                <div style="text-align: center; padding: 0px 10px; border-right: 1px solid #d8d8d8;">
+                  <span style="color: #808285; font-size: 11px; font-weight: 400; line-height: 18px;">[text name="text-discount-top"]</span><br>
+                  <span style="color: #808285; font-size: 11px; font-weight: 400; line-height: 18px;">[text name="text-discount-bottom"]</span>
+                </div>
+                <div style="text-align: center; padding-right: 10px; padding-left: 10px;">
+                  <span style="color: #808285; font-size: 11px; font-weight: 400; line-height: 18px;">[text name="text-discount-percentage-top"]</span><br>
+                  <span style="color: #808285; font-size: 11px; font-weight: 400; line-height: 18px;">[text name="text-discount-percentage-bottom"]</span>
+                </div>
+              </div>
+              [/loop]
+              [loop name="cta-button" min="0"]
+              <div style="margin: 0;">
+                <a href="[text name='url']" target="_blank">
+                  <amp-img src="[text name='desktop']" width="[text name='width desktop']" height="40" layout="fixed" style="margin: 0;" class="image-desktop"></amp-img>
+                  <amp-img src="[text name='mobile']" width="[text name='width mobile']" height="40" layout="fixed" style="margin: 0;" class="image-mobile"></amp-img>
+                </a>
+              </div>
+              [/loop]
+            </div>
+            [/loop]
+          </div>
+        </div>
+        [/loop]
+      </div>
+      [/loop]
+      [loop name="1-column-banner" min="0"]
+      {capture assign="paddingtop"}[text name="padding-top"]{/capture}{capture assign="paddingbottom"}[text name="padding-bottom"]{/capture}
+      <div class="content-block" style="padding-top: {$paddingtop}px; padding-bottom: {$paddingbottom}px;">
+        [loop name="headline" min="0"]
+        <div class="headline padding-bottom-25-m">
+          <h1>[text name="title"]</h1>
+          [loop name="seperator" min="0"]
+          <div class="seperator"></div>
+          [/loop]
+        </div>
+        [/loop]
+        [loop name="image" min="0"]
+        <a href="[text name='url']" target="_blank">
+          <amp-img src="[text name='desktop']" layout="responsive" height="[text name='height desktop']" width="700" class="image-desktop border-round">
+          </amp-img>
+          <amp-img src="[text name='mobile']" layout="responsive" height="[text name='height mobile']" width="560" class="image-mobile border-round">
+          </amp-img>
+        </a>
+        [/loop]
+      </div>
+      [/loop]
+      [loop name="inspiratie_leftimage" min="0"]
+      {capture assign="paddingtop"}[text name="padding-top"]{/capture}{capture assign="paddingbottom"}[text name="padding-bottom"]{/capture}
+      <div class="content-block" style="padding-top: {$paddingtop}px; padding-bottom: {$paddingbottom}px;">
+        [loop name="headline" min="0"]
+        <div class="headline padding-bottom-15-m">
+          <h1>[text name="title"]</h1>
+          [loop name="seperator" min="0"]
+          <div class="seperator"></div>
+          [/loop]
+        </div>
+        [/loop]
+        <div class="arrangement-block padding-bottom-25-m" style="display: flex; justify-content: space-between; padding-bottom: 30px; flex-wrap: wrap;">
+          [loop name="image-block" min="0"]
+          <div class="inspiratie-block-fullwidth-mobile" style="flex-basis: 340px;">
+            <a href="[text name='url']" target="_blank">
+              <amp-img src="[text name='desktop']" layout="responsive" height="[text name='height desktop']" width="340" class="image-desktop">
+              </amp-img>
+              <amp-img src="[text name='mobile']" layout="responsive" height="[text name='height mobile']" width="560" class="image-mobile">
+              </amp-img>
+            </a>
+          </div>
+          [/loop]
+          <div class="inspiratie-block-fullwidth-mobile" style="flex-basis: 340px;">
+            [loop name="title-block" min="0"]
+            <div class="inspiratie-title padding-top-10-m">
+              <h1>
+                [text name="title"]
+              </h1>
+            </div>
+            [loop name="subtitle" min="0"]
+            <div class="inspiratie-subtitle">
+              <span  style="color: #707070; font-size: 14px; line-height: 19px; font-weight:700; font-family:'Roboto Slab','Open Sans','Helvetica','Arial',sans-serif;">
+              [text name="content"]
+              </span>
+            </div>
+            [/loop]
+            [/loop]
+            [loop name="text-block" min="0"]
+            <div style="padding-bottom: 30px;">
+              <span style="color: #000; font-weight: 400; font-size: 14px;">
+              [text name="content"]
+              </span>
+            </div>
+            [/loop]
+            [loop name="cta-block" min="0"]
+            <div class="flex-mobile margin-top-10-m" style="flex-wrap: wrap;">
+              [loop name="persuasive-block" min="0"]
+              <div class="inspiratie-block-persuasive">
+                [loop name="without_icon" min="0"]
+                <span style="color: #EC008C; font-weight: 700; font-size: 14px; line-height: 25px;">
+                [text name="content"]
+                </span>
+                [/loop]
+              </div>
+              [/loop]
+              [loop name="cta-button" min="0"]
+              <div style="margin: 0;">
+                <a href="[text name='url']" target="_blank">
+                  <amp-img src="[text name='desktop']" width="[text name='width desktop']" height="40" layout="fixed" style="margin: 0;" class="image-desktop"></amp-img>
+                  <amp-img src="[text name='mobile']" width="[text name='width mobile']" height="40" layout="fixed" style="margin: 0;" class="image-mobile"></amp-img>
+                </a>
+              </div>
+              [/loop]
+            </div>
+            [/loop]
+          </div>
+        </div>
+      </div>
+      [/loop]
+      [loop name="recommendations_squeezely" min="0"]
+    {capture name='url' assign='urlSqzly'}https://squeezely.tech/products?account=SQ-2565780&productset=27&email={$profile.Emailadres}{/capture}
+      {capture assign="paddingtop"}[text name="padding-top"]{/capture}{capture assign="paddingbottom"}[text name="padding-bottom"]{/capture}
+      <div class="content-block" style="padding-top: {$paddingtop}px; padding-bottom: {$paddingbottom}px;">
+        [loop name="headline" min="0"]
+        <div class="headline padding-bottom-25-m">
+          <h1>[text name="title"]</h1>
+          [loop name="seperator" min="0"]
+          <div class="seperator"></div>
+          [/loop]
+        </div>
+        [/loop]
+        [loop name="product-1-2" min="0"]
+        {capture assign="my_feed_content"}{loadfeed feed=$urlSqzly xslt='Recommendation_product_1_2_squeezely' personalizable=true}{/capture}{eval var=$my_feed_content} [/loop] [loop name="spacer" min="0"]
+        [/loop]
+      </div>
+    [/loop]
+    </div>
+    [/loop]
+    [loop name="footer" min="0"]
+    <div class="footer">
+      <div class="footer-container">
+        [loop name="headline" min="0"]
+        <h2 class="padding-bottom-15-m" style="padding-bottom: 20px; padding-top: 25px; margin: 0px; line-height: 26px;">
+          [text name="title"]
+        </h2>
+        [/loop]
+        [loop name="banner" min="0"]
+        <a href="[text name='url']" target="_blank">
+          <amp-img src="[text name='desktop']" layout="responsive" height="300" width="700" class="image-desktop">
+          </amp-img>
+          <amp-img src="[text name='mobile']" layout="responsive" height="705" width="560" class="image-mobile">
+          </amp-img>
+        </a>
+        [/loop]
+        <div class="footer-social">
+          [loop name="social" min="0"]
+          <h2 style="padding-bottom: 15px; padding-top: 20px; margin: 0px; line-height: 21px; font-size: 16px; ">
+            [text name="title"]
+          </h2>
+          <div class="footer-social-images">
+            <a href="https://www.facebook.com/voordeeluitjesnl" target="_blank">
+              <amp-img src="https://pic.vicinity.nl/image/7032/0/6159/7c40c7590c76ec1ebe17c7c55b52787a/f_i_facebook@2x.png" layout="fixed" height="25" width="25">
+              </amp-img>
+            </a>
+            <a href="https://www.instagram.com/voordeeluitjes.nl/" target="_blank">
+              <amp-img src="https://pic.vicinity.nl/image/7032/0/6144/160e7d12aa526cbe65c42a4eb2c78e15/f_i_instagram@2x.png" layout="fixed" height="25" width="25">
+              </amp-img>
+            </a>
+            <a href="https://www.voordeeluitjes.nl/blog/" target="_blank">
+              <amp-img src="https://pic.vicinity.nl/image/7032/0/6136/97797e6d5d7f5002a76f1b7e75d756df/f_i_blog@2x.png" layout="fixed" height="25" width="25">
+              </amp-img>
+            </a>
+            <a href="https://www.youtube.com/channel/UCAaGBPOVNIsEnIO6aSkEKNA" target="_blank">
+              <amp-img src="https://pic.vicinity.nl/image/7032/0/6129/27cf08fbae5a5031157dac6b5da00cf8/f_i_youtube@2x.png" layout="fixed" height="25" width="25">
+              </amp-img>
+            </a>
+          </div>
+          [/loop]
+          [loop name="rating" min="0"]
+          <h2 style="padding-bottom: 15px; padding-top: 25px; margin: 0px; line-height: 21px; font-size: 16px;">
+            [text name="title"]
+          </h2>
+          <a href="[text name='positive-url']" target="_blank">
+            <amp-img src="[text name='feedback-positive']" layout="fixed" height="50" width="50" style="margin-right: 20px;">
+            </amp-img>
+          </a>
+          <a href="[text name='negative-url']" target="_blank">
+            <amp-img src="[text name='feedback-negative']" layout="fixed" height="50" width="50">
+            </amp-img>
+          </a>
+          [/loop]
+        </div>
+        <div style="border-bottom: 1px solid #D9D9D9; border-top: 1px solid #D9D9D9; padding: 10px 0px; margin: 20px 0px 10px 0px;">
+          [loop name="disclaimer" min="0"]
+          <p style="text-align: center; color: #808285; font-size: 11px; line-height: 20px;">
+            [text name="content"]
+          </p>
+          [/loop]
+          <div class="footer-links" style="padding: 15px 0px 20px 0px;">
+            <div><a href="[text name='link-contact']" target="_blank" class="footer-link">Contact</a></div>
+            <div class="mobile-hide"><a href="[text name='link-aboutus']" target="_blank" class="footer-link">Over ons</a></div>
+            <div class="mobile-hide"><a href="[text name='link-disclaimer']" target="_blank" class="footer-link">Voorwaarden</a></div>
+            <div><a href="[text name='link-settings']" target="_blank" class="footer-link">Wijzig uw e-mailvoorkeuren</a></div>
+            <div><a href="[text name='link-signout']" target="_blank" class="footer-link">Uitschrijven</a></div>
+          </div>
+          <p style="text-align: center; color: #808285; font-size: 11px; line-height: 20px;">
+            Deze e-mail is verstuurd door Voordeeluitjes.nl, Munsterstraat 20, 7418 EV Deventer.
+          </p>
+        </div>
+        <div style="padding-bottom: 15px; display: flex; justify-content: center;">
+          <p style="text-align: center; color: #808285; font-size: 11px; line-height: 20px;">
+            <span>Telefoon: 0900 66 777 88 (25 c/m)</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    [/loop]
+  </body>
+</html>
