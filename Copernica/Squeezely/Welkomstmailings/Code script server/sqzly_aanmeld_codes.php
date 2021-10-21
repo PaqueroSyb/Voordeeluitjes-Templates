@@ -28,10 +28,10 @@ $codeDB = 21;
 // Get parameters
 $campagne = $_GET["campagne"];
 $type = $_GET["type"];
-$userSubProfileID = $_GET["subprofiel"];
+$userProfileID = $_GET["profiel"];
 
 // Load lock file
-$fp = fopen("lock.txt", "r+");
+$fp = fopen("lock_sqzly_aanmeld_codes.txt", "r+");
 
 // acquire an exclusive lock
 if (flock($fp, LOCK_EX)) 
@@ -40,9 +40,9 @@ if (flock($fp, LOCK_EX))
 	ftruncate($fp, 0);
 	      
 	// Check if profile has already been called upon
-	$usedSubProfiles = json_decode(file_get_contents('codes.json'), true);
+	$usedProfiles = json_decode(file_get_contents('sqzly_aanmeld_codes_used.json'), true);
 	
-	if (!array_key_exists($userSubProfileID, $usedSubProfiles)) 
+	if (!array_key_exists($userProfileID, $usedProfiles)) 
 	{
 		// Set parameters to check if code is used and set campagne
 		$parameters = array(
@@ -72,23 +72,23 @@ if (flock($fp, LOCK_EX))
 		// Safe code to profile
 		$data = array(
 			"fields" => array(
-				'Canvascadeaucode' =>  $code
+				'Sqzly_aanmeld_kortingscode' =>  $code
 			),
 		);
 	
 		if ($type == "mass") 
 		{
-			$api->put("subprofile/{$userSubProfileID}", $data);
+			$api->put("profile/{$userProfileID}", $data);
 		};
 	
-		$usedSubProfiles[$userSubProfileID] = $code;
+		$usedProfiles[$userProfileID] = $code;
 	
-		file_put_contents("codes.json",json_encode($usedSubProfiles));
+		file_put_contents("sqzly_aanmeld_codes_used.json",json_encode($usedProfiles));
 	
 	} 
 	else 
 	{
-		$code = $usedSubProfiles[$userSubProfileID];
+		$code = $usedProfiles[$userProfileID];
 	};
 	
 	// flush output before releasing the lock
