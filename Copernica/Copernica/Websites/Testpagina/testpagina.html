@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+  <head>
+    <!-- Google Analytics -->
+    <script>
+    [literal]
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-159061594-1', 'auto');
+      ga('send', 'pageview');
+    [/literal]
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Voordeeluitjes.nl">
+    {if $property.Autoredirect eq 'Ja'}
+    <meta http-equiv='refresh' content='14; URL=https://www.voordeeluitjes.nl/?utm_source=copernica&utm_medium=referral'>
+    {/if}
+    <!-- Title -->
+    <title>{$property.Website_titel}</title>
+    <link rel="icon" href="https://www.voordeeluitjes.nl/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <!-- Optional JavaScript --> 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    
+    <!-- Select2 javascript -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+    <!-- Start custom scripts-->
+    <!-- Polyfill voor foreach oudere browsers zoals IOS 8-->
+    <script type="text/javascript">
+    if (window.NodeList && !NodeList.prototype.forEach) {
+      NodeList.prototype.forEach = Array.prototype.forEach;
+    }
+    </script>
+
+    <script type="text/javascript">
+      function setAangemeld() {
+        var aangemeldWaarde = document.getElementById('tellafriendaangemeld');
+        aangemeldWaarde.value = "Ja";
+    } 
+    </script>
+
+    <!-- Wordt gebruikt voor de tell a friend campagne: maak een nieuw profiel aan direct nadat de klant bevestigt -->   
+    <script type="text/javascript">
+      function submitProfielForm(){
+      document.subscribe.submit();
+    }
+    </script> 
+
+    <!-- Toon error meldingen bij forms -->  
+    <script type="text/javascript">
+    [literal]      
+      window.onload = function() {
+        document.querySelector("[type=submit]").addEventListener("click", checkrequired);
+        document.querySelector("form").addEventListener("invalid", function(event) {
+          event.preventDefault();
+        }, true );
+      }
+
+      function checkrequired() {
+        var elements = document.querySelectorAll('[required]');
+        elements.forEach(function(element) {
+          if (element.value === "" || element.checked === false) {
+            document.forms[0].classList.add('submitted-form-invalid');
+          } else {
+            return true;
+         }
+        });
+      }
+    [/literal]
+    </script>
+
+    <!-- Wordt gebruikt voor de profielverrijking mail, haalt de waardes op uit de URL en voegt ze in de input field -->   
+    <script type="text/javascript">
+      function getURLwaardes() {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var aanhef = url.searchParams.get("aanhef");
+        var voornaam = url.searchParams.get("voornaam");
+        var tussenvoegsel = url.searchParams.get("tussenvoegsel");
+        var achternaam = url.searchParams.get("achternaam");
+        var aanhef_input = document.getElementById('profiel-aanhef'); var voornaam_input = document.getElementById('profiel-voornaam'); var tussenvoegsel_input = document.getElementById('profiel-tussenvoegsel'); var achternaam_input = document.getElementById('profiel-achternaam');
+        aanhef_input.value = aanhef; 
+        voornaam_input.value = voornaam;
+        tussenvoegsel_input.value = tussenvoegsel;
+        achternaam_input.value = achternaam;
+      }
+    </script> 
+  </head>
+  <!-- Verschillende smarty functies om te kijken welke pagina er geladen wordt, op basis hiervan wordt een script gerund die nodig is voor die specifieke pagina. -->   
+  {if $smarty.get.page eq 'succesvol'}
+  <body onload="redirect();">
+    {elseif $smarty.server.REQUEST_URI|strstr:'vriend=referred'}
+    <body onload="setAangemeld();">
+      {elseif $smarty.server.REQUEST_URI|strstr:'tellafriend?profielaangemaakt=ja'}
+      <body onload="submitProfielForm();">
+        {elseif $smarty.server.REQUEST_URI|strstr:'?page=uitschrijving'}
+        <body onload="submitProfielForm();">
+          {elseif $smarty.server.REQUEST_URI|strstr:'?page=wijziging-pauze'}
+          <body onload="submitProfielForm();">
+            {elseif $smarty.server.REQUEST_URI|strstr:'&type=nieuw'}
+            <body onload="getURLwaardes();">
+              {else}
+              <body>
+                {/if}
+                <div class="sticky-footer-content">
+                <header>
+                  <div class="navbar navbar-toggleable-md d-flex justify-content-center navbar-top">
+                    <div class ="row navbar-container">
+                      <ul class="list-container desktop col-sm-12">
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-trigger="focus" data-placement="bottom" title="Bron: The Feedback Company." rev="template_link_119">
+                          <li class="w-auto mw-100 list-item" style="padding-left:0!important;">
+                            <img src="https://pic.vicinity.nl/image/7032/0/79923/bfca5e0ea6c84e39297af352a9ab8ffb/heart-icon.png">96% van onze klanten beveelt ons aan*
+                          </li>
+                        </a>
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-trigger="focus" data-placement="bottom" title="Bij een klein gedeelte van ons aanbod betaalt u kort na boeken." rev="template_link_136">
+                          <li class="w-auto mw-100 list-item">
+                            <img src="https://pic.vicinity.nl/image/7032/0/79922/96781667153ef12e44e895681bcc756d/clock-icon.png">Geen zorgen: betaal later!*
+                          </li>
+                        </a>
+                        <li class="w-auto mw-100 list-item">
+                          <img src="https://pic.vicinity.nl/image/7032/0/79925/6f116a37f1f1df3e5e53bfbd1d988229/vink-icon.png">Unieke &amp; voordelige arrangementen
+                        </li>
+                        <li class="w-auto mw-100 list-item" style="padding-right:0!important;">
+                          <img src="https://pic.vicinity.nl/image/7032/0/79924/b59438600764a3245f2b1f6054331043/star-icon.png">Méér dan 10 jaar dé specialist
+                        </li>
+                      </ul>
+                      <div class="list-container mobile col-sm-12">
+                        <div class="carousel slide carousel-fade" data-ride="carousel">
+                          <div class="carousel-inner">
+                            <div class="w-auto mw-100 list-item carousel-item active" data-interval="4000">
+                              <img src="https://pic.vicinity.nl/image/7032/0/79923/bfca5e0ea6c84e39297af352a9ab8ffb/heart-icon.png">96% van onze klanten beveelt ons aan*
+                            </div>
+                            <div class="w-auto mw-100 list-item carousel-item" data-interval="4000">
+                              <img src="https://pic.vicinity.nl/image/7032/0/79922/96781667153ef12e44e895681bcc756d/clock-icon.png">Geen zorgen: betaal later!*
+                            </div>
+                            <div class="w-auto mw-100 list-item carousel-item" data-interval="4000">
+                              <img src="https://pic.vicinity.nl/image/7032/0/79925/6f116a37f1f1df3e5e53bfbd1d988229/vink-icon.png">Unieke &amp; voordelige arrangementen
+                            </div>
+                            <div class="w-auto mw-100 list-item carousel-item" data-interval="4000">
+                              <img src="https://pic.vicinity.nl/image/7032/0/79924/b59438600764a3245f2b1f6054331043/star-icon.png">Méér dan 10 jaar dé specialist
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <nav class="navbar navbar-toggleable-md d-flex justify-content-center bg-white">
+                    <div class="navbar-container">
+                      <div class ="row">
+                        <div class="col-sm-12 col-md-12 col-lg-3 logo-container text-center text-lg-left"> <a class="navbar-brand center-brand" href="https://www.voordeeluitjes.nl/" title="Hotelaanbiedingen: goedkope hotels via Voordeeluitjes.nl" target="_blank" rev="template_link_121"> <img class="logo-desktop" src="https://www.voordeeluitjes.nl/CR/ng/images/partners/voordeeluitjes/core/logo.svg" width="220" height="auto" alt="Voordeeluitjes.nl logo"/><img class="logo-mobile" src="https://www.voordeeluitjes.nl/CR/ng/images/partners/voordeeluitjes/core/logo.svg" width="190" height="auto" alt="Voordeeluitjes.nl logo" style="display: none;"/> </a> </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6 hidden-md-down header-mobile-none header-menu">
+                          <div class="row hidden-md-down justify-content-center">
+                            <div class="col-sm-4 header-border w-auto">
+                              <a class="color-hotel-img" href="https://www.voordeeluitjes.nl/" target="_blank" rev="template_link_775">
+                                <div class="header-icon"><img class="color-hotel-main" src="https://pic.vicinity.nl/image/7032/0/4139/1448133e145c1f993c16c6c196840f58/vu_icon_hotels@2x.png" alt="Icoon hotels"><img class="color-hotel-kleur" src="https://pic.vicinity.nl/image/7032/0/6076/2702b1391ba67eb8750437f0425d8e9e/vu_icon_cat_hotels@2x.jpg" style="max-height:0px;display:block" alt="Icoon hotels"></div>
+                                <span class="header-text">Hotels</span> 
+                              </a>
+                            </div>
+                            <div class="col-sm-4 header-border w-auto">
+                              <a class="color-hotel-img" href="https://www.voordeeluitjes.nl/vakantieparken" target="_blank" rev="template_link_776">
+                                <div class="header-icon"><img class="color-hotel-main" src="https://pic.vicinity.nl/image/7032/0/4114/6515ed9e073baf90a7d48a12698be2cf/vu_icon_vakantieparken@2x.png" alt="Icoon Vakantieparken"> <img class="color-hotel-kleur" src="https://pic.vicinity.nl/image/7032/0/77637/825b51b1ec7b540028e697de5fff4109/VP-icon-oranje.jpg" style="max-height:0px;display:block" alt="Icoon Vakantieparken"></div>
+                                <span class="header-text vp">Vakantieparken</span> 
+                              </a>
+                            </div>
+                            <div class="col-sm-4 w-auto color-hotel">
+                              <a class="color-hotel-img" href="https://www.voordeeluitjes.nl/actie/last-minute-hotel-deals" target="_blank" rev="template_link_777">
+                                <div class="header-icon"><img class="color-hotel-main" src="https://pic.vicinity.nl/image/7032/0/8667/9552e24401f730e043aaef5b33bd58c6/icon-lastminute.png" alt="Icoon Last minutes"> <img class="color-hotel-kleur" src="https://pic.vicinity.nl/image/7032/0/77644/1f08a34abb85833ab6833b95c55c25cd/LM-icon-magenta.jpg" style="max-height:0px;display:block" alt="Icoon last Minutes"></div>
+                                <span class="header-text">Last minutes</span> 
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3 hidden-md-down header-mobile-none">
+                          <div class="row hidden-md-down" style="margin-right: 0px; margin-left: 0px;">
+                            <div id="open-search-box" class="search-menu"><input type="text" class="search-bar-menu" placeholder="Zoeken" disabled><img class="search-bar-icon" src="https://pic.vicinity.nl/image/7032/0/101498/bd33dc399b7acd3c03f918b3c45bb821/search-icon.jpg" alt="Zoeken"/></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+                  <a id="search-box-top-close" href="javascript:void(0)" rev="template_link_778">
+                    <div id="search-box-top-bg" style="background-color: rgba(0,0,0); position: absolute; top: 170px; bottom: 0; left: 0; right: 0; z-index: 25; opacity: 0.25; cursor: initial"></div>
+                  </a>
+                  <div id="search-box-top" class="search-bar-box">
+                    <div class="body-container" style="position: relative;">
+                      <span id="close-search-box" class="search-bar-box-close">&times;</span>
+                      <h4 class="search-bar-box-title" id="test-value">Waar bent u naar op zoek?</h4>
+                      <div class="search-bar-box-form" style="display: flex;">
+                        <div class="search-bar-box-text-container"> <input id="search-bestemming" type="text" class="search-bar-box-text-menu" placeholder="Bestemming, hotel, thema"/></div>
+                        <div class="search-bar-box-date-container"><input id="search-datum"  type="date" class="search-bar-box-date-menu" placeholder="dd-mm-yyyy"/></div>
+                        <div class="search-bar-box-date-container">
+                          <select id="select-test" class="select-custom-style js-states">
+                            <option>Aantal dagen</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                          </select>
+                        </div>
+                        <div class="search-bar-box-date-container"><button type="button" class="search-bar-box-button" onclick="zoekenWebsite()">zoek hotels</button></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="desktop-menu" style="height:24px; width:100%; clear:both; background-color: #EC008C; position: relative;">
+                  </div>
+                  <div class="jumbotron jumbotron-fluid">
+                    <div style="background-image: linear-gradient(transparent,#000);bottom:0; left:0; right:0; position:absolute; opacity:1; display: none;">
+                      <div class="body-container" style="color:#ffffff; opacity:0; margin-bottom: 13px;">Hoi dan</div>
+                    </div>
+                    <div class="body-container">
+                      <div class="jumbotron-kader">
+                        <div class="jumbotron-absolute">
+                          <button type="button" class="btn hide-always">Bekijk de video</button>
+                        </div>
+                        <h1>[text name='Kader title 2']</h1>
+                        <h2>[text name='Kader subtitle']</h2>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+                <div class="body-container width-750 padding mobile">
+                  <div class="col-xs-12">
+                    <div class="col-xs-12 form-padding" style="margin-bottom: 20px; padding-left: 0px; padding-right: 0px;">
+                      [text name='Tekst input'][text name='Button'][text name='Progress bar']
+                    </div>
+                  </div>
+                </div>
+                <footer class="sticky-footer">
+                  <div class="footer-desktop">
+                    <div class="footer-bg">
+                      <div class="footer-title">Kampioen in arrangementen</div>
+                    </div>
+                    <div class="navbar d-flex justify-content-center">
+                      <div class="navbar-container">
+                        <div class="footer-logos">
+                          <div class ="row justify-content-around">
+                            <div class="col-sm-7 col-md-8 col-lg-9">
+                              <span class="logos-title">Bekend van:</span>
+                              <ul class="logos-list">
+                                <li class="logo-list"><span class="logo-avro"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-kro"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-max"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-mikro"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-ncrv"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-npo"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-televizier"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-tros"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-vara"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-vab"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-sbs6"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-veronica"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-net5"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-libelle"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-telegraaf"></span>
+                                </li>
+                                <li class="logo-list"><span class="logo-ad"></span>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col-sm-5 col-md-4 col-lg-3">
+                              <div class="row rating-container">
+                                <div class="rating-title">96% van de klanten beveelt Voordeeluitjes.nl aan.</div>
+                                <div class="rating">
+                                  <div><img src="https://pic.vicinity.nl/image/7032/0/78118/582f3ff88bbfcd5ba25625087109ebad/rating-icon.png" alt="Rating"/></div>
+                                  <div class="rating-score">8.3/10</div>
+                                </div>
+                                <div class="rating-description"><strong>Uitstekend</strong> | 4000+ beoordelingen</div>
+                                <div><img src="https://www.voordeeluitjes.nl/CR/ng/images/third-party/feedback-company/logo.png" alt="The Feedback Company logo"/></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer-mobile">
+                    <div class="body-container mobile footer">
+                      <div class="navbar d-flex justify-content-center rating-border">
+                        <div class="row justify-content-center rating-container">
+                          <div class="col-sm-8 col-md-4 col-lg-3">
+                            <div class="rating-title">96% van de klanten beveelt Voordeeluitjes.nl aan.</div>
+                            <div class="rating">
+                              <div><img src="https://pic.vicinity.nl/image/7032/0/78118/582f3ff88bbfcd5ba25625087109ebad/rating-icon.png" alt="Rating"/></div>
+                              <div class="rating-score">8.3/10</div>
+                            </div>
+                            <div class="rating-description"><strong>Uitstekend</strong> | 4000+ beoordelingen</div>
+                            <div><img src="https://www.voordeeluitjes.nl/CR/ng/images/third-party/feedback-company/logo.png" alt="The Feedback Company logo"/></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer-row">
+                    <div class="body-container">
+                      <div class="row justify-content-center">
+                        <div class="col-ms-12">
+                          <a href="https://www.voordeeluitjes.nl/?utm_source=copernica&utm_medium=referral&utm_campaign=nieuwsbrief-interesses" target="_blank" rev="template_link_135">
+                          <img src="https://www.voordeeluitjes.nl/CR/ng/images/partners/voordeeluitjes/core/logo-footer.svg" width="220" height="55" alt="Voordeeluitjes.nl Logo"/>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </footer>
+
+                <!-- Haal profielwaardes op om te gebruiken in een script --> 
+                <input type="hidden" id="frequentie" value="{$profile.Frequentie}"/>
+                <input type="hidden" id="frequentie_vp" value="{$profile.Frequentie_vp}"/>
+                <input type="hidden" id="profile_id" value="{$profile.id}"/>
+                <input type="hidden" id="profile_code" value="{$profile.code}"/>
+
+                <!-- Haal de frequentie waarde op en voeg deze in Veldwaarde Geen toe | Haal de servicemail inschrijving op --> 
+                <script type="text/javascript">
+                [literal]
+                  window.waarde = document.getElementById("frequentie").value;
+                  window.waardeVP = document.getElementById("frequentie_vp").value;
+                  
+                  $(function () { 
+                  $(`input[value="${window.waarde}"]`)
+                      .filter(':visible:first')
+                      .prop('checked', true)
+                  });
+                  
+                  $(function () { 
+                  $(`input[value="${window.waardeVP}"]`)
+                      .filter(':visible:first')
+                      .prop('checked', true)
+                  });
+                  
+                  [/literal]
+                </script>
+
+                <!-- Toggle tijdelijk pauzeren blok aan of uit --> 
+                <script type="text/javascript">
+                [literal]  
+                  var pauzeDivs = document.querySelectorAll('.div-pauze');
+                  var closePauzeDivs = document.querySelectorAll('.close');
+                  var openPauzeDivs = document.querySelectorAll('.open');
+                  var pauzeDivUitschrijven = document.querySelectorAll('.div-pauze-uitschrijven');
+                  var hidePauzeDivUitschrijvenWarning = document.querySelectorAll('.div-pauze .form-group.row .col-sm-12.background-pauze .list-unstyled li input');
+                  var pauzeDivUitschrijfWarning = document.querySelectorAll('.div-pauze-uitschrijven-warning');
+                  
+                  openPauzeDivs.forEach(function (openPauzeDiv, index) {
+                    openPauzeDiv.addEventListener('click', function () {
+                      pauzeDivs[index].setAttribute("class", "div-pauze active");
+                    })
+                  });
+                  
+                  closePauzeDivs.forEach(function (closePauzeDiv, index) {
+                    closePauzeDiv.addEventListener('click', function () {
+                      var setIndex = index;
+                      getIndex;
+                      if (setIndex == 0 || setIndex == 1 || setIndex == 2) {
+                        var getIndex = 0;
+                      } else {
+                        var getIndex = 1;
+                      }
+                      pauzeDivs[getIndex].setAttribute("class", "div-pauze");
+                      pauzeDivUitschrijfWarning[getIndex].setAttribute("class", "div-pauze-uitschrijven-warning");
+                      var pauzeInputs = pauzeDivs[getIndex].querySelectorAll('input');
+                      pauzeInputs.forEach(function (pauzeInput) {
+                        pauzeInput.checked = false;
+                      })
+                    })
+                  });
+                  
+                  hidePauzeDivUitschrijvenWarning.forEach(function (hidePauzeDivUitschrijfWarning, index) {
+                    hidePauzeDivUitschrijfWarning.addEventListener('click', function () {
+                      var setIndex = index;
+                      getIndex;
+                      if (setIndex == 0 || setIndex == 1 || setIndex == 2) {
+                        var getIndex = 0;
+                      } else {
+                        var getIndex = 1;
+                      }
+                      pauzeDivUitschrijfWarning[getIndex].setAttribute("class", "div-pauze-uitschrijven-warning");
+                    })
+                  });
+                  
+                  pauzeDivUitschrijven.forEach(function (pauzeDivUitschrijf, index) {
+                    pauzeDivUitschrijf.addEventListener('click', function () {
+                      pauzeDivUitschrijfWarning[index].setAttribute("class", "div-pauze-uitschrijven-warning active");
+                    })
+                  });
+                [/literal]
+                </script>
+
+                <!-- Sluit de tijdelijke pauze popup en zet het tijdelijke pauze databaseveld op leeg--> 
+                <script type="text/javascript">
+                [literal]
+                  var popup =  document.querySelector('#popup-pauze');
+                  var tijdelijkpauzerenperiode = document.getElementById('tijdelijke_periode');
+
+                  document.querySelectorAll('#close-popup').forEach(function (el) {
+                    el.addEventListener('click', function() {
+                      popup.style.display = 'none';
+                    });
+                  });
+
+                  document.getElementById("submit-popup").addEventListener('click', function() {
+                    tijdelijkpauzerenperiode.value = "";
+                  });
+                  
+                [/literal]
+                </script>
+
+                <!-- Als de pagina 'succesvol' geladen is, redirect deze dan naar de juiste pagina. Of door op #close popup te klikken stop je de auto redirect--> 
+                {if $smarty.get.page eq 'succesvol'}
+                <script type="text/JavaScript">
+                [literal]
+                  var profile_id = "profile=" + document.getElementById("profile_id").value;
+                  var profile_code = "&code=" + document.getElementById("profile_code").value;
+                   
+                  function redirect() {
+                    redirectTimeout = setTimeout("window.location = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?${profile_id + profile_code}`;",6000);
+                   
+                    document.querySelectorAll('#close-popup').forEach(function (el) {
+                      el.addEventListener('click', function() {
+                        clearTimeout(redirectTimeout);
+                      });
+                    });
+                   }
+                [/literal]
+                </script>
+                {/if}
+                
+                {if $smarty.server.REQUEST_URI|strstr:'/feedback'}
+                <!-- Wanneer de slider wordt aangepast, toon de waarde dan bij "Uw gekozen cijfer"--> 
+                <script>
+                [literal]
+                  var slider = document.getElementById("feedback-slider");
+                  var cijfer = document.getElementById("feedback-cijfer");
+                  cijfer.innerHTML = slider.value;   
+                  
+                  slider.oninput = function() {
+                    if (slider.value <= 6) {
+                    slider.classList.add('orange');slider.classList.remove('red');
+                    cijfer.classList.add('output-orange');cijfer.classList.remove('output-red');
+                  } if (slider.value <= 3) {
+                    slider.classList.add('red');slider.classList.remove('orange');
+                    cijfer.classList.add('output-red');cijfer.classList.remove('output-orange');
+                  } if (slider.value >= 7) {
+                    slider.classList.remove('red');slider.classList.remove('orange');
+                    cijfer.classList.remove('output-red');cijfer.classList.remove('output-orange');
+                  }
+                  cijfer.innerHTML = this.value;
+                  }
+                  
+                  $('input[type="range"]').on('input', function() {
+                  
+                  var control = $(this),
+                    controlMin = control.attr('min'),
+                    controlMax = control.attr('max'),
+                    controlVal = control.val(),
+                    controlThumbWidth = control.data('thumbwidth');
+                  
+                  var range = controlMax - controlMin;
+                  
+                  var position = ((controlVal - controlMin) / range) * 100;
+                  var positionOffset = Math.round(controlThumbWidth * position / 100) - (controlThumbWidth / 2);
+                  var output = control.next('output');
+                  
+                  output
+                    .css('left', 'calc(' + position + '% - ' + positionOffset + 'px)')
+                    .text(controlVal);
+                  });
+                  
+                [/literal]
+                </script>
+
+                <!-- Feedback pagina wordt niet ondersteund in Internet Explorer popup --> 
+                <script>
+                [literal]
+                  var internetexplorer = document.getElementById("popup-feedback");  
+                  
+                  function isIE() {
+                  ua = navigator.userAgent;
+                    
+                  var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+                  
+                  return is_ie; 
+                  }
+                  
+                  if (isIE()){
+                    internetexplorer.style.display = "block";
+                  }else{
+                    internetexplorer.style.display = "none";
+                  }
+                [/literal]
+                </script>
+                {/if}
+
+                <script  type="text/javascript">
+                  $("#select-test").select2({
+                     minimumResultsForSearch: -1
+                  });
+                </script>
+
+                <script type="text/javascript">
+                  function zoekenWebsite() {
+                    var datum_waarde = document.getElementById('search-datum').value;
+                    var datum_waarde_formatted = datum_waarde.split('-').reverse().join('-');
+                    var zoekterm = "q=" + document.getElementById('search-bestemming').value + "&text=" + document.getElementById('search-bestemming').value;
+                    if (document.getElementById('search-datum').value !== '') {
+                      var datum = "&arrivalDate=" + datum_waarde_formatted;
+                    } else {
+                      var datum = "&arrivalDate=na"
+                    }
+                    if (document.getElementById('select-test').value !== 'Aantal dagen') {
+                      var aantal_dagen = "&totalDays=" + document.getElementById('select-test').value;
+                    } else {
+                      var aantal_dagen = "&totalDays=na"; 
+                    }
+                   window.location = `https://www.voordeeluitjes.nl/ZoekHotels?${zoekterm + datum + aantal_dagen}`;
+                  }
+                </script> 
+
+                <script  type="text/javascript">
+                  var search_box =  document.querySelector('#search-box-top');
+                  var search_box_bg =  document.querySelector('#search-box-top-bg');
+                  var search_box_close =  document.querySelector('#search-box-top-close');
+                  
+                  document.querySelectorAll('#close-search-box').forEach(function (el) {
+                    el.addEventListener('click', function() {
+                      search_box.classList.remove('active');
+                      search_box_bg.classList.remove('active');
+                    });
+                  });
+                  
+                  document.querySelectorAll('#open-search-box').forEach(function (el) {
+                    el.addEventListener('click', function() {
+                      search_box.classList.add('active');
+                      search_box_bg.classList.add('active');
+                    });
+                  });
+                  
+                  document.querySelectorAll('#search-box-top-close').forEach(function (el) {
+                    el.addEventListener('click', function() {
+                      search_box.classList.remove('active');
+                      search_box_bg.classList.remove('active');
+                    });
+                  }); 
+                </script>
+
+                {if $smarty.server.REQUEST_URI|strstr:'/uitschrijven'}
+                <script type="text/javascript">
+                [literal]  
+                  var nextpage = document.getElementById("next-page");
+                  var uitgeschreven = document.getElementById("uitschrijven");
+                  var variabelepauze = document.getElementById("pauzedate");
+                  var oldvalue = document.getElementById("frequentie").value;
+                  var newvalue = "";
+                  var tijdelijkepauze = "Tijdelijke pauze";
+                  var wijziging = "Wijziging";
+                  
+                  var uitschrijfradios = document.querySelectorAll('input[type=radio]');
+                  
+                  uitschrijfradios.forEach(function(radio) {
+                    radio.addEventListener('change', function(e) {
+                      if (e.target.value === "Uitgeschreven") {
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=uitschrijving&oldvalue=${oldvalue}`;
+                      } else if (e.target.value === "3 maanden" || e.target.value === "6 maanden") {
+                        var newvalue = e.target.value;      
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
+                      } else if (e.target.value === "Dagelijks" || e.target.value === "Wekelijks" || e.target.value === "Maandelijks") {
+                        var newvalue = e.target.value;   
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${wijziging}&oldvalue=${oldvalue}&newvalue=${newvalue}`;
+                      }
+                    })
+                  });
+                  
+                  variabelepauze.addEventListener('change', function(pauze) {
+                    if (pauze.target.value !== "") {
+                      var newvalue = pauze.target.value;   
+                      nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
+                    }
+                  });
+                [/literal]
+                </script>
+                {/if}
+
+                {if $smarty.server.REQUEST_URI|strstr:'/mailvoorkeuren'}
+                <script type="text/javascript">
+                [literal]  
+                  var nextpage = document.getElementById("next-page");
+                  var uitgeschreven = document.getElementById("uitschrijven");
+                  var oldvalue = document.getElementById("frequentie").value;
+                  var newvalue = "";
+                  var tijdelijkepauze = "Tijdelijke pauze";
+                  var wijziging = "Wijziging";
+                  
+                  var uitschrijfradios = document.querySelectorAll('input[type=radio]');
+                  
+                  uitschrijfradios.forEach(function(radio) {
+                    radio.addEventListener('change', function(e) {
+                      if (e.target.value === "Uitgeschreven") {
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=uitschrijving&oldvalue=${oldvalue}`;
+                      } else if (e.target.value === "2 weken" || e.target.value === "1 maand" || e.target.value === "6 maanden") {
+                        var newvalue = e.target.value;      
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
+                      } else if (e.target.value === "Dagelijks" || e.target.value === "Wekelijks" || e.target.value === "Maandelijks") {
+                        var newvalue = e.target.value;   
+                        nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=wijziging-pauze&gebeurtenis=${wijziging}&oldvalue=${oldvalue}&newvalue=${newvalue}`;
+                      }
+                    })
+                  });
+                  
+                [/literal]
+                </script>
+                {/if}
+
+                <!-- Bootstrap tooltip script --> 
+                <script>[literal]
+                  $(function () {
+                    $('[data-toggle="tooltip"]').tooltip()})
+                  [/literal]
+                </script>
+  </body>
+</html>

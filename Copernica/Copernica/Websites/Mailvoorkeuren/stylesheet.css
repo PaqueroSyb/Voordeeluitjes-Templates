@@ -753,6 +753,13 @@ html, body {
   background-color: #FFFFFF;
  }
  
+ .logos-title {
+  font-weight: 700;
+  color: #EC008C;
+  font-size: 13px;
+  padding-bottom: 20px;
+ }
+
  .logos-list {
   list-style-type: none !important;
   margin-bottom: 0px;
@@ -870,6 +877,14 @@ html, body {
   height: 44px;
  }
  
+ .rating-container {
+  padding: 10px 20px 0px 20px;
+ }
+
+ .rating-border {
+  border-top: 1px solid #ccc;
+ }
+
  .rating-title {
   color: #EC008C;
   font-size: 20px;
@@ -1933,6 +1948,10 @@ html, body {
  
   .gegevens-opgeslagen.hide-mobile {
    display: none!important;
+  }
+  .rating-container {
+    padding: 20px;
+    text-align: center;
   }
  }
  
