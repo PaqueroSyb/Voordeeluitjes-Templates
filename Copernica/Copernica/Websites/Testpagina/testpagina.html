@@ -428,7 +428,7 @@
                   var popup =  document.querySelector('#popup-pauze');
                   var tijdelijkpauzerenperiode = document.getElementById('tijdelijke_periode');
 
-                  document.querySelectorAll('#close-popup').forEach(function (el) {
+                  document.querySelectorAll('#close-popup').forEach(function(el) {
                     el.addEventListener('click', function() {
                       popup.style.display = 'none';
                     });
@@ -451,7 +451,7 @@
                   function redirect() {
                     redirectTimeout = setTimeout("window.location = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?${profile_id + profile_code}`;",6000);
                    
-                    document.querySelectorAll('#close-popup').forEach(function (el) {
+                    document.querySelectorAll('#close-popup').forEach(function(el) {
                       el.addEventListener('click', function() {
                         clearTimeout(redirectTimeout);
                       });
@@ -557,21 +557,21 @@
                   var search_box_bg =  document.querySelector('#search-box-top-bg');
                   var search_box_close =  document.querySelector('#search-box-top-close');
                   
-                  document.querySelectorAll('#close-search-box').forEach(function (el) {
+                  document.querySelectorAll('#close-search-box').forEach(function(el) {
                     el.addEventListener('click', function() {
                       search_box.classList.remove('active');
                       search_box_bg.classList.remove('active');
                     });
                   });
                   
-                  document.querySelectorAll('#open-search-box').forEach(function (el) {
+                  document.querySelectorAll('#open-search-box').forEach(function(el) {
                     el.addEventListener('click', function() {
                       search_box.classList.add('active');
                       search_box_bg.classList.add('active');
                     });
                   });
                   
-                  document.querySelectorAll('#search-box-top-close').forEach(function (el) {
+                  document.querySelectorAll('#search-box-top-close').forEach(function(el) {
                     el.addEventListener('click', function() {
                       search_box.classList.remove('active');
                       search_box_bg.classList.remove('active');
