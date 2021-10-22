@@ -1,0 +1,860 @@
+html,
+body {
+  background-color: #fff;
+  color: #000;
+  background: white;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  overflow-x: hidden;
+}
+
+body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.ht {
+  color: #ec008c!important;
+}
+
+.vp {
+  color: #f58220!important;
+}
+
+.bg-image {
+    background-image: url(voordeeluitjes/winactie2_vakantiepark_fullwidth4.jpg)!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+}
+
+hr {
+  margin-bottom: 0px;
+}
+
+
+/* Import fonts */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+/* Text styles*/
+
+p {
+  color: #000;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+h1 {
+  font-size: 2.6rem;
+  color: #ec008c;
+  line-height: 1.1;
+  font-weight: 500;
+  font-family: "Roboto Slab", "Helvetica", "Arial", sans-serif !important;
+}
+
+.title {
+  font-size: 46px;
+  color: #252525;
+}
+
+.subtitle {
+  color: #252525;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .bg-image {
+    background-image: url(voordeeluitjes/winactie2_vakantiepark_mobile2.jpg)!important;
+  }
+}
+
+h2 {
+  color: #868686;
+  font-size: 16px;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: 400;
+}
+
+h3 {
+  color: #555656;
+  font-size: 15px;
+  line-height: 1.6;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: 400;
+}
+
+h4 {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: 700;
+  padding-top: 30px;
+}
+
+.absolute-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+}
+
+.full-height {
+  height: 100%;
+  margin: 0px;
+}
+
+.active {
+  display: block!important;
+}
+
+.body-container {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.content-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px 20px 0px 20px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.title-container {
+  padding: 20px 0px 10px 0px;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.stick-top {
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.action-hotel {
+  border-right: 1px solid #c5c5c5;
+}
+
+.action-hotel,
+.action-vp {
+  padding: 30px 0px;
+}
+
+#page-1, #page-2, #page-3 {
+  display: none;
+}
+
+.bgimage-vp {
+  background-image: url(voordeeluitjes/leadwerving_actie_vakantiepark_small-min2.jpg);
+  height: 100%;
+  right: 0px;
+  background-position: 70% 72%;
+}
+
+.bgimage-winactie2-hotel {
+    background-image: url(voordeeluitjes/winactie2_hotel_small.jpg);
+    height: 100%;
+    background-position: center left;
+  }
+
+.bgimage-winactie2-vp {
+    background-image: url(voordeeluitjes/winactie2_vakantiepark_small.jpg);
+    height: 100%;
+    right: 0px;
+    background-position: 70% 72%;
+  }
+.bgimage-hotel.fullwidth {
+  background-image: url(voordeeluitjes/leadwerving_actie_hotel_fullwidth_small2.jpg)!important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+.bgimage-vp.fullwidth {
+  background-image: url(voordeeluitjes/leadwerving_actie_vakantiepark_fullwidth_small2.jpg)!important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+.bgimage-winactie2-hotel.fullwidth {
+    background-image: url(voordeeluitjes/winactie2_hotel_fullwidth.jpg)!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+  }
+  .bgimage-winactie2-vp.fullwidth {
+    background-image: url(voordeeluitjes/winactie2_vakantiepark_fullwidth.jpg)!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+  }
+.action-type {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.action-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.action-subtitle {
+  font-size: 16px;
+}
+
+.form-container:hover+div {
+  margin-top: 17px!important;
+}
+
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo-container {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0px;
+}
+
+.logo-wvhj {
+  position: absolute;
+  right: 40px;
+  top: -40px;
+  width: 100px;
+}
+
+.logo-title {
+  margin: 0px;
+  padding: 0px;
+  color: #707070;
+}
+
+.form-container-page2 {
+  padding: 20px 30px;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+@media (min-width: 768px) {
+  .body-container {
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .body-container.page-2 {
+    margin-bottom: 30px;
+  }
+  .active.flex {
+    display: -webkit-flex!important;
+    display: flex!important;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo-container {
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 10px 0px;
+    position: relative!important;
+  }
+  body {
+    height: auto!important;
+  }
+  .body-container {
+    margin-bottom: 30px;
+  }
+  .sticky-footer-content.height-thanks {
+    height: 75vh;
+  }
+  .logo-wvhj {
+    position: relative;
+ top: 0;
+ right: 0;
+ margin: 0 auto;
+ margin-top: 10px;
+ margin-bottom: 25px;
+ width: auto;
+ text-align: center;
+  }
+}
+
+.center-block {
+  margin: 0 auto;
+}
+
+.form-title,
+.form-subtitle {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 60%;
+}
+
+.form-subtitle {
+  font-weight: 700;
+}
+
+.form-fields {
+  width: 100%;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0px 40px;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .bgimage-vp {
+    background-position: bottom center;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo-vu {
+    width: 260px;
+ margin-top: 5px;
+  }
+  .form-container {
+    margin: 0px 30px;
+  }
+  .form-fields {
+    padding: 0px 20px;
+  }
+  .content-container {
+    margin-top: 20px;
+  }
+  .title-container {
+    padding: 10px 0px;
+  }
+  .action-hotel {
+    padding-top: 0px!important;
+    border-bottom: 1px solid #c5c5c5;
+    border-right: none;
+  }
+  .action-hotel,
+  .action-vp {
+    padding: 20px 0px;
+    margin: 0px;
+  }
+  .action-hotel {
+    padding-bottom: 25px;
+  }
+  .action-type {
+    padding-bottom: 10px;
+  }
+  .action-title {
+    font-size: 18px;
+  }
+  .action-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .bgimage-hotel {
+    background-image: url(voordeeluitjes/leadwerving_actie_hotel_fullwidth_small2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+  }
+  .bgimage-hotel.fullwidth {
+     background-image: url(voordeeluitjes/leadwerving_actie_hotel_fullwidth_small2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+  }
+  .bgimage-winactie2-hotel {
+    background-image: url(voordeeluitjes/winactie2_hotel_fullwidth.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+  }
+  .bgimage-winactie2-hotel.fullwidth {
+    background-image: url(voordeeluitjes/winactie2_hotel_fullwidth.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+  }
+  .form-container-page2 {
+    padding: 0px 10px 40px 0px;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 685px) {
+  .form-title,
+  .form-subtitle {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-container {
+    margin: 0px 15px;
+  }
+}
+
+.sticky-footer-content {
+  -webkit-flex: 1 0 auto;
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.sticky-footer {
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  position: relative;
+  background-color: #fff;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.col-form-label {
+  padding-top: 5px !important;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .col-form-label {
+    padding-top: 15px!important;
+  }
+  .form-group {
+    margin-bottom: 0px!important;
+  }
+  h4 {
+    margin-bottom: 5px;
+  }
+}
+
+.col-form-label.textarea {
+  padding-top: 6px !important;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .col-form-label.textarea {
+    padding-top: 8px !important;
+  }
+}
+
+.form-control {
+  font-size: 14px !important;
+  height: 40px;
+  border: 1px solid #707070;
+}
+
+select.form-control {
+  width: auto!important;
+  height: 40px!important;
+}
+
+.form-control:focus {
+  border: 1px solid #00aeef;
+  outline: none !important;
+  box-shadow: none!important;
+  -webkit-transition: all 0.15s ease-in-out 0s;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+.form-control[readonly],
+.form-control[readonly]:focus {
+  border: none;
+}
+
+.form-control.textarea {
+  font-size: 14px !important;
+  height: 100px;
+  border: 1px solid #707070;
+}
+
+.form-control.textarea:focus {
+  border: 1px solid #00aeef;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-transition: all 0.15s ease-in-out 0s;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+li:last-child label {
+  margin-bottom: 0 !important;
+}
+
+.checkbox-horizontal li {
+  display: inline-block;
+  padding-left: 0 !important;
+  width: 150px;
+}
+
+.radio-horizontal li {
+  display: inline-block;
+  padding-left: 0 !important;
+  width: 130px;
+}
+
+.radio-horizontal-small li {
+  display: inline-block;
+  padding-left: 0 !important;
+  width: 60px;
+}
+
+.radio-horizontal.radio-numbers li {
+  display: inline-block;
+  padding-left: 0 !important;
+  padding-right: 25px;
+  width: auto;
+}
+
+input[type=submit],
+.btn {
+  position: relative;
+  background: #95c121 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  padding: 9px 23px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .26);
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+input[type="submit"]:hover,
+.btn:hover {
+  background-color: #7ca400;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, .26);
+}
+
+input[type="submit"]:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, .26);
+  background-color: #7ca400;
+}
+
+button {
+  position: relative;
+  background-color: #a6ce39;
+  /* Green */
+  border: none;
+  color: white;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  padding: 13px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button {
+  position: relative;
+  background-color: #a6ce39;
+  /* Green */
+  border: none;
+  color: white;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  padding: 13px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #FFFFFF!important;
+}
+
+
+/* Checkbox styling */
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked)+label,
+[type="checkbox"]:checked+label {
+  position: relative;
+  padding-left: 2.2em;
+  cursor: pointer;
+}
+
+[type="checkbox"]:not(:checked)+label:before,
+[type="checkbox"]:checked+label:before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #fff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 1px;
+  top: 5px;
+  left: 2px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type="checkbox"]:not(:checked)+label:after,
+[type="checkbox"]:checked+label:after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  background: #707070 0% 0% no-repeat padding-box;
+  border-radius: 1px;
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  transition: all .2s;
+}
+
+[type="checkbox"]:not(:checked)+label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked+label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.checkbox-check {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  z-index: 10;
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  height: 10px;
+  width: 6px;
+}
+
+
+/* Radiobutton styling */
+
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="radio"]:not(:checked)+label,
+[type="radio"]:checked+label {
+  position: relative;
+  padding-left: 2.2em;
+  cursor: pointer;
+}
+
+[type="radio"]:not(:checked)+label:before,
+[type="radio"]:checked+label:before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #707070;
+  border-radius: 100%;
+  background: white;
+  top: 2px;
+  left: 0px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked)+label:after,
+[type="radio"]:checked+label:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #707070;
+  border-radius: 100%;
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  transition: all .2s;
+}
+
+[type="radio"]:not(:checked)+label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+
+/* Verwijdert rode omlijning in firefox wanneer een veld verplicht is */
+
+input:required {
+  box-shadow: none;
+}
+
+@media (max-width:768px) {
+  input[type="text"]:not(:placeholder-shown):valid~.input-valid,
+  input[type="email"]:not(:placeholder-shown):valid~.input-valid,
+  textarea:not(:placeholder-shown):valid~.input-valid {
+    top: 53px!important;
+  }
+  .submitted-form-invalid input:invalid~.input-valid,
+  .submitted-form-invalid textarea:invalid~.input-valid {
+    top: 53px!important;
+  }
+  .gegevens-opgeslagen {
+    padding-top: 30px;
+    padding-left: 0px!important;
+    width: 100%;
+  }
+  .gegevens-opgeslagen.hide-mobile {
+    display: none!important;
+  }
+  .col-form-label.textarea {
+    padding-top: 17px !important;
+  }
+}
+
+.submitted-form-invalid input:invalid,
+.submitted-form-invalid textarea:invalid {
+  border: 1px solid red;
+  background-color: #ff555526;
+}
+
+.submitted-form-invalid input:invalid+label:before {
+  border: 1px solid red;
+  background-color: #ff555526;
+}
+
+.submitted-form-invalid input:invalid+label .checkbox-check {
+  display: none;
+}
+
+input[type="text"]:not(:placeholder-shown):valid,
+input[type="email"]:not(:placeholder-shown):valid,
+textarea:not(:placeholder-shown):valid {
+  border-bottom: 1px solid #95c121;
+}
+
+.error-message {
+  padding-top: 0px;
+  color: #ff5555;
+  font-size: 12px;
+  display: none;
+}
+
+.submitted-form-invalid input:invalid~.error-message,
+.submitted-form-invalid textarea:invalid~.error-message {
+  display: block;
+}
+
+.submitted-form-invalid input[type="checkbox"]:not(:checked)~.error-message {
+  display: block;
+}
+
+input[type="text"]:not(:placeholder-shown):valid~.input-valid,
+input[type="email"]:not(:placeholder-shown):valid~.input-valid,
+textarea:not(:placeholder-shown):valid~.input-valid {
+  position: absolute;
+  top: 44px;
+  right: 28px;
+  z-index: 10;
+  -webkit-transform: rotate(42deg);
+  transform: rotate(42deg);
+  border-bottom: 3px solid #95c121;
+  border-right: 3px solid #95c121;
+  height: 14px;
+  width: 8px;
+}
+
+.submitted-form-invalid input:invalid~.input-valid,
+.submitted-form-invalid textarea:invalid~.input-valid {
+  position: absolute;
+  top: 44px;
+  right: 28px;
+  z-index: 10;
+  background-image: url(voordeeluitjes/error-message-icon.png);
+  width: 4px;
+  height: 16px;
+  background-size: 4px 16px;
+}
+
+#page-1 {
+  padding-bottom: 10px;
+}
+
+.voorwaarden {
+  margin-top: -35px;
+  padding-bottom: 20px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.padding-bottom-20 {
+  padding-bottom: 20px;
+}

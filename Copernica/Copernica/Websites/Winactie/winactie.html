@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+<head>
+
+<!-- Google Analytics -->
+<script>[literal]
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-159061594-1', 'auto');
+ga('send', 'pageview');
+[/literal]
+</script>
+<!-- End Google Analytics -->
+
+<!-- Meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="author" content="Voordeeluitjes.nl">  
+<meta name="robots" content="noindex,nofollow"/>
+
+<!-- Title -->
+<title>Voordeeluitjes.nl winactie</title>
+<link rel="icon" href="https://www.voordeeluitjes.nl/favicon.ico">
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> 
+
+<!-- Optional JavaScript --> 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+
+<!-- Preload images -->
+<link rel="preload" as="image" href="https://vicinity.picsrv.net/image/7032/0/123422/d1cad3bc942e280b9ff703f4b54ff863/leadwerving_actie_hotel_small-min.jpg">
+<link rel="preload" as="image" href="https://vicinity.picsrv.net/image/7032/0/141506/e2f83e8c45fcf90db937957263543da7/leadwerving_actie_vakantiepark_small-min2.jpg">
+<link rel="prefetch" href="https://vicinity.picsrv.net/image/7032/0/141507/43e2115be62e6e84fd0494279574f259/leadwerving_actie_vakantiepark_fullwidth_small2.jpg">
+<link rel="prefetch" href="https://vicinity.picsrv.net/image/7032/0/123400/6ab2c4032f3510ff52f45e10e73c810d/leadwerving_actie_hotel_fullwidth_small2.jpg">
+
+<link rel="preload" as="image" href="https://vicinity.picsrv.net/image/7032/0/123422/d1cad3bc942e280b9ff703f4b54ff863/leadwerving_actie_hotel_small-min.jpg">
+<link rel="preload" as="image" href="https://vicinity.picsrv.net/image/7032/0/152923/3b0c0d5e70273b46ab1ee77b331484ad/winactie2_vakantiepark_small.jpg">
+<link rel="prefetch" href="https://vicinity.picsrv.net/image/7032/0/141507/43e2115be62e6e84fd0494279574f259/leadwerving_actie_vakantiepark_fullwidth_small2.jpg">
+<link rel="prefetch" href="https://vicinity.picsrv.net/image/7032/0/152925/13536ef63713d68aa9a9d0aea5aaca2d/winactie2_vakantiepark_fullwidth.jpg">
+
+<script type="text/javascript">
+[literal]
+// Polyfill voor het checken of een element een specifieke class bevat met behulp van .matches
+if (!Element.prototype.matches) {
+   Element.prototype.matches =
+    Element.prototype.matchesSelector ||
+    Element.prototype.mozMatchesSelector ||
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.oMatchesSelector ||
+    Element.prototype.webkitMatchesSelector ||
+    function (s) {
+     var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+      i = matches.length;
+     while (--i >= 0 && matches.item(i) !== this) {}
+     return i > -1;
+    };
+   }
+ }
+[/literal]
+</script>
+
+<script type="text/javascript">
+[literal]
+window.onload = function () {
+    var subtitle = document.querySelector(".subtitle");
+    var page1 = document.getElementById("page-1");
+    var mediaQueryMobile = window.matchMedia('(max-width: 768px)');
+
+    (function generateID() {
+      var length = 8,
+      charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+      retVal = "";
+      for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+      }
+      document.querySelector('[name="dbfield574"]').value = retVal;
+      uniqueID = retVal;
+    })();
+
+    var encryptEmail = document.querySelector('[name=dbfield8]');
+    encryptEmail.addEventListener('input', function () {
+      sha256(this.value);
+      emailAdress = this.value;
+    });
+ 
+    async function sha256(message) {
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      document.querySelector('[name="dbfield180"]').value = hashHex;
+    }
+
+    document.querySelector("form").addEventListener("invalid", function (event) {
+      event.preventDefault();
+    }, true);
+
+    document.querySelector(".submitForm").addEventListener("click", function () {
+      var emailValid = document.querySelector('[name=dbfield8]').value;
+      var nameValid = document.querySelector('[name=dbfield90]').value;
+      var conditionsAgreed = document.querySelector('input[type=checkbox]'); 
+      if (emailValid !== "" && nameValid !== "" && conditionsAgreed.checked === true) {
+        loadPixel();
+        document.forms[0].submit();
+        submitChoice();
+        ga('send', 'event', 'Winactie', 'Bevestiging', 'Ingeschreven');
+      } else {
+        document.forms[0].setAttribute("class", "submitted-form-invalid");
+      }
+    });
+
+    function submitChoice() {
+      page1.setAttribute("class", "");
+      document.getElementById("logo").setAttribute("class", "logo-container page-2");
+      document.querySelector("h1").innerText = "Hoera, u maakt nu kans!";
+      subtitle.innerHTML = "Uw deelname was succesvol en u maakt nu automatisch kans op het <b style='color:#f58220;'>GRATIS arrangement</b>! De winnaar wordt uiterlijk 21 november bekendgemaakt.<br><br>Daarnaast bent u met e-mailadres <b>" + emailAdress + "</b> aangemeld voor de Voordeeluitjes.nl-nieuwsbrief. U zult vanaf nu onze nieuwsbrief vol scherpe aanbiedingen en inspirerende tips ontvangen!";
+      var documentHeight = document.querySelector('.sticky-footer-content');
+      documentHeight.setAttribute("class", "sticky-footer-content height-thanks");
+    }
+ 
+    function loadPixel() {
+      var tScript = document.createElement('script');
+      var executeScript = document.createElement('script');
+      tScript.type = 'text/javascript';
+      executeScript.type = 'text/javascript';
+      var scripts = document.getElementsByTagName('script')[0];
+      var tScriptInput = `
+        var ttConversionOptions = ttConversionOptions || [];
+        ttConversionOptions.push({
+        type: 'lead',
+        campaignID: '34295',
+        productID: '54441',
+        transactionID: '${uniqueID}',
+        descrMerchant: '',
+        descrAffiliate: ''
+        });
+       `
+      var executeScriptInput = `
+        (function(ttConversionOptions) {
+        var campaignID = 'campaignID' in ttConversionOptions ? ttConversionOptions.campaignID : ('length' in ttConversionOptions && ttConversionOptions.length ? ttConversionOptions[0].campaignID : null);
+        var tt = document.createElement('script'); tt.type = 'text/javascript'; tt.async = true; tt.src = '//tm.tradetracker.net/conversion?s=' + encodeURIComponent(campaignID) + '&t=m';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tt, s);
+        })(ttConversionOptions);
+      `
+      tScript.text = tScriptInput;
+      executeScript.text = executeScriptInput;
+      scripts.parentNode.insertBefore(tScript, scripts);
+      scripts.parentNode.insertBefore(executeScript, scripts);
+    } 
+[/literal]
+</script>
+</head>
+
+<body class="bg-image">
+  <div class="sticky-footer-content">
+    <div class="body-container">
+      <div class="content-container">
+        <div class="title-container">
+          <h1 class="title">WIN een verblijf t.w.v. € 299,-</h1>
+          <p class="subtitle"><b style="color: #f58220">GRATIS 5-daags arrangement</b> voor 4 personen bij Vakantiepark Westerbergen!</p>
+        </div>
+        <div id="page-1" class="active flex">
+          <div class="col-xs-12">
+            <div class="form-container">
+              [text name='subscribe-form']
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="sticky-footer">
+    <div id="logo" class="logo-container">
+      <p class="logo-title">Dit is een actie van</p>
+      <a href="https://www.voordeeluitjes.nl/" target="_blank" rev="template_link_887">
+      <img src="https://www.voordeeluitjes.nl/CR/ng/images/partners/voordeeluitjes/core/logo.svg" alt="VU.nl Logo" width="200" height="auto" class="logo-vu"/>
+      </a>
+    </div>
+  <div class="logo-wvhj">
+   <img src="https://www.voordeeluitjes.nl/CR/ng/images/WMT.svg" width="95" height="auto" alt="Logo website van het jaar"/>
+  </div>
+ </footer>
+</body>
+</html>
