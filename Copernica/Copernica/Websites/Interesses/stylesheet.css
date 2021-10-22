@@ -1,0 +1,2280 @@
+html, body {
+  background-color: #FFFFFF;
+  color: #000000;
+  background: white;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: Calibri, "Helvetica", "Arial", sans-serif !important;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  margin-bottom: 0px;
+}
+
+/* Text styles*/
+p {
+  color: #000000;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   margin-bottom: 0px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #ec008c;
+  line-height: 1.1;
+  font-weight: 500;
+  font-family: "Roboto Slab", "Helvetica", "Arial", sans-serif !important;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+h2 {
+  color: #868686;
+  font-size: 18px;
+  font-family: Calibri, "Helvetica", "Arial", sans-serif !important;
+  font-weight: 400;
+  margin-top: 0.5rem!important
+}
+
+.h2-none {
+ margin-bottom: -40px!important; 
+}
+
+h3 {
+ color: #252525;
+ font-size: 18px;
+ line-height: 24px;
+ font-family: Calibri, "Helvetica", "Arial", sans-serif !important;
+ font-weight: 700;
+ letter-spacing: 0px;
+ padding: 20px 0px 10px 0px;
+}
+
+h4 {
+ color: #252525;
+ font-size: 16px;
+ line-height: 19px;
+ font-family: Calibri, "Helvetica", "Arial", sans-serif !important;
+ font-weight: 700;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+/* Header and navbar */
+.tooltip-inner {
+  max-width: 300px;
+  background-color: #FFFFFF;
+  border-radius: 0px;
+  color: #707070;
+  padding: 9px 14px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+.tooltip {
+  box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+  z-index: 21;
+}
+
+.bs-tooltip-auto[x-placement^=bottom], .bs-tooltip-bottom {
+  padding: 0 !important;
+  margin-top: 0.4rem;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow, .bs-tooltip-bottom .arrow {
+  top: -6px;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .bs-tooltip-bottom .arrow::before {
+  border-bottom-color: #FFFFFF;
+}
+
+.navbar-top {
+  background-color: #F9F9F9 !important;
+  border-bottom: 1px solid #C5C5C5 !important;
+  width: 100% !important;
+}
+
+.navbar-top ul li {
+  list-style-type: none !important;
+  width: auto;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.list-container.mobile {
+  justify-content: center;
+}
+
+.list-item {
+  font-size: 14px;
+  color: #707070;
+}
+
+.list-item img {
+  width: 19px;
+  height: 19px;
+  margin-right: 10px;
+}
+
+@media (max-width: 991px) {
+  .list-item img {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .list-item img {
+    width: 19px;
+    height: 19px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .color-hotel-img span{
+   font-size: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .list-item {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .list-item {
+    font-size: 12px;
+  }
+}
+
+.logo-container {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 991px) {
+  .logo-mobile {
+    display: inline-block !important;
+    max-width: 200px;
+  }
+  .logo-desktop {
+    display: none !important;
+  }
+  .desktop-menu {
+ display: none;
+  }
+}
+
+.header-menu {
+  margin-top: 22px;
+  width: auto !important;
+  color: #868686;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .header-mobile-none {
+    display: none;
+  }
+}
+
+#search-box-top, #search-box-top-bg {
+  display: none;
+}
+
+.desktop-menu-bg {
+  display: none;
+}
+
+.active {
+  display: block!important;
+}
+
+.search-menu {
+ margin-top: 13px;
+ width: 100%;
+ position: relative;
+}
+
+.search-bar-menu {
+ height: 41px;
+ border-radius: .25rem;
+ border: 1px solid #707070;
+ padding: 0px 18px;
+ width: 100%;
+ cursor: pointer;
+ position: absolute;
+}
+
+.search-bar-icon {
+ position: absolute;
+ width: 18px;
+ height: 18px;
+ right: 18px;
+ top: 12px;
+ cursor: pointer;
+}
+
+.search-bar-menu:disabled {
+    background-color: #f2f2f2;
+}
+
+.search-bar-box {
+ background-color: #ffffff;
+ position: absolute;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ height: 170px;
+ z-index: 25;
+ transform .3s ease-out;
+}
+
+.search-bar-box-title {
+ padding-top: 40px;
+ font-weight: 700;
+ font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+}
+
+.search-bar-box-text-menu:not(:placeholder-shown) {
+  color: #000000;
+}
+
+.search-bar-box-date-menu:not(:placeholder-shown) {
+  color: #000000;
+}
+
+.select-custom-style:not(:placeholder-shown) {
+  color: #000000;
+}
+
+.search-bar-box-text-menu {
+ height: 50px;
+ border-radius: .25rem;
+ border: 1px solid #707070;
+ padding: 0px 18px;
+ width: 612px;
+ position: absolute;
+ cursor: initial;
+ color: #495057;
+ background-image: url(https://pic.vicinity.nl/image/7032/0/101515/0b88427e11e87c8a3835c7b72aea214c/search-icon-wit.jpg);
+    background-repeat: no-repeat;
+    background-position: 580px 16px;
+ background-size: 18px 18px;
+}
+
+.search-bar-box-date-menu {
+ height: 50px;
+ border-radius: .25rem;
+ border: 1px solid #707070;
+ padding: 0px 18px;
+    width: 164px;
+ position: relative;
+ cursor: pointer;
+ color: #495057;
+ background-color: #FFFFFF;
+ background-image: url(https://pic.vicinity.nl/image/7032/0/102379/492ae89e4c4c644cc0cfe47296c556b5/calender.jpg);
+    background-repeat: no-repeat;
+    background-position: 134px 16px;
+ background-size: 18px 18px;
+}
+
+.search-bar-box-button {
+  position: relative;
+  background-color: #a2cf44;
+  border: none;
+  color: white;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  padding: 0px 20px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0px!important;
+  box-shadow:0 3px 6px rgba(0,0,0,.16);
+  border-radius: 4px;
+  width: 100%;
+  background-image: url(https://pic.vicinity.nl/image/7032/0/103566/c6a9e1b350e987e8ec7e0b5669e25d6d/arrow-right-green.jpg);
+  background-repeat: no-repeat;
+  background-position: 138px 17px;
+
+}
+
+.search-bar-box-button:before {
+ background-image: url(https://pic.vicinity.nl/image/7032/0/103566/c6a9e1b350e987e8ec7e0b5669e25d6d/arrow-right-green.jpg);
+ background-size: 13px 13px;
+ top: 8px;
+ right: 10px;
+ position: absolute;
+}
+
+.search-bar-box-close {
+  position: absolute;
+  right: 28px;
+  top: 5px;
+  font-size: 36px;
+  font-weight: 900;
+  color: #707070;
+  cursor: pointer;
+}
+
+input[type="date"].search-bar-box-date-menu:before {
+  color: transparent;
+  background-image: url(https://pic.vicinity.nl/image/7032/0/102379/492ae89e4c4c644cc0cfe47296c556b5/calender.jpg);
+  display: block;
+  font-family: 'FontAwesome';
+  content: '';
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: #495057;
+  cursor: pointer;
+}
+
+.search-bar-box-text-menu:focus, .search-bar-box-date-menu:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+select.custom-select:focus {
+ outline: none !important;
+    box-shadow: none !important;
+
+}
+
+.search-bar-box-form {
+ padding-bottom: 40px;
+}
+
+.search-bar-box-text-container {
+ position: relative;
+ width: 612px;
+ margin-right: 12px;
+}
+
+@media (min-width: 991px) and (max-width: 1199px) {
+.search-bar-box-text-menu {
+    width: 412px;
+ background-position: 380px 16px;
+}
+.search-bar-box-text-container {
+ width: 412px;
+ background-position: 380px 16px;
+}
+}
+
+.search-bar-box-date-container {
+ position: relative;
+ width: 164px;
+ margin-right: 12px;
+}
+
+.search-bar-box-icon {
+ position: absolute;
+ width: 18px;
+ height: 18px;
+ right: 12px;
+ top: 16px;
+}
+
+.header-icon {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.header-icon img {
+  max-width: 22px;
+  max-height: 22px;
+}
+
+.header-text {
+  vertical-align: middle;
+  font-size: 18px;
+  color: #707070;
+}
+
+.color-hotel-main {
+  display: block;
+}
+
+.header-text a, a:hover {
+  text-decoration: none !important;
+}
+
+.color-hotel-img:hover .header-text {
+  text-decoration: none !important;
+  color: #EC008C;
+  font-weight: 400;
+}
+
+.color-hotel-img:hover .header-text.vp {
+  text-decoration: none !important;
+  color: #F58220;
+  font-weight: 400;
+}
+
+.color-hotel-img:hover .color-hotel-main {
+  max-height: 0px !important;
+}
+
+.color-hotel-img:hover .color-hotel-kleur {
+  max-height: none !important;
+}
+
+.header-border {
+  border-right: 1px solid #d1d3d4;
+}
+
+.alignleft {
+  text-align: left;
+}
+
+.w-auto {
+  width: auto;
+  flex: none !important;
+}
+
+.carousel-item {
+  -webkit-transition: opacity 1.0s ease-in-out;
+  -moz-transition: opacity 1.0s ease-in-out;
+  -o-transition: opacity 1.0s ease-in-out;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  -webkit-transition: opacity 1.0s ease-in-out;
+  -moz-transition: opacity 1.0s ease-in-out;
+  -o-transition: opacity 1.0s ease-in-out;
+  opacity: 1;
+}
+
+.hide-always {
+  display: none;
+}
+
+@media(max-width: 768px) {
+  .list-container.desktop {
+    display: none;
+  }
+  .footer-desktop {
+    display: none !important;
+  }
+}
+
+@media(min-width: 768px) {
+  .list-container.mobile {
+    display: none;
+  }
+  .footer-mobile {
+    display: none;
+  }
+  [type="checkbox"]:checked + label .checkbox-text {
+   display: none;
+ }
+}
+
+.body-container.padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.body-container.width-750 {
+ max-width: 750px;
+ width: 100%;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .body-container.padding {
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-container {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1199px) {
+  .navbar-container {
+    width: 970px;
+  }
+  .menu-sub-item#menu-topbestemmingen:before {left: 9%!important;}
+  .menu-sub-item#menu-aanbiedingen:before {left: 25%!important;}
+  .menu-sub-item#menu-themas:before {left: 39%!important;}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-container {
+    width: 750px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .navbar-container {
+    max-width: 748px;
+  }
+}
+
+@media (max-width: 479px) {
+  .navbar-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .body-container {
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1199px) {
+  .body-container {
+    width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .body-container {
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .body-container {
+    max-width: 748px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 479px) {
+  .body-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.jumbotron {
+  background-image: url(https://pic.vicinity.nl/image/7032/0/77663/bb7e0066d1af26aac90613af83a384d2/header-voordeeluitjes-desktop-1920x400px.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: 275px;
+  position: relative;
+}
+
+.jumbotron-kader {
+  max-height: 225px;
+  position: absolute;
+  bottom: 50px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.jumbotron-white {
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+@media(max-width: 767px) {
+  .body-container.mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  input[type="date"].calender-black:before {
+    top: 51px!important;
+  }
+}
+
+.jumbotron-absolute {
+  position: absolute;
+  bottom: 90%;
+  left: 65%;
+}
+
+@media (max-width: 479px) {
+  .jumbotron-absolute {
+    left: 50%;
+  }
+}
+
+.btn {
+  background-color: #EC008C;
+  color: #FFFFFF;
+}
+
+@media (min-width: 1200px) {
+  .jumbotron {
+    background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/voordeeluitjes_copernica_header.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    height: 275px;
+  }
+  .jumbotron.userpanel {
+    background-image: url(voordeeluitjes/userpanel_header_copernica_desktop.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    height: 275px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .jumbotron {
+    background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/voordeeluitjes_copernica_header_tablet.jpg));
+    background-size: cover;
+    background-position: bottom center;
+    height: 275px;
+  }
+  .jumbotron.userpanel {
+    background-image: url(voordeeluitjes/userpanel_header_copernica_tablet.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    height: 275px;
+  }
+}
+
+@media (max-width: 767px) {
+  .jumbotron {
+    background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/voordeeluitjes_copernica_header_mobile.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    height: 200px;
+  }
+  .jumbotron.userpanel {
+    background-image: url(voordeeluitjes/userpanel_header_copernica_mobiel.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    height: 250px;
+  }
+}
+
+.footer-bg {
+  background-color: #f1f1f1;
+  border-top: 1px solid #fff;
+  width: 100% !important;
+  padding: 25px;
+}
+
+.footer-title {
+  text-align: center;
+  color: #4c4d4f;
+  font-size: 28px;
+  font-family: "Roboto Slab", "Helvetica", "Arial", sans-serif !important;
+  background-color: #f1f1f1;
+}
+
+.footer-logos {
+  padding: 15px 0px;
+  background-color: #FFFFFF;
+}
+
+.logos-list {
+  list-style-type: none !important;
+  margin-bottom: 0px;
+  margin-left: -50px;
+  margin-right: -10px;
+  margin-top: 10px;
+}
+
+.logo-list {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline;
+  vertical-align: top;
+}
+
+.logo-list span {
+  background-image: url(https://images.www.voordeeluitjes.nl/Images/sprite/vulogoscategoriesknowfrom.1613454052.png);
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.logo-avro {
+  background-position: 0 -28px;
+  width: 73px;
+  height: 44px;
+}
+
+.logo-kro {
+  background-position: -104px -108px;
+  width: 108px;
+  height: 18px;
+}
+
+.logo-max {
+  background-position: -73px -72px;
+  width: 108px;
+  height: 24px;
+}
+
+.logo-mikro {
+  background-position: 0px -132px;
+  width: 44px;
+  height: 44px;
+}
+
+.logo-ncrv {
+  background-position: -44px -132px;
+  width: 44px;
+  height: 44px;
+}
+
+.logo-npo {
+  background-position: 0px 0;
+  width: 216px;
+  height: 28px;
+}
+
+.logo-televizier {
+  background-position: -132px -156px;
+  width: 73px;
+  height: 15px;
+}
+
+.logo-tros {
+  background-position: -73px -28px;
+  width: 71px;
+  height: 44px;
+}
+
+.logo-vara {
+  background-position: -73px -96px;
+  width: 73px;
+  height: 12px;
+}
+
+.logo-vab {
+  background-position: 0px -72px;
+  width: 73px;
+  height: 36px;
+}
+
+.logo-sbs6 {
+  background-position: 0px -176px;
+  width: 38px;
+  height: 44px;
+}
+
+.logo-veronica {
+  background-position: -132px -132px;
+  width: 72px;
+  height: 24px;
+}
+
+.logo-net5 {
+  background-position: -88px -132px;
+  width: 44px;
+  height: 44px;
+}
+
+.logo-libelle {
+  background-position: -38px -176px;
+  width: 50px;
+  height: 25px;
+}
+
+.logo-telegraaf {
+  background-position: 0px -108px;
+  width: 104px;
+  height: 24px;
+}
+
+.logo-ad {
+  background-position: -144px -28px;
+  width: 44px;
+  height: 44px;
+}
+
+.rating-title {
+  color: #EC008C;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: "Roboto Slab", "Helvetica", "Arial", sans-serif !important;
+  margin-bottom: 20px;
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.rating div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.rating img {
+  padding-right: 10px;
+}
+
+.rating-score {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Roboto Slab", "Helvetica", "Arial", sans-serif !important;
+  color: #000000;
+}
+
+.rating-description {
+  margin-bottom: 15px;
+  font-size: 90%;
+}
+
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer-row {
+  padding: 15px;
+  background-color: #4d4d4f;
+  border-top: 1px solid #404042;
+}
+
+.sticky-footer-content {
+  flex: 1 0 auto;
+}
+ 
+.sticky-footer {
+  flex-shrink: 0;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.col-form-label {
+  padding-top: 5px !important;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .col-form-label {
+    padding-top: 15px!important;
+  }
+  .form-group {
+    margin-bottom: 0px!important;
+  }
+   h4 {
+    margin-bottom: 5px;
+  }
+}
+
+.col-form-label.textarea {
+  padding-top: 6px !important;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .col-form-label.textarea {
+     padding-top: 8px !important;
+  }
+}
+
+.form-control {
+  font-size: 14px !important;
+  height: 40px;
+  border: 1px solid #707070;
+  }
+
+select.form-control {
+ width: auto!important;
+ height: 40px!important;
+}
+
+.form-control:focus {
+  border: 1px solid #00AEEF;
+  outline: none !important;
+  box-shadow: none!important;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+
+.form-control[readonly],.form-control[readonly]:focus {
+   border: none;
+}
+
+.form-control.textarea {
+  font-size: 14px !important;
+  height: 100px;
+  border: 1px solid #707070;
+}
+
+.form-control.textarea:focus {
+  border: 1px solid #00AEEF;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+li:last-child label {
+  margin-bottom: 0 !important;
+}
+
+.checkbox-horizontal li {
+  display: inline-block;
+  padding-left: 0 !important;
+  width: 150px;
+}
+
+@media (max-width: 576px) {
+  .checkbox-double-row {
+    margin-bottom: .5em;
+  }
+}
+
+.radio-horizontal li {
+  display: inline-block;
+  padding-left: 0 !important;
+  width: 130px;
+}
+
+.radio-horizontal-small li {
+  display: inline-block;
+  padding-left: 0 !important;
+  width: 60px;
+}
+
+.radio-horizontal.radio-numbers li {
+  display: inline-block;
+  padding-left: 0 !important;
+  padding-right: 25px;
+  width: auto;
+}
+
+input[type=submit] {
+  position: relative;
+  background: #95C121 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  padding: 9px 23px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,.26);
+}
+
+input[type="submit"]:hover {
+ background-color: #7ca400;
+ box-shadow: 1px 3px 3px rgba(0,0,0,.26);
+}
+
+input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 1px 3px 3px rgba(0,0,0,.26);
+  background-color: #7ca400;
+}
+
+
+input[type="submit"].form-tabs-submit {
+  display: inline-block;
+  background-color: #F5F5F5;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 3px #0000000F;
+  border-radius:0px;
+  color: #707070;
+  width: 25%;
+  padding: 9px 0px;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  input[type="submit"].form-tabs-submit, input[type="submit"].form-tabs-submit.activetab { 
+    width: 100%!important;
+  }
+}
+
+input[type="submit"].form-tabs-submit.activetab {
+  display: inline-block;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 1px 3px #00000029;
+  border-radius:0px;
+  color: #EC008C;
+  border-bottom: 3px solid #EC008C;
+  width: 25%;
+  padding: 9px 0px;
+  font-size: 15px;
+}
+
+input[type="submit"].form-tabs-submit:hover {
+  background-color: #E8E8E8;
+}
+
+input[type="submit"].form-tabs-submit:focus {
+  background: #FFFFFF;
+  box-sizing: border-box;
+}
+
+button {
+  position: relative;
+  background-color: #a6ce39; /* Green */
+  border: none;
+  color: white;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  padding: 13px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button {
+  position: relative;
+  background-color: #a6ce39; /* Green */
+  border: none;
+  color: white;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  padding: 13px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #FFFFFF!important;
+}
+
+/* Checkbox styling */
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkbox-33 {
+ padding-right: 1rem;
+}
+
+label {
+ margin-bottom: 1rem;
+}
+
+@media (max-width:992px) {
+ .form-padding {
+  justify-content: center!important;
+  text-align: center!important;
+ }
+ 
+ .row {
+ justify-content: center!important;
+ }
+}
+
+@media (max-width:992px) and (min-width:576px) {
+ .form-padding {
+  padding-left: 15px!important;
+  padding-right: 15px!important;
+ }
+}
+
+.checkbox-text {
+ display: inline-block;
+ background-color: rgba(0, 0, 0, 0.75);
+ width: 230px;
+ color: #ffffff;
+ font-size: 24px;
+ font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+ font-weight: 500;
+ z-index: 1;
+ text-align: center;
+ margin-top: 187px;
+ padding: 10px 0px 9px 0px;
+ position: relative;
+}
+
+[type="checkbox"]:not(:checked) + label:hover .checkbox-text {
+background-color: rgba(236,0,140, 0.75);
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
+  position: relative;
+  cursor: pointer;
+  height: 230px;
+  width: 230px;
+}
+
+[type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  top: 0px;
+  left: 0px;
+  padding: 195px 0px 0px 0px;
+}
+
+[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
+  content: '';
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  background-size: 230px 230px;
+}
+
+@media (max-width: 768px) {
+[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 55px;
+}
+
+[type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before {
+  content: '';
+  background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/favicon.png)!important;
+  background-repeat: no-repeat;
+  background-color: #00aeef;
+  width: 100%;
+  position: absolute;
+  padding: 20px;
+  height: 55px;
+}
+
+[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
+  content: '';
+  background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/favicon.png)!important;
+  background-repeat: no-repeat;
+  background-color: #EC008C;
+  width: 100%;
+  position: absolute;
+  padding: 20px;
+  height: 55px;
+  background-size: 55px;
+}
+
+.checkbox-text {
+ background-color: transparent!important;
+ width: 100%;
+ color: #ffffff;
+ font-size: 24px;
+ font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+ font-weight: 500;
+ z-index: 1;
+ text-align: left;
+ left: 70px;
+ padding: 15px 0px 10px 0px;
+ margin-top: 0px;
+ position: absolute;
+}
+.checkbox-33 {
+ width:100%;
+ padding-right: 0px;
+}
+}
+
+#Appartementen[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/vrienden-unchecked.jpg);
+}
+
+#Appartementen[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/vrienden-checked.jpg);
+}
+
+#Hotels[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/hotels-unchecked.jpg);
+}
+
+#Hotels[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/hotels-checked.jpg);
+}
+
+#Vakantieparken[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/vakantieparken-unchecked.jpg);
+}
+
+#Vakantieparken[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/vakantieparken-checked.jpg);
+}
+
+#BenB[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/benb-unchecked.jpg);
+}
+
+#BenB[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/benb-checked.jpg);
+}
+
+#Nederland[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/checkbox-image-nl-unchecked.jpg);
+}
+
+#Nederland[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/checkbox-image-nl.jpg);
+}
+
+#Duitsland[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/duitsland-unchecked.jpg);
+}
+
+#Duitsland[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/duitsland-checked.jpg);
+}
+
+#Belgie[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/belgie-unchecked.jpg);
+}
+
+#Belgie[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/belgie-checked.jpg);
+}
+
+#Frankrijk[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/frankrijk-unchecked.jpg);
+}
+
+#Frankrijk[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/frankrijk-checked.jpg);
+}
+
+#Luxemburg[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/luxemburg-unchecked.jpg);
+}
+
+#Luxemburg[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/luxemburg-checked.jpg);
+}
+
+#Oostenrijk[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/oostenrijk-unchecked.jpg);
+}
+
+#Oostenrijk[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/oostenrijk-checked.jpg);
+}
+
+#Citytrip[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/citytrip-unchecked.jpg);
+}
+
+#Citytrip[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/citytrip-checked.jpg);
+}
+
+#Actief[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/actief-unchecked.jpg);
+}
+
+#Actief[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/actief-checked.jpg);
+}
+
+#Relaxen[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/relaxen-unchecked.jpg);
+}
+
+#Relaxen[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/relaxen-checked.jpg);
+}
+
+#Wellness[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/wellness-unchecked.jpg);
+}
+
+#Welness[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/wellness-checked.jpg);
+}
+
+#Skivakantie[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/skivakantie-unchecked.jpg);
+}
+
+#Skivakantie[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/skivakantie-checked.jpg);
+}
+
+#Zonvakantie[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/zonvakantie-unchecked.jpg);
+}
+
+#Zonvakantie[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/zonvakantie-checked.jpg);
+}
+
+#Logies-ontbijt[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/logies-ontbijt-unchecked.jpg);
+}
+
+#Logies-ontbijt[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/logies-ontbijt-checked.jpg);
+}
+
+#Halfpension[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/halfpension-unchecked.jpg);
+}
+
+#Halfpension[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/halfpension-checked.jpg);
+}
+
+#Diner[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/diner-unchecked.jpg);
+}
+
+#Diner[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/diner-checked.jpg);
+}
+
+#All-inclusive[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/all-inclusive-unchecked.jpg);
+}
+
+#All-inclusive[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/all-inclusive-checked.jpg);
+}
+
+#Partner[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/partner-unchecked.jpg);
+}
+
+#Partner[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/partner-checked.jpg);
+}
+
+#Familie[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/familie-unchecked.jpg);
+}
+
+#Familie[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/familie-checked.jpg);
+}
+
+#Alleen[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/alleen-unchecked.jpg);
+}
+
+#Alleen[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/alleen-checked.jpg);
+}
+
+#Vrienden[type="checkbox"]:not(:checked) + label:before {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/vrienden-unchecked.jpg);
+}
+
+#Vrienden[type="checkbox"]:checked + label:after {
+ background-image: url(https://www.voordeeluitjes.nl/Images/freeValues/vrienden-checked.jpg);
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox-33-mobile {
+ width: 100%!important;
+ text-align: left;
+ font-size: 18px;
+ font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+ font-weight: 500;
+}
+
+@media (max-width: 578px) {
+ label {
+  margin-bottom: 15px;
+ }
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Radiobutton styling */
+[type="radio"]:not(:checked), [type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+  position: relative;
+  padding-left: 2.2em;
+  cursor: pointer;
+}
+
+[type="radio"]:not(:checked) + label:before, [type="radio"]:checked + label:before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #707070;
+  border-radius: 100%;
+  background: white;
+  top: 2px;
+  left: 0px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after, [type="radio"]:checked + label:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #707070;
+  border-radius: 100%;
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  transition: all .2s;
+}
+
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* Tijdelijke pauze popup */
+div.div-pauze h4, div.div-pauze p {
+ color: #FFFFFF!important;
+}
+
+.div-pauze {
+ border-radius: 0.25rem;
+}
+
+.div-pauze label {
+ color: #FFFFFF;
+}
+
+.div-pauze [type="radio"]:not(:checked) + label:before, .div-pauze [type="radio"]:checked + label:before {
+  border: 1px solid #FFFFFF;
+  background: #EC008C!important;
+}
+
+.div-pauze [type="radio"]:not(:checked) + label:after, .div-pauze [type="radio"]:checked + label:after {
+  background: #ffffff;
+}
+
+.div-pauze .form-control {
+  background-color: #EC008C;
+  color: #FFFFFF;
+  font-size: 14px !important;
+  height: 50px;
+  border: 1px solid #FFFFFF;
+  margin-bottom: 5px;
+}
+  
+.popup-pauze-container {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}  
+
+@media (max-width: 768px) {
+.div-pauze .form-control {
+  padding-top: 14px;
+  }
+}
+
+.popup-pauze-content {
+  background-color: #FFFFFF;
+  margin: 15% auto;
+  border-radius: 4px;
+  max-width: 600px;
+  text-align: center;
+}
+.popup-feedback-content {
+  background-color: #FFFFFF;
+  margin: 4% auto;
+  border-radius: 4px;
+  max-width: 600px;
+  text-align: center;
+}
+.succesvol {
+  border: solid 2px #2b7825;
+}
+@media (max-width: 576px) {
+  .popup-pauze-content {
+    margin: 30% auto!important;
+  }
+  .popup-feedback-content {
+    margin: 5% auto!important;
+  }
+  .popup-pauze-container {
+    overflow-y: scroll;
+  }
+}
+
+.popup-pauze-padding {
+  padding: 40px;
+}
+
+.close-popup {
+  float: right;
+  font-size: 22px;
+  color: #FFFFFF;
+  background-color: #000000;
+  width: 40px;
+  height: 40px;
+  display: block;
+  padding-top: 6px;
+  border-radius: 0px 4px 0px;
+  cursor: pointer;
+}
+
+.button-popup {
+  margin: 0 auto;
+}
+
+/* Custom datum stijling */
+input[type="date"]::-webkit-inner-spin-button,    
+input[type="date"]::-webkit-clear-button {
+  display: none!important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+}
+
+input[type="date"]:before {
+  color: transparent;
+  background: none;
+  cursor: pointer;
+  display: block;
+  font-family: 'FontAwesome';
+  content: '\f073';
+  width: 15px;
+  height: 20px;
+  position: absolute;
+  top: 14px;
+  right: 30px;
+  color: #ffffff;
+}
+ 
+input[type="date"].calender-black:before {
+  background: none;
+  display: block;
+  font-family: 'FontAwesome';
+  content: '\f073';
+  width: 15px;
+  height: 20px;
+  position: absolute;
+  top: 42px;
+  right: 30px;
+  color: #363636;
+}
+
+/* Custom feedback slider */
+.feedback-container {
+ width: 80%;
+ position: relative;
+ margin-bottom: 70px;
+}
+
+.feedback-slider {
+  width: 100%;
+  border-radius: 3px;
+  height: 15px;
+  background: #f1f1f1;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.feedback-slider:hover {
+  background: #bbbbbb;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.feedback-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  position: relative;
+  appearance: none;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  cursor: pointer;
+  background: url(https://pic.vicinity.nl/image/7032/0/98190/4d2cfb1e53bb1820eeff83463dd3f511/smiley-green-2.png);
+  background-size: 46px 46px;
+}
+
+.feedback-slider.orange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  cursor: pointer;
+  background: url(https://pic.vicinity.nl/image/7032/0/98191/ba2613b3797b47feff2b7e0a69c27bdf/smiley-orange-2.png);
+  background-size: 46px 46px;
+}
+
+.feedback-slider.red::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  cursor: pointer;
+  background: url(https://pic.vicinity.nl/image/7032/0/98192/50d7288976d5c0c6d5c7f33f525c95c4/smiley-red-2.png);
+  background-size: 46px 46px;
+}
+
+.feedback-slider::-moz-range-thumb {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  cursor: pointer;
+  background: url(https://pic.vicinity.nl/image/7032/0/98190/4d2cfb1e53bb1820eeff83463dd3f511/smiley-green-2.png);
+  background-size: 46px 46px;
+}
+
+.feedback-slider.orange::-moz-range-thumb {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  cursor: pointer;
+  background: url(https://pic.vicinity.nl/image/7032/0/98191/ba2613b3797b47feff2b7e0a69c27bdf/smiley-orange-2.png);
+  background-size: 46px 46px;
+}
+
+.feedback-slider.red::-moz-range-thumb {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  cursor: pointer;
+  background: url(https://pic.vicinity.nl/image/7032/0/98192/50d7288976d5c0c6d5c7f33f525c95c4/smiley-red-2.png);
+  background-size: 46px 46px;
+}
+
+.feedback-slider::-ms-thumb {
+  width: 40px;
+  background: #84b458;
+  cursor: pointer;
+}
+ 
+.feedback-slider.orange::-ms-thumb {
+  width: 40px;
+  background: #dba652;
+  cursor: pointer;
+}
+ 
+.feedback-slider.red::-ms-thumb {
+  width: 40px;
+  background: #d96065;
+  cursor: pointer;
+}
+
+output {
+  position: absolute;
+  color: #84b458;
+  display: block;
+  transform: translateX(-50%);
+  font-size: 50px;
+  top: 50px;
+  text-align: center;
+  right: -35px;
+}
+
+.output-negatief {
+  position: absolute;
+  color: #84b458;
+  display: block;
+  transform: translateX(-50%);
+  font-size: 50px;
+  top: 50px;
+  text-align: center;
+  left: 25px;
+}
+
+.output-orange {
+  color: #dba652;
+}
+
+.output-red {
+  color: #d96065; 
+}
+
+/* Verwijdert rode omlijning in firefox wanneer een veld verplicht is */
+input:required {
+    box-shadow:none;
+}
+ 
+.form-container {
+  max-width: 1100px;
+} 
+
+.select2-search--dropdown {
+  display: none!important;
+}
+
+.select2-container {
+  width: 164px!important;
+}
+
+.select2-container .select2-selection--single {
+  height: 50px!important;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-top: 10px;
+  padding-left: 18px!important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 50px!important;
+  top:0px!important;
+}
+
+.select2-container *:focus {
+  outline: none!important;
+}
+
+.select2-container--default .select2-selection--single {
+  border: 1px solid #707070!important;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #f5f5f5!important;
+  color: #000000!important;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #EC008C!important;
+  color: #FFFFFF!important;  
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+  min-height: 256px!important;
+  overflow-y: auto; 
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border: none!important;
+}
+
+.select2-results__option {
+  padding: 4px 6px!important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  background-image: url(https://pic.vicinity.nl/image/7032/0/101928/36bf4ae6d48c36c2dbfc2bc64ad19697/arrow-down.jpg);
+  background-size: 15px 10px!important;
+  background-repeat: no-repeat;
+  top: 20px!important;
+  right: 6px!important;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow {
+  background-image: url(https://pic.vicinity.nl/image/7032/0/102378/c1e108243135adcacd55424edf408b1a/arrow-up.jpg);
+  background-size: 15px 10px!important;
+  background-repeat: no-repeat;
+  top: 20px!important;
+  right: 6px!important;
+}
+
+.desktop-menu-subcontainer {
+ position: relative;
+}
+
+.menu-item {
+  color: #FFFFFF;
+  width: auto;
+  margin-right: 10px;
+  padding-right: 20px;
+  display: inline-block;
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 48px;
+}
+
+.arrow-icon {
+  background-image: url(https://pic.vicinity.nl/image/7032/0/102422/6076cd8c485424bdd85297b420750d12/magenta-arrow-down.jpg);
+  background-repeat: no-repeat;
+  background-size: 12px 9px;
+  width: 12px;
+  height: 9px;
+  display: inline-block;
+  top: 21px;
+  position: absolute;
+  left: calc(100%);
+}
+
+.arrow-icon.menu-hover {
+  background-image:url(https://pic.vicinity.nl/image/7032/0/102423/781ef1659dfed95d58fdf79583037467/magenta-arrow-up.jpg)!important;
+}
+
+.menu-top-item {
+  position: relative;
+  display: block;
+  color: #FFFFFF!important;
+  line-height: 48px;
+  padding-right: 14px;
+  cursor: pointer;
+}
+
+
+.menu-sub-item {
+ display: none;
+ position:absolute;
+ background-color: #FFFFFF;
+ color: #000000;
+ z-index: 25;
+ border-radius: 0 0 4px 4px;
+ box-shadow: 0 3px 6px rgba(0,0,0,.16);
+ padding: 36px 36px 42px;
+ top: 48px;
+}
+
+.menu-sub-item-ks {
+ display: none;
+ position:absolute;
+ background-color: #FFFFFF;
+ color: #000000;
+ z-index: 25;
+ border-radius: 0 0 4px 4px;
+ box-shadow: 0 3px 6px rgba(0,0,0,.16);
+ padding: 18px 16px 0px 16px!important;
+ top: 48px;
+ right: 0px;
+ width: 235px;
+} 
+
+.menu-sub-item-ks:before {
+ border-color: #fff transparent transparent transparent;
+ border-width: 20px 118px 0 118px;
+ content: "";
+ width: 0;
+ height: 0;
+ right: 0px;
+ bottom: -20px;
+ position: absolute;
+ display: block;
+ border-style: solid;
+ filter: drop-shadow(0 8px 3px rgba(0, 0, 0, .3));
+ z-index: 25;
+}
+
+.menu-sub-item-ks:after {
+content: "";
+border-top: none;
+border-bottom: 8px solid #fff;
+border-left: 25px solid transparent;
+border-right: 25px solid transparent;
+top: -8px;
+right: 20px;
+position: absolute;
+} 
+
+.menu-sub-item#menu-topbestemmingen:before {
+ content: '';
+ border-bottom: 8px solid #fff;
+ border-right: 8px solid transparent;
+ border-left: 8px solid transparent;
+ position: absolute;
+ top: -8px;
+ left: 7%;
+ z-index: 40;
+ transform: translateX(-50%);
+}
+
+.menu-sub-item#menu-aanbiedingen:before {
+ content: '';
+ border-bottom: 8px solid #fff;
+ border-right: 8px solid transparent;
+ border-left: 8px solid transparent;
+ position: absolute;
+ top: -8px;
+ left: 21%;
+ z-index: 40;
+ transform: translateX(-50%);
+}
+
+.menu-sub-item#menu-themas:before {
+ content: '';
+ border-bottom: 8px solid #fff;
+ border-right: 8px solid transparent;
+ border-left: 8px solid transparent;
+ position: absolute;
+ top: -8px;
+ left: 33%;
+ z-index: 40;
+ transform: translateX(-50%);
+}
+
+
+.sub-row {
+ display: flex;
+ margin: 0;
+}
+
+.menu-sub-column {
+ padding: 0 0 0 24px;
+ border-left: 1px solid rgba(112,112,112,.3);
+}
+
+.menu-sub-column:first-child {
+ border-left: 0!important;
+}
+
+.menu-sub-title {
+ font-size: 16px;
+ line-height: 1.5;
+ color: #EC008C;
+ font-weight: 700;
+}
+
+.menu-sub-title-ks {
+ font-size: 16px;
+ line-height: 1.5;
+ color: #EC008C;
+ font-weight: 400;
+}
+
+.menu-text {
+ color: #707070;
+ margin-left: 29px;
+ font-size: 14px;
+ font-weight: 400;
+ line-height: 20px;
+ padding-right: 0px!important;
+}
+
+.menu-list {
+ margin: 6px 0 0!important;
+ line-height: 1.5;
+ font-size: 16px;
+}
+
+.menu-list li {
+ margin: 6px 0 0!important;
+ line-height: 1.5;
+}
+.menu-list-ks li {
+  padding: 10px 0px;
+}
+
+.menu-link {
+ color: #000000!important;
+}
+
+.menu-link:hover {
+  text-decoration: underline!important;
+  color: #000000!important;
+}
+
+.menu-dark-bg {
+  background-color: rgba(0,0,0);
+  position: absolute;
+  top: 166px;
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+  z-index: 4000;
+  opacity: 1;
+}
+
+.menu-bg-dark {
+  background-color: rgba(0,0,0);
+  position: absolute;
+  z-index: 10;
+  top: 168px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.25;
+  display: none;
+} 
+
+.menu-right {
+ float: right;
+}
+
+.menu-right div {
+ padding-right: 5px;
+ margin-right: 0px;
+}
+
+.menu-right > .menu-top-item {
+ padding-right: 5px;
+ margin-right: 0px;
+}
+
+.menu-ks-hover:focus #ks-container, .menu-ks-hover:active #ks-container  {
+ display: block!important;
+}
+
+.menu-ks-hover {
+  outline: none!important;
+}
+
+.menu-ks-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;  
+}
+
+.menu-mail:hover {
+  text-decoration: underline!important;
+}
+
+.email-hidden {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0px;
+  margin-bottom: 0px;
+}
+
+.email-visible {
+  opacity: 1;
+  visibility: visible;
+  max-height: 60px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .email-visible {
+    max-height: 95px;
+  }
+}
+
+.fade {
+    -webkit-transition: max-height 0.3s ease-in-out, opacity 1s ease-in-out;
+  -moz-transition: max-height 0.3s ease-in-out, opacity 1s ease-in-out;
+  -ms-transition: max-height 0.3s ease-in-out, opacity 1s ease-in-out;
+  -o-transition: max-height 0.3s ease-in-out, opacity 1s ease-in-out;
+  transition: visbility 0.3s ease-in-out, max-height 0.3s ease-in-out, opacity 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .col-form-label.textarea {
+  padding-top: 17px !important;
+  }
+}
+
+/* Styling voor de kortingsvoucher iframe pagina */
+@media (max-width: 930px) {
+.list-no-margin {
+  margin-bottom: 0px!important;
+}
+}
+@media (max-width:768px) {
+.bevestiging-balk {
+  width: 100%!important;
+}
+}
+.koffiequiz-radio {
+  display: block!important;
+  cursor: pointer!important;
+}
+.koffiequiz-radio:not(:last-child) {
+    padding: 5px 0px;
+}
+.koffiequiz-radio:last-child {
+  padding-top: 5px;
+}
+.koffiequiz-styling {
+  padding: 15px;
+  border: 1px solid #707070;
+  border-radius: 4px;
+  box-sizing: border-box!important;
+   -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+.koffiequiz-styling::first-letter {
+  font-size: 150%;
+}
+.koffiequiz-input:checked + div {
+  border: 2px solid #EC008C;
+  padding: 14px;
+  color: #EC008C;
+  font-weight: 600;
+  border-radius: 4px;
+  box-sizing: border-box!important;
+   -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+@media (max-width:768px) {
+  input[type="text"]:not(:placeholder-shown):valid ~ .input-valid, input[type="email"]:not(:placeholder-shown):valid ~ .input-valid, textarea:not(:placeholder-shown):valid  ~ .input-valid {
+  top: 53px!important;
+}
+.submitted-form-invalid input:invalid ~ .input-valid, .submitted-form-invalid textarea:invalid ~ .input-valid {
+  top: 53px!important;
+}
+.gegevens-opgeslagen {
+  padding-top: 30px;
+  padding-left: 0px!important;
+  width: 100%;
+}
+.gegevens-opgeslagen.hide-mobile {
+  display: none!important;
+  }  
+}
+
+.submitted-form-invalid input:invalid, .submitted-form-invalid textarea:invalid {
+  border: 1px solid red;
+  background-color: #FF555526;
+}
+
+.submitted-form-invalid input:invalid + label:before{
+  border: 1px solid red;
+  background-color: #FF555526;
+}
+
+.submitted-form-invalid input:invalid + label .checkbox-check{
+  display: none;
+}
+
+input[type="text"]:not(:placeholder-shown):valid, input[type="email"]:not(:placeholder-shown):valid, textarea:not(:placeholder-shown):valid {
+  border: 1px solid #95C121;
+}
+
+.error-message {
+  padding-top: 5px;
+  color: #FF5555;
+  font-size: 12px;
+  display: none;
+}
+
+.submitted-form-invalid input:invalid ~ .error-message, .submitted-form-invalid textarea:invalid ~ .error-message {
+  display: block;
+}
+
+.submitted-form-invalid input[type="checkbox"]:not(:checked) ~ .error-message {
+  display: block;
+}
+
+input[type="text"]:not(:placeholder-shown):valid ~ .input-valid, input[type="email"]:not(:placeholder-shown):valid ~ .input-valid, textarea:not(:placeholder-shown):valid  ~ .input-valid {
+  position: absolute;
+  top: 44px;
+  right: 28px;
+  z-index: 10;
+  transform: rotate(42deg);
+  border-bottom: 3px solid #95C121;
+  border-right: 3px solid #95C121;
+  height: 14px;
+  width: 8px;
+}
+
+.submitted-form-invalid input:invalid ~ .input-valid, .submitted-form-invalid textarea:invalid ~ .input-valid {
+  position: absolute;
+  top: 44px;
+  right: 28px;
+  z-index: 10;
+  background-image: url(voordeeluitjes/error-message-icon.png);
+  width: 4px;
+  height: 16px;
+  background-size: 4px 16px;
+}
+
+.gegevens-opgeslagen {
+  color: #EC008C;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.toelichting {
+  display: none;
+}
+
+.progress-bar {
+ background-color: #EC008C;
+}
+
+.progress {
+ border-radius: 4%;
+    height: 1.2rem;
+}
+
+.progress-mobile {
+  padding-left: 0px!important;
+  display: inline-block;
+  margin-left:0!important;
+}

@@ -1,0 +1,889 @@
+{if $smarty.get.type eq 'nieuw'}
+{if $smarty.get.page eq '1'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?page=2&amp;type=nieuw&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="9b57ce9464a5bffdee81d00f7852f0d1a01b1399133373cfcc2b1f40c376b4fa"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="8,9,10,11,12,13"/>
+  <h1>Uw favoriete bestemming </h1>
+  <p>Selecteer hieronder uw favoriete landen door op de afbeelding te klikken.</p>
+  <div class="col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Nederland" name="interest8" type="checkbox">
+        <label for="Nederland">
+          <div class="checkbox-text">Nederland</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Duitsland" name="interest9" type="checkbox">
+        <label for="Duitsland">
+          <div class="checkbox-text">Duitsland</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Belgie" name="interest10" type="checkbox">
+        <label for="Belgie">
+          <div class="checkbox-text">België</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Frankrijk" name="interest12" type="checkbox">
+        <label for="Frankrijk">
+          <div class="checkbox-text">Frankrijk</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Luxemburg" name="interest11" type="checkbox">
+        <label for="Luxemburg">
+          <div class="checkbox-text">Luxemburg</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Oostenrijk" name="interest13" type="checkbox">
+        <label for="Oostenrijk">
+          <div class="checkbox-text">Oostenrijk</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Naar vraag 2"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=8%2C9%2C10%2C11%2C12%2C13&document=0&account=7032&cdmaccount=7032&check=9b57ce9464a5bffdee81d00f7852f0d1a01b1399133373cfcc2b1f40c376b4fa&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Land', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{elseif $smarty.get.page eq '2'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?page=3&amp;type=nieuw&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="91933efe70c784a7116c9ed688479129d2dd414fd47b4678af447888021addeb"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="6,7,14,17"/>
+  <h1>Uw favoriete accommodaties </h1>
+  <p>Selecteer hieronder uw favoriete accommodaties door op de afbeelding te klikken.</p>
+  <div class="col-lg-8 col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Hotels" name="interest6" type="checkbox">
+        <label for="Hotels">
+          <div class="checkbox-text">Hotels</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Vakantieparken" name="interest7" type="checkbox">
+        <label for="Vakantieparken">
+          <div class="checkbox-text">Vakantieparken</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="BenB" name="interest14" type="checkbox">
+        <label for="BenB">
+          <div class="checkbox-text">Bed & Breakfasts</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Appartementen" name="interest17" type="checkbox">
+        <label for="Appartementen">
+          <div class="checkbox-text">Appartementen</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Naar vraag 3"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=6%2C7%2C14%2C17&document=0&account=7032&cdmaccount=7032&check=91933efe70c784a7116c9ed688479129d2dd414fd47b4678af447888021addeb&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Accommodatie', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{elseif $smarty.get.page eq '3'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?page=4&amp;type=nieuw&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="77a106775a5048e4c7012712855e6413dcbd47098a4b2a47b167030c86f76e0d"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="21,22,24,34,35,37"/>
+  <h1>Uw favoriete activiteiten</h1>
+  <p>Selecteer hieronder uw favoriete activiteiten door op de afbeelding te klikken.</p>
+  <div class="col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Citytrip" name="interest22" type="checkbox">
+        <label for="Citytrip">
+          <div class="checkbox-text">Citytrip</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Actief" name="interest35" type="checkbox">
+        <label for="Actief">
+          <div class="checkbox-text">Actief en natuur</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Relaxen" name="interest37" type="checkbox">
+        <label for="Relaxen">
+          <div class="checkbox-text">Relaxen</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Wellness" name="interest34" type="checkbox">
+        <label for="Wellness">
+          <div class="checkbox-text">Wellness</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Skivakantie" name="interest21" type="checkbox">
+        <label for="Skivakantie">
+          <div class="checkbox-text">Wintersport</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Zonvakantie" name="interest24" type="checkbox">
+        <label for="Zonvakantie">
+          <div class="checkbox-text">Zonvakantie</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Naar vraag 4"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=21%2C22%2C24%2C34%2C35%2C37&document=0&account=7032&cdmaccount=7032&check=77a106775a5048e4c7012712855e6413dcbd47098a4b2a47b167030c86f76e0d&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Activiteit', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{elseif $smarty.get.page eq '4'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?page=5&amp;type=nieuw&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="dcff41bc4b0c934c3fd9df571343adc008b5d08160dcf9998c1118fcc189ed7b"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="19,32,33,36"/>
+  <h1>Uw favoriete arrangementen</h1>
+  <p>Selecteer hieronder uw favoriete arrangementen door op de afbeelding te klikken.</p>
+  <div class="col-lg-8 col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Logies-ontbijt" name="interest33" type="checkbox">
+        <label for="Logies-ontbijt">
+          <div class="checkbox-text">Logies-ontbijt</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Halfpension" name="interest32" type="checkbox">
+        <label for="Halfpension">
+          <div class="checkbox-text">Halfpension</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Diner" name="interest36" type="checkbox">
+        <label for="Diner">
+          <div class="checkbox-text">Diner</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="All-inclusive" name="interest19" type="checkbox">
+        <label for="All-inclusive">
+          <div class="checkbox-text">All-inclusive</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Naar de laatste vraag"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=19%2C32%2C33%2C36&document=0&account=7032&cdmaccount=7032&check=dcff41bc4b0c934c3fd9df571343adc008b5d08160dcf9998c1118fcc189ed7b&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Arrangement', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{elseif $smarty.get.page eq '5'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?type=nieuw&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="84e90216e745ea479c34c383b59c8c980b871d33919854161911ff114aa495f1"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="38,39,40,41"/>
+  <h1>Met wie reist u graag?</h1>
+  <p>Selecteer hieronder met wie u graag reist door op de afbeelding te klikken.</p>
+  <div class="col-lg-8 col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Partner" name="interest38" type="checkbox">
+        <label for="Partner">
+          <div class="checkbox-text">Met mijn partner</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Familie" name="interest39" type="checkbox">
+        <label for="Familie">
+          <div class="checkbox-text">Met mijn familie</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Vrienden" name="interest41" type="checkbox">
+        <label for="Vrienden">
+          <div class="checkbox-text">Met vrienden</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Alleen" name="interest40" type="checkbox">
+        <label for="Alleen">
+          <div class="checkbox-text">Alleen of zakelijk</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Vragenlijst afronden"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=38%2C39%2C40%2C41&document=0&account=7032&cdmaccount=7032&check=84e90216e745ea479c34c383b59c8c980b871d33919854161911ff114aa495f1&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Reisgezelschap', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{else}
+<h1>Bedankt!</h1>
+<p>Uw voorkeuren zijn succesvol opgeslagen. Vanaf nu zullen wij proberen het aanbod zo goed mogelijk op uw wensen aan te laten sluiten.</p>
+{/if}
+{else}
+{if $smarty.get.page eq '1'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?page=2&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="91933efe70c784a7116c9ed688479129d2dd414fd47b4678af447888021addeb"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="6,7,14,17"/>
+  <h1>Uw favoriete accommodaties </h1>
+  <p>Selecteer hieronder uw favoriete accommodaties door op de afbeelding te klikken.</p>
+  <div class="col-lg-8 col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Hotels" name="interest6" type="checkbox">
+        <label for="Hotels">
+          <div class="checkbox-text">Hotels</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Vakantieparken" name="interest7" type="checkbox">
+        <label for="Vakantieparken">
+          <div class="checkbox-text">Vakantieparken</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="BenB" name="interest14" type="checkbox">
+        <label for="BenB">
+          <div class="checkbox-text">Bed & Breakfasts</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Appartementen" name="interest17" type="checkbox">
+        <label for="Appartementen">
+          <div class="checkbox-text">Appartementen</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Naar vraag 2"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=6%2C7%2C14%2C17&document=0&account=7032&cdmaccount=7032&check=91933efe70c784a7116c9ed688479129d2dd414fd47b4678af447888021addeb&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Accommodatie', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{elseif $smarty.get.page eq '2'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?page=3&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="9b57ce9464a5bffdee81d00f7852f0d1a01b1399133373cfcc2b1f40c376b4fa"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="8,9,10,11,12,13"/>
+  <h1>Uw favoriete bestemming </h1>
+  <p>Selecteer hieronder uw favoriete landen door op de afbeelding te klikken.</p>
+  <div class="col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Nederland" name="interest8" type="checkbox">
+        <label for="Nederland">
+          <div class="checkbox-text">Nederland</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Duitsland" name="interest9" type="checkbox">
+        <label for="Duitsland">
+          <div class="checkbox-text">Duitsland</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Belgie" name="interest10" type="checkbox">
+        <label for="Belgie">
+          <div class="checkbox-text">België</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Frankrijk" name="interest12" type="checkbox">
+        <label for="Frankrijk">
+          <div class="checkbox-text">Frankrijk</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Luxemburg" name="interest11" type="checkbox">
+        <label for="Luxemburg">
+          <div class="checkbox-text">Luxemburg</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Oostenrijk" name="interest13" type="checkbox">
+        <label for="Oostenrijk">
+          <div class="checkbox-text">Oostenrijk</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Naar vraag 3"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=8%2C9%2C10%2C11%2C12%2C13&document=0&account=7032&cdmaccount=7032&check=9b57ce9464a5bffdee81d00f7852f0d1a01b1399133373cfcc2b1f40c376b4fa&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Land', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{elseif $smarty.get.page eq '3'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?page=4&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="77a106775a5048e4c7012712855e6413dcbd47098a4b2a47b167030c86f76e0d"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="21,22,24,34,35,37"/>
+  <h1>Uw favoriete activiteiten</h1>
+  <p>Selecteer hieronder uw favoriete activiteiten door op de afbeelding te klikken.</p>
+  <div class="col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Citytrip" name="interest22" type="checkbox">
+        <label for="Citytrip">
+          <div class="checkbox-text">Citytrip</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Actief" name="interest35" type="checkbox">
+        <label for="Actief">
+          <div class="checkbox-text">Actief en natuur</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Relaxen" name="interest37" type="checkbox">
+        <label for="Relaxen">
+          <div class="checkbox-text">Relaxen</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Wellness" name="interest34" type="checkbox">
+        <label for="Wellness">
+          <div class="checkbox-text">Wellness</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Skivakantie" name="interest21" type="checkbox">
+        <label for="Skivakantie">
+          <div class="checkbox-text">Wintersport</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Zonvakantie" name="interest24" type="checkbox">
+        <label for="Zonvakantie">
+          <div class="checkbox-text">Zonvakantie</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Naar vraag 4"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=21%2C22%2C24%2C34%2C35%2C37&document=0&account=7032&cdmaccount=7032&check=77a106775a5048e4c7012712855e6413dcbd47098a4b2a47b167030c86f76e0d&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Activiteit', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{elseif $smarty.get.page eq '4'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?page=5&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="dcff41bc4b0c934c3fd9df571343adc008b5d08160dcf9998c1118fcc189ed7b"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="19,32,33,36"/>
+  <h1>Uw favoriete arrangementen</h1>
+  <p>Selecteer hieronder uw favoriete arrangementen door op de afbeelding te klikken.</p>
+  <div class="col-lg-8 col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Logies-ontbijt" name="interest33" type="checkbox">
+        <label for="Logies-ontbijt">
+          <div class="checkbox-text">Logies-ontbijt</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Halfpension" name="interest32" type="checkbox">
+        <label for="Halfpension">
+          <div class="checkbox-text">Halfpension</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Diner" name="interest36" type="checkbox">
+        <label for="Diner">
+          <div class="checkbox-text">Diner</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="All-inclusive" name="interest19" type="checkbox">
+        <label for="All-inclusive">
+          <div class="checkbox-text">All-inclusive</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Naar de laatste vraag"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=19%2C32%2C33%2C36&document=0&account=7032&cdmaccount=7032&check=dcff41bc4b0c934c3fd9df571343adc008b5d08160dcf9998c1118fcc189ed7b&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Arrangement', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{elseif $smarty.get.page eq '5'}
+<form id="form-interesses" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="change"/>
+  <input type="hidden" name="next" value="http://copernica.voordeeluitjes.nl/interesses?profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="84e90216e745ea479c34c383b59c8c980b871d33919854161911ff114aa495f1"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="interests" value="38,39,40,41"/>
+  <h1>Met wie reist u graag?</h1>
+  <p>Selecteer hieronder met wie u graag reist door op de afbeelding te klikken.</p>
+  <div class="col-lg-8 col-xs-12 form-padding" style="padding-right: 0px!important; padding-left: 0px!important;">
+    <div class="form-group row" style="margin-left: 0px!important; margin-right: 0px!important;">
+      <div class="checkbox-33">
+        <input id="Partner" name="interest38" type="checkbox">
+        <label for="Partner">
+          <div class="checkbox-text">Met mijn partner</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Familie" name="interest39" type="checkbox">
+        <label for="Familie">
+          <div class="checkbox-text">Met mijn familie</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Vrienden" name="interest41" type="checkbox">
+        <label for="Vrienden">
+          <div class="checkbox-text">Met vrienden</div>
+        </label>
+      </div>
+      <div class="checkbox-33">
+        <input id="Alleen" name="interest40" type="checkbox">
+        <label for="Alleen">
+          <div class="checkbox-text">Alleen of zakelijk</div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left:0px!important;"><input type="submit" name="formSubmit" value="Vragenlijst afronden"></div>
+</form>
+<script type="text/javascript">
+  var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=9&document=48&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=&colfields=&interests=38%2C39%2C40%2C41&document=0&account=7032&cdmaccount=7032&check=84e90216e745ea479c34c383b59c8c980b871d33919854161911ff114aa495f1&notification=';
+  var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+  url = url.replace(/__CODE__/, code);
+  if (location.search.match(/subprofile=(\d+)/))
+  {
+  url = url.replace('__SUBPROFILE__', RegExp.$1);
+  url = url.replace('__PROFILE__', 0);
+  }
+  else if (location.search.match(/profile=(\d+)/))
+  {
+  url = url.replace('__PROFILE__', RegExp.$1);
+  url = url.replace('__SUBPROFILE__', 0);
+  }
+  
+  var script = ("<script src='"+url+"'><\/script>");
+  document.writeln(script);
+</script>
+<script type="text/javascript">
+  var form = document.getElementById("form-interesses");
+  
+  form.addEventListener('submit', function(event) {
+  
+    event.preventDefault();
+    setTimeout(submitForm, 1000);
+    var formSubmitted = false;
+  
+    function submitForm() {
+      if (!formSubmitted) {
+        formSubmitted = true;
+        form.submit();
+      }
+    }
+  
+    ga('send', 'event', 'Interesses pagina', 'Wijziging', 'Reisgezelschap', {
+      'hitCallback': submitForm 
+  	});
+  });
+</script>
+{else}
+<h1>Bedankt!</h1>
+<p>Uw voorkeuren zijn succesvol opgeslagen. Vanaf nu zullen wij proberen het aanbod zo goed mogelijk op uw wensen aan te laten sluiten.</p>
+{/if}
+{/if}

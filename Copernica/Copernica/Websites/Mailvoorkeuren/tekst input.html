@@ -1,0 +1,635 @@
+{if $smarty.get.page eq 'uitschrijving'}
+<form name="subscribe" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="subscribe"/>
+  <input type="hidden" name="next" value="https://copernica.voordeeluitjes.nl/uitschrijven?page=feedback&amp;profile={$profile.id}&amp;code={$profile.code}"/>
+  <input type="hidden" name="check" value="42802464ab0ea509a2a9d09a5eb97f37ab6764379f204d0a6fd1cb720fea7204"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="match_key" value="dbfield8"/>
+  <input type="hidden" name="collection" value="470"/>
+  <input type="hidden" name="dbfields" value="8"/>
+  <input type="hidden" name="colfields" value="297,298,299"/>
+  <input type="hidden" name="dbfield8" value="{$profile.Emailadres}"/>
+  <input type="hidden" name="colfield297" value="Uitschrijving"/>
+  <input type="hidden" name="colfield298" value="{$smarty.get.oldvalue}"/>
+  <input type="hidden" name="colfield299" value="Geen"/>
+  <h3 style="padding-top: 0px;">Persoonlijke gegevens</h3>
+  <div class="content-block">
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-12">
+        <label class="col-form-label">E-mailadres</label>
+        <input type="email" class="form-control"  value="{$profile.Emailadres|ucfirst}" name="dbfield8">
+        <div class="input-valid"></div>
+      </div>
+    </div>
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-6">
+        <label class="col-form-label">Voornaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield90">  
+        <div class="input-valid"></div>
+      </div>
+      <div class="col-sm-6">
+        <label class="col-form-label">Achternaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw achternaam in" name="dbfield9">   
+        <div class="input-valid"></div>
+      </div>
+    </div>
+  </div>
+  <h3>Mailvoorkeur aanpassen</h3>
+  <div class="content-block">
+    <h4>Hoe vaak wilt u onze nieuwsbrief ontvangen?</h4>
+    <p class="grey">Wist u dat u gemakkelijk de frequentie kunt aanpassen? Kies er bijvoorbeeld voor om de nieuwsbrief wekelijks of maandelijks te ontvangen. Of kies voor een tijdelijke pauze.</p>
+    <ul class="list-unstyled">
+      <li><input class="close" id="dagelijks" name="dbfield55" type="radio" value="Dagelijks"><label for="dagelijks">Dagelijks</label></li>
+      <li><input class="close" id="wekelijks" name="dbfield55" type="radio" value="Wekelijks"><label for="wekelijks">Wekelijks</label></li>
+      <li><input class="close" id="maandelijks" name="dbfield55" type="radio" value="Maandelijks"><label for="maandelijks">Maandelijks</label></li>
+      <li><input class="open" id="geen" name="dbfield55" type="radio" value="{$profile.Frequentie}"><label for="geen">Geen</label></li>
+    </ul>
+    <div class="div-pauze">
+      <div class="form-group row">
+        <div class="col-sm-12 background-pauze">
+          <h4 class="div-pauze-title">Tijdelijk pauzeren</h4>
+          <p>Weet u zeker dat u onze nieuwsbrief niet meer wilt ontvangen? U kunt de nieuwsbrief ook tijdelijk pauzeren.</p>
+          <ul class="list-unstyled">
+            <li><input id="2-weken" name="dbfield240" type="radio" value="2 weken"><label for="2-weken">Nieuwsbrief pauzeren voor 2 weken {if $profile.Frequentie eq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="1-maand" name="dbfield240" type="radio" value="1 maand"><label for="1-maand">Nieuwsbrief pauzeren voor 1 maand {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="6-maanden" name="dbfield240" type="radio" value="6 maanden" ><label for="6-maanden">Nieuwsbrief pauzeren voor 6 maanden</label></li>
+            <li><input id="uitschrijven" name="dbfield240" type="radio" value="Uitgeschreven" class="div-pauze-uitschrijven"><label for="uitschrijven">Nee, Ik wil mij definitief uitschrijven</label>
+              <div class="div-pauze-uitschrijven-warning">Weet u zeker dat u voortaan de beste hotelaanbiedingen wilt missen?</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-block">
+  <h4>Wilt u de servicemail ontvangen?</h4>
+    <p class="grey">Wilt u onze servicemail ontvangen, zodat we u een fijne reis kunnen wensen (en persoonlijke aanbevelingen of verzoeken op basis van uw boeking kunnen sturen)?</p>
+    <ul class="list-unstyled">
+      <li><input id="ja" name="dbfield184" type="radio" value="Ja"><label for="ja">Ja</label></li>
+      <li><input id="nee" name="dbfield184" type="radio" value="Afgemeld"><label for="nee">Nee</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Wanneer wilt u de nieuwsbrief ontvangen?</h4>
+    <ul class="list-unstyled">
+      <li><input id="VO" name="dbfield239" type="radio" value="Vroege ochtend"><label for="VO">05:00 - 09:00</label></li>
+      <li><input id="LO" name="dbfield239" type="radio" value="Late ochtend"><label for="LO">09:00 - 12:00</label></li>
+      <li><input id="VM" name="dbfield239" type="radio" value="Vroege middag"><label for="VM">12:00 - 16:00</label></li>
+      <li><input id="LM" name="dbfield239" type="radio" value="Late middag"><label for="LM">16:00 - 19:00</label></li>
+      <li><input id="AV" name="dbfield239" type="radio" value="Avond"><label for="AV">19:00 - 24:00</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Nieuwsbrief interesses</h4>
+    <p class="grey">Wilt u uw nieuwsbrief interesses, zoals het type verblijf, land of type arrangement aanpassen? <a style="text-decoration: none; color: #000000;" href="https://copernica.voordeeluitjes.nl/interesses?page=1&amp;profile={$profile.id}&amp;code={$profile.code}" target="_blank" rev="document_link_144">Klik dan <u>hier</u></a></p>
+  </div>
+</form>
+{elseif $smarty.get.page eq 'wijziging-pauze'}
+<form name="subscribe" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/>
+  <input type="hidden" name="wizard" value="subscribe"/>
+  <input type="hidden" name="next" value="https://copernica.voordeeluitjes.nl/bedankt"/>
+  <input type="hidden" name="check" value="42802464ab0ea509a2a9d09a5eb97f37ab6764379f204d0a6fd1cb720fea7204"/>
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="match_key" value="dbfield8"/>
+  <input type="hidden" name="collection" value="470"/>
+  <input type="hidden" name="dbfields" value="8"/>
+  <input type="hidden" name="colfields" value="297,298,299"/>
+  <input type="hidden" name="dbfield8" value="{$profile.Emailadres}"/>
+  <input type="hidden" name="colfield297" value="{$smarty.get.gebeurtenis}"/>
+  <input type="hidden" name="colfield298" value="{$smarty.get.oldvalue}"/>
+  <input type="hidden" name="colfield299" value="{$smarty.get.newvalue}"/>
+  <h3 style="padding-top: 0px;">Persoonlijke gegevens</h3>
+  <div class="content-block">
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-12">
+        <label class="col-form-label">E-mailadres</label>
+        <input type="email" class="form-control"  value="{$profile.Emailadres|ucfirst}" name="dbfield8">
+        <div class="input-valid"></div>
+      </div>
+    </div>
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-6">
+        <label class="col-form-label">Voornaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield90">  
+        <div class="input-valid"></div>
+      </div>
+      <div class="col-sm-6">
+        <label class="col-form-label">Achternaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw achternaam in" name="dbfield9">   
+        <div class="input-valid"></div>
+      </div>
+    </div>
+  </div>
+  <h3>Mailvoorkeur aanpassen</h3>
+  <div class="content-block">
+    <h4>Hoe vaak wilt u onze nieuwsbrief ontvangen?</h4>
+    <p class="grey">Wist u dat u gemakkelijk de frequentie kunt aanpassen? Kies er bijvoorbeeld voor om de nieuwsbrief wekelijks of maandelijks te ontvangen. Of kies voor een tijdelijke pauze.</p>
+    <ul class="list-unstyled">
+      <li><input class="close" id="dagelijks" name="dbfield55" type="radio" value="Dagelijks"><label for="dagelijks">Dagelijks</label></li>
+      <li><input class="close" id="wekelijks" name="dbfield55" type="radio" value="Wekelijks"><label for="wekelijks">Wekelijks</label></li>
+      <li><input class="close" id="maandelijks" name="dbfield55" type="radio" value="Maandelijks"><label for="maandelijks">Maandelijks</label></li>
+      <li><input class="open" id="geen" name="dbfield55" type="radio" value="{$profile.Frequentie}"><label for="geen">Geen</label></li>
+    </ul>
+    <div class="div-pauze">
+      <div class="form-group row">
+        <div class="col-sm-12 background-pauze">
+          <h4 class="div-pauze-title">Tijdelijk pauzeren</h4>
+          <p>Weet u zeker dat u onze nieuwsbrief niet meer wilt ontvangen? U kunt de nieuwsbrief ook tijdelijk pauzeren.</p>
+          <ul class="list-unstyled">
+            <li><input id="2-weken" name="dbfield240" type="radio" value="2 weken"><label for="2-weken">Nieuwsbrief pauzeren voor 2 weken {if $profile.Frequentie eq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="1-maand" name="dbfield240" type="radio" value="1 maand"><label for="1-maand">Nieuwsbrief pauzeren voor 1 maand {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="6-maanden" name="dbfield240" type="radio" value="6 maanden" ><label for="6-maanden">Nieuwsbrief pauzeren voor 6 maanden</label></li>
+            <li><input id="uitschrijven" name="dbfield240" type="radio" value="Uitgeschreven" class="div-pauze-uitschrijven"><label for="uitschrijven">Nee, Ik wil mij definitief uitschrijven</label>
+              <div class="div-pauze-uitschrijven-warning">Weet u zeker dat u voortaan de beste hotelaanbiedingen wilt missen?</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-block">
+    <h4>Wilt u de servicemail ontvangen?</h4>
+    <p class="grey">Wilt u onze servicemail ontvangen, zodat we u een fijne reis kunnen wensen (en persoonlijke aanbevelingen of verzoeken op basis van uw boeking kunnen sturen)?</p>
+    <ul class="list-unstyled">
+      <li><input id="ja" name="dbfield184" type="radio" value="Ja"><label for="ja">Ja</label></li>
+      <li><input id="nee" name="dbfield184" type="radio" value="Afgemeld"><label for="nee">Nee</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Wanneer wilt u de nieuwsbrief ontvangen?</h4>
+    <ul class="list-unstyled">
+      <li><input id="VO" name="dbfield239" type="radio" value="Vroege ochtend"><label for="VO">05:00 - 09:00</label></li>
+      <li><input id="LO" name="dbfield239" type="radio" value="Late ochtend"><label for="LO">09:00 - 12:00</label></li>
+      <li><input id="VM" name="dbfield239" type="radio" value="Vroege middag"><label for="VM">12:00 - 16:00</label></li>
+      <li><input id="LM" name="dbfield239" type="radio" value="Late middag"><label for="LM">16:00 - 19:00</label></li>
+      <li><input id="AV" name="dbfield239" type="radio" value="Avond"><label for="AV">19:00 - 24:00</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Nieuwsbrief interesses</h4>
+    <p class="grey">Wilt u uw nieuwsbrief interesses, zoals het type verblijf, land of type arrangement aanpassen? <a style="text-decoration: none; color: #000000;" href="https://copernica.voordeeluitjes.nl/interesses?page=1&amp;profile={$profile.id}&amp;code={$profile.code}" target="_blank" rev="document_link_144">Klik dan <u>hier</u></a></p>
+  </div>
+</form>
+{elseif {$profile.Tijdelijke_Datum != ''} or {$profile.Tijdelijke_Pauze == '2 weken'} or {$profile.Tijdelijke_Pauze == '1 maand'} or {$profile.Tijdelijke_Pauze == '3 maanden'} or {$profile.Tijdelijke_Pauze == '6 maanden'}}
+<form name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/> 
+  <input type="hidden" name="wizard" value="change"/> 
+  <input type="hidden" name="next" value="https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=succesvol&profile={$profile.id}&code={$profile.code}"/> 
+  <input type="hidden" name="check" value="d4f0afec38be22123d5c0ea323023b8df631b5566f6d4f854a28d380e11c9ce4"/> 
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="dbfields" value="8,9,55,90,184,240,578"/>
+  <input type="hidden" name="dbfield240" id="tijdelijke_periode" value="{$profile.Tijdelijke_Pauze}"/>
+  <h3 style="padding-top: 0px;">Persoonlijke gegevens</h3>
+  <div class="content-block">
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-12">
+        <label class="col-form-label">E-mailadres</label>
+        <input type="email" class="form-control"  value="{$profile.Emailadres|ucfirst}" name="dbfield8">
+        <div class="input-valid"></div>
+      </div>
+    </div>
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-6">
+        <label class="col-form-label">Voornaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield90">  
+        <div class="input-valid"></div>
+      </div>
+      <div class="col-sm-6">
+        <label class="col-form-label">Achternaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw achternaam in" name="dbfield9">   
+        <div class="input-valid"></div>
+      </div>
+    </div>
+  </div>
+  <h3>Mailvoorkeur aanpassen</h3>
+  <div class="content-block">
+    <h4>Hoe vaak wilt u onze nieuwsbrief ontvangen?</h4>
+    <p class="grey">Wist u dat u gemakkelijk de frequentie kunt aanpassen? Kies er bijvoorbeeld voor om de nieuwsbrief wekelijks of maandelijks te ontvangen. Of kies voor een tijdelijke pauze.</p>
+    <ul class="list-unstyled">
+      <li><input class="close" id="dagelijks" name="dbfield55" type="radio" value="Dagelijks"><label for="dagelijks">Dagelijks {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion">meest gekozen</div>{/if}</label></li>
+      <li><input class="close" id="wekelijks" name="dbfield55" type="radio" value="Wekelijks"><label for="wekelijks">Wekelijks</label></li>
+      <li><input class="close" id="maandelijks" name="dbfield55" type="radio" value="Maandelijks"><label for="maandelijks">Maandelijks</label></li>
+      <li><input class="open" id="geen" name="dbfield55" type="radio" value="{$profile.Frequentie}"><label for="geen">Geen</label></li>
+    </ul>
+    <div id="popup-pauze" class="popup-pauze-container">
+      <div class="popup-pauze-content">
+        <span id="close-popup" class="close-popup">&times;</span>
+        <div class="popup-pauze-padding">
+          <h1 style="padding-bottom: 10px;">U heeft onze nieuwsbrief tijdelijk gepauzeerd</h1>
+          {if {$profile.Tijdelijke_Datum != ''}}
+          <p>
+            Uw nieuwsbrief pauze duurt nog tot: <b>{$profile.Tijdelijke_Datum|date_format:"%d-%m-%Y"}</b><br><br> Wilt u de nieuwsbrief direct weer ontvangen? Klik dan snel op de knop hieronder! 
+          </p>
+          {else}
+          <p>
+            U heeft onze nieuwsbrief voor<b> {$profile.Tijdelijke_Pauze} </b>gepauzeerd<br><br> Wilt u de nieuwsbrief direct weer ontvangen? Klik dan snel op de knop hieronder! 
+          </p>
+          {/if}
+          <input type="submit" id="submit-popup" class="button-popup" value="Tijdelijke pauze nú stoppen" name="submit">
+        </div>
+      </div>
+    </div>
+    <div class="div-pauze">
+      <div class="form-group row">
+        <div class="col-sm-12 background-pauze">
+          <h4 class="div-pauze-title">Tijdelijk pauzeren</h4>
+          <p>Weet u zeker dat u onze nieuwsbrief niet meer wilt ontvangen? U kunt de nieuwsbrief ook tijdelijk pauzeren.</p>
+          <ul class="list-unstyled">
+            <li><input id="2-weken" name="dbfield240" type="radio" value="2 weken"><label for="2-weken">Nieuwsbrief pauzeren voor 2 weken {if $profile.Frequentie eq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="1-maand" name="dbfield240" type="radio" value="1 maand"><label for="1-maand">Nieuwsbrief pauzeren voor 1 maand {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="6-maanden" name="dbfield240" type="radio" value="6 maanden" ><label for="6-maanden">Nieuwsbrief pauzeren voor 6 maanden</label></li>
+            <li><input id="uitschrijven" name="dbfield240" type="radio" value="Uitgeschreven" class="div-pauze-uitschrijven"><label for="uitschrijven">Nee, Ik wil mij definitief uitschrijven</label>
+              <div class="div-pauze-uitschrijven-warning">Weet u zeker dat u voortaan de beste hotelaanbiedingen wilt missen?</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-block">
+    <h4>Wilt u de servicemail ontvangen?</h4>
+    <p class="grey">Wilt u onze servicemail ontvangen, zodat we u een fijne reis kunnen wensen (en persoonlijke aanbevelingen of verzoeken op basis van uw boeking kunnen sturen)?</p>
+    <ul class="list-unstyled">
+      <li><input id="ja" name="dbfield184" type="radio" value="Ja"><label for="ja">Ja</label></li>
+      <li><input id="nee" name="dbfield184" type="radio" value="Afgemeld"><label for="nee">Nee</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Wilt u de verlaten winkelwagen servicemail ontvangen?</h4>
+    <p class="grey">Wilt u onze verlaten winkelwagen mail ontvangen, zodat we u kunnen helpen uw boeking gemakkelijk te maken?</p>
+    <ul class="list-unstyled">
+      <li><input id="winkelwagenja" name="dbfield578" type="radio" value="Ja"><label for="winkelwagenja">Ja</label></li>
+      <li><input id="winkelwagennee" name="dbfield578" type="radio" value="Nee"><label for="winkelwagennee">Nee</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Nieuwsbrief interesses</h4>
+    <p class="grey">Wilt u uw nieuwsbrief interesses, zoals het type verblijf, land of type arrangement aanpassen? <a style="text-decoration: none; color: #000000;" href="https://copernica.voordeeluitjes.nl/interesses?page=1&amp;profile={$profile.id}&amp;code={$profile.code}" target="_blank" rev="document_link_144">Klik dan <u>hier</u></a></p>
+  </div>
+  <div class="form-group row col-sm-12"><input type="submit" name="submit" value="Voorkeuren opslaan"></div>
+</form>
+<script type="text/javascript">
+    var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=7&document=39&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=8%2C9%2C55%2C90%2C184%2C240%2C578&colfields=&interests=&document=0&account=7032&cdmaccount=7032&check=d4f0afec38be22123d5c0ea323023b8df631b5566f6d4f854a28d380e11c9ce4&notification=';
+    var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+    url = url.replace(/__CODE__/, code);
+    if (location.search.match(/subprofile=(\d+)/)) 
+    {
+        url = url.replace('__SUBPROFILE__', RegExp.$1);
+        url = url.replace('__PROFILE__', 0);
+    }
+    else if (location.search.match(/profile=(\d+)/)) 
+    {
+        url = url.replace('__PROFILE__', RegExp.$1);
+        url = url.replace('__SUBPROFILE__', 0);
+    }
+    
+    var script = ("<script src='"+url+"'><\/script>");
+    document.writeln(script);
+</script>
+
+{elseif $smarty.get.page eq 'succesvol'}
+<form name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/> 
+  <input type="hidden" name="wizard" value="change"/> 
+  <input type="hidden" name="next" value="https://copernica.voordeeluitjes.nl/bedankt?profile={$profile.id}&amp;code={$profile.code}"/> 
+  <input type="hidden" name="check" value="d4f0afec38be22123d5c0ea323023b8df631b5566f6d4f854a28d380e11c9ce4"/> 
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="dbfields" value="8,9,55,90,184,240,578"/>
+  <h3 style="padding-top: 0px;">Persoonlijke gegevens</h3>
+  <div class="content-block">
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-12">
+        <label class="col-form-label">E-mailadres</label>
+        <input type="email" class="form-control"  value="{$profile.Emailadres|ucfirst}" name="dbfield8">
+        <div class="input-valid"></div>
+      </div>
+    </div>
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-6">
+        <label class="col-form-label">Voornaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield90">  
+        <div class="input-valid"></div>
+      </div>
+      <div class="col-sm-6">
+        <label class="col-form-label">Achternaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw achternaam in" name="dbfield9">   
+        <div class="input-valid"></div>
+      </div>
+    </div>
+  </div>
+  <h3>Mailvoorkeur aanpassen</h3>
+  <div class="content-block">
+    <h4>Hoe vaak wilt u onze nieuwsbrief ontvangen?</h4>
+    <p class="grey">Wist u dat u gemakkelijk de frequentie kunt aanpassen? Kies er bijvoorbeeld voor om de nieuwsbrief wekelijks of maandelijks te ontvangen. Of kies voor een tijdelijke pauze.</p>
+    <ul class="list-unstyled">
+      <li><input class="close" id="dagelijks" name="dbfield55" type="radio" value="Dagelijks"><label for="dagelijks">Dagelijks {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion">meest gekozen</div>{/if}</label></li>
+      <li><input class="close" id="wekelijks" name="dbfield55" type="radio" value="Wekelijks"><label for="wekelijks">Wekelijks</label></li>
+      <li><input class="close" id="maandelijks" name="dbfield55" type="radio" value="Maandelijks"><label for="maandelijks">Maandelijks</label></li>
+      <li><input class="open" id="geen" name="dbfield55" type="radio" value="{$profile.Frequentie}"><label for="geen">Geen</label></li>
+    </ul>
+    <div id="popup-pauze" class="popup-pauze-container">
+      <div class="popup-pauze-content">
+        <span id="close-popup" class="close-popup">&times;</span>
+        <div class="popup-pauze-padding">
+          <i class="fa fa-check" style="font-size: 38px; color: #0dad00; padding-bottom: 15px;"></i>
+          <h1 style="padding-bottom: 10px;">Uw tijdelijke pauze is succesvol stop gezet</h1>
+          <p style="margin-bottom: 0px;">Vanaf nu zult u de nieuwsbrief weer <b>{$profile.Frequentie|lower}</b> van ons ontvangen!</p>
+        </div>
+      </div>
+    </div>
+    <div class="div-pauze">
+      <div class="form-group row">
+        <div class="col-sm-12 background-pauze">
+          <h4 class="div-pauze-title">Tijdelijk pauzeren</h4>
+          <p>Weet u zeker dat u onze nieuwsbrief niet meer wilt ontvangen? U kunt de nieuwsbrief ook tijdelijk pauzeren.</p>
+          <ul class="list-unstyled">
+            <li><input id="2-weken" name="dbfield240" type="radio" value="2 weken"><label for="2-weken">Nieuwsbrief pauzeren voor 2 weken {if $profile.Frequentie eq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="1-maand" name="dbfield240" type="radio" value="1 maand"><label for="1-maand">Nieuwsbrief pauzeren voor 1 maand {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="6-maanden" name="dbfield240" type="radio" value="6 maanden" ><label for="6-maanden">Nieuwsbrief pauzeren voor 6 maanden</label></li>
+            <li><input id="uitschrijven" name="dbfield240" type="radio" value="Uitgeschreven" class="div-pauze-uitschrijven"><label for="uitschrijven">Nee, Ik wil mij definitief uitschrijven</label>
+              <div class="div-pauze-uitschrijven-warning">Weet u zeker dat u voortaan de beste hotelaanbiedingen wilt missen?</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-block">
+    <h4>Wilt u de servicemail ontvangen?</h4>
+    <p class="grey">Wilt u onze servicemail ontvangen, zodat we u een fijne reis kunnen wensen (en persoonlijke aanbevelingen of verzoeken op basis van uw boeking kunnen sturen)?</p>
+    <ul class="list-unstyled">
+      <li><input id="ja" name="dbfield184" type="radio" value="Ja"><label for="ja">Ja</label></li>
+      <li><input id="nee" name="dbfield184" type="radio" value="Afgemeld"><label for="nee">Nee</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Wilt u de verlaten winkelwagen servicemail ontvangen?</h4>
+    <p class="grey">Wilt u onze verlaten winkelwagen mail ontvangen, zodat we u kunnen helpen uw boeking gemakkelijk te maken?</p>
+    <ul class="list-unstyled">
+      <li><input id="winkelwagenja" name="dbfield578" type="radio" value="Ja"><label for="winkelwagenja">Ja</label></li>
+      <li><input id="winkelwagennee" name="dbfield578" type="radio" value="Nee"><label for="winkelwagennee">Nee</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Nieuwsbrief interesses</h4>
+    <p class="grey">Wilt u uw nieuwsbrief interesses, zoals het type verblijf, land of type arrangement aanpassen? <a style="text-decoration: none; color: #000000;" href="https://copernica.voordeeluitjes.nl/interesses?page=1&amp;profile={$profile.id}&amp;code={$profile.code}" target="_blank" rev="document_link_144">Klik dan <u>hier</u></a></p>
+  </div>
+  <div class="form-group row col-sm-12"><input type="submit" name="submit" value="Voorkeuren opslaan"></div>
+</form>
+<script type="text/javascript">
+    var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=7&document=39&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=8%2C9%2C55%2C90%2C184%2C240%2C578&colfields=&interests=&document=0&account=7032&cdmaccount=7032&check=d4f0afec38be22123d5c0ea323023b8df631b5566f6d4f854a28d380e11c9ce4&notification=';
+    var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+    url = url.replace(/__CODE__/, code);
+    if (location.search.match(/subprofile=(\d+)/)) 
+    {
+        url = url.replace('__SUBPROFILE__', RegExp.$1);
+        url = url.replace('__PROFILE__', 0);
+    }
+    else if (location.search.match(/profile=(\d+)/)) 
+    {
+        url = url.replace('__PROFILE__', RegExp.$1);
+        url = url.replace('__SUBPROFILE__', 0);
+    }
+    
+    var script = ("<script src='"+url+"'><\/script>");
+    document.writeln(script);
+</script>
+{else}
+{if $smarty.get.mail eq 'abc'}
+<form id="form-preferences" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/> 
+
+  <input type="hidden" name="wizard" value="change"/> 
+  <input id="next-page" type="hidden" name="next" value="https://copernica.voordeeluitjes.nl/bedankt?profile={$profile.id}&code={$profile.code}"/> 
+  <input type="hidden" name="check" value="d893c0590a13990256df8633626840377b0c174684e9ed42f41b86e33546f73a"/> 
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="dbfields" value="8,9,90,578"/>
+  <h3 style="padding-top: 0px;">Persoonlijke gegevens</h3>
+  <div class="content-block">
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-12">
+        <label class="col-form-label">E-mailadres</label>
+        <input type="email" class="form-control"  value="{$profile.Emailadres|ucfirst}" name="dbfield8">
+        <div class="input-valid"></div>
+      </div>
+    </div>
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-6">
+        <label class="col-form-label">Voornaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield90">  
+        <div class="input-valid"></div>
+      </div>
+      <div class="col-sm-6">
+        <label class="col-form-label">Achternaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw achternaam in" name="dbfield9">   
+        <div class="input-valid"></div>
+      </div>
+    </div>
+  </div>
+  <h3>Mailvoorkeur aanpassen</h3>
+  <div class="content-block">
+      <h4>Wilt u de verlaten winkelwagen servicemail ontvangen?</h4>
+      <p class="grey">Wilt u onze verlaten winkelwagen mail ontvangen, zodat we u kunnen helpen uw boeking gemakkelijk te maken?</p>
+      <ul class="list-unstyled">
+         <li><input id="winkelwagenja" name="dbfield578" type="radio" value="Ja"><label for="winkelwagenja">Ja</label></li>
+         <li><input id="winkelwagennee" name="dbfield578" type="radio" value="Nee"><label for="winkelwagennee">Nee</label></li>
+      </ul>
+   </div>
+   <div class="content-block">
+      <h4>Nieuwsbrief interesses</h4>
+      <p class="grey">Wilt u uw nieuwsbrief interesses, zoals het type verblijf, land of type arrangement aanpassen? <a style="text-decoration: none; color: #707070;" href="https://copernica.voordeeluitjes.nl/interesses?page=1&amp;profile={$profile.id}&amp;code={$profile.code}" target="_blank" rev="document_link_144">Klik dan <u>hier</u></a></p>
+   </div>
+   <div class="form-group row col-sm-12"><input type="submit" name="formSubmit" value="Voorkeuren opslaan"></div>
+</form>
+<script type="text/javascript">
+    var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=7&document=39&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=8%2C9%2C90%2C578&colfields=&interests=&document=0&account=7032&cdmaccount=7032&check=d893c0590a13990256df8633626840377b0c174684e9ed42f41b86e33546f73a&notification=';
+    var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+    url = url.replace(/__CODE__/, code);
+    if (location.search.match(/subprofile=(\d+)/)) 
+    {
+        url = url.replace('__SUBPROFILE__', RegExp.$1);
+        url = url.replace('__PROFILE__', 0);
+    }
+    else if (location.search.match(/profile=(\d+)/)) 
+    {
+        url = url.replace('__PROFILE__', RegExp.$1);
+        url = url.replace('__SUBPROFILE__', 0);
+    }
+    
+    var script = ("<script src='"+url+"'><\/script>");
+    document.writeln(script);
+</script>
+{else}
+<form id="form-preferences" name="change" method="post" action="https://publisher.copernica.com/">
+  <input type="hidden" name="px_process" value=".p.w.formgenerate.outputform"/> 
+
+  <input type="hidden" name="wizard" value="change"/> 
+  <input id="next-page" type="hidden" name="next" value="https://copernica.voordeeluitjes.nl/bedankt?profile={$profile.id}&code={$profile.code}"/> 
+  <input type="hidden" name="check" value="d4f0afec38be22123d5c0ea323023b8df631b5566f6d4f854a28d380e11c9ce4"/> 
+  <input type="hidden" name="cdmaccount" value="7032"/>
+  <input type="hidden" name="database" value="2"/>
+  <input type="hidden" name="profile" value="0"/>
+  <input type="hidden" name="subprofile" value="0"/>
+  <input type="hidden" name="code" value="0"/>
+  <input type="hidden" name="dbfields" value="8,9,55,90,184,240,578"/>
+  <h3 style="padding-top: 0px;">Persoonlijke gegevens</h3>
+  <div class="content-block">
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-12">
+        <label class="col-form-label">E-mailadres</label>
+        <input type="email" class="form-control"  value="{$profile.Emailadres|ucfirst}" name="dbfield8">
+        <div class="input-valid"></div>
+      </div>
+    </div>
+    <div class="form-group row col-xs-12">
+      <div class="col-sm-6">
+        <label class="col-form-label">Voornaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw voornaam in" name="dbfield90">  
+        <div class="input-valid"></div>
+      </div>
+      <div class="col-sm-6">
+        <label class="col-form-label">Achternaam</label>
+        <input type="text" class="form-control" placeholder="Vul hier uw achternaam in" name="dbfield9">   
+        <div class="input-valid"></div>
+      </div>
+    </div>
+  </div>
+  <h3>Mailvoorkeur aanpassen</h3>
+  <div class="content-block">
+  <h4>Hoe vaak wilt u onze nieuwsbrief ontvangen?</h4>
+    <p class="grey">Wist u dat u gemakkelijk de frequentie kunt aanpassen? Kies er bijvoorbeeld voor om de nieuwsbrief wekelijks of maandelijks te ontvangen. Of kies voor een tijdelijke pauze.</p>
+    <ul class="list-unstyled">
+      <li><input class="close" id="dagelijks" name="dbfield55" type="radio" value="Dagelijks"><label for="dagelijks">Dagelijks {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion">meest gekozen</div>{/if}</label></li>
+      <li><input class="close" id="wekelijks" name="dbfield55" type="radio" value="Wekelijks"><label for="wekelijks">Wekelijks</label></li>
+      <li><input class="close" id="maandelijks" name="dbfield55" type="radio" value="Maandelijks"><label for="maandelijks">Maandelijks</label></li>
+      <li><input class="open" id="geen" name="dbfield55" type="radio" value="{$profile.Frequentie}"><label for="geen">Geen</label></li>
+    </ul>
+    <div class="div-pauze">
+      <div class="form-group row">
+        <div class="col-sm-12 background-pauze">
+          <h4 class="div-pauze-title">Tijdelijk pauzeren</h4>
+          <p>Weet u zeker dat u onze nieuwsbrief niet meer wilt ontvangen? U kunt de nieuwsbrief ook tijdelijk pauzeren.</p>
+            <ul class="list-unstyled">
+            <li><input id="2-weken" name="dbfield240" type="radio" value="2 weken"><label for="2-weken">Nieuwsbrief pauzeren voor 2 weken {if $profile.Frequentie eq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="1-maand" name="dbfield240" type="radio" value="1 maand"><label for="1-maand">Nieuwsbrief pauzeren voor 1 maand {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
+            <li><input id="6-maanden" name="dbfield240" type="radio" value="6 maanden" ><label for="6-maanden">Nieuwsbrief pauzeren voor 6 maanden</label></li>
+            <li><input id="uitschrijven" name="dbfield240" type="radio" value="Uitgeschreven" class="div-pauze-uitschrijven"><label for="uitschrijven">Nee, Ik wil mij definitief uitschrijven</label>
+              <div class="div-pauze-uitschrijven-warning">Weet u zeker dat u voortaan de beste hotelaanbiedingen wilt missen?</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-block">
+    <h4>Wilt u de servicemail ontvangen?</h4>
+    <p class="grey">Wilt u onze servicemail ontvangen, zodat we u een fijne reis kunnen wensen (en persoonlijke aanbevelingen of verzoeken op basis van uw boeking kunnen sturen)?</p>
+    <ul class="list-unstyled">
+      <li><input id="ja" name="dbfield184" type="radio" value="Ja"><label for="ja">Ja</label></li>
+      <li><input id="nee" name="dbfield184" type="radio" value="Afgemeld"><label for="nee">Nee</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Wilt u de verlaten winkelwagen servicemail ontvangen?</h4>
+    <p class="grey">Wilt u onze verlaten winkelwagen mail ontvangen, zodat we u kunnen helpen uw boeking gemakkelijk te maken?</p>
+    <ul class="list-unstyled">
+        <li><input id="winkelwagenja" name="dbfield578" type="radio" value="Ja"><label for="winkelwagenja">Ja</label></li>
+        <li><input id="winkelwagennee" name="dbfield578" type="radio" value="Nee"><label for="winkelwagennee">Nee</label></li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <h4>Nieuwsbrief interesses</h4>
+    <p class="grey">Wilt u uw nieuwsbrief interesses, zoals het type verblijf, land of type arrangement aanpassen? <a style="text-decoration: none; color: #707070;" href="https://copernica.voordeeluitjes.nl/interesses?page=1&amp;profile={$profile.id}&amp;code={$profile.code}" target="_blank" rev="document_link_144">Klik dan <u>hier</u></a></p>
+  </div>
+  <div class="form-group row col-sm-12"><input type="submit" name="formSubmit" value="Voorkeuren opslaan"></div>
+</form>
+<script type="text/javascript">
+    var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=7&document=39&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=8%2C9%2C55%2C90%2C184%2C240%2C578&colfields=&interests=&document=0&account=7032&cdmaccount=7032&check=d4f0afec38be22123d5c0ea323023b8df631b5566f6d4f854a28d380e11c9ce4&notification=';
+    var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
+    url = url.replace(/__CODE__/, code);
+    if (location.search.match(/subprofile=(\d+)/)) 
+    {
+        url = url.replace('__SUBPROFILE__', RegExp.$1);
+        url = url.replace('__PROFILE__', 0);
+    }
+    else if (location.search.match(/profile=(\d+)/)) 
+    {
+        url = url.replace('__PROFILE__', RegExp.$1);
+        url = url.replace('__SUBPROFILE__', 0);
+    }
+    
+    var script = ("<script src='"+url+"'><\/script>");
+    document.writeln(script);
+</script>
+<script type="text/javascript">
+var form = document.getElementById("form-preferences");
+   
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  setTimeout(submitForm, 1000);
+  var formSubmitted = false;
+   
+  function submitForm() {
+    if (!formSubmitted) {
+      formSubmitted = true;
+      form.submit();
+    }
+  }
+
+  if (document.getElementById("dagelijks").checked === true) {
+    ga('send', 'event', 'Mailvoorkeuren pagina', 'Wijziging', 'Dagelijks', {
+      'hitCallback': submitForm 
+  });
+  } else if (document.getElementById("wekelijks").checked === true) {
+    ga('send', 'event', 'Mailvoorkeuren pagina', 'Wijziging', 'Wekelijks', {
+      'hitCallback': submitForm 
+  });
+  } else if (document.getElementById("maandelijks").checked === true) {
+    ga('send', 'event', 'Mailvoorkeuren pagina', 'Wijziging', 'Maandelijks', {
+      'hitCallback': submitForm 
+  });
+  } else if (document.getElementById("2-weken").checked === true) {
+     ga('send', 'event', 'Mailvoorkeuren pagina', 'Tijdelijke pauze', '2 weken', {
+       'hitCallback': submitForm 
+  });
+  } else if (document.getElementById("3-maanden").checked === true) {
+     ga('send', 'event', 'Mailvoorkeuren pagina', 'Tijdelijke pauze', '3 maanden', {
+       'hitCallback': submitForm 
+  });
+  } else if (document.getElementById("6-maanden").checked === true) {
+     ga('send', 'event', 'Mailvoorkeuren pagina', 'Tijdelijke pauze', '6 maanden', {
+       'hitCallback': submitForm 
+  });
+  } else {
+    ga('send', 'event', 'Mailvoorkeuren pagina', 'Uitschrijving', 'Geen', {
+      'hitCallback': submitForm 
+  });
+  }
+});
+</script>
+<script type="text/javascript">
+var uitschrijfWarning = document.getElementById("uitschrijven-warning");
+document.querySelectorAll('.clear-datum').forEach(el => el.addEventListener('click', function(e) {
+  if (e.target.value === "Uitgeschreven") {
+    uitschrijfWarning.classList.add("active");
+  } else {
+    uitschrijfWarning.classList.remove("active");
+  }
+})); 
+</script>
+{/if}
+{/if}

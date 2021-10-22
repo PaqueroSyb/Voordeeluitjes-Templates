@@ -1,0 +1,116 @@
+<page>
+	<title culture="nl-NL"><![CDATA[Uw extra's]]></title>
+	<content culture="nl-NL">
+		<![CDATA[
+		<script type="text/javascript">
+		function getUrlQueryParams(url) {
+  			var queryString = url.split("?")[1];
+  			var keyValuePairs = queryString.split("&");
+  			var keyValue = [];
+ 			var queryParams = {};
+  			Array.prototype.forEach.call(keyValuePairs, function(pair) {
+    			keyValue = pair.split("=");
+    			queryParams[keyValue[0]] = decodeURIComponent(keyValue[1]);
+			});
+  		  return queryParams;
+		}
+  		var urlCurrent = window.location.href;
+		var currentParameters = getUrlQueryParams(urlCurrent);
+		var profile = currentParameters["profile"];
+		var code = currentParameters["code"];
+		var extras = currentParameters["extras"];
+		var bid = currentParameters["bid"];
+		var pid = currentParameters["pid"];
+		var version = currentParameters["utm_campaign"];
+		var confirmed = currentParameters["confirmed"];
+	    var bodyIframe = document.getElementById("placeIframe");
+		ifrm = document.createElement("iframe");
+		
+		if (confirmed === "yes") {
+			ifrm.setAttribute("src", "https://copernica.voordeeluitjes.nl/klantextras?profile="+ profile +"&code=" + code + "&bid=" + bid + "&pid=" + pid + "&confirmed=yes"); 
+		} else {
+			ifrm.setAttribute("src", "https://copernica.voordeeluitjes.nl/klantextras?profile="+ profile +"&code=" + code + "&bid=" + bid + "&pid=" + pid + "&version=" + version); 
+		}
+		
+		ifrm.style.width = 100+"%";
+ 		
+		var mediaQuerySmall = window.matchMedia('(max-width: 1200px)');
+		var mediaQueryTablet = window.matchMedia('(max-width: 992px)');
+		var mediaQueryMobile = window.matchMedia('(max-width: 768px)');
+		
+		if (confirmed === "yes") {
+			ifrm.style.height = 265+"px";
+		} else if (mediaQueryMobile.matches) {
+			if (extras === "1") {
+				ifrm.style.height = 2000+"px";
+			} else if (extras === '2') {
+				ifrm.style.height = 2500+"px";
+			} else if (extras === '3') {
+				ifrm.style.height = 3000+"px";
+			} else {
+				ifrm.style.height = 3500+"px";
+			}
+		} else if (mediaQueryTablet.matches) {
+			if (extras === "1") {
+				ifrm.style.height = 1755+"px";
+			} else if (extras === '2') {
+				ifrm.style.height = 2095+"px";
+			} else if (extras === '3') {
+				ifrm.style.height = 2450+"px";
+			} else {
+				ifrm.style.height = 2830+"px";
+			}
+		} else if (mediaQuerySmall.matches) {
+			if (extras === "1") {
+				ifrm.style.height = 1095+"px";
+			} else if (extras === '2') {
+				ifrm.style.height = 1460+"px";
+			} else if (extras === '3') {
+				ifrm.style.height = 1805+"px";
+			} else {
+				ifrm.style.height = 2190+"px";
+			}
+		} else {
+			if (extras === "1") {
+				ifrm.style.height = 1065+"px";
+			} else if (extras === '2') {
+				ifrm.style.height = 1400+"px";
+			} else if (extras === '3') {
+				ifrm.style.height = 1750+"px";
+			} else {
+				ifrm.style.height = 2130+"px";
+			}
+		}
+		ifrm.frameBorder = 0;
+		ifrm.scrolling = "no";
+		bodyIframe.appendChild(ifrm);
+		</script>
+		
+		<div id="placeIframe"></div>
+		
+		<style type="text/css">
+		nav, .partner-labels, .header-search-button, .container-breadcrumbs, .vu-bg-img, h1.title, .icon-vu-search1, .vu-campaign-banner {
+		 display: none!important;
+		}
+		.container-top-bar {
+		 box-shadow: 0px 1px 3px rgba(0,0,0,0.29);
+		}
+		.title-wrapper {
+		 margin-top: 30px;
+		}
+		.section-wrapper, .main-content .section-wrapper .container {
+		 background-color: #f1f1f1!important;
+		}
+		@media (max-width: 768px) {
+		 .page-content-wrapper {
+		  padding-left: 0px!important;
+		  padding-right: 0px!important;
+		 }
+		 .title-wrapper {
+		  margin-top: 16px;
+		 }
+		}
+		</style>
+		]]>
+	</content>
+</page>
