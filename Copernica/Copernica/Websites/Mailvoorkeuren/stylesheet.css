@@ -1060,6 +1060,7 @@ html, body {
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0,0,0,.26);
   margin-top: 20px;
+  text-transform: lowercase !important;
  }
  
  input[type="submit"]:hover, .button:hover {
@@ -1278,7 +1279,7 @@ html, body {
  
  .popup-pauze-container {
   position: fixed;
-  z-index: 1;
+  z-index: 99;
   left: 0;
   top: 0;
   width: 100%;
