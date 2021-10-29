@@ -58,3 +58,16 @@ footer {
     text-align: center;
     background-color: #F5F5F5;
 }
+
+@media (max-width: 768px) {
+  .row-dog {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0px;
+  }
+  .dog-image {
+    margin-right: 0px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}
