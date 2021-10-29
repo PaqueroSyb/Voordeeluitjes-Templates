@@ -1,14 +1,27 @@
-window.onload = function() {
+var retrieveDogs = document.getElementById('retrieveDogs');
+var loadedXTimes = document.getElementById('loadedXTimes');
+var count = 0;
+retrieveDogs.addEventListener('click', function() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         // Typical action to be performed when the document is ready:
         var response = JSON.parse(xhttp.responseText);
-        for (let i = 0; i < response.athletes.length; i++) {
-            document.getElementById("test-data").innerHTML += "<b>" + response.athletes[i].name + "</b><br>Deadlift: " + response.athletes[i].lift.deadlift + "<br>Squat: " + response.athletes[i].lift.squat  + "<br>Benchpress: " + response.athletes[i].lift.benchpress + "<br><br>";
-        }
+        var images = response.message;
+        var imageDiv = document.querySelectorAll('.dog-image')
+        images.forEach(function (image, index) {
+          var currentImage = imageDiv[index].querySelector('img');
+          imageDiv[index].removeChild(currentImage);
+
+          var newImage = document.createElement("img");
+          newImage.setAttribute('src', image);
+          imageDiv[index].appendChild(newImage);
+        });
       }
     };
-    xhttp.open("GET", "data.json", true);
+    xhttp.open("GET", "https://dog.ceo/api/breeds/image/random/6", true);
     xhttp.send();
-  };
+
+    count++;
+    loadedXTimes.innerText = count;
+});
