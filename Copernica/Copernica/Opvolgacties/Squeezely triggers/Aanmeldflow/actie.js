@@ -1,9 +1,4 @@
-<div id="show-test"></div>
-
-<script type="text/javascript">
-var showTest = document.getElementById('show-test');
-
-var kortingscodeDateValue = "2020-08-10";
+var kortingscodeDateValue = profile.Sqzly_aanmeld_kortingscode_datum;
 
 var today = new Date();
 today.setHours(0, 0, 0);
@@ -13,8 +8,7 @@ kortingscodeDate.setHours(0, 0, 0);
 var sendKortingscode = today.getTime() - kortingscodeDate.getTime();
 
 if (sendKortingscode > 31536000000) {
-	showTest.innerText = "True";
+	return true;
 } else {
-  showTest.innerText = "False";
+  return false;
 }
-</script>

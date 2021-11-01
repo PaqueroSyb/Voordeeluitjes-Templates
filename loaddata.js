@@ -8,6 +8,7 @@ retrieveDogs.addEventListener('click', function() {
         // Typical action to be performed when the document is ready:
         var response = JSON.parse(xhttp.responseText);
         var images = response.message;
+        
         var imageDiv = document.querySelectorAll('.dog-image')
         images.forEach(function (image, index) {
           var currentImage = imageDiv[index].querySelector('img');
