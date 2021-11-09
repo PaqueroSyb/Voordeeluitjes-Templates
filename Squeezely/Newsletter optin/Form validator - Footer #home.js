@@ -30,7 +30,6 @@ submitButton.addEventListener('click', submitForm, false);
 inputEmail.addEventListener('keydown', function(key) {
   if (key.keyCode == '13') {
     submitForm('Enter key');
-    console.log(`${key.keyCode} ingedrukt`)
   }
 });
 
@@ -42,13 +41,14 @@ function submitForm(submitElement) {
     _sqzl.push({
       "anonymize": "no",
     });
-    preferenceHotel = document.getElementById('preference-hotel').checked ? "Ja" : "Nee";
-    preferenceVakantiepark = document.getElementById('preference-vakantiepark').checked ? "Ja" : "Nee";
+    // preferenceHotel = document.getElementById('preference-hotel').checked ? "Ja" : "Nee";
+    // preferenceVakantiepark = document.getElementById('preference-vakantiepark').checked ? "Ja" : "Nee";
     _sqzl.push({
-      "event": "NewsletterFooterConfirm",
+      "event": "NewsletterSubscribeConfirm",
       "email": emailValue,
-      "custom_email_preference_hotel": preferenceHotel,
-      "custom_email_preference_vakantiepark": preferenceVakantiepark,
+      "custom_email_preference_hotel": "Ja",
+      // "custom_email_preference_vakantiepark": preferenceVakantiepark,
+      "custom_email_batch": "Inschrijvingen",
     });
     _sqzl.push({
       "anonymize": "yes",
