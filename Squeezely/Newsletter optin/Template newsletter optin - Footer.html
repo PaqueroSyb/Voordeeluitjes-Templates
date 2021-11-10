@@ -58,7 +58,7 @@
     {{ cssPrefix }} input[type=checkbox]:checked:before{ background-color: #ec008c; border: 2px solid #ec008c; }
     {{ cssPrefix }} input[type=checkbox]:checked:after{ content: ""; display:  block; position: absolute; top: -2px; left: 1px; width: 11px; height: 6px; border: solid 2px transparent; border-right: none;
         border-top: none; transform: translate(3px,4px) rotate(-45deg); border-color: #FFF; }
-    {{ cssPrefix }} .input-group{ display: -webkit-flex; display: flex; width: 100%; }
+    {{ cssPrefix }} .input-group{ display: -webkit-flex; display: flex; width: 100%; -webkit-align-items: center; align-items: center; }
     {{ cssPrefix }} .flex-email{ -webkit-flex: 1; flex: 1; }
     {{ cssPrefix }} .error-message{ font-size: 11px; line-height: 16px; color: #f55;  margin-top: 3px; position: absolute; display: none; }
     {{ cssPrefix }} .error-message.hide{ display: none !important; }
@@ -89,8 +89,10 @@
     @media all and (max-width:30em){
         {{ cssPrefix }} a.sqzly-btn{ display:block; margin:0.2em auto; }
     }
-    @media( max-width : 767px ){
+    @media( max-width : 768px ){
         {{ cssPrefix }} .sqzly-modal { padding-top: 45px; padding-bottom: 27px; }
+        {{ cssPrefix }} .form-control-feedback.icon-vu-check1 { top: 6px; }
+        {{ cssPrefix }} .sqzly-fields input[type="email"] { padding: 9px 45px 11px 12px; }
     }
 
 </style>
@@ -134,7 +136,7 @@
                 {% elseif element == 'button' and elementSettings.enabled %}
 
                 <div class="sqzly-fields">
-                    <div class="preferences">
+                    <!-- <div class="preferences">
                         <div class="preferences-title">Ik wil aanbiedingen voor:</div>
                         <div class="checkbox-container">
                             <label>
@@ -149,6 +151,7 @@
                             </label>
                         </div>
                     </div>
+                  -->
                     <div class="input-group">
                         {% for field in fields %}
                             {% if field.type == 'checkbox' %}
@@ -192,8 +195,8 @@
 
                             <span class="icon icon-vu-exclamation form-control-feedback"></span>
                             <span class="icon icon-vu-check1 form-control-feedback"></span>
-                            <div style="position: relative">
-                                <a href="javascript:" class="sqzly-form-submit sqzly-btn {% if elements.button.full_width %}sqzly-btn-fullwidth{% endif %}">{% if parsedItem.button %}{{ parsedItem.button }}{% else %}CTA text{% endif %}</a>
+                            <div style="position: relative;" tabindex="0">
+                                <a href="javascript:" tabindex="0" class="sqzly-form-submit sqzly-btn {% if elements.button.full_width %}sqzly-btn-fullwidth{% endif %}">{% if parsedItem.button %}{{ parsedItem.button }}{% else %}CTA text{% endif %}</a>
                                 <i class="icon-vu-thick-arrow-right"></i>
                             </div>
                         </div>
@@ -217,3 +220,6 @@
         </div>
     </div>
 {% endfor %}
+
+
+        
