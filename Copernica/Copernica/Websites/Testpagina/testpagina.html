@@ -15,6 +15,19 @@
     </script>
     <!-- End Google Analytics -->
 
+    {if $smarty.get.page eq 'sybrentest'}
+    <script type="text/javascript">
+    [literal]
+      (function(s,q,z,l,y){s._sqzl=s._sqzl||[];l=q.createElement('script'),
+      y=q.getElementsByTagName('script')[0];l.async=1;l.type='text/javascript';
+      l.defer=true;l.src=z;y.parentNode.insertBefore(l,y)})
+      (window,document,'https://squeezely.tech/tracker/SQ-2565780/sqzl.js');
+
+      window._sqzl = window._sqzl || [];
+    [/literal]
+    </script>
+    {/if}
+
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,6 +56,12 @@
     <!-- Select2 javascript -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+    <!-- Haal profielwaardes op om te gebruiken in een script --> 
+    <input type="hidden" id="frequentie" value="{$profile.Frequentie}"/>
+    <input type="hidden" id="frequentie_vp" value="{$profile.Frequentie_vp}"/>
+    <input type="hidden" id="profile_id" value="{$profile.id}"/>
+    <input type="hidden" id="profile_code" value="{$profile.code}"/>
 
     <!-- Start custom scripts-->
     <!-- Polyfill voor foreach oudere browsers zoals IOS 8-->
@@ -340,12 +359,6 @@
                   </div>
                 </footer>
 
-                <!-- Haal profielwaardes op om te gebruiken in een script --> 
-                <input type="hidden" id="frequentie" value="{$profile.Frequentie}"/>
-                <input type="hidden" id="frequentie_vp" value="{$profile.Frequentie_vp}"/>
-                <input type="hidden" id="profile_id" value="{$profile.id}"/>
-                <input type="hidden" id="profile_code" value="{$profile.code}"/>
-
                 <!-- Haal de frequentie waarde op en voeg deze in Veldwaarde Geen toe | Haal de servicemail inschrijving op --> 
                 <script type="text/javascript">
                 [literal]
@@ -359,7 +372,7 @@
                   });
                   
                   $(function () { 
-                  $(`input[value="${window.waardeVP}"]`)
+                  $(`input[name="dbfield599"]input[value="${window.waardeVP}"]`)
                       .filter(':visible:first')
                       .prop('checked', true)
                   });
