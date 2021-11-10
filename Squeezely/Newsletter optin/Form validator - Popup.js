@@ -1,7 +1,6 @@
 let submitButton = document.querySelector('.sqzly-form-submit');
 let inputEmail = document.querySelector('.sqzly-emailfield');
 let inputContainer = document.querySelector('.sqzly-fields');
-let modal = document.querySelector('.sqzly-fields');
 let emailValue;
 let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
@@ -20,11 +19,6 @@ inputEmail.addEventListener('input', function() {
     }
 });
 
-let urlPath = window.location.pathname;
-if (urlPath === '/') {
-    modal.classList.add('home');
-}
-
 submitButton.addEventListener('click', function() {
     let emailValid = pattern.test(emailValue);
     if (emailValid === false) {
@@ -36,13 +30,14 @@ submitButton.addEventListener('click', function() {
         preferenceHotel = document.getElementById('preference-hotel').checked ? "Ja" : "Nee";
         preferenceVakantiepark = document.getElementById('preference-vakantiepark').checked ? "Ja" : "Nee";
         _sqzl.push({
-            "event": "NewsletterFooterConfirm",
+            "event": "NewsletterSubscribeConfirm",
             "email": emailValue,
             "custom_email_preference_hotel": preferenceHotel,
             "custom_email_preference_vakantiepark": preferenceVakantiepark,
+            "custom_email_batch": "Discount tool",
         });
         _sqzl.push({
             "anonymize": "yes",
         });
-    }   
+    }
 });

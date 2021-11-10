@@ -1414,10 +1414,7 @@ name="text-after" editor="poor"]</span>
 <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0"> [loop name="left-column-1" min="1"] {capture assign="package_id"}[text name="package id" editor="editor"]{/capture}
                                               {loadprofile source="Hotel_Feed" assign="geladenhotels" Package_ID=$package_id multiple="true"}
                                               {foreach $geladenhotels as $geladenhotel}
-                                              {capture assign="hotel_url"}[text name="url hotel"
-editor="poor"]{/capture}
-                                              {capture assign="action_type"}[text name="action type" editor="poor"]{/capture}
-                                              {capture assign="actionColor"}{if $action_type == 'hotel'}#ec008c{else}#f58220{/if}{/capture} [loop name="image-block" min="0"] <tr><td valign="top" class="hide-for-small" style="padding-bottom:10px"><a href="{$hotel_url}{$property.AB_all_links}" target="_blank" style="margin:0;padding:0;text-decoration:none">[text name="desktop" editor="poor"]</a>
+                                              {capture assign="hotel_url"}[text name="url hotel" editor="poor"]{/capture}{capture assign="utmContent"}{if $ab_test == 'yes'}?utm_content={$geladenhotel.Hotel_Naam|replace:' ':'-'}-{$profile.Batch}{else}&amp;utm_content={$geladenhotel.Hotel_Naam|replace:' ':'-'}-{$profile.Batch}{/if}{/capture}{capture assign="action_type"}[text name="action type" editor="poor"]{/capture}{capture assign="actionColor"}{if $action_type == 'hotel'}#ec008c{else}#f58220{/if}{/capture} [loop name="image-block" min="0"] <tr><td valign="top" class="hide-for-small" style="padding-bottom:10px"><a href="{$hotel_url}{$property.AB_all_links}" target="_blank" style="margin:0;padding:0;text-decoration:none">[text name="desktop" editor="poor"]</a>
 </td> [literal]
 <!--[if !true]><!-->[/literal] <td valign="top" class="show-for-small" style="display:none;padding-bottom:10px"><a href="{$hotel_url}{$property.AB_all_links}" target="_blank" style="margin:0;padding:0;text-decoration:none">[text name="mobile" editor="poor" class="responsive-img"]</a>
 </td> [literal]
@@ -1504,7 +1501,7 @@ name="price" editor="poor"]</span> <span class="font-content-semi wq b" style="c
                                               {loadprofile source="Hotel_Feed" assign="geladenhotels" Package_ID=$package_id multiple="true"}
                                               {foreach $geladenhotels as $geladenhotel}
                                               {capture assign="hotel_url"}[text name="url hotel"
-editor="poor"]{/capture}
+editor="poor"]{/capture}{capture assign="utmContent"}{if $ab_test == 'yes'}?utm_content={$geladenhotel.Hotel_Naam|replace:' ':'-'}-{$profile.Batch}{else}&amp;utm_content={$geladenhotel.Hotel_Naam|replace:' ':'-'}-{$profile.Batch}{/if}{/capture}
                                               {capture assign="action_type"}[text name="action type" editor="poor"]{/capture}
                                               {capture assign="actionColor"}{if $action_type == 'hotel'}#ec008c{else}#f58220{/if}{/capture} [loop name="image-block" min="0"] <tr><td valign="top" class="hide-for-small" style="padding-bottom:10px"><a href="{$hotel_url}{$property.AB_all_links}" target="_blank" style="margin:0;padding:0;text-decoration:none">[text name="desktop" editor="poor"]</a>
 </td> [literal]

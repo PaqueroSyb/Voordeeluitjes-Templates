@@ -66,7 +66,7 @@
     function submitProfielForm(){
       document.subscribe.submit();
     }
-    </script> 
+    </script>
     
     <!-- Toon error meldingen bij forms -->  
     <script type="text/javascript">    
@@ -113,11 +113,7 @@
   <body onload="redirect();">
   {elseif $smarty.server.REQUEST_URI|strstr:'vriend=referred'}
   <body onload="setAangemeld();">
-  {elseif $smarty.server.REQUEST_URI|strstr:'tellafriend?profielaangemaakt=ja'}
-  <body onload="submitProfielForm();">
-  {elseif $smarty.server.REQUEST_URI|strstr:'?page=uitschrijving'}
-  <body onload="submitProfielForm();">
-  {elseif $smarty.server.REQUEST_URI|strstr:'?page=wijziging-pauze'}
+  {elseif $smarty.server.REQUEST_URI|strstr:'tellafriend?profielaangemaakt=ja' || $smarty.server.REQUEST_URI|strstr:'?page=uitschrijving' || $smarty.server.REQUEST_URI|strstr:'?page=wijziging-pauze'}
   <body onload="submitProfielForm();">
   {elseif $smarty.server.REQUEST_URI|strstr:'&type=nieuw'}
   <body onload="getURLwaardes();">
@@ -226,7 +222,9 @@
           </div>
         </div>
       </div>
-      <div class="desktop-menu" style="height:24px; width:100%; clear:both; background-color: #EC008C; position: relative;"></div>
+      <div id="menu-bg-dark" class="menu-bg-dark"></div>
+      <div class="desktop-menu" style="height:24px; width:100%; clear:both; background-color: #EC008C; position: relative;">
+      </div>
       <div class="jumbotron jumbotron-fluid">
         <div class="body-container">
           <div class="jumbotron-kader">
@@ -391,6 +389,7 @@
                   
   hidePauzeDivUitschrijvenWarning.forEach(function (hidePauzeDivUitschrijfWarning, index) {
     hidePauzeDivUitschrijfWarning.addEventListener('click', function () {
+      var setIndex = index;
       var getIndex = 0;
       pauzeDivUitschrijfWarning[getIndex].setAttribute("class", "div-pauze-uitschrijven-warning");
     })
@@ -529,24 +528,24 @@
 
   <!-- Toevoegen van de juiste waarden bij het invullen van de search query's in de searchbox -->
   <script type="text/javascript">
-  function zoekenWebsite() {
-    var datum_waarde = document.getElementById('search-datum').value;
-    var datum_waarde_formatted = datum_waarde.split('-').reverse().join('-');
-    var zoekterm = "q=" + document.getElementById('search-bestemming').value + "&text=" + document.getElementById('search-bestemming').value;
-    if (document.getElementById('search-datum').value !== '') {
-      var datum = "&arrivalDate=" + datum_waarde_formatted;
-    } else {
-      var datum = "&arrivalDate=na"
+    function zoekenWebsite() {
+      var datum_waarde = document.getElementById('search-datum').value;
+      var datum_waarde_formatted = datum_waarde.split('-').reverse().join('-');
+      var zoekterm = "q=" + document.getElementById('search-bestemming').value + "&text=" + document.getElementById('search-bestemming').value;
+      if (document.getElementById('search-datum').value !== '') {
+        var datum = "&arrivalDate=" + datum_waarde_formatted;
+      } else {
+        var datum = "&arrivalDate=na"
+      }
+              
+      if (document.getElementById('select-test').value !== 'Aantal dagen') {
+        var aantal_dagen = "&totalDays=" + document.getElementById('select-test').value;
+      } else {
+        var aantal_dagen = "&totalDays=na"; 
+      }
+      window.location = `https://www.voordeeluitjes.nl/ZoekHotels?${zoekterm + datum + aantal_dagen}`;
     }
-  
-    if (document.getElementById('select-test').value !== 'Aantal dagen') {
-      var aantal_dagen = "&totalDays=" + document.getElementById('select-test').value;
-    } else {
-      var aantal_dagen = "&totalDays=na"; 
-    }
-    window.location = `https://www.voordeeluitjes.nl/ZoekHotels?${zoekterm + datum + aantal_dagen}`;
-  }
-  </script> 
+    </script> 
 
   <!-- Uitschrijven functie die o.b.v. van de waarde redirect naar de nieuwe pagina, op deze pagina wordt dan de waarde direct opgeslagen in de database -->
   {if $smarty.server.REQUEST_URI|strstr:'/uitschrijven'}
