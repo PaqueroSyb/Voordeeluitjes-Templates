@@ -1,0 +1,1143 @@
+<page>
+  <title culture="nl-NL">
+    <![CDATA[Gebruikerspanel]]>
+  </title>
+  <content culture="nl-NL">
+    <![CDATA[
+      <div class="header-relative">
+       <div class="header-container">
+        <span class="header-title">
+      	Het Voordeeluitjes.nl gebruikerspanel
+        </span>
+        <span class="header-subtitle"> 
+         Help ons de website te verbeteren!
+        </span>
+        <a class="header-button show-desktop" href="#aanmeldformulier">
+         aanmelden voor het gebruikerspanel
+        </a>
+        <a class="header-button show-mobile" href="#aanmeldformulier">
+         ik wil mij aanmelden
+        </a>
+       </div>
+       <!-- <div id="more-info-mobile" class="header-persuasion">
+        Win een <span style="color: #EC008C;">GRATIS</span> halfpension verblijf voor 2 personen! <span id="more-info-icon" class="icon icon-vu-info"></span>
+        <div id="persuasion-info" class="persuasion-details">
+         De winactie, één gratis 2-daags halfpension arrangement voor 2 personen, wordt verloot onder alle deelnemers van het Voordeeluitjes.nl gebruikerspanel. Winnaar conformeert zich aan verplichte deelname aan min. 1 onderzoek. Winactie voorwaarden van toepassing.
+        </div>
+       </div> -->
+       <img class="show-desktop" src="https://www.voordeeluitjes.nl/Images/freeValues/gebruikerspanel_header_desktop.png" alt="Voordeeluitjes gebruikerspanel" width="100%" height="auto">
+       <img class="show-mobile" src="https://www.voordeeluitjes.nl/Images/freeValues/gebruikerspanel_header_mobile.png" alt="Voordeeluitjes gebruikerspanel" width="100%" height="200">
+      </div>
+      
+      <div class="content-container-first">
+       <div class="content-580px content-text">
+         Bij Voordeeluitjes.nl zijn we constant bezig met het verbeteren
+         van onze website, en daarbij kunnen we uw hulp goed gebruiken.
+         Hierom organiseren wij regelmatig interviews en onderzoeken over
+         de gebruiksvriendelijkheid van de website. Helpt u mee? Dat kan nu
+         online op een veilige afstand, en straks ook bij ons op kantoor.
+       </div>
+      </div>
+      
+      <script type="text/javascript">
+      var countertablet = 0;
+       $("#next-usp").click(function(){  
+        if(countertablet == 1){
+         $('#nav-2').removeClass('grey-bg');
+         countertablet = 0;
+         $('#nav-1').addClass('grey-bg');
+         $("#usp-1").css("marginLeft","0%");
+        } else {
+         $('#nav-1').removeClass('grey-bg');
+         $('#nav-2').addClass('grey-bg');
+          $("#usp-1").css("marginLeft","-100%");
+         countertablet++
+         }
+      });
+      
+       $("#prev-usp").click(function(){  
+        if(countertablet == 1){
+         $('#nav-2').removeClass('grey-bg');
+         countertablet = 0;
+         $('#nav-1').addClass('grey-bg');
+         $("#usp-1").css("marginLeft","0%");
+        } else {
+         $('#nav-1').removeClass('grey-bg');
+         $('#nav-2').addClass('grey-bg');
+          $("#usp-1").css("marginLeft","-100%");
+         countertablet++
+         }
+      });
+      
+       $("#nav-1").click(function(){
+       $("#nav-1").addClass('grey-bg'); 
+       $("#nav-2").removeClass('grey-bg');
+       $("#usp-1").css("marginLeft","0%");
+       countertablet = 0;
+       });
+       
+       $("#nav-2").click(function(){
+       $("#nav-2").addClass('grey-bg'); 
+       $("#nav-1").removeClass('grey-bg');
+       $("#usp-1").css("marginLeft","-100%");
+       countertablet = 1;
+       });
+       
+      var counter = 1;
+       $("#next-usp-mobile").click(function(){  
+        if(counter == 4){
+         $('#nav-mob-'+counter).removeClass('grey-bg');
+         counter = 1;
+         $('#nav-mob-'+counter).addClass('grey-bg');
+         const item = document.querySelector('.usp-item');
+         const marginLeft = parseInt(item.style.marginLeft.replace('px', '')) || 0;
+         item.style.marginLeft = marginLeft + 300 + '%';
+        } else {
+         $('#nav-mob-'+counter).removeClass('grey-bg');
+         $('#nav-mob-'+(counter+1)).addClass('grey-bg');
+         const item = document.querySelector('.usp-item');
+         const marginLeft = parseInt(item.style.marginLeft.replace('px', '')) || 0;
+         item.style.marginLeft = marginLeft - 100 + '%';
+         counter++
+         }
+      });
+      
+       $("#prev-usp-mobile").click(function(){  
+        if(counter == 1){
+         $('#nav-mob-'+counter).removeClass('grey-bg');
+         counter = 4;
+         $('#nav-mob-'+4).addClass('grey-bg');
+         const item = document.querySelector('.usp-item');
+         const marginLeft = parseInt(item.style.marginLeft.replace('px', '')) || 0;
+         item.style.marginLeft = marginLeft - 300 + '%';
+        } else {
+         $('#nav-mob-'+counter).removeClass('grey-bg');
+         $('#nav-mob-'+(counter-1)).addClass('grey-bg');
+         const item = document.querySelector('.usp-item');
+         const marginLeft = parseInt(item.style.marginLeft.replace('px', '')) || 0;
+         item.style.marginLeft = marginLeft + 100 + '%';
+         counter--
+         }
+      });
+       
+        $("#nav-mob-1").click(function(){
+       $("#nav-mob-1").addClass('grey-bg'); 
+       $("#nav-mob-2").removeClass('grey-bg');
+       $("#nav-mob-4").removeClass('grey-bg');
+       $("#nav-mob-3").removeClass('grey-bg');
+       $("#usp-1").css("marginLeft","0%");
+       counter = 1;
+       });
+       
+       $("#nav-mob-1").click(function(){
+       $("#nav-mob-1").addClass('grey-bg'); 
+       $("#nav-mob-2").removeClass('grey-bg');
+       $("#nav-mob-4").removeClass('grey-bg');
+       $("#nav-mob-3").removeClass('grey-bg');
+       $("#usp-1").css("marginLeft","0%");
+       counter = 1;
+       });
+       
+        $("#nav-mob-2").click(function(){
+       $("#nav-mob-2").addClass('grey-bg'); 
+       $("#nav-mob-1").removeClass('grey-bg');
+       $("#nav-mob-3").removeClass('grey-bg');
+        $("#nav-mob-4").removeClass('grey-bg');
+        $("#usp-1").css("marginLeft","-100%");
+        counter = 2;
+       });
+       
+        $("#nav-mob-3").click(function(){
+       $("#nav-mob-3").addClass('grey-bg'); 
+       $("#nav-mob-2").removeClass('grey-bg');
+       $("#nav-mob-4").removeClass('grey-bg');
+       $("#nav-mob-1").removeClass('grey-bg');
+       $("#usp-1").css("marginLeft","-200%");
+       counter = 3;
+       });
+       
+        $("#nav-mob-4").click(function(){
+       $("#nav-mob-4").addClass('grey-bg'); 
+       $("#nav-mob-1").removeClass('grey-bg');
+       $("#nav-mob-3").removeClass('grey-bg');
+        $("#nav-mob-2").removeClass('grey-bg');
+        $("#usp-1").css("marginLeft","-300%");
+        counter = 4;
+       });
+       
+       var mediaQuery = window.matchMedia('(max-width: 992px)');
+       
+       if (mediaQuery.matches) {
+        var persuasionInfo = document.getElementById("persuasion-info");
+        document.getElementById("more-info-mobile").addEventListener("click", openDetails);
+        function openDetails(e) {
+         e.stopPropagation();
+         persuasionInfo.classList.toggle("active");
+         if (persuasionInfo.classList.contains("active")) {
+          document.addEventListener("click", closeDetails);
+         }
+        }
+        function closeDetails() {
+         persuasionInfo.classList.remove("active");
+         document.removeEventListener("click", closeDetails);
+        }
+       }
+      </script>
+      
+      <div class="content-container usp-flex">
+        <div class="usp-nav-desktop">
+         <a id="nav-1" class="usp-container-nav grey-bg"></a>
+         <a id="nav-2" class="usp-container-nav"></a>
+        </div>
+        <div class="usp-nav-mobile">
+         <a id="nav-mob-1" class="usp-container-nav grey-bg"></a>
+         <a id="nav-mob-2" class="usp-container-nav"></a>
+         <a id="nav-mob-3" class="usp-container-nav"></a>
+         <a id="nav-mob-4" class="usp-container-nav"></a>
+        </div>
+       <div class="usp-container">
+        <div id="usp-1" class="usp-item">
+         <div class="height-52">
+          <svg xmlns="http://www.w3.org/2000/svg" height="52" width="52" viewBox="0 0 32 32"><defs><style>.cls-1{fill:#ec008c;}.cls-2{fill:none;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M31.71,15.29l-15-15a1,1,0,0,0-1.42,0l-15,15a1,1,0,0,0-.21,1.09A1,1,0,0,0,1,17H3.33V30.5A1.5,1.5,0,0,0,4.83,32H27.17a1.5,1.5,0,0,0,1.5-1.5V17H31a1,1,0,0,0,.92-.62A1,1,0,0,0,31.71,15.29ZM19.88,30H12.12V19h7.76Zm6.79,0H21.88V18.46A1.46,1.46,0,0,0,20.41,17H11.59a1.46,1.46,0,0,0-1.47,1.46V30H5.33V16a1,1,0,0,0-1-1H3.41L16,2.41,28.59,15h-.92a1,1,0,0,0-1,1Z"/><rect class="cls-2" width="32" height="32"/></g></g></svg>
+         </div>
+         <div class="usp-margin usp-title">Makkelijk vanuit huis</div>
+         <div class="usp-text">Gebruikersonderzoeken vinden nu online plaats via een videogesprek.</div>
+        </div>
+        <div id="usp-2" class="usp-item">
+         <div class="height-52">
+          <svg xmlns="http://www.w3.org/2000/svg" height="52" width="52" viewBox="0 0 32.04 29.31"><defs><style>.cls-1{fill:#ec008c;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M24.8,0H1.6A1.6,1.6,0,0,0,0,1.6V21.92c0,.56.22.87.56.87a1.1,1.1,0,0,0,.66-.3l5.93-5H24.8a1.6,1.6,0,0,0,1.6-1.61V1.6A1.6,1.6,0,0,0,24.8,0Zm-.4,15.47h-18L2,19.2V2H24.4Z"/><path class="cls-1" d="M30.43,6.52h-2v2H30V25.73L25.62,22h-18V19.68l-2,1.69v1A1.6,1.6,0,0,0,7.23,24H24.89l5.92,5a1.12,1.12,0,0,0,.66.3c.34,0,.57-.3.57-.87V8.13A1.61,1.61,0,0,0,30.43,6.52Z"/><path class="cls-1" d="M15.52,5.6a1.21,1.21,0,0,1,1.24,1.24c0,1.17-1.47,2.56-3.56,4.47C11.12,9.41,9.64,8,9.64,6.84A1.21,1.21,0,0,1,10.88,5.6a1.48,1.48,0,0,1,1.1.52L13.2,7.55l1.22-1.43a1.48,1.48,0,0,1,1.1-.52m0-1.6A3.1,3.1,0,0,0,13.2,5.08,3.08,3.08,0,0,0,10.88,4,2.81,2.81,0,0,0,8,6.84c0,1.95,1.76,3.54,4.41,5.95l.75.68.75-.68c2.66-2.41,4.41-4,4.41-5.95A2.81,2.81,0,0,0,15.52,4Z"/><rect class="cls-1" x="9.17" y="18.92" width="16.48" height="1.6"/></g></g></svg>
+         </div>
+         <div class="usp-margin usp-title">Vertel ons over uw ideale website</div>
+         <div class="usp-text">Geef aan wat voor u belangrijk is en misschien ziet u uw ideeën later terug!</div>
+        </div>
+        <div id="usp-3" class="usp-item">
+         <div class="height-52">
+          <svg xmlns="http://www.w3.org/2000/svg" height="52" width="52" viewBox="0 0 28.67 32"><defs><style>.cls-1{fill:#ec008c;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M9.11,20.25H5.78A.76.76,0,0,0,5,21v3.33H5a.75.75,0,0,0,.75.75H9.11a.74.74,0,0,0,.75-.75V21A.75.75,0,0,0,9.11,20.25Zm-.75,3.33H6.53V21.75H8.36Z"/><path class="cls-1" d="M16,20.25H12.66a.76.76,0,0,0-.75.75v3.33a.76.76,0,0,0,.75.75H16a.75.75,0,0,0,.75-.75V21A.76.76,0,0,0,16,20.25Zm-.75,3.33H13.41V21.75h1.84Z"/><rect class="cls-1" x="18.8" y="20.25" width="4.83" height="4.83" rx="0.75"/><path class="cls-1" d="M27.17,3.33H22V1a1,1,0,0,0-2,0V3.33H8.67V1a1,1,0,0,0-2,0V3.33H1.5A1.5,1.5,0,0,0,0,4.83v9.5H0V30.5A1.5,1.5,0,0,0,1.5,32H27.17a1.5,1.5,0,0,0,1.5-1.5V4.83A1.5,1.5,0,0,0,27.17,3.33Zm-20.5,2V7.67a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V5.33H20V7.67a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V5.33h4.67v8H2v-8ZM2,30V15.33H26.67V30Z"/></g></g></svg>
+         </div>
+         <div class="usp-margin usp-title">Geen verplichtingen</div>
+         <div class="usp-text">Per uitnodiging kunt u bepalen of u meedoet óf een keertje overslaat.</div>
+        </div>
+        <div id="usp-4" class="usp-item">
+         <div class="height-52">
+          <svg xmlns="http://www.w3.org/2000/svg" height="52" width="52" viewBox="0 0 52 49.75"><defs><style>.cls-1{fill:#EC008C;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="Group_7522" data-name="Group 7522"><path id="Path_7205" data-name="Path 7205" class="cls-1" d="M15.52,31.59a9.1,9.1,0,1,0-9.11-9.1,9.11,9.11,0,0,0,9.11,9.1Zm0-15a5.86,5.86,0,1,1-5.86,5.86h0A5.87,5.87,0,0,1,15.52,16.62Z"/><path id="Path_7206" data-name="Path 7206" class="cls-1" d="M31,25.93a7.77,7.77,0,1,0,7.77-7.76h0A7.76,7.76,0,0,0,31,25.92Zm12.29,0a4.52,4.52,0,1,1-4.52-4.52A4.52,4.52,0,0,1,43.26,25.93Z"/><path id="Path_7207" data-name="Path 7207" class="cls-1" d="M45.48,36.62a12.58,12.58,0,0,1-13.48,0,8.13,8.13,0,0,0-6.51,8v5.16H50.38A1.63,1.63,0,0,0,52,48.13h0V44.58A8.13,8.13,0,0,0,45.48,36.62Zm3.27,9.89h-20V44.59a4.9,4.9,0,0,1,2.88-4.46,15.74,15.74,0,0,0,14.24,0,4.9,4.9,0,0,1,2.89,4.45Z"/><path id="Path_7208" data-name="Path 7208" class="cls-1" d="M27,35.35a8,8,0,0,0-3.9-1.14,13.94,13.94,0,0,1-15.19,0A8.12,8.12,0,0,0,0,42.32v5.8a1.63,1.63,0,0,0,1.63,1.63H22.2V44.59A11.41,11.41,0,0,1,27,35.35Zm-8,9.24v1.92H3.26V42.33a4.85,4.85,0,0,1,3.92-4.78A17.17,17.17,0,0,0,20,39.11,14.32,14.32,0,0,0,19,44.59Z"/><path id="Path_7202" data-name="Path 7202" class="cls-1" d="M34.14,2.6a2,2,0,0,1,2,1.92.28.28,0,0,1,0,.09c0,1.91-2.39,4.17-5.78,7.25C27,8.79,24.59,6.52,24.59,4.61a2,2,0,0,1,1.92-2h.09a2.38,2.38,0,0,1,1.79.84l2,2.32,2-2.32a2.43,2.43,0,0,1,1.79-.84m0-2.6a5,5,0,0,0-3.76,1.76A5,5,0,0,0,26.6,0,4.56,4.56,0,0,0,22,4.52v.09c0,3.17,2.85,5.75,7.16,9.66l1.22,1.1,1.21-1.1c4.31-3.92,7.16-6.5,7.16-9.66A4.57,4.57,0,0,0,34.22,0Z"/></g></g></g></svg>
+         </div>
+         <div class="usp-margin usp-title">Top beoordeeld door deelnemers</div>
+         <div class="usp-text">Deelnemers van het gebruikerspanel beoordelen hun ervaring met een 9+.</div>
+        </div>
+       </div>
+        <a id="prev-usp" class="arrow usp-prev"></a>
+        <a id="next-usp" class="arrow usp-next"></a>
+        <a id="prev-usp-mobile" class="arrow usp-prev-mobile"></a>
+        <a id="next-usp-mobile" class="arrow usp-next-mobile"></a>
+      </div>
+      
+      <div id="aanmeldformulier-footer"></div>
+      <div class="content-container" id="aanmeldformulier">
+       <div class="content-470px">
+        <div class="title-container aanmeldformulier h1-custom">
+         Help mee Voordeeluitjes.nl te verbeteren
+        </div>
+        <iframe src="https://copernica.voordeeluitjes.nl/iframevu?page=userpanel" width="100%" height="435" scrolling="no" frameborder="0" class="iframe-desktop"></iframe>
+        </div>
+        </div>
+       </div>
+      </div>
+      
+      <div class="content-container">
+       <div class="title-container h1-custom">
+        Na uw inschrijving
+       </div>
+       <div class="inschrijving-container">
+        <div class="inschrijving-item">
+         <div class="inschrijving-title">1</div>
+         <div class="inschrijving-text-container inschrijving-text">
+          U ontvangt een mail wanneer er een onderzoek is gepland. U vertelt ons of u wel of niet mee wil doen.
+        </div>
+        </div>
+        <div class="inschrijving-item">
+         <div class="inschrijving-title">2</div>
+         <div class="inschrijving-text-container inschrijving-text">
+          U ontvangt ruim van tevoren meer informatie over het onderzoek. Op de dag zelf zal de sessie, tussen de 30 en 90 minuten duren.
+         </div>
+        </div>
+        <div class="inschrijving-item">
+         <div class="inschrijving-title">3</div>
+         <div class="inschrijving-text-container inschrijving-text">
+          Bedankt voor uw deelname. Wij kunnen dankzij uw waardevolle inzichten aan de slag met het verbeteren van onze website!
+         </div>
+        </div>
+       </div>
+      </div>
+      
+      <div class="content-container">
+       <div class="title-container h1-custom">
+         Veelgestelde vragen
+       </div>
+       <div class="faq-container">
+       <div class="faq-column">
+        <div class="faq-item">
+        <input id="faq1" class="open-answer" type="checkbox">
+        <label class="open-content" for="faq1">
+        <span class="faq-title">
+        Wat is het Voordeeluitjes.nl gebruikerspanel?
+        </span>
+        </label>
+        <div class="faq-answer">
+        Het panel wordt door Voordeeluitjes.nl ingezet om bezoekers mee te laten denken over verschillende onderwerpen.
+        Bijvoorbeeld de gebruiksvriendelijkheid van onze website of over wat belangrijke informatie is in de zoektocht naar een
+        korte vakantie. In het Voordeeluitjes.nl-gebruikerspanel zitten leden die graag hun mening en ervaringen met ons delen.
+        </div>
+        </div>
+        <div class="faq-item">
+        <input id="faq2" class="open-answer" type="checkbox">
+        <label class="open-content" for="faq2">
+        <span class="faq-title">
+        Aan hoeveel onderzoeken moet ik meedoen?
+        </span>
+        </label>
+        <div class="faq-answer">
+        Dat mag u helemaal zelf weten! Natuurlijk zien wij u graag regelmatig terug, maar u kunt er ook voor kiezen om eenmalig mee te doen. 
+        </div>
+        </div>
+        <div class="faq-item">
+        <input id="faq3" class="open-answer" type="checkbox">
+        <label class="open-content" for="faq3">
+        <span class="faq-title">
+        Waar vinden de onderzoeken plaats?
+        </span>
+        </label>
+        <div class="faq-answer">
+        <b>I.v.m. corona tijdelijk geen onderzoeken op kantoor.
+        We nodigen u graag uit wanneer dit weer kan.</b><br><br>
+        De meeste onderzoeken zullen plaatsvinden op ons kantoor in Deventer.
+        Soms voeren we ook online onderzoeken uit. Die duren 10 tot 20 minuten en kunnen eenvoudig 
+        vanuit huis gedaan worden.
+        </div>
+        </div>
+        <div class="faq-item">
+        <input id="faq4" class="open-answer" type="checkbox">
+        <label class="open-content" for="faq4">
+        <span class="faq-title">
+        Wat gebeurt er met de gegevens?
+        </span>
+        </label>
+        <div class="faq-answer">
+        Wij maken aantekeningen van wat u doet op onze website en wat u zegt tijdens een onderzoeksessie.
+        Wij gebruiken deze gegevens maar voor één doel: het verbeteren van onze website en diensten.
+        Gegevens behandelen we strikt vertrouwelijk, blijven intern en zullen dus nooit openlijk gedeeld worden.
+        Bovendien worden uw gegevens anoniem verwerkt.
+        </div>
+        </div>
+       </div>
+       <div class="faq-column">
+        <div class="faq-item">
+        <input id="faq5" class="open-answer" type="checkbox">
+        <label class="open-content" for="faq5">
+        <span class="faq-title">
+        Wat wordt er van mij verwacht?
+        </span>
+        </label>
+        <div class="faq-answer">
+        Wij horen graag uw mening over Voordeeluitjes.nl, en kijken met u mee hoe u de website gebruikt.
+        Zo kan er een onderzoek zijn waarbij wij u vragen op zoek te gaan naar een 3-daagse vakantie in,
+        bijvoorbeeld, de Moezel. Terwijl u onze site gebruikt vertelt u ons wat u ziet en waar u tegenaan loopt.
+        Ook horen wij graag wat u van eventuele nieuwe websiteontwerpen vindt. Een ander voorbeeld van een sessie
+        is een rondetafelgesprek, waarin we met u en andere panelleden praten over hoe u zich oriënteert op een korte vakantie.
+        Zo heeft elke sessie een ander doel en een ander onderwerp.
+        </div>
+        </div>
+        <div class="faq-item">
+        <input id="faq6" class="open-answer" type="checkbox">
+        <label class="open-content" for="faq6">
+        <span class="faq-title">
+        Hoelang duurt een sessie?
+        </span>
+        </label>
+        <div class="faq-answer">
+        Een onderzoeksessie zal in de meeste gevallen tussen de 30 en 90 minuten duren. 
+        Dit kan variëren afhankelijk van het gespreksonderwerp of de opdracht. Wij zullen altijd vooraf een inschatting
+        van de uren die gemoeid zijn met de specifieke sessie aan u doorgeven.
+        </div>
+        </div>
+        <div class="faq-item">
+        <input id="faq7" class="open-answer" type="checkbox">
+        <label class="open-content" for="faq7">
+        <span class="faq-title">
+        Proberen jullie mij iets te verkopen tijdens een sessie?
+        </span>
+        </label>
+        <div class="faq-answer">
+        Nee, de sessies hebben geen commerciële insteek. Het doel is om te horen en zien hoe u zich gedraagt
+        op onze website, wat uw mening is over een bepaalde pagina en wat voor u belangrijk is in de zoektocht
+        naar een korte vakantie. Er vinden geen daadwerkelijke aankopen plaats. Het kan zijn dat in een opdracht
+        u gevraagd wordt een ‘boeking’ te maken. Dit betreft geen echte boeking, deze ‘testboeking’ wordt direct
+        na de opdracht verwijderd uit ons systeem.
+        </div>
+        </div>
+        <div class="faq-item">
+        <input id="faq8" class="open-answer" type="checkbox">
+        <label class="open-content" for="faq8">
+        <span class="faq-title">
+        Is er een vergoeding voor inbreng en tijd?
+        </span>
+        </label>
+        <div class="faq-answer">
+        Wij bieden geen vergoeding voor uw deelname en/of gemaakte (reis)kosten.
+        Uiteraard kunt u wel rekenen op koffie, thee en wat lekkers!
+        En niet te vergeten: u krijgt een uniek kijkje in de keuken bij Voordeeluitjes.nl!
+        </div>
+        </div>
+       </div>
+       </div>
+       
+       <div class="aanmelden-container">
+        <a href="#aanmeldformulier-footer" class="button-2">
+         aanmelden voor het gebruikerspanel
+        </a>
+       </div>
+      </div>
+      
+      <div class="content-container">
+       <div class="title-container h1-custom">
+        Overige vragen
+       </div>
+       <div class="content-580px content-text info">>
+         Heeft u nog vragen of wilt u graag meer informatie over het gebruikerspanel?
+         Neem dan vrijblijvend contact met ons op. Dit kan via onderstaand e-mailadres:
+        <span class="email-adress">
+         Gebruikerspanel@voordeeluitjes.nl
+        </span>
+       </div>
+      </div>
+      
+      <!--
+      <div class="content-container">
+       <div class="content-580px">
+        <p class="content-text" style="color: #707070;">
+         * Hier ruimte vrij houden voor de: <Voorwaarden gratis verblijf actie>
+        </p>
+       </div>
+      </div>
+      -->
+      
+      <style type="text/css">
+       h1.title {
+        display: none;
+       }
+       p {
+        margin: 0px!important;
+       }
+       .h1-custom {
+        font-family: 'Roboto Slab',Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 24px;
+        line-height: 32px;
+        color: #EC008C;
+        letter-spacing: 0px;
+       }
+       .show-desktop {
+        display: block;
+       }
+       .show-mobile {
+        display: none;
+        object-fit: cover;
+       }
+       .button-2 {
+        box-shadow: 0px 1px 3px #00000026;
+        border: 2px solid #707070;
+        border-radius: 4px;
+        color: #707070!important;
+        padding: 8px 20px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+       }
+       .header-relative {
+        position: relative;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+       }
+       .header-container {
+        z-index: 22;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        color: #FFFFFF;
+        padding: 50px 35px;
+       }
+       .header-persuasion {
+        position: absolute;
+        background-color: #FFF;
+        width: 240px;
+        padding: 10px 15px;
+        color: #000;
+        font-weight: 700;
+        border-radius: 4px 0px 0px 4px;
+        bottom: 48px;
+        right: 0px;
+        z-index: 24;
+       }
+       .persuasion-details {
+        font-size: 16px;
+        line-height: 24px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        position: absolute;
+        right: 0px;
+        letter-spacing: 0.48px;
+        color: #252525;
+        padding: 20px;
+        top: 68px;
+        font-weight: 400;
+        width: 380px;
+        filter: drop-shadow(0 0 3px rgba(0, 0, 0, .2));
+        display: none;
+       }
+       .persuasion-details::before {
+        position: absolute;
+        border-width: 0 15px 15px 15px;
+        width: 0;
+        height: 0;
+        border-color: transparent transparent #fff transparent;
+        border-style: solid;
+        content: '';
+        right: 34px;
+        top: -13px;
+       }
+       .header-title {
+        font-family: 'Roboto Slab',Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 43px;
+        line-height: 57px;
+        color: #FFF;
+        font-weight: 700;
+        text-shadow: 0px 3px 6px #00000094;
+        letter-spacing: 0;
+        display: block;
+        padding-bottom: 5px;
+       }
+       .header-subtitle {
+        font-family: 'Roboto Slab',Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 40px;
+        color: #FFF;
+        text-shadow: 0px 3px 6px #00000094;
+        letter-spacing: 0;
+        display: block;
+        margin-bottom: 60px;
+       }
+       .header-button {
+        background: #95C121 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000026;
+        border-radius: 4px;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        font-weight: 700;
+        padding: 8px 0px; 
+        cursor: pointer;
+        max-width: 335px;
+        text-align: center;
+       }
+       .header-button.show-mobile {
+        max-width: 200px!important;
+        text-align: center;
+        padding: 8px 0px!important;
+       }
+       .header-button:hover, .header-button:focus {
+        color: #FFFFFF;
+       }
+       .content-container-first {
+        padding: 60px 0px 30px 0px;
+       }
+       .content-container {
+        padding: 30px 0px;
+       }
+       .content-580px {
+        max-width: 580px;
+        margin: 0 auto;
+        text-align: left;
+       }
+       .content-470px {
+        max-width: 470px;
+        margin: 0 auto;
+        text-align: left;
+       }
+       .title-container {
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 30px;
+       }
+       .title-container.aanmeldformulier {
+        padding-bottom: 30px;
+       }
+       .usp-nav-desktop {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-order: 2;
+        order: 2;
+       }
+       .usp-container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        -webkit-order: 1;
+        order: 1;
+       }
+       .usp-item {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+        max-width: 250px;
+       }
+       #usp-1 {
+        margin-left: 0px;
+       }
+       .usp-margin {
+        margin: 20px 0px 10px 0px;
+       }
+       .usp-title {
+        color: #252525; font-family: Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        font-weight: 700;
+       }
+       .usp-text {
+        color: #252525;
+        font-family: Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+       }
+       .usp-radio {
+        display: none!important;
+       }
+       .usp-container::-webkit-scrollbar {
+        display: none;
+       }
+       .usp-prev, .usp-next {
+        display: none;
+       } 
+       .usp-prev-mobile, .usp-next-mobile {
+        display: none;
+       }
+       .usp-prev:hover, .usp-next:hover, .usp-prev-mobile:hover, .usp-next-mobile:hover {
+         color: #EC008C;
+         text-decoration: none;
+         cursor: pointer;
+       }
+       .content-text {
+        color: #252525;
+        font-family: Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+       }
+       .inschrijving-container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+       }
+       .inschrijving-item {
+        width: 32%;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        -webkit-box-shadow: 0px 1px 3px #00000029;
+        box-shadow: 0px 1px 3px #00000029;
+        display: -webkit-flex;
+        display: flex;
+        padding: 10px 15px;
+       }
+       .inschrijving-title {
+        color: #C5C5C5;
+        opacity: 0.76;
+        font-family: Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 50px;
+        line-height: 50px;
+        letter-spacing: 0px;
+        font-weight: 700;
+       }
+       .inschrijving-text-container {
+        max-width: 90%;
+        padding-top: 4px;
+        padding-left: 15px;
+       }
+       .inschrijving-text {
+        color: #252525;
+        font-family: Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+       }
+       .faq-container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+       }
+       .faq-column {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex: 1 1 0px;
+        flex: 1 1 0px;
+        margin-right: 20px;
+       }
+       .faq-item {
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 4px; background: #FDF1F8 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000026;
+        padding: 15px 20px;
+       }
+       .faq-title {
+        color: #000000;
+        font-family: 'Segoe UI', Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0px;
+       }
+       .open-content {
+        position: relative;
+       }
+       .open-content:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: 0px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 6px 0 6px;
+        border-color: #707070 transparent transparent transparent;
+        transition: transform 0.2s ease-in-out;
+       }
+       input[type="checkbox"] {
+        display: none!important;
+       }
+       label {
+        display: -webkit-flex!important;
+        display: flex!important;
+        margin-bottom: 0px!important;
+        font-weight: 400!important;
+        cursor: pointer;
+       }
+       .faq-answer {
+        display: none;
+        padding-top: 15px;
+        color: #000000;
+        font-family: 'Segoe UI', Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+       }
+       .open-answer:checked ~ .faq-answer {
+        display: block!important;
+       }
+       .open-answer:checked ~ .open-content:after {
+        width: 0;
+        height: 0;
+        transform: rotate(-180deg);
+       }
+       .open-answer:checked ~ .open-content {
+        font-weight: 700!important;
+       }
+       .aanmelden-container {
+        padding-top: 60px;
+        text-align: center;
+       }
+       .email-adress {
+         font-family: 'Segoe UI', Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+         font-size: 20px;
+         line-height: 27px;
+         letter-spacing: 0px;
+         color: #000000;
+         text-decoration: underline;
+         text-align: center;
+         display: block;
+        }
+        .grey-bg {
+         background-color: #707070!important; 
+        }
+        .icon-vu-info {
+         font-size: 14px;
+         color: #C5C5C5;
+         cursor: pointer;
+        }
+        .active {
+         display: block;
+        }
+        .info {
+         text-align: center;
+         padding-bottom: 30px;
+        }
+        .height-52 {
+         height: 52px;
+        }
+       @media (min-width: 992px) and (max-width: 1199px) {
+        .header-container {
+         padding: 22px 35px;
+        }
+        .header-button {
+         padding: 5px 15px; 
+        }
+       }
+        @media (max-width: 992px) {
+        .header-persuasion {
+         -webkit-order: 2;
+         order: 2;
+         max-width: 375px;
+         width: 100%;
+         border-right: none;
+         position: relative;
+         padding: 60px 0px 30px 0px;
+         bottom: 0px;
+         text-align: center;
+         margin: 0 auto;
+        }
+       }
+       @media (min-width: 991px) {
+        #more-info-icon:hover + .persuasion-details {
+         display: block;
+        }
+       }
+       @media (max-width: 992px) and (min-width: 768px) {
+        .header-container {
+         padding: 8px 35px;
+        }
+        .header-title {
+         font-size: 34px;
+         line-height: 45px;
+         -webkit-text-size-adjust: 90%;
+        }
+        .header-subtitle {
+         margin-bottom: 40px;
+         -webkit-text-size-adjust: 80%;
+        }
+        .header-button {
+         padding: 5px 15px; 
+        }
+        .persuasion-details {
+         top: 97px;
+         right: -38px;
+        }
+        .content-container-first {
+         padding-top: 30px;
+        }
+        .usp-container {
+         display: -webkit-flex;
+         display: flex;
+         -webkit-justify-content: normal;
+         justify-content: normal;
+         -webkit-flex-wrap: nowrap;
+         flex-wrap: nowrap;
+         overflow-x: hidden;
+        }
+        .usp-item {
+         -webkit-flex: 0 0 auto;
+         flex: 0 0 auto;
+         max-width: none!important;
+         width: 50%;
+         transition: margin 0.3s ease-in-out;
+        }
+        .usp-text {
+         max-width: 260px;
+         display: block;
+         margin: 0 auto;
+         padding-bottom: 15px;
+        }
+        .usp-prev, .usp-next {
+         display: block;
+         position: absolute;
+         top: 104px;
+        }
+        .usp-nav-mobile {
+         display: none;
+        } 
+        .arrow {
+         border: solid #EC008C;
+         border-width: 0 3px 3px 0;
+         padding: 3px;
+        }
+        .usp-prev {
+         left: 15px;
+         transform: rotate(135deg);
+         -webkit-transform: rotate(135deg);
+        }
+        .usp-next {
+         right: 15px;
+         transform: rotate(-45deg);
+         -webkit-transform: rotate(-45deg);
+        }
+        .usp-next-mobile {
+         display: none;
+        }
+        .content-container.usp-flex {
+         display: -webkit-flex;
+         display: flex;
+         -webkit-flex-wrap: wrap;
+         flex-wrap: wrap;
+         -webkit-justify-content: center;
+         justify-content: center;
+         position: relative;
+        }
+        .usp-container-nav {
+         background-color: #C5C5C5;
+         width: 10px;
+         height: 10px;
+         border-radius: 50%;
+         margin: 0px 2.5px;
+        }
+        .inschrijving-container {
+         -webkit-flex-wrap: wrap;
+         flex-wrap: wrap;
+        }
+        .inschrijving-item {
+         margin-bottom: 20px;
+         width: 100%;
+        }
+        .inschrijving-text-container {
+         max-width: none!important;
+        }
+        .faq-container {
+         -webkit-flex-direction: column;
+         flex-direction: column;
+        }
+        .faq-column {
+         margin-right: 0px!important;
+         width: 100%;
+        }
+       }
+       @media (max-width: 767px) {
+        .show-desktop {
+         display: none!important;
+        }
+        .show-mobile {
+         display: block!important;
+        }
+        .h1-custom {
+         font-size: 20px;
+         line-height: 24px;
+        }
+        .button-2 {
+         font-size: 16px;
+        }
+        .header-container {
+         padding: 35px 15px;
+        }
+        .persuasion-details {
+         top: 97px;
+         right: -38px;
+         width: 290px;
+         text-align: left;
+        }
+        .header-title {
+         font-size: 18px;
+         line-height: 24px;
+         padding-bottom: 0px;
+        }
+        .header-subtitle {
+         font-size: 14px;
+         margin-bottom: 25px;
+        }
+        .content-container {
+         padding: 20px 0px;
+        }
+        .content-container-first {
+         padding: 20px 0px;
+        }
+        .title-container {
+         padding-bottom: 20px;
+        }
+        .title-container.aanmeldformulier {
+         padding-bottom: 20px;
+        }
+        .content-580px {
+         text-align: center;
+        }
+        .content-470px {
+         text-align: center!important;
+        }
+        .title-container.aanmeldformulier {
+         text-align: center!important;
+        }
+        .usp-container {
+         display: -webkit-flex;
+         display: flex;
+         -webkit-justify-content: normal;
+         justify-content: normal;
+         -webkit-flex-wrap: nowrap;
+         flex-wrap: nowrap;
+         overflow-x: hidden;
+        }
+        .usp-item {
+         -webkit-flex: 0 0 auto;
+         flex: 0 0 auto;
+         max-width: none!important;
+         width: 100%;
+         transition: margin 0.3s ease-in-out;
+        }
+        .usp-text {
+         max-width: 260px;
+         display: block;
+         margin: 0 auto;
+         padding-bottom: 15px;
+        }
+        #usp-next, #usp-prev {
+         display: none!important;
+        }
+        .usp-prev-mobile, .usp-next-mobile {
+         display: block;
+         position: absolute;
+         top: 94px;
+        }
+        .arrow {
+         border: solid #EC008C;
+         border-width: 0 3px 3px 0;
+         padding: 3px;
+        }
+        .usp-prev-mobile {
+         left: 0px;
+         background-color: #FFF;
+         transform: rotate(135deg);
+         -webkit-transform: rotate(135deg);
+        } 
+        .usp-next-mobile {
+         right: 0px;
+         background-color: #FFF;
+         transform: rotate(-45deg);
+         -webkit-transform: rotate(-45deg);
+        }
+        .usp-nav-mobile {
+         display: -webkit-flex;
+         display: flex;
+         -webkit-order: 2;
+         order: 2;
+        }
+        .usp-nav-desktop {
+         display: none!important;
+        }  
+        .content-container.usp-flex {
+         display: -webkit-flex;
+         display: flex;
+         -webkit-flex-wrap: wrap;
+         flex-wrap: wrap;
+         -webkit-justify-content: center;
+         justify-content: center;
+         position: relative;
+        }
+        .usp-container-nav {
+         background-color: #C5C5C5;
+         width: 10px;
+         height: 10px;
+         border-radius: 50%;
+         margin: 0px 2.5px;
+        }
+        .inschrijving-container {
+         -webkit-flex-wrap: wrap;
+         flex-wrap: wrap;
+        }
+        .inschrijving-item {
+         margin-bottom: 20px;
+         width: 100%;
+        }
+        .inschrijving-text-container {
+         max-width: none!important;
+        }
+        .faq-container {
+         -webkit-flex-direction: column;
+         flex-direction: column;
+        }
+        .faq-column {
+         margin-right: 0px!important;
+         width: 100%;
+        }
+        .aanmelden-container {
+         padding-top: 20px;
+        }
+        .email-adress {
+         font-size: 18px;
+        }
+        .page-content-wrapper .page-content iframe {
+         height: 420px;
+        }
+       }
+        @media (min-width: 392px) and (max-width: 767px) {
+         .usp-prev-mobile {
+          left: 10%;
+      	background-color: #FFF;
+         }
+         .usp-next-mobile {
+          right: 10%;
+      	background-color: #FFF;
+         }
+        }
+        @media (max-width: 383px) {
+        .header-container {
+         padding: 20px 15px;
+        }
+       }
+       @media (max-width: 480px) {
+        .header-persuasion {
+         max-width: 373px;
+        }   
+        .persuasion-details {
+         top: 120px;
+         right: 0px;
+         width: 290px;
+         text-align: left;
+        }
+        .persuasion-details::before {
+         right: 171px;
+        }
+       }
+       @media (max-width: 385px) {
+        .persuasion-details::before {
+         right: 125px;
+        }
+       }
+       @media (max-width: 325px) {
+        .persuasion-details {
+         width: 100%;
+        }
+        .persuasion-details::before {
+         right: 93px;
+        }
+       }
+       @media (max-width: 321px) {
+        .persuasion-details::before {
+         right: 125px;
+        }
+       }
+       @media (max-width: 430px) {
+        .page-content-wrapper .page-content iframe {
+         height: 440px!important;
+        }
+       }
+        @media (max-width: 392px) {
+        .page-content-wrapper .page-content iframe {
+         height: 465px!important;
+        }
+       }
+       @media (max-width: 358px) {
+        .page-content-wrapper .page-content iframe {
+         height: 490px!important;
+        }
+       }
+       @media (max-width: 325px) {
+        .page-content-wrapper .page-content iframe {
+         height: 512px!important;
+        }
+       }
+      </style>
+      		]]>
+  </content>
+</page>

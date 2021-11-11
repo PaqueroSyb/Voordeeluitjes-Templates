@@ -1,0 +1,348 @@
+<page>
+  <title culture="nl-NL">
+    <![CDATA[Hotelgids]]>
+  </title>
+  <content culture="nl-NL">
+    <![CDATA[
+      <div class="header-relative">
+       <div class="header-container">
+         <span class="header-title">
+      	Hotelgids
+         </span>
+         <span class="header-subtitle"> 
+          Bekijk de meest actuele hieronder!
+         </span>
+       </div>
+       <img src="https://www.voordeeluitjes.nl/Images/freeValues/Header_hotelgids_pagina_V2.jpg" alt="Hotelgids headerafbeelding" width="100%" height="300" style="object-fit: cover;"/>
+      </div>
+      
+      <div class="content-container-first">
+       <div class="content-580px content-text">
+         Heeft u onze spiksplinternieuwe <b>Hotel- of Vakantiegids</b> al gespot bij uw favoriete tijdschrift en/of RTV-blad?
+         <br> Nee? Geen zorgen, u kunt hem hieronder digitaal doorbladeren. Ontdek de beste vakantieparken- en hotelaanbiedingen van dit moment en kies snel uw favoriete bestemming!
+       </div>
+      </div>
+      
+      <div class="content-container content-580px padding-bottom-10">
+        <span class="title-container h1-custom">
+        De beste aanbiedingen van dit moment!
+        </span>
+        <p class="content-text padding-top-10">
+         Klik links in de balk op de volgende pijltjes om hem op uw volledige scherm te lezen: <img src="https://www.voordeeluitjes.nl/Images/freeValues/fullscreen-icon.jpg" width="30" height="30" alt="Fullscreen icoon"/>
+        </p>
+      </div>
+      
+      <div class="hotelgids-container">
+       <div class="hotelgids-sub-container">
+        <div id="tab-1" class="form-tabs-submit activetab width-50">Landleven, Plus, Max
+         <span class="hotelgids-subtitle"></span>Acties geldig t/m 30 november</span>
+        </div>
+        <div id="tab-2" class="form-tabs-submit width-50">Ncrv, Avro, Kro, Televizier en Vara
+         <span class="hotelgids-subtitle">Acties geldig t/m 31 januari 2022</span>
+        </div>
+        <!-- <div id="tab-3" class="form-tabs-submit width-33">Landleven, Plus, Max
+         <span class="hotelgids-subtitle">Acties geldig t/m 30 november</span>
+        </div> -->
+       </div>
+       <div class="hotelgids-paddingtop">
+        <iframe id="hotelgids-1" class="form-show" src="https://onlinetouch.nl/voordeeluitjes/wk-33-hotelgids---plus-landleven-max-digitaal?html=true#/0/" width="100%" height="610" style="border:0;" allowfullscreen=""></iframe>
+        <iframe id="hotelgids-2" class="form-show" src="https://onlinetouch.nl/voordeeluitjes/wk-42-hotelgids---tros-ncrv-avro-kro-televizier-en-vara-digitaal" width="100%" height="610" style="border:0; display: none;" allowfullscreen=""></iframe>
+       </div>
+      </div>
+      
+      <script type="text/javascript">
+        
+      var getTabs = document.querySelectorAll('.form-tabs-submit');
+      var getForms = document.querySelectorAll('.form-show');
+      
+       Array.prototype.forEach.call(getTabs, function (tab) {
+        tab.addEventListener('click', function(e) {
+         var getTabId = tab.id;
+         var currentTab = getTabId.slice(-1);
+         var formID = `hotelgids-${currentTab}`;
+         var showForm = document.getElementById(formID);
+          Array.prototype.forEach.call(getTabs, function (tab) {
+            tab.setAttribute("class", "form-tabs-submit width-50");
+          })
+          Array.prototype.forEach.call(getForms, function (form) {
+           form.style.display = "none";
+          })
+          e.currentTarget.setAttribute("class", "form-tabs-submit activetab width-50");
+          showForm.style.display = "block";
+        })
+       })
+      </script>
+      
+      <style type="text/css">
+       h1.title {
+        display: none;
+       }
+       p {
+        margin: 0px!important;
+       }
+       .h1-custom {
+        font-family: 'Roboto Slab',Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 24px;
+        line-height: 32px;
+        color: #EC008C;
+        letter-spacing: 0px;
+       }
+       .show-desktop {
+        display: block;
+       }
+       .show-mobile {
+        display: none;
+       }
+       .header-relative {
+        position: relative;
+       }
+       .header-container {
+        z-index: 22;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        color: #FFFFFF;
+        padding: 50px 35px;
+       }
+       .header-title {
+        font-family: 'Roboto Slab',Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 43px;
+        line-height: 57px;
+        color: #FFF;
+        font-weight: 700;
+        text-shadow: 0px 3px 15px #00000094;
+        letter-spacing: 0;
+        display: block;
+        padding-bottom: 5px;
+       }
+       .header-subtitle {
+        font-family: 'Roboto Slab',Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 40px;
+        color: #FFF;
+        text-shadow: 0px 3px 6px #00000094;
+        letter-spacing: 0;
+        display: block;
+        margin-bottom: 60px;
+       }
+       a:hover {
+        text-decoration: none;
+       }
+       .content-container {
+        padding: 30px 0px;
+       }
+       .content-container-first {
+        padding: 60px 0px 30px 0px;
+       }
+       .content-container:last-of-type {
+        padding-bottom: 40px;
+       }
+       .content-580px {
+        max-width: 580px;
+        margin: 0 auto;
+        text-align: left;
+       }
+       .content-470px {
+        max-width: 470px;
+        margin: 0 auto;
+        text-align: left;
+       }
+       .title-container {
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 20px;
+       }
+       .content-text {
+        color: #252525;
+        font-family: Calibri,FTC-Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+       }
+       iframe {
+        margin: 0 auto;
+        display: block;
+        max-width: 920px;
+        width: 100%;
+       }
+       .hotelgids-container {
+        padding: 0px 0px 20px 0px;
+        margin: 0px auto;
+        margin-bottom: 40px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000029;
+        border: 1px solid #C5C5C5;
+        border-radius: 4px;
+        position: relative;
+        max-width: 960px;
+       }
+       .hotelgids-sub-container {
+        width: 100%;
+        display: flex;
+       }
+       .hotelgids-paddingtop {
+        margin-top: 20px;
+       }
+       .form-tabs-submit {
+        display: -webkit-flex;
+        display: flex;
+        background-color: #F5F5F5;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 3px #0000000F;
+        border-radius:0px;
+        color: #707070;
+        width: 25%;
+        padding: 9px 0px;
+        font-size: 16px;
+        border: none;
+        -webkit-justify-content: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 700;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-items: center;
+        align-items: center;
+       }
+       .form-tabs-submit.activetab {
+        display: -webkit-flex;
+        display: flex;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000029;
+        border-radius:0px;
+        color: #EC008C;
+        border-bottom: 3px solid #EC008C;
+        width: 25%;
+        padding: 9px 0px;
+        font-size: 16px;
+       }
+       .form-tabs-submit::first-of-type {
+        border-radius: 4px 0px 0px 0px
+       }
+       .form-tabs-submit::last-of-type {
+        border-radius: 0px 4px 0px 0px;
+       }
+       .form-tabs-submit.width-25 {
+        width: 25%;
+       }
+       .form-tabs-submit.width-33 {
+        width: 33.3%;
+       }
+       .form-tabs-submit.width-50 {
+        width: 50%;
+       }
+       .form-tabs-submit.width-100 {
+        width: 100%;
+       }
+       .hotelgids-subtitle {
+        color: #707070;
+        font-size: 15px;
+        font-weight: 400;
+        width: 100%;
+       }
+       .form-tabs-submit:hover {
+        background-color: #E8E8E8;
+       }
+       .form-tabs-submit:focus {
+        background: #FFFFFF;
+        box-sizing: border-box;
+        border: none!important;
+       }
+       .hotelgids-3, .hotelgids-2, .hotelgids-1 {
+        display: none;
+       }
+       .padding-bottom-10 {
+        padding-bottom: 10px;
+       }
+       .padding-top-10 {
+        padding-top: 10px;
+       }
+       @media (min-width: 992px) and (max-width: 1199px) {
+        .header-container {
+         padding: 22px 35px;
+        }
+        .header-button {
+         padding: 5px 15px; 
+        }
+       }
+       @media (max-width: 991px) and (min-width: 768px) {
+        .header-container {
+         padding: 20px 35px;
+        }
+        .header-title {
+         font-size: 34px;
+         line-height: 45px;
+        }
+        .header-subtitle {
+         margin-bottom: 40px;
+        }
+        iframe {
+         height: 500px;
+        }
+       }
+       @media (max-width: 767px) {
+        .show-desktop {
+         display: none!important;
+        }
+        .show-mobile {
+         display: block!important;
+        }
+        .h1-custom {
+         font-size: 18px;
+         line-height: 24px;
+        }
+        .button-2 {
+         font-size: 16px;
+        }
+        .header-container {
+         padding: 35px 15px;
+        }
+        .header-title {
+         font-size: 22px;
+         line-height: 24px;
+         padding-bottom: 0px;
+        }
+        .header-subtitle {
+         font-size: 16px;
+         margin-bottom: 25px;
+        }
+        .content-container {
+         padding: 20px 0px;
+        }
+        .content-container-first {
+         padding: 20px 0px;
+        }
+        .title-container {
+         padding-bottom: 20px;
+        }
+        .content-580px {
+         text-align: center;
+        }
+        .content-470px {
+         text-align: center!important;
+        }
+        .form-tabs-submit, .form-tabs-submit.activetab { 
+          width: 100%!important;
+        }
+        .hotelgids-sub-container {
+         flex-wrap: wrap;
+        }
+        .hotelgids-paddingtop {
+         margin-top: 10px; 
+        }
+        .form-tabs-submit:hover {
+         background-color: #FFFFFF;
+        }
+       }
+       @media (max-width: 383px) {
+        .header-container {
+         padding: 40px 15px;
+        }
+       }
+       </style>
+      		]]>
+  </content>
+</page>

@@ -22,7 +22,7 @@ if (flock($fp, LOCK_EX))
 	
 	if (!array_key_exists($userSubProfileID, $usedSubProfiles)) 
 	{
-    $code = "SybrenTestCode39";
+    $code = "SybrenTestCode41";
     $dateToday = date("Y-m-d");
 
     $testArray = array(
@@ -36,6 +36,7 @@ if (flock($fp, LOCK_EX))
 	} 
 	else 
 	{
+    $lastSubscribeDate = $usedSubProfiles[$userSubProfileID][1];
 		$code = $usedSubProfiles[$userSubProfileID][0];
 	};
 	
@@ -49,5 +50,5 @@ fclose($fp);
 $txt1 = "Code";
 // Output code so it can be fetched.
 echo "Code: " . $code . "<br/>";
-echo "Datum: " . $usedSubProfiles[$userSubProfileID][1] . "<br/>";
+echo "Datum: " . $lastSubscribeDate . "<br/>";
 ?>
