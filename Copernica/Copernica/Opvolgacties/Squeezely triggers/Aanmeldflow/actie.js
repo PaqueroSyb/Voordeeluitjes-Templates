@@ -7,7 +7,7 @@ kortingscodeDate.setHours(0, 0, 0);
   
 var sendKortingscode = today.getTime() - kortingscodeDate.getTime();
 
-if (sendKortingscode > 31536000000) {
+if (sendKortingscode > 47347200000 || kortingscodeDateValue == '') {
 	return true;
 } else {
   return false;

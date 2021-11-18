@@ -1,9 +1,10 @@
-<div id="show-test"></div>
+<div id="test"></div>
 
 <script type="text/javascript">
-var showTest = document.getElementById('show-test');
+var test = document.getElementById('test');
 
-var kortingscodeDateValue = "2020-08-10";
+var kortingscodeDateValue = '2019-08-10';
+let falseTrue;
 
 var today = new Date();
 today.setHours(0, 0, 0);
@@ -12,9 +13,12 @@ kortingscodeDate.setHours(0, 0, 0);
   
 var sendKortingscode = today.getTime() - kortingscodeDate.getTime();
 
-if (sendKortingscode > 31536000000) {
-	showTest.innerText = "True";
+if (sendKortingscode > 47347200000 || kortingscodeDateValue == '') {
+  falseTrue = true;
 } else {
-  showTest.innerText = "False";
+  falseTrue = false;
 }
+
+test.innerText = falseTrue;
+
 </script>

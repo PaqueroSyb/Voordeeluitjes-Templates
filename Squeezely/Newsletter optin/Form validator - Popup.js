@@ -27,13 +27,13 @@ submitButton.addEventListener('click', function() {
         _sqzl.push({
             "anonymize": "no",
         });
-        preferenceHotel = document.getElementById('preference-hotel').checked ? "Ja" : "Nee";
-        preferenceVakantiepark = document.getElementById('preference-vakantiepark').checked ? "Ja" : "Nee";
+        // preferenceHotel = document.getElementById('preference-hotel').checked ? "Ja" : "Nee";
+        // preferenceVakantiepark = document.getElementById('preference-vakantiepark').checked ? "Ja" : "Nee";
         _sqzl.push({
             "event": "NewsletterSubscribeConfirm",
             "email": emailValue,
-            "custom_email_preference_hotel": preferenceHotel,
-            "custom_email_preference_vakantiepark": preferenceVakantiepark,
+            "custom_email_preference_hotel": "Ja",
+            // "custom_email_preference_vakantiepark": preferenceVakantiepark,
             "custom_email_batch": "Discount tool",
         });
         _sqzl.push({
