@@ -1,59 +1,6 @@
 <HomeResponse>
   <widgets>
-    <hotelOfTheWeek>
-      <title>
-        <![CDATA[Hotels met diner]]>
-      </title>
-      <packageSlug>
-        <![CDATA[diner-deals]]>
-      </packageSlug>
-      <description>
-        <![CDATA[3, 4 of 5 dagen incl. een heerlijk diner - al voor <b>59,50</b>]]>
-      </description>
-      <image>
-        <![CDATA[/images/freeValues/vu_widget_2021wk23_diner.jpg]]>
-      </image>
-      <link>
-      <![CDATA[/actie/dinerspecial-arrangementen?totalDays=3,4,5&filters=N4Ig5gTg9grgDgZxALgNqkrOBJAJigJgIBoQBLAFwFMBbJNEAVhFIDYWQB2DgDhAF1SAIyoALAIYA3MlAgoQ4gHYBPEAF9B4KlHqgAxrEUUIZKvQUAbCxzjRpivWfnirHPZVPmX1tWqA]]>
-      </link>
-      <annotation>
-        <![CDATA[Excl. toeristenbel. en admin. kosten (1-3 pers. 14,50, 4+ pers. 24,50 per boeking.). Prijs o.b.v. 2-persoonsbezetting]]>
-      </annotation>
-    </hotelOfTheWeek>
-    <actionOfTheWeek>
-      <title>
-        <![CDATA[Halfpension op de Veluwe]]>
-      </title>
-      <packageSlug>
-        <![CDATA[witte-berken]]>
-      </packageSlug>
-      <description>
-        <![CDATA[Geniet 2 tot 5 dagen in dit prachtige natuurhotel - al voor <b>85,-</b>]]>
-      </description>
-      <image>
-        <![CDATA[/images/freeValues/vu_widget_2021wk25_witteberken.jpg]]>
-      </image>
-      <link>
-      <![CDATA[/hotel/witte-berken-natuurhotel]]>
-      </link>
-      <annotation>
-        <![CDATA[Excl. toeristenbel. en admin. kosten (1-3 pers. 14,50, 4+ pers. 24,50 per boeking.). Prijs o.b.v. 2-persoonsbezetting]]>
-      </annotation>
-    </actionOfTheWeek>
-    <social>
-      <facebook>
-        <name>
-          <![CDATA[Voordeeluitjes.nl op Facebook]]>
-        </name>
-        <description>
-          <![CDATA[Voordeeluitjes.nl is uiteraard ook te vinden op Facebook.
-            Like de pagina en blijf op de hoogte van aanbiedingen en leuke acties!]]>
-        </description>
-        <link>
-        <![CDATA[/facebook.html]]>
-        </link>
-      </facebook>
-    </social>
+  <!-- Widgets were deleted from homepage, do not delete <widgets> to not break the homepage with error -->  
   </widgets>
   <!-- Topoffers-->
   <topOffers>
