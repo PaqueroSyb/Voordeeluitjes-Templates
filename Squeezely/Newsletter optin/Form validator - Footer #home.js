@@ -1,7 +1,6 @@
 let submitButton = document.querySelector('.sqzly-form-submit');
 let inputEmail = document.querySelector('.sqzly-emailfield');
 let inputContainer = document.querySelector('.sqzly-fields');
-let modal = document.querySelector('.sqzly-fields');
 let emailValue;
 let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
@@ -19,11 +18,6 @@ inputEmail.addEventListener('input', function() {
     showErrorMessage.innerText = "dit veld is verplicht";
   }
 });
-
-let urlPath = window.location.pathname;
-if (urlPath === '/') {
-  modal.classList.add('home');
-}
 
 submitButton.addEventListener('click', submitForm, false);
 

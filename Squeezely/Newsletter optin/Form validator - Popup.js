@@ -19,7 +19,15 @@ inputEmail.addEventListener('input', function() {
     }
 });
 
-submitButton.addEventListener('click', function() {
+submitButton.addEventListener('click', submitForm, false);
+
+inputEmail.addEventListener('keydown', function(key) {
+  if (key.keyCode == '13') {
+    submitForm('Enter key');
+  }
+});
+
+function submitForm(submitElement) {
     let emailValid = pattern.test(emailValue);
     if (emailValid === false) {
         inputContainer.setAttribute('class', 'sqzly-fields input-invalid');
@@ -40,4 +48,8 @@ submitButton.addEventListener('click', function() {
             "anonymize": "yes",
         });
     }
-});
+    if (submitElement == 'Enter key') {
+      _document.querySelector('#sqzl_div-120-71 .szqly-modal-content').classList.add('sqzly-collapse');
+      _document.querySelector('#sqzl_div-120-71 .szqly-thankyou').classList.add('sqzly-in');
+    }
+};
