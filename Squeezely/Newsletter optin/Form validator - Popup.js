@@ -49,7 +49,7 @@ function submitForm(submitElement) {
         });
     }
     if (submitElement == 'Enter key') {
-      _document.querySelector('#sqzl_div-120-71 .szqly-modal-content').classList.add('sqzly-collapse');
-      _document.querySelector('#sqzl_div-120-71 .szqly-thankyou').classList.add('sqzly-in');
+      _document.querySelector('#sqzl_div-10-126 .szqly-modal-content').classList.add('sqzly-collapse');
+      _document.querySelector('#sqzl_div-10-126 .szqly-thankyou').classList.add('sqzly-in');
     }
-};
+}
