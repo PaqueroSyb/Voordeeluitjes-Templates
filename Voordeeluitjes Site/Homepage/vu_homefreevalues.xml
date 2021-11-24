@@ -7,7 +7,31 @@
     <!-- Topoffer 1-->
     <OfferItem>
       <title>
-        <![CDATA[2 of 3 dagen incl. diner: al voor 45,-]]>
+        <![CDATA[Black Friday Deals]]>
+      </title>
+      <packageSlug>
+        <![CDATA[black-friday]]>
+      </packageSlug>
+      <link>
+      <![CDATA[actie/black-friday]]>
+      </link>
+      <image>
+        <![CDATA[/Images/freeValues/vu_topoffer_2021wk47_blackfriday2.jpg]]>
+      </image>
+      <info>
+        <![CDATA[7 dagen lang EXCLUSIEVE deals, slechts tijdelijk te boeken! Profiteer snel!]]>
+      </info>
+      <description>
+        <![CDATA[Profiteer nú]]>
+      </description>
+      <annotation>
+        <![CDATA[Excl. toeristenbel. en admin. kosten (1-3 pers. 14,50, 4+ pers. 24,50 per boeking.). Prijs o.b.v. 2-persoonsbezetting]]>
+      </annotation>
+    </OfferItem>
+    <!-- Topoffer 2-->
+    <OfferItem>
+      <title>
+        <![CDATA[2 of 3 dagen incl. diner(s)]]>
       </title>
       <packageSlug>
         <![CDATA[winterspecials]]>
@@ -16,7 +40,7 @@
       <![CDATA[actie/winterspecials]]>
       </link>
       <image>
-        <![CDATA[/Images/freeValues/vu_topOffer_2021wk45_winterspecials2.jpg]]>
+        <![CDATA[/Images/freeValues/vu_topoffer_2021wk47_winterspecialsnew2.jpg]]>
       </image>
       <info>
         <![CDATA[Winterspecials: incl. ontbijt en heerlijk diner(s)  - al voor <b>45,-</b> p.p.]]>
@@ -28,34 +52,10 @@
         <![CDATA[Excl. toeristenbel. en admin. kosten (1-3 pers. 14,50, 4+ pers. 24,50 per boeking.). Prijs o.b.v. 2-persoonsbezetting]]>
       </annotation>
     </OfferItem>
-    <!-- Topoffer 2-->
-        <OfferItem>
-      <title>
-        <![CDATA[Luxe NH Hotels]]>
-      </title>
-      <packageSlug>
-        <![CDATA[nh-hotels]]>
-      </packageSlug>
-      <link>
-      <![CDATA[/actie/nh-hotels]]>
-      </link>
-      <image>
-        <![CDATA[/Images/freeValues/vu_topOffer_2021wk42_nhhotels.jpg]]>
-      </image>
-      <info>
-        <![CDATA[EXCLUSIEVE Deals: 2, 3 of 4 dagen een heerlijk verblijf incl. ontbijt - al vanaf <b>57,50</b>]]>
-      </info>
-      <description>
-        <![CDATA[Profiteer nú]]>
-      </description>
-      <annotation>
-        <![CDATA[Excl. toeristenbel. en admin. kosten (1-3 pers. 14,50, 4+ pers. 24,50 per boeking.). Prijs o.b.v. 2-persoonsbezetting]]>
-      </annotation>
-    </OfferItem>
     <!-- Topoffer 3-->
     <OfferItem>
       <title>
-        <![CDATA[Hotels met soepele annuleringsvoorwaarden]]>
+        <![CDATA[Kosteloos annuleren]]>
       </title>
       <packageSlug>
         <![CDATA[kosteloos-annuleren]]>
@@ -64,10 +64,10 @@
       <![CDATA[/actie/hotels-met-soepele-annuleringsvoorwaarden]]>
       </link>
       <image>
-        <![CDATA[/Images/freeValues/vu_topOffer_2021wk46_kosteloos_annuleren.jpg]]>
+        <![CDATA[/Images/freeValues/vu_topoffer_2021wk46_kosteloos_annulerennew.jpg]]>
       </image>
       <info>
-        <![CDATA[Onbezorgd eropuit? Annuleer kosteloos tot 48 uur voor aankomst bij deze hotels!]]>
+        <![CDATA[Onbezorgd eropuit? Het kan bij deze hotels met soepele annuleringsvoorwaarden!]]>
       </info>
       <description>
         <![CDATA[Profiteer nú]]>
