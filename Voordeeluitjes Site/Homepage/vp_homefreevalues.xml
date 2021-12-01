@@ -1,0 +1,851 @@
+<HomeResponse>
+     <!-- Topoffers-->
+  <topOffers>
+<!-- Topoffer 1-->
+    <OfferItem>
+    <title><![CDATA[Kortingen tot wel 40%]]></title>
+    <packageSlug>
+    <![CDATA[landal-greenparks]]>
+    </packageSlug>
+    <link><![CDATA[/actie/landal-vakanties]]></link>
+    <image><![CDATA[/images/freeValues/vp_topOffer_2021wk48_landal2.jpg]]></image>
+    <info><![CDATA[Een heerlijk verblijf bij Landal GreenParks - al voor <b>99,-</b> p.acco.]]></info>
+    <description><![CDATA[Profiteer nú]]></description>
+    <annotation><![CDATA[excl. toeristenbelasting en administratiekosten.]]></annotation> 
+  </OfferItem>
+  <!-- Topoffer 2-->
+	<OfferItem>
+    <title><![CDATA[Leuke kerstvakantie deals]]></title>
+    <packageSlug>
+    <![CDATA[kerstvakantie]]>
+    </packageSlug>
+    <link><![CDATA[/actie/kerstvakantie-vp]]></link>
+    <image><![CDATA[/images/freeValues/vp_topOffer_2021wk48_kerstvakantie2.jpg]]></image>
+	<info><![CDATA[Boek een fijn vakantiehuis met Kerst of Oud & nieuw - al voor <b>99,-</b> p.acco.]]></info>
+    <description><![CDATA[Profiteer nú]]></description>
+    <annotation><![CDATA[excl. toeristenbelasting en administratiekosten.]]></annotation> 
+  </OfferItem>
+<!-- Topoffer 3-->
+	<OfferItem>
+    <title><![CDATA[EuroParcs: luxe resorts]]></title>
+    <packageSlug>
+        <![CDATA[europarcs]]>
+    </packageSlug>
+    <link><![CDATA[/actie/europarcs]]></link>
+    <image><![CDATA[/images/freeValues/vp_topOffer_2021wk48_europarcs2.jpg]]></image>
+		<info><![CDATA[Leuke familieparken op de mooiste locaties - 4 dagen al voor <b>149,-</b> p.acco.]]></info>
+    <description><![CDATA[Profiteer nú]]></description>
+    <annotation><![CDATA[excl. toeristenbelasting en administratiekosten.]]></annotation> 
+  </OfferItem>
+  </topOffers>
+  <!-- Widgets were deleted from homepage, do not delete <widgets> to not break the homepage with error -->  
+  <widgets>
+  </widgets>
+  <tips>
+  <heading><![CDATA[Vakantieparken Tips]]></heading>
+  </tips>
+  <menus>
+  <!-- Menu Array-->
+  <Menu>
+    <id/>
+    <name>
+    <![CDATA[Topbestemmingen]]>
+    </name>
+    <button>
+    <link>
+      <![CDATA[/overzicht/vakantieparken]]>
+    </link>
+    <text>
+      <![CDATA[Alle vakantieparken]]>
+    </text>
+    <openInNewWindow>
+      <![CDATA[false]]>
+    </openInNewWindow>
+    </button>
+    <info>
+    <name>
+      <![CDATA[Topbestemmingen]]>
+    </name>
+    <description>
+      <![CDATA[
+Hiernaast vindt u een selectie van bestemmingen met voordelige <b>vakantiepark</b> arrangementen. Kunt u uw gewenste bestemming niet vinden? Klik dan op ‘alle <b>vakantieparken</b>’ voor het complete vakantieparkenaanbod van Voordeeluitjes.nl.
+]]>
+    </description>
+    </info>
+    <columns>
+    <!-- Column Array-->
+    <Column>
+      <categories>
+      <!-- Category Array-->
+      <Category>
+
+        <heading>
+        <![CDATA[Landen]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+        <MenuItem>
+          <name>
+          <![CDATA[Nederland]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/nederland]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_nederland]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Duitsland]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/duitsland]]>
+
+
+          </link>
+          <id>
+          <![CDATA[vakantieparken_duitsland]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[België]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/belgie]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_belgie]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Luxemburg]]>
+          </name>
+          <link>
+
+          <![CDATA[/vakantieparken/luxemburg]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_luxemburg]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Frankrijk]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/frankrijk]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_frankrijk]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Italië]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/italie]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_italie]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Zweden]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/zweden]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_zweden]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+       </categories>
+    </Column>
+    <Column>
+      <categories>
+      <!-- Category Array-->
+      <Category>
+        <heading>
+        <![CDATA[Provincie]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+        <MenuItem>
+          <name>
+          <![CDATA[Drenthe]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/drenthe]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_drenthe]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Flevoland]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/flevoland]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_flevoland]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Friesland]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/friesland]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_friesland]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Gelderland]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/gelderland]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_gelderland]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Groningen]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/groningen]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_groningen]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+
+
+          <![CDATA[Limburg]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/limburg]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_limburg]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Noord-Brabant]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/noord-brabant]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_noord_brabant]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Noord-Holland]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/noord-holland]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_noord_holland]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Overijssel]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/overijssel]]>
+          </link>
+
+          <id>
+          <![CDATA[vakantieparken_overijssel]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Utrecht]]>
+          </name>
+          <link>
+          <![CDATA[/vakantieparken/utrecht]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_utrecht]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Zeeland]]>
+          </name>
+
+          <link>
+          <![CDATA[/vakantieparken/zeeland]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_zeeland]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Zuid-Holland]]>
+          </name>
+
+          <link>
+          <![CDATA[/vakantieparken/zuid-holland]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_zuid_holland]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+      </categories>
+    </Column>
+    <Column>
+      <categories>
+      <!-- Category Array-->
+      <Category>
+        <heading>
+        <![CDATA[Regio]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+        <MenuItem>
+          <name>
+          <![CDATA[Waddeneilanden]]>
+          </name>
+          <link>
+          <![CDATA[/actie/vakantie-op-wadden]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_wadden]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Texel]]>
+          </name>
+          <link>
+          <![CDATA[/actie/vakantieparken-texel]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_texel]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Veluwe]]>
+          </name>
+          <link>
+          <![CDATA[actie/vakantieparken-veluwe]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_veluwe]]>
+          </id>
+        </MenuItem>
+ <MenuItem>
+          <name>
+          <![CDATA[Moezel]]>
+          </name>
+          <link>
+          <![CDATA[actie/vakantieparken-moezel]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_moezel]]>
+          </id>
+        </MenuItem>
+ <MenuItem>
+          <name>
+          <![CDATA[Eifel]]>
+          </name>
+          <link>
+          <![CDATA[actie/vakantieparken-eifel]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_eifel]]>
+          </id>
+        </MenuItem>
+ <MenuItem>
+          <name>
+          <![CDATA[Belgische Kust]]>
+          </name>
+          <link>
+          <![CDATA[actie/vakantieparken-belgische-kust]]>
+          </link>
+          <id>
+          <![CDATA[vakantieparken_belgische_kust]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+      </categories>
+    </Column>
+    </columns>
+  </Menu>
+  <Menu>
+    <id/>
+    <name>
+    <![CDATA[Populair]]>
+
+    </name>
+    <button>
+    <link>
+      <![CDATA[/overzicht/vakantieparken]]>
+    </link>
+    <text>
+      <![CDATA[Alle vakantieparken]]>
+    </text>
+    <openInNewWindow>
+      <![CDATA[false]]>
+    </openInNewWindow>
+    </button>
+    <info>
+    <name>
+      <![CDATA[Populair]]>
+    </name>
+    <description>
+      <![CDATA[
+Hiernaast vindt u een selectie van populaire <b>vakantiepark</b> aanbiedingen van Voordeeluitjes.nl. In dit overzicht vindt u door ons aanbevolen top <b>vakantiepark</b> aanbiedingen, last minute <b>vakantieparken</b> en seizoenaanbiedingen. Kunt u uw gewenste <b>vakantiepark</b> aanbieding niet vinden? Klik dan op ‘alle <b>vakantieparken</b>’ voor het complete aanbod van Voordeeluitjes.nl.
+]]>
+    </description>
+    </info>
+    <columns>
+    <!-- Column Array-->
+    <Column>
+      <categories>
+      <!-- Category Array-->
+      <Category>
+        <heading>
+        <![CDATA[Voordeeluitjes thema's]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+        <MenuItem>
+          <name>
+          <![CDATA[Nieuw! Bij Voordeeluitjes.nl]]>
+          </name>
+          <link>
+          <![CDATA[actie/nieuw-bij-voordeeluitjes-nl-2]]>
+          </link>
+          <id>
+          <![CDATA[nieuw_bij_voordeeluitjes]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Voordeelontbijtje]]>
+          </name>
+          <link>
+          <![CDATA[/actie/voordeelontbijtje]]>
+          </link>
+          <id>
+          <![CDATA[voordeelontbijtje]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+
+          <![CDATA[Met subtropisch zwemparadijs]]>
+          </name>
+          <link>
+          <![CDATA[/actie/met-subtropisch-zwemparadijs]]>
+          </link>
+          <id>
+          <![CDATA[met_subtropisch_zwemparadijs]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Huisdieren toegestaan]]>
+          </name>
+          <link>
+          <![CDATA[/actie/huisdieren-toegestaan]]>
+          </link>
+          <id>
+          <![CDATA[huisdieren_toegestaan]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[€ 99 arrangement]]>
+          </name>
+          <link>
+          <![CDATA[/actie/99-arrangement]]>
+          </link>
+          <id>
+          <![CDATA[99_arrangement]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+      <Category>
+        <heading>
+        <![CDATA[Vakanties en feestdagen]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+<MenuItem>
+          <name>
+          <![CDATA[Herfstvakantie]]>
+          </name>
+          <link>
+          <![CDATA[/actie/herfstvakantie-vp]]>
+          </link>
+          <id>
+          <![CDATA[[herfstvakantie_2019]]]>
+          </id>
+        </MenuItem>
+<MenuItem>
+          <name>
+          <![CDATA[Kerstvakantie]]>
+          </name>
+          <link>
+          <![CDATA[/actie/kerstvakantie-vp]]>
+          </link>
+          <id>
+          <![CDATA[[kerstvakantie_2019]]]>
+          </id>
+        </MenuItem>
+<MenuItem>
+          <name>
+          <![CDATA[Oud & nieuw]]>
+          </name>
+          <link>
+          <![CDATA[/actie/oud-nieuw-vakantieparken]]>
+          </link>
+          <id>
+          <![CDATA[[oudnieuw_2019]]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+      </categories>
+    </Column>
+    <Column>
+      <categories>
+      <!-- Category Array-->
+      <Category>
+        <heading>
+        <![CDATA[Last Minutes]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+        <MenuItem>
+          <name>
+          <![CDATA[Last minute top 10]]>
+          </name>
+          <link>
+          <![CDATA[/actie/last-minute-top-10]]>
+          </link>
+          <id>
+          <![CDATA[last_minute_top_10]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Last minute vakantieparken]]>
+          </name>
+          <link>
+          <![CDATA[/actie/last-minute-vakantieparken]]>
+          </link>
+          <id>
+          <![CDATA[last_minute_vakantieparken]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Last minute vakantie]]>
+          </name>
+          <link>
+          <![CDATA[actie/last-minute-vakantie]]>
+          </link>
+          <id>
+          <![CDATA[last_minute_vakantie]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Last minute bungalow]]>
+          </name>
+          <link>
+          <![CDATA[actie/last-minute-bungalow]]>
+          </link>
+          <id>
+          <![CDATA[last_minute_bungalow]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+      <Category>
+        <heading>
+        <![CDATA[Type verblijf]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+        <MenuItem>
+          <name>
+          <![CDATA[Appartement]]>
+          </name>
+          <link>
+          <![CDATA[/actie/appartement]]>
+          </link>
+          <id>
+          <![CDATA[appartement]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Bed & Breakfast]]>
+          </name>
+          <link>
+          <![CDATA[/actie/bed-breakfast]]>
+          </link>
+          <id>
+          <![CDATA[bed_breakfast]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Boerderij]]>
+          </name>
+          <link>
+          <![CDATA[/actie/boerderij]]>
+          </link>
+          <id>
+          <![CDATA[boerderij]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Camping]]>
+          </name>
+          <link>
+          <![CDATA[/actie/camping]]>
+          </link>
+          <id>
+          <![CDATA[camping]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Kasteel]]>
+          </name>
+          <link>
+          <![CDATA[/actie/kasteel]]>
+          </link>
+          <id>
+          <![CDATA[kasteel]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Bungalowpark]]>
+          </name>
+          <link>
+          <![CDATA[/actie/bungalowpark]]>
+          </link>
+          <id>
+          <![CDATA[bungalowpark]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+      </categories>
+    </Column>
+    <Column>
+      <categories>
+      <!-- Category Array-->
+      <Category>
+        <heading>
+        <![CDATA[Ik zoek naar:]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+        <MenuItem>
+          <name>
+          <![CDATA[3-daags arrangement]]>
+          </name>
+          <link>
+          <![CDATA[/actie/3-daags-arrangement]]>
+          </link>
+          <id>
+          <![CDATA[3_daags_arrangement]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[4-daags arrangement]]>
+          </name>
+          <link>
+          <![CDATA[/actie/4-daags-arrangement]]>
+          </link>
+          <id>
+          <![CDATA[4_daags_arrangement]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[5-daags arrangement]]>
+          </name>
+          <link>
+          <![CDATA[/actie/5-daags-arrangement]]>
+          </link>
+          <id>
+          <![CDATA[5_daags_arrangement]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[8-daags arrangement]]>
+          </name>
+          <link>
+          <![CDATA[/actie/8-daags-arrangement]]>
+          </link>
+          <id>
+          <![CDATA[8_daags_arrangement]]>
+          </id>
+        </MenuItem>
+ <MenuItem>
+          <name>
+          <![CDATA[15-daags arrangement]]>
+          </name>
+          <link>
+          <![CDATA[/actie/15-daags-arrangement]]>
+          </link>
+          <id>
+          <![CDATA[15_daags_arrangement]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+      <Category>
+        <heading>
+        <![CDATA[Lezersaanbiedingen]]>
+        </heading>
+        <items>
+        <!-- MenuItem Array-->
+        <MenuItem>
+
+
+          <name>
+          <![CDATA[Gezien in de Kampioen]]>
+          </name>
+          <link>
+          <![CDATA[actie/gezien-de-kampioen]]>
+          </link>
+          <id>
+          <![CDATA[gezien_de_kampioen]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Vakantiegids]]>
+          </name>
+          <link>
+          <![CDATA[/actie/vakantiegids]]>
+          </link>
+          <id>
+          <![CDATA[vakantiegids]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[TV deals]]>
+          </name>
+          <link>
+          <![CDATA[actie/tv-spots-vakantieparken]]>
+          </link>
+          <id>
+          <![CDATA[tv_deals]]>
+          </id>
+        </MenuItem>
+        <MenuItem>
+          <name>
+          <![CDATA[Gezien in de Libelle/Margriet]]>
+          </name>
+          <link>
+          <![CDATA[actie/gezien-de-libelle-margriet]]>
+          </link>
+          <id>
+          <![CDATA[libelle]]>
+          </id>
+        </MenuItem>
+        </items>
+      </Category>
+      </categories>
+    </Column>
+    </columns>
+  </Menu>
+    <Menu>
+    <id><![CDATA[blog_item]]></id>
+    <name>
+    <![CDATA[Blog]]>
+    </name>
+    <button>
+    <link>
+      <![CDATA[/blog/]]>
+    </link>
+    <text>
+    </text>
+    <openInNewWindow>
+      <![CDATA[true]]>
+    </openInNewWindow>
+    </button>      
+  </Menu>
+  <Menu>
+    <id><![CDATA[Video's]]></id>      
+    <name>
+    <![CDATA[Video's]]>
+    </name>
+
+    <button>
+    <link>
+      <![CDATA[https://www.youtube.com/voordeeluitjes]]>
+    </link>
+    <text>
+    </text>
+    <openInNewWindow>
+      <![CDATA[true]]>
+    </openInNewWindow>
+    </button>      
+  </Menu>
+  </menus>
+
+<pagePersuasions>
+  <heading><![CDATA[Boek voordelig een vakantie aanbieding naar een vakantiepark bij Voordeeluitjes.nl!]]></heading>
+  <persuasionItems>
+    <PagePeruasionItem>
+      <title><![CDATA[Beste vakantiepark arrangementen]]></title>
+      <description><![CDATA[<p> Niet alleen voor het boeken van een hotel moet u bij Voordeeluitjes.nl zijn; ook voor een voordelige vakantie in een fraai vakantiehuis of luxe stacaravan kunt u uitstekend bij ons terecht. Bekijk hier alle voordelige <b>vakantieparken</b> deals voor een lekkere week, midweek of een weekendje weg in een huisje. Zo bieden we naast vakantieparken in Nederland ook bungalow- en vakantieparken in Duitsland, België, Frankrijk, Luxemburg en diverse andere Europese landen. Dit worden er steeds meer!</p><p>Ons ruime aanbod laat bovendien voordelige vakantiehuisjes in alle soorten en maten zien, of u nu kiest voor een vakantiehuis op het platteland, een bungalow, een mobile home aan zee of een chalet in de bossen. Maar ook als u op een luxe manier wilt kamperen in een volledig en stijlvol ingerichte tent, beter bekend onder het begrip ‘glamping’, vindt u bij ons uw favoriete verblijf. </p>]]></description>
+    </PagePeruasionItem> 
+    <PagePeruasionItem>
+      <title><![CDATA[Vakantieparken op mooie locaties]]></title>
+      <description><![CDATA[<p> Voordeeluitjes.nl heeft bij ieder vakantiepark de leukste vakantie-aanbiedingen geselecteerd. Hele dagen zwemmen en actief bezig zijn, ontspannen op het terras van uw vakantiehuis of <a href="/actie/bungalows">bungalow</a> of de prachtige omgeving van het vakantiepark verkennen; u kunt precies doen wat u zelf wilt! </p><p>Want op een vakantiepark heeft u alle vrijheid; in de privacy van uw bungalow, compleet ingerichte (safari-)tent of vakantiehuis bepaalt u zelf hoe laat u opstaat, wat u neemt voor het ontbijt en of u ’s avonds wilt koken. </p><p>Vakantieparken met (subtropisch) zwembad, bungalowparken met veel groen rondom de accommodaties, parken waar huisdieren welkom zijn of familiecampings met de leukste faciliteiten voor de kleintjes.</p>]]></description>
+    </PagePeruasionItem>
+    <PagePeruasionItem>
+      <description><![CDATA[<p>Voordeeluitjes.nl is van alle markten thuis en heeft ook vakantieparken van diverse bekende ketens in het aanbod, zoals Holiday Suites, Vodatent en Oostappen Vakantieparken. </p><p>De aantrekkelijke <b>vakantiepark-arrangementen</b> die u bij Voordeeluitjes.nl vindt, staan garant voor de mooiste vakantieparken, de leukste locaties en de voordeligste prijzen. U bent sowieso voordelig uit, ook als u op zoek bent naar de beste last minutes vakantieparken!</p><p>Ga op ontdekkingsreis en kijk ook eens op ons Voordeeluitjes-blog voor inspiratie!</p>]]></description>
+    </PagePeruasionItem>
+    <PagePeruasionItem>
+      <title><![CDATA[Team Voordeeluitjes.nl]]></title>
+      <description><![CDATA[<p>Wilt u meer info ontvangen over een <b>vakantiepark</b>? Het is altijd mogelijk een informatie-aanvraag te doen en we sturen u met plezier de gewenste gegevens toe. Heeft u hulp nodig bij het boeken van uw <b>camping</b> of <b>vakantiepark</b>? Wij zijn op iedere dag van het jaar telefonisch bereikbaar. Ons deskundige Team Voordeeluitjes.nl is altijd bereid om u verder te helpen! </p><h2 class="title ng-binding ng-scope">Veilig online een vakantiepark boeken</h2><p>Bent u er helemaal uit? Weet u al in welk land u wilt recreëren, welk <b>vakantiepark</b> de kinderen het tofst zullen vinden en van welk <b>arrangement</b> u wilt genieten? Bij ons kunt u veilig online boeken. U heeft bij ons geen creditcard nodig om een <b>vakantie(park)</b> te boeken. Meestal ontvangt u de betalingsinformatie schriftelijk, zodat u het bedrag eenvoudig vanuit huis kunt overmaken.</p>]]></description>
+    </PagePeruasionItem>    
+  </persuasionItems>
+</pagePersuasions>
+</HomeResponse>
