@@ -1,4 +1,22 @@
 <?php
+include('website/config.php');
+
+$ipOK = false;
+foreach($settings['copernica_ip_whitelist'] as $ipRange){
+    if(ip_in_range($_SERVER["REMOTE_ADDR"], $ipRange)){
+        $ipOK = true;
+        break;
+    }
+}
+
+if(!$ipOK){
+    die('IP not authorized');
+}
+
+if (!$dbSlave) {
+	header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+	die("Database connection failed");
+}
 
 // Load essentials
 require_once('copernica_rest_api.php');
@@ -12,7 +30,7 @@ $campagne = $_GET["campagne"];
 $userProfileID = $_GET["profiel"];
 
 // Load lock file
-$fp = fopen("lock.txt", "r+");
+$fp = fopen("lock_sqzly_aanmeld_codes.txt", "r+");
 
 // acquire an exclusive lock
 if (flock($fp, LOCK_EX)) 
@@ -21,7 +39,7 @@ if (flock($fp, LOCK_EX))
 	ftruncate($fp, 0);
 	      
 	// Check if profile has already been called upon
-	$usedProfiles = json_decode(file_get_contents('codes.json'), true);
+	$usedProfiles = json_decode(file_get_contents('sqzly_aanmeld_codes_used.json'), true);
 	
 	if (!array_key_exists($userProfileID, $usedProfiles)) 
 	{
@@ -65,7 +83,7 @@ if (flock($fp, LOCK_EX))
     // Save array to profile key
 		$usedProfiles[$userProfileID] = $codeDateArray;
 	
-		file_put_contents("codes.json",json_encode($usedProfiles));
+		file_put_contents("sqzly_aanmeld_codes_used.json",json_encode($usedProfiles));
 	
 	} 
 	else 
@@ -121,7 +139,7 @@ if (flock($fp, LOCK_EX))
       // Save array to profile key
       $usedProfiles[$userProfileID] = $codeDateArray;
     
-      file_put_contents("codes.json",json_encode($usedProfiles));
+      file_put_contents("sqzly_aanmeld_codes_used.json",json_encode($usedProfiles));
 
     }
     else
@@ -142,4 +160,17 @@ fclose($fp);
 
 // Output code so it can be fetched.
 echo $code;
+
+function ip_in_range( $ip, $range ) {
+	if ( strpos( $range, '/' ) == false ) {
+		$range .= '/27';
+	}
+	// $range is in IP/CIDR format eg 127.0.0.1/24
+	list( $range, $netmask ) = explode( '/', $range, 2 );
+	$range_decimal = ip2long( $range );
+	$ip_decimal = ip2long( $ip );
+	$wildcard_decimal = pow( 2, ( 32 - $netmask ) ) - 1;
+	$netmask_decimal = ~ $wildcard_decimal;
+	return ( ( $ip_decimal & $netmask_decimal ) == ( $range_decimal & $netmask_decimal ) );
+}
 ?>
