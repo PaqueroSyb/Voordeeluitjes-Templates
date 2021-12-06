@@ -29,7 +29,7 @@ function getDatabaseStatistics() {
             var requestFrequentie = "&fields[]=frequentie%3D%3D" + frequentie;
           }
           let response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/" + selectionID + "/profiles?fields[]=batch%3D%3D" + batch + requestFrequentie +
-            "&access_token=5399e0f006f149ddf17659bf2fbabbbfdddb7d1a1cc22adb2f252eecdff38cbf7561611c46521a237c59ec82ae520e1c45050cc409e71ea6d5bb9133fbaacd12", {
+            "&access_token=", {
             muteHttpExceptions: true
           });
 

@@ -23,7 +23,7 @@ function getDatabaseStatistics() {
         var succesfull = false;
         while(!succesfull) {
             try {
-                var response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/3015/profiles?&fields[]=batch%3D%3D" + batch + "&access_token=5399e0f006f149ddf17659bf2fbabbbfdddb7d1a1cc22adb2f252eecdff38cbf7561611c46521a237c59ec82ae520e1c45050cc409e71ea6d5bb9133fbaacd12", {
+                var response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/3015/profiles?&fields[]=batch%3D%3D" + batch + "&access_token=", {
 muteHttpExceptions: true });
 
                 // Parse data to JSON and get total
@@ -52,7 +52,7 @@ muteHttpExceptions: true });
         var succesfull = false;
         while(!succesfull) {
             try {
-                var response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/3016/profiles?&fields[]=batch%3D%3D" + batch + "&access_token=5399e0f006f149ddf17659bf2fbabbbfdddb7d1a1cc22adb2f252eecdff38cbf7561611c46521a237c59ec82ae520e1c45050cc409e71ea6d5bb9133fbaacd12", {
+                var response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/3016/profiles?&fields[]=batch%3D%3D" + batch + "&access_token=", {
 muteHttpExceptions: true });
 
               // Parse data to JSON and get total
@@ -81,7 +81,7 @@ muteHttpExceptions: true });
         var succesfull = false;
         while(!succesfull) {
             try {
-                var response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/3055/profiles?&fields[]=batch%3D%3D" + batch + "&access_token=5399e0f006f149ddf17659bf2fbabbbfdddb7d1a1cc22adb2f252eecdff38cbf7561611c46521a237c59ec82ae520e1c45050cc409e71ea6d5bb9133fbaacd12", {
+                var response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/3055/profiles?&fields[]=batch%3D%3D" + batch + "&access_token=", {
 muteHttpExceptions: true });
 
                 // Parse data to JSON and get total
@@ -106,7 +106,7 @@ muteHttpExceptions: true });
 
   function noOptin() {
       var frequentie = "No-Optin";
-      var response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/3015/profiles?&fields[]=frequentie%3D%3D" + frequentie + "&access_token=5399e0f006f149ddf17659bf2fbabbbfdddb7d1a1cc22adb2f252eecdff38cbf7561611c46521a237c59ec82ae520e1c45050cc409e71ea6d5bb9133fbaacd12", {
+      var response = UrlFetchApp.fetch("https://api.copernica.com/v2/view/3015/profiles?&fields[]=frequentie%3D%3D" + frequentie + "&access_token=", {
 muteHttpExceptions: true });
 
       // Parse data to JSON and get total
@@ -119,7 +119,7 @@ muteHttpExceptions: true });
   }
 
   function bookingTotal() {
-      var response = UrlFetchApp.fetch("https://api.copernica.com/v2/miniview/129/subprofiles?access_token=5399e0f006f149ddf17659bf2fbabbbfdddb7d1a1cc22adb2f252eecdff38cbf7561611c46521a237c59ec82ae520e1c45050cc409e71ea6d5bb9133fbaacd12", {
+      var response = UrlFetchApp.fetch("https://api.copernica.com/v2/miniview/129/subprofiles?access_token=", {
 muteHttpExceptions: true });
 
       // Parse data to JSON and get total
