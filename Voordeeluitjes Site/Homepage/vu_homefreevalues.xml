@@ -7,19 +7,19 @@
     <!-- Topoffer 1-->
     <OfferItem>
       <title>
-        <![CDATA[Black Friday Deals]]>
+        <![CDATA[2 of 3 dagen incl. diner(s)]]>
       </title>
       <packageSlug>
-        <![CDATA[black-friday]]>
+        <![CDATA[winterspecials]]>
       </packageSlug>
       <link>
-      <![CDATA[actie/black-friday]]>
+      <![CDATA[/actie/winterspecials]]>
       </link>
       <image>
-        <![CDATA[/Images/freeValues/vu_topoffer_2021wk47_blackfriday2.jpg]]>
+        <![CDATA[/Images/freeValues/vu_topoffer_2021wk47_winterspecialsnew2.jpg]]>
       </image>
       <info>
-        <![CDATA[7 dagen lang EXCLUSIEVE deals, slechts tijdelijk te boeken! Profiteer snel!]]>
+        <![CDATA[Winterspecials: incl. ontbijt en heerlijk diner(s)  - al voor <b>45,-</b> p.p.]]>
       </info>
       <description>
         <![CDATA[Profiteer nú]]>
@@ -31,19 +31,19 @@
     <!-- Topoffer 2-->
     <OfferItem>
       <title>
-        <![CDATA[2 of 3 dagen incl. diner(s)]]>
+        <![CDATA[Stedentrip Antwerpen]]>
       </title>
       <packageSlug>
-        <![CDATA[winterspecials]]>
+        <![CDATA[antwerpen]]>
       </packageSlug>
       <link>
-      <![CDATA[actie/winterspecials]]>
+      <![CDATA[/hotels/plaats-antwerpen]]>
       </link>
       <image>
-        <![CDATA[/Images/freeValues/vu_topoffer_2021wk47_winterspecialsnew2.jpg]]>
+        <![CDATA[/Images/freeValues/vu_topoffer_2021wk48_antwerpen.jpg]]>
       </image>
       <info>
-        <![CDATA[Winterspecials: incl. ontbijt en heerlijk diner(s)  - al voor <b>45,-</b> p.p.]]>
+        <![CDATA[In België kunt u er heerlijk opuit! Ga ook kerstshoppen - al voor <b>32,-</b> p.p.]]>
       </info>
       <description>
         <![CDATA[Profiteer nú]]>
