@@ -1,0 +1,477 @@
+<!-- Aangevraagde extra's o.b.v. aangemaakt subprofiel -->
+{loadprofile source="Extras_feed" Extra_ID={$mailing.trigger.subprofile.Package_ID} assign=prijsgekozenextras multiple=true}
+{if $mailing.trigger.subprofile.Extra1_variable1 != '-'}
+{foreach $prijsgekozenextras as $pge}
+{if $mailing.trigger.subprofile.Extra1_beschrijving == $pge.Extra_name}
+<tr>
+  <td align="left">
+    <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="padding-bottom: 20px; padding-top: 10px;">
+          <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td class="hide-for-small" valign="top">
+                <img alt="Afbeelding {$mailing.trigger.subprofile.Extra1_beschrijving}" class="hide-for-small" src="{$pge.Image_email_URL}" width="160" height="100" border="0">
+              </td>
+              <td class="hide-for-small" width="20"></td>
+              <td valign="top">
+                <table class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="520" cellspacing="0" cellpadding="0" border="0">
+                  <!--[if !true]><!-->
+                  <tr>
+                    <td class="show-for-small" width="100%" style="padding-bottom: 10px; padding-top: 10px; display: none; width: 100%;">
+                      <span class="show-for-small" style="display:none;margin:0;padding:0"><img alt="Afbeelding {$mailing.trigger.subprofile.Extra1_beschrijving}" border="0" class="responsive-img" src="{$pge.Image_email_mobile_URL}" width="700" height="150"></span>
+                    </td>
+                  </tr>
+                  <!--<![endif]-->
+                  <tr>
+                    <td class="padding-bottom-5-m" valign="middle" align="left" style="padding-bottom: 5px;">
+                      <h1 class="font-title fr kt a" style="color: #000;font-family: 'Roboto Slab','Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 26px;margin: 0;mso-line-height-rule: exactly;padding: 0">{$mailing.trigger.subprofile.Extra1_beschrijving}</h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left">
+                      <table width="520" class="y" role="presentation" style="background-color: #F1F1F1; border-radius: 4px; padding: 0px; border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;" cellspacing="0" cellpadding="0" border="0" bgcolor="F1F1F1">
+                        <tr>
+                          <td class="td" width="50%" align="left" style="padding-left: 8px;">
+                            <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">{if $pge.Variable1 != '-'}{$pge.Variable1}{else}{$pge.Suffix|ucfirst}{/if}: {$mailing.trigger.subprofile.Extra1_variable1}</p>
+                          </td>
+                          <td class="td" width="50%" align="left">
+                            <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                              {if $mailing.trigger.subprofile.Extra1_variable2 != '-'}{$pge.Variable2}: {$mailing.trigger.subprofile.Extra1_variable2}{/if}
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left">
+                      <table width="520" class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                          <td class="td" width="50%" align="left" style="padding-left: 8px; padding-top: 4px;">
+                            <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Extra prijs: {$mailing.trigger.subprofile.Extra1_voorprijs|replace:'.':','}</p>
+                          </td>
+                          <td class="td" width="50%" align="left" style="padding-top: 4px;">
+                            <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                              Totaalprijs extra: <span style="color: #EC008C;">{capture assign="totalPrice"}{if $mailing.trigger.subprofile.Extra1_variable2 != '-'}{math equation="x * y * z" x=$mailing.trigger.subprofile.Extra1_variable1 y=$mailing.trigger.subprofile.Extra1_variable2 z=$mailing.trigger.subprofile.Extra1_voorprijs}{else}{math equation="x * y" x=$mailing.trigger.subprofile.Extra1_variable1  y=$mailing.trigger.subprofile.Extra1_voorprijs}{/if}{/capture}{capture assign="showTotalPrice"}{$totalPrice|string_format:"%.2f"}{/capture}{$showTotalPrice|replace:'.':','}</span>
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          {if $mailing.trigger.subprofile.Extra1_question != ''}
+          <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td style="padding-top: 5px;">
+                <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                  <i>Opmerking: {$mailing.trigger.subprofile.Extra1_question}</i>
+                </p>
+              </td>
+            </tr>
+          </table>
+          {/if}
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+{/if}
+{/foreach}
+{/if}
+{if $mailing.trigger.subprofile.Extra2_variable1 != '-'}
+{foreach $prijsgekozenextras as $pge}
+{if $mailing.trigger.subprofile.Extra2_beschrijving == $pge.Extra_name}
+<tr>
+  <td align="left">
+    <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="padding-bottom: 20px">
+          <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0"
+      <tr>
+        <td class="hide-for-small" valign="top">
+          <img alt="Afbeelding {$mailing.trigger.subprofile.Extra2_beschrijving}" class="hide-for-small" src="{$pge.Image_email_URL}" width="160" height="100" border="0">
+        </td>
+        <td class="hide-for-small" width="20"></td>
+        <td valign="top">
+          <table class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="520" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td>
+                <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td class="show-for-small" style="padding-bottom: 10px; padding-top: 10px; display: none;"><span class="show-for-small" style="display:none;margin:0;padding:0;"><img alt="Afbeelding {$mailing.trigger.subprofile.Extra2_beschrijving}" class="show-for-small" src="{$pge.Image_email_mobile_URL}" width="100%" height="auto" border="0"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="padding-bottom-5-m" valign="middle" align="left" style="padding-bottom: 5px;">
+                      <h1 class="font-title fr kt a" style="color: #000;font-family: 'Roboto Slab','Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 26px;margin: 0;mso-line-height-rule: exactly;padding: 0">{$mailing.trigger.subprofile.Extra2_beschrijving}</h1>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">
+                <table width="520" class="y" role="presentation" style="background-color: #F1F1F1; border-radius: 4px; padding: 0px; border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0;" cellspacing="0" cellpadding="0" border="0" bgcolor="F1F1F1">
+                  <tr>
+                    <td class="td" width="50%" align="left" style="padding-left: 8px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">{if $pge.Variable1 != '-'}{$pge.Variable1}{else}{$pge.Suffix|ucfirst}{/if}: {$mailing.trigger.subprofile.Extra2_variable1}</p>
+                    </td>
+                    <td class="td" width="50%" align="left">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                        {if $mailing.trigger.subprofile.Extra2_variable2 != '-'}{$pge.Variable2}: {$mailing.trigger.subprofile.Extra2_variable2}{/if}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">
+                <table width="520" class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td class="td" width="50%" align="left" style="padding-left: 8px; padding-top: 4px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Prijs extra:  {$mailing.trigger.subprofile.Extra2_voorprijs|replace:'.':','}</p>
+                    </td>
+                    <td class="td" width="50%" align="left" style="padding-top: 4px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Totaalprijs extra: <span style="color: #EC008C;">{capture assign="totalPrice"}{if $mailing.trigger.subprofile.Extra2_variable2 != '-'}{math equation="x * y * z" x=$mailing.trigger.subprofile.Extra2_variable1 y=$mailing.trigger.subprofile.Extra2_variable2 z=$mailing.trigger.subprofile.Extra2_voorprijs}{else}{math equation="x * y" x=$mailing.trigger.subprofile.Extra2_variable1  y=$mailing.trigger.subprofile.Extra2_voorprijs}{/if}{/capture}{capture assign="showTotalPrice"}{$totalPrice|string_format:"%.2f"}{/capture}{$showTotalPrice|replace:'.':','}</span></p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    {if $mailing.trigger.subprofile.Extra2_question != ''}
+    <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="padding-top: 5px;">
+          <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+            <i>Opmerking: {$mailing.trigger.subprofile.Extra2_question}</i>
+          </p>
+        </td>
+      </tr>
+    </table>
+    {/if}
+  </td>
+</tr>
+</table>
+</td>
+</tr>
+{/if}
+{/foreach}
+{/if}
+{if $mailing.trigger.subprofile.Extra3_variable1 != '-'}
+{foreach $prijsgekozenextras as $pge}
+{if $mailing.trigger.subprofile.Extra3_beschrijving == $pge.Extra_name}
+<tr>
+  <td align="left">
+    <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="padding-bottom: 20px;">
+          <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0"
+      <tr>
+        <td class="hide-for-small" valign="top">
+          <img alt="Afbeelding {$mailing.trigger.subprofile.Extra3_beschrijving}" class="hide-for-small" src="{$pge.Image_email_URL}" width="160" height="100" border="0">
+        </td>
+        <td class="hide-for-small" width="20"></td>
+        <td valign="top">
+          <table class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="520" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td class="show-for-small" style="padding-bottom: 10px; padding-top: 10px; display: none;"><span class="show-for-small" style="display:none;margin:0;padding:0;"><img alt="Afbeelding {$mailing.trigger.subprofile.Extra3_beschrijving}" class="show-for-small" src="{$pge.Image_email_mobile_URL}" width="100%" height="auto" border="0"></span></td>
+            </tr>
+            <tr>
+              <td>
+                <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td class="padding-bottom-5-m" valign="middle" align="left" style="padding-bottom: 5px;">
+                      <h1 class="font-title fr kt a" style="color: #000;font-family: 'Roboto Slab','Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 26px;margin: 0;mso-line-height-rule: exactly;padding: 0">{$mailing.trigger.subprofile.Extra3_beschrijving}</h1>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">
+                <table width="520" class="y" role="presentation" style="background-color: #F1F1F1; border-radius: 4px; padding: 0px; border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0;" cellspacing="0" cellpadding="0" border="0" bgcolor="F1F1F1">
+                  <tr>
+                    <td class="td" width="50%" align="left" style="padding-left: 8px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">{if $pge.Variable1 != '-'}{$pge.Variable1}{else}{$pge.Suffix|ucfirst}{/if}: {$mailing.trigger.subprofile.Extra3_variable1}</p>
+                    </td>
+                    <td class="td" width="50%" align="left">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                        {if $mailing.trigger.subprofile.Extra3_variable2 != '-'}{$pge.Variable2}: {$mailing.trigger.subprofile.Extra3_variable2}{/if}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">
+                <table width="520" class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td class="td" width="50%" align="left" style="padding-left: 8px; padding-top: 4px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Prijs extra:  {$mailing.trigger.subprofile.Extra3_voorprijs|replace:'.':','}</p>
+                    </td>
+                    <td class="td" width="50%" align="left" style="padding-top: 4px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Totaalprijs extra: <span style="color: #EC008C;">{capture assign="totalPrice"}{if $mailing.trigger.subprofile.Extra3_variable2 != '-'}{math equation="x * y * z" x=$mailing.trigger.subprofile.Extra3_variable1 y=$mailing.trigger.subprofile.Extra3_variable2 z=$mailing.trigger.subprofile.Extra3_voorprijs}{else}{math equation="x * y" x=$mailing.trigger.subprofile.Extra3_variable1  y=$mailing.trigger.subprofile.Extra3_voorprijs}{/if}{/capture}{capture assign="showTotalPrice"}{$totalPrice|string_format:"%.2f"}{/capture}{$showTotalPrice|replace:'.':','}</span></p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    {if $mailing.trigger.subprofile.Extra3_question != ''}
+    <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="padding-top: 5px;">
+          <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+            <i>Opmerking: {$mailing.trigger.subprofile.Extra3_question}</i>
+          </p>
+        </td>
+      </tr>
+    </table>
+    {/if}
+  </td>
+</tr>
+</table>
+</td>
+</tr>
+{/if}
+{/foreach}
+{/if}
+{if $mailing.trigger.subprofile.Extra4_variable1 != '-'}
+{foreach $prijsgekozenextras as $pge}
+{if $mailing.trigger.subprofile.Extra4_beschrijving == $pge.Extra_name}
+<tr>
+  <td align="left">
+    <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="padding-bottom: 20px;">
+          <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0"
+      <tr>
+        <td class="hide-for-small" valign="top">
+          <img alt="Afbeelding {$mailing.trigger.subprofile.Extra4_beschrijving}" class="hide-for-small" src="{$pge.Image_email_URL}" width="160" height="100" border="0">
+        </td>
+        <td class="hide-for-small" width="20"></td>
+        <td valign="top">
+          <table class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="520" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td class="show-for-small" style="padding-bottom: 10px; padding-top: 10px; display: none;"><span class="show-for-small" style="display:none;margin:0;padding:0;"><img alt="Afbeelding {$mailing.trigger.subprofile.Extra4_beschrijving}" class="show-for-small" src="{$pge.Image_email_mobile_URL}" width="100%" height="auto" border="0"></span></td>
+            </tr>
+            <tr>
+              <td>
+                <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td class="padding-bottom-5-m" valign="middle" align="left" style="padding-bottom: 5px;">
+                      <h1 class="font-title fr kt a" style="color: #000;font-family: 'Roboto Slab','Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 26px;margin: 0;mso-line-height-rule: exactly;padding: 0">{$mailing.trigger.subprofile.Extra4_beschrijving}</h1>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">
+                <table width="520" class="y" role="presentation" style="background-color: #F1F1F1; border-radius: 4px; padding: 0px; border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0;" cellspacing="0" cellpadding="0" border="0" bgcolor="F1F1F1">
+                  <tr>
+                    <td class="td" width="50%" align="left" style="padding-left: 8px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">{if $pge.Variable1 != '-'}{$pge.Variable1}{else}{$pge.Suffix|ucfirst}{/if}: {$mailing.trigger.subprofile.Extra4_variable1}</p>
+                    </td>
+                    <td class="td" width="50%" align="left">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                        {if $mailing.trigger.subprofile.Extra4_variable2 != '-'}{$pge.Variable2}: {$mailing.trigger.subprofile.Extra4_variable2}{/if}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left">
+                <table width="520" class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td class="td" width="50%" align="left" style="padding-left: 8px; padding-top: 4px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Prijs extra:  {$mailing.trigger.subprofile.Extra4_voorprijs|replace:'.':','}</p>
+                    </td>
+                    <td class="td" width="50%" align="left" style="padding-top: 4px;">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Totaalprijs extra: <span style="color: #EC008C;">{capture assign="totalPrice"}{if $mailing.trigger.subprofile.Extra4_variable2 != '-'}{math equation="x * y * z" x=$mailing.trigger.subprofile.Extra4_variable1 y=$mailing.trigger.subprofile.Extra4_variable2 z=$mailing.trigger.subprofile.Extra4_voorprijs}{else}{math equation="x * y" x=$mailing.trigger.subprofile.Extra4_variable1  y=$mailing.trigger.subprofile.Extra4_voorprijs}{/if}{/capture}{capture assign="showTotalPrice"}{$totalPrice|string_format:"%.2f"}{/capture}{$showTotalPrice|replace:'.':','}</span></p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    {if $mailing.trigger.subprofile.Extra4_question != ''}
+    <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="padding-top: 5px;">
+          <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+            <i>Opmerking: {$mailing.trigger.subprofile.Extra4_question}</i>
+          </p>
+        </td>
+      </tr>
+    </table>
+    {/if}
+  </td>
+</tr>
+</table>
+</td>
+</tr>
+{/if}
+{/foreach}
+{/if}
+
+<!-- Totaalprijs + klantenservice blok -->
+{if $mailing.trigger.subprofile.Extra1_beschrijving != '-' || $mailing.trigger.subprofile.Extra2_beschrijving != '-' || $mailing.trigger.subprofile.Extra3_beschrijving != '-' || $mailing.trigger.subprofile.Extra4_beschrijving != '-'}
+<tr>
+  <td align="left">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+      <tr>
+        <td align="left" style="padding-top: 10px; border-top: 1px solid #d8d8d8;">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+            <tr>
+              <td class="hide-for-small" width="63%" align="left">
+              </td>
+              <td class="w-50" width="260" align="left">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+                  <tr>
+                    <td class="w-50" width="95" align="left">
+                      <p class="font-title fr kt a" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 29px;margin: 0;mso-line-height-rule: exactly;padding: 0; display: inline-block;">
+                        Totaalprijs:
+                      </p>
+                    </td>
+                    <td class="w-50 mu"  width="30" align="right">
+                      <p class="font-title fr kt a" style="color: #EC008C;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 29px;margin: 0;mso-line-height-rule: exactly;padding: 0; display: inline-block;">
+                        {$mailing.trigger.subprofile.Totaalprijs|replace:'.':','}
+                      </p>
+                    </td>
+                    <td class="hide-for-small" width="95" align="right"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            {if $discountExists == 'Ja'}
+            <tr>
+              <td class="hide-for-small" width="63%" align="left">
+              </td>
+              <td class="w-50" width="260" align="left">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+                  <tr>
+                    <td class="w-50" width="95" align="left">
+                      <p class="font-title fr kt a" style="color: #707070;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 500!important;line-height: 29px;margin: 0;mso-line-height-rule: exactly;padding: 0; display: inline-block;">
+                        U bespaart:
+                      </p>
+                    </td>
+                    <td class="w-50 mu" width="55" align="right">
+                      <p class="font-title fr kt a" style="color: #707070;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 500!important;line-height: 29px;margin: 0;mso-line-height-rule: exactly;padding: 0; display: inline-block;">
+                        20,00
+                      </p>
+                    </td>
+                    <td class="hide-for-small" width="110" align="right"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            {/if}
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+{/if}
+{if $mailing.trigger.subprofile.Kamer_upgrade == 'Ja'}
+<tr>
+  <td align="left">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+      <tr height="45">
+        <td style="line-height:45px; font-size: 45px;">&nbsp;</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td align="left">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+      <tr>
+        <td style="padding-bottom: 35px">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+            <tr>
+              <td class="hide-for-small" valign="top">
+                <img alt="" class="hide-for-small" src="voordeeluitjes/extra-image-upgrade-email.jpg" width="260" height="140" border="0">
+              </td>
+              <td class="hide-for-small" width="20"></td>
+              <td valign="top">
+                <table class="y" role="presentation" width="420" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+                  <!--[if !true]><!-->
+                  <tr>
+                    <td class="show-for-small" style="padding-bottom: 10px; padding-top: 10px; display: none;"><span class="show-for-small" style="display:none;margin:0;padding:0;"><img alt="" class="show-for-small" src="voordeeluitjes/extra-image-email-upgrade-mobile.jpg" width="100%" height="auto" border="0"></span></td>
+                  </tr>
+                  <!--<![endif]-->
+                  <tr>
+                    <td>
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+                        <tr>
+                          <td class="padding-bottom-5-m" valign="middle" align="left" style="padding-bottom: 5px; padding-top: 10px;">
+                            <h1 class="font-title fr kt a" style="color: #000;font-family: 'Roboto Slab','Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 26px;margin: 0;mso-line-height-rule: exactly;padding: 0">Kamerupgrade</h1>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="td" width="50%" align="left">
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Tijdens openingstijden neemt een medewerker van onze klantenservice <b>binnen 2 uur telefonisch contact</b> met u op om de mogelijkheden te bespreken!</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+{/if}
+<tr>
+  <td align="left">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+      <tr height="20" style="font-size:0;">
+        <td style="line-height:20px; font-size: 20px;">&nbsp;</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td align="left">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+      <tr>
+        <td align="left">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+            <tr>
+              <td align="left">
+                <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                  Heeft u nog vragen omtrent uw aanvraag? Onze klantenservice helpt u graag een handje verder. Neem contact met ons op via:
+                  E-mail: <a href="mailto:team@voordeeluitjes.nl" style="color: #EC008C; text-decoration: underline;" target="_top">team@voordeeluitjes.nl</a> | Tel: <a href="tel:+31857609760" style="color: #EC008C; text-decoration: underline;" >+31 85 760 9 760</a> (lokaal tarief)
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>

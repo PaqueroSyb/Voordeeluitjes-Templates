@@ -1,0 +1,171 @@
+<!-- Persuasion code -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+  <tr>
+     <td style="padding-bottom: 25px;">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" bgcolor="#EC008C" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0; background-color: #EC008C; border-radius: 4px;">
+           <tr>
+              <td align="left" valign="top">
+                 <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+                    <tr>
+                       <td align="left" class="hide-for-small" style="padding: 17px 0px 13px 24px;">
+                          <img src="voordeeluitjes/clock-icon-extras3.png" width="38" height="50" alt="Afbeelding klok"/>
+                       </td>
+                       <td align="left" class="padding-urgency" style="padding: 17px 0px 20px 12px;">
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+                             <tr>
+                                <td align="left" style="padding-bottom: 8px;">
+                                   <p class="font-content c font-size-16-m" style="color: #FFF;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 18px;font-weight: 700!important;line-height: 22px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                                      Wacht niet langer en verzeker uzelf van de laagste prijs!
+                                   </p>
+                                </td>
+                             </tr>
+                             <tr>
+                                <td align="left">
+                                   <p class="font-content-bold c" style="color: #FFF;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 17px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                                      Mogelijk betaalt u later meer.
+                                   </p>
+                                </td>
+                             </tr>
+                          </table>
+                       </td>
+                       <!--[if !true]><!--><td valign="bottom" align="right" class="show-for-small" style="display: none">
+                          <img src="voordeeluitjes/clock-icon-extras-mobile2.png" width="auto" height="100%" alt="Afbeelding klok"/>
+                       </td><!--<![endif]-->
+                    </tr>
+                 </table>
+              </td>
+           </tr>
+        </table>
+     </td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+  <tr>
+     <td class="padding-bottom-5-m" style="padding-bottom: 10px">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+           <tr>
+              <td align="left" valign="top">
+                 <h1 class="font-title a hr kt" style="color: #000;font-family: 'Roboto Slab','Open Sans',Helvetica,Arial,sans-serif!important;font-size: 30px;font-weight: 700!important;line-height: 40px;margin: 0;mso-line-height-rule: exactly;padding: 0">
+                    <span style="font-size:22px;">Bij te boeken extra's</span>
+                 </h1>
+              </td>
+           </tr>
+        </table>
+     </td>
+  </tr>
+  <tr>
+     <td height="5" align="left" valign="middle" style="border-top: 1px solid #d8d8d8"></td>
+  </tr>
+</table>
+
+<!-- Foreach loop per mogelijke extra -->
+{loadprofile source="Extras_feed" Extra_ID={$mailing.trigger.subprofile.PackageID} assign=geladenextras multiple=true}
+{capture assign="bookedAddons"}{$mailing.trigger.subprofile.Addons|lower}{/capture}{capture assign="items"}0{/capture}{foreach $geladenextras as $ge}{if $ge.Show_extra == "Yes"}{capture assign="addonLower"}{$ge.Extra_name|lower}{/capture}{assign var="checkAddons" value=" "|explode:$addonLower}{if !$bookedAddons|strstr:$checkAddons[0] && !$bookedAddons|strstr:$checkAddons[1]}{capture assign="items"}{math equation="x + y" x=$items y=1}{/capture}{/if}{/if}{/foreach}
+{loadprofile source="Hotel_feed" Package_ID={$mailing.trigger.subprofile.PackageID} assign=geladenhotels multiple=true}
+{foreach $geladenhotels as $gh}
+{capture assign="PackageIsDiner"}{if $gh.Package_Name|strstr:'Halfpension' ||$gh.Package_Name|strstr:'halfpension' || $gh.Package_Name|strstr:'All inclusive' || $gh.Package_Name|strstr:'all inclusive'}Yes{/if}{/capture}
+{/foreach}
+<tr>
+  <td align="left">
+    <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+      {foreach $geladenextras as $ge}
+      {if $ge.Show_extra == 'Yes'}
+      {capture assign="bookedAddons"}{$mailing.trigger.subprofile.Addons|lower}{/capture}
+      {capture assign="addonLower"}{$ge.Extra_name|lower}{/capture}
+      {assign var="checkAddons" value=" "|explode:$addonLower}
+      {if !$bookedAddons|strstr:$checkAddons[0] && !$bookedAddons|strstr:$checkAddons[1]}
+      {capture assign="ExtraDiner"}{if $ge.Extra_name|strstr:'diner' || $ge.Extra_name|strstr:'3-' || $ge.Extra_name|strstr:'menu' || $ge.Extra_name|strstr:'buffet' || $ge.Extra_name|strstr:'gangen' || $ge.Extra_name|strstr:'keuze'}Yes{/if}{/capture}
+      {capture assign="PackageDinerExtraDiner"}{if $PackageIsDiner == "Yes" && $ExtraDiner == "Yes"}Yes{else}No{/if}{/capture}
+      {if $PackageDinerExtraDiner == "No"}
+      <tr>
+        <td style="padding-bottom: 20px">
+          <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td class="hide-for-small" valign="top"> 
+                <a target="_blank" href="https://www.voordeeluitjes.nl/info/hotels/klant-extras?profile={$profile.id}&code={$profile.code}&items={$items}&pid={$mailing.trigger.subprofile.PackageID}&bid={$mailing.trigger.subprofile.Boekingsnummer}"><img alt="" class="hide-for-small" src="{$ge.Image_email_URL}" width="160" height="100" border="0"></a> 
+              </td>
+              <td class="hide-for-small" width="20"></td>
+              <td valign="top" class="padding-top-0-m" style="padding-top: 0px;">
+                <table class="y" role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="520" cellspacing="0" cellpadding="0" border="0">
+                  <!--[if !true]><!-->
+                  <tr>
+                    <td class="show-for-small" width="100%" style="padding-bottom: 10px; padding-top: 10px; display: none; width: 100%;">
+                      <a target="_blank" href="https://www.voordeeluitjes.nl/info/hotels/klant-extras?profile={$profile.id}&code={$profile.code}&items={$items}&pid={$mailing.trigger.subprofile.PackageID}&bid={$mailing.trigger.subprofile.Boekingsnummer}"><span class="show-for-small" style="display:none;margin:0;padding:0"><img alt="" border="0" class="responsive-img" src="{$ge.Image_email_mobile_URL}" width="700" height="150"></span></a>
+                    </td>
+                  </tr>
+                  <!--<![endif]--> 
+                  <tr>
+                    <td>
+                      <table role="presentation" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                          <td class="padding-bottom-5-m" valign="middle" align="left">
+                            <h1 class="font-title fr kt a" style="color: #000;font-family: 'Roboto Slab','Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 16px;margin: 0;mso-line-height-rule: exactly;padding: 0">{$ge.Extra_name}</h1>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 40px;margin: 0;mso-line-height-rule: exactly;padding: 0">{$ge.Extra_description}</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      {/if}
+      {/if}
+      {/if}
+      {/foreach}
+    </table>
+  </td>
+</tr>
+
+<!-- Kamer upgrade -->
+{loadprofile source="Hotel_feed" Package_ID={$mailing.trigger.subprofile.PackageID} assign=geladenhotels multiple=true}
+{foreach $geladenhotels as $gh}
+{capture assign="showRoomUpgrade"}{if $gh.Amount_of_accommodations > 1}No{else}No{/if}{/capture}
+{/foreach}
+
+{if $showRoomUpgrade == "Yes"}
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+   <tr>
+      <td style="padding-bottom: 25px">
+         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" <tr="" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+   <tbody>
+      <tr>
+         <td class="hide-for-small" valign="top">
+            <a target="_blank" href="https://www.voordeeluitjes.nl/info/hotels/klant-extras?profile={$profile.id}&code={$profile.code}&items={$items}&pid={$mailing.trigger.subprofile.PackageID}&bid={$mailing.trigger.subprofile.Boekingsnummer}"><img alt="" class="hide-for-small" src="voordeeluitjes/extra-image-upgrade-email3.jpg" width="260" height="140" border="0"></a>
+         </td>
+         <td class="hide-for-small" width="20"></td>
+         <td valign="top">
+            <table class="y" role="presentation" width="420" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+               <!--[if !true]><!--><tr>
+                  <td class="show-for-small" style="padding-bottom: 10px; padding-top: 10px; display: none;"><a target="_blank" href="https://www.voordeeluitjes.nl/info/hotels/klant-extras?profile={$profile.id}&code={$profile.code}&items={$items}&pid={$mailing.trigger.subprofile.PackageID}&bid={$mailing.trigger.subprofile.Boekingsnummer}"><span class="show-for-small" style="display:none;margin:0;padding:0;"><img alt="" class="show-for-small" src="voordeeluitjes/extra-image-email-upgrade-mobile.jpg" width="100%" height="auto" border="0"></span></a></td>
+               </tr><!--<![endif]-->
+               <tr>
+                  <td>
+                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;margin: 0;mso-table-lspace: 0;mso-table-rspace: 0;padding: 0">
+                        <tr>
+                           <td class="padding-bottom-5-m" valign="middle" align="left" style="padding-bottom: 5px; padding-top: 10px;">
+                              <h1 class="font-title fr kt a" style="color: #000;font-family: 'Roboto Slab','Open Sans',Helvetica,Arial,sans-serif!important;font-size: 16px;font-weight: 700!important;line-height: 26px;margin: 0;mso-line-height-rule: exactly;padding: 0">Upgrade uw kamer</h1>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="td" width="50%" align="left">
+                     <p class="font-content c" style="color: #000;font-family: 'Open Sans',Helvetica,Arial,sans-serif!important;font-size: 14px;font-weight: 400!important;line-height: 30px;margin: 0;mso-line-height-rule: exactly;padding: 0">Ga voor extra luxe en comfort met een kamerupgrade!</p>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+</table>
+</td></tr>
+</table>
+{/if}
