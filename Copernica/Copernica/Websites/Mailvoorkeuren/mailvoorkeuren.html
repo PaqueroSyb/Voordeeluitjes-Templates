@@ -14,6 +14,20 @@
     [/literal]
     </script>
     <!-- End Google Analytics -->
+
+    <!-- Squeezely script -->
+    <script type="text/javascript">
+      [literal]
+        (function(s,q,z,l,y){s._sqzl=s._sqzl||[];l=q.createElement('script'),
+        y=q.getElementsByTagName('script')[0];l.async=1;l.type='text/javascript';
+        l.defer=true;l.src=z;y.parentNode.insertBefore(l,y)})
+        (window,document,'https://squeezely.tech/tracker/SQ-2565780/sqzl.js');
+  
+        window._sqzl = window._sqzl || [];
+      [/literal]
+    </script>
+    <!-- End Squeezely script -->
+
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -337,8 +351,10 @@
         </div>
       </div>
     </footer>
+    
   <!-- Haal profielwaardes op om te gebruiken in een script --> 
   <input type="hidden" id="frequentie" value="{$profile.Frequentie}"/>
+  <input type="hidden" id="frequentie_vp" value="{$profile.Frequentie_vp}"/>
   <input type="hidden" id="profile_id" value="{$profile.id}"/>
   <input type="hidden" id="profile_code" value="{$profile.code}"/>
 
@@ -346,9 +362,16 @@
   <!-- Haal de frequentie waarde op en voeg deze in Veldwaarde Geen toe | Haal de servicemail inschrijving op --> 
   <script type="text/javascript">
   window.waarde = document.getElementById("frequentie").value;
+  window.waardeVP = document.getElementById("frequentie_vp").value;
       
   $(function () { 
   $(`input[value="${window.waarde}"]`)
+    .filter(':visible:first')
+    .prop('checked', true)
+  });
+
+  $(function () { 
+    $(`input[name="dbfield599"]input[value="${window.waardeVP}"]`)
     .filter(':visible:first')
     .prop('checked', true)
   });  
@@ -360,7 +383,7 @@
   var closePauzeDivs = document.querySelectorAll('.close');
   var openPauzeDivs = document.querySelectorAll('.open');
   var pauzeDivUitschrijven = document.querySelectorAll('.div-pauze-uitschrijven');
-  var hidePauzeDivUitschrijvenWarning = document.querySelectorAll('.div-pauze .form-group.row .col-sm-12.background-pauze .list-unstyled li input');
+  var hidePauzeDivUitschrijvenWarning = document.querySelectorAll('.hide-warning');
   var pauzeDivUitschrijfWarning = document.querySelectorAll('.div-pauze-uitschrijven-warning');
 
   openPauzeDivs.forEach(function (openPauzeDiv, index) {
@@ -390,13 +413,30 @@
   hidePauzeDivUitschrijvenWarning.forEach(function (hidePauzeDivUitschrijfWarning, index) {
     hidePauzeDivUitschrijfWarning.addEventListener('click', function () {
       var setIndex = index;
-      var getIndex = 0;
+      getIndex;
+      if (setIndex == 0 || setIndex == 1 || setIndex == 2) {
+        var getIndex = 0;
+        document.getElementById('geen').checked = false;
+      } else if (setIndex >= 3) {
+        var getIndex = 1;
+        document.getElementById('geenvp').checked = false;
+      }
       pauzeDivUitschrijfWarning[getIndex].setAttribute("class", "div-pauze-uitschrijven-warning");
+      pauzeDivUitschrijven[getIndex].checked = false;
     })
   });
                   
   pauzeDivUitschrijven.forEach(function (pauzeDivUitschrijf, index) {
     pauzeDivUitschrijf.addEventListener('click', function () {
+      if (index == 0) {
+        document.querySelectorAll('input[name="dbfield240"]').forEach(function (radio) {
+          radio.checked = false;
+        });
+      } else {
+        document.querySelectorAll('input[name="dbfield600"]').forEach(function (radio) {
+          radio.checked = false;
+        });
+      }
       pauzeDivUitschrijfWarning[index].setAttribute("class", "div-pauze-uitschrijven-warning active");
     })
   });
