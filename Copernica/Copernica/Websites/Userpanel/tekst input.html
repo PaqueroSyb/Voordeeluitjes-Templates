@@ -313,26 +313,30 @@ document.writeln(script);
   }
 
 // Op button klik: mobiel > scroll naar boven, mobiel en desktop > laat gegevens opgeslagen zien
-document.querySelectorAll('.gegevens-opslaan').forEach(el => el.addEventListener('click', function() {
-   var mq = window.matchMedia( "(max-width:768px)" );
-   if (mq.matches) {
-    var scrollTo = document.getElementById('vraag-1');
-    scrollTo.scrollIntoView({ behavior: 'smooth', start: 'start'});
-    var elements = document.querySelectorAll('.gegevens-opgeslagen');
-    elements.forEach(element => {
-     element.style.display = 'flex';
-   });
-   } else {
-     var volgende = this.nextElementSibling;
-     volgende.style.display = 'flex';
-   }
-}))
+document.querySelectorAll('.gegevens-opslaan').forEach(function (el) {
+  el.addEventListener('click', function() {
+    var mq = window.matchMedia( "(max-width:768px)" );
+    if (mq.matches) {
+      var scrollTo = document.getElementById('vraag-1');
+      scrollTo.scrollIntoView({ behavior: 'smooth', start: 'start'});
+      var elements = document.querySelectorAll('.gegevens-opgeslagen');
+      elements.forEach(function (element) {
+        element.style.display = 'flex';
+      });
+    } else {
+      var volgende = this.nextElementSibling;
+      volgende.style.display = 'flex';
+    }
+  })
+});
 
 // Als er bovenin op de tab wordt geklikt 'gegevens opslaan' hiden:
-document.querySelectorAll('.form-tabs-submit').forEach(el => el.addEventListener('click', function() {
-   var elements = document.querySelectorAll('.gegevens-opgeslagen');
-    elements.forEach(element => {
-     element.style.display = 'none';
-   });
- }))
+document.querySelectorAll('.form-tabs-submit').forEach(function (el) {
+  el.addEventListener('click', function() {
+    var elements = document.querySelectorAll('.gegevens-opgeslagen');
+    elements.forEach(function (element) {
+      element.style.display = 'none';
+    });
+  })
+});
 </script>
