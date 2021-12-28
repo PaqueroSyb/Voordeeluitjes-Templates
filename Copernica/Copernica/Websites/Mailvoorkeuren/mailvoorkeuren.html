@@ -58,6 +58,12 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
     
+    <!-- Haal profielwaardes op om te gebruiken in een script --> 
+    <input type="hidden" id="frequentie" value="{$profile.Frequentie}"/>
+    <input type="hidden" id="frequentie_vp" value="{$profile.Frequentie_vp}"/>
+    <input type="hidden" id="profile_id" value="{$profile.id}"/>
+    <input type="hidden" id="profile_code" value="{$profile.code}"/>
+
     <!-- Start custom scripts-->
     [literal]
     <!-- Polyfill voor foreach oudere browsers zoals IOS 8-->
@@ -351,12 +357,6 @@
         </div>
       </div>
     </footer>
-    
-  <!-- Haal profielwaardes op om te gebruiken in een script --> 
-  <input type="hidden" id="frequentie" value="{$profile.Frequentie}"/>
-  <input type="hidden" id="frequentie_vp" value="{$profile.Frequentie_vp}"/>
-  <input type="hidden" id="profile_id" value="{$profile.id}"/>
-  <input type="hidden" id="profile_code" value="{$profile.code}"/>
 
   [literal]
   <!-- Haal de frequentie waarde op en voeg deze in Veldwaarde Geen toe | Haal de servicemail inschrijving op --> 
@@ -445,16 +445,11 @@
   <!-- Sluit de tijdelijke pauze popup en verwijdert de waarde die klant had ingevuld --> 
   <script type="text/javascript">
   var popup =  document.querySelector('#popup-pauze');
-  var tijdelijkpauzerenperiode = document.getElementById('tijdelijke_periode');
       
   document.querySelectorAll('#close-popup').forEach(function (el) {
     el.addEventListener('click', function() {
       popup.style.display = 'none';
     });
-  });
-
-  document.getElementById("submit-popup").addEventListener('click', function() {
-    tijdelijkpauzerenperiode.value = "";
   });
   </script>
 
@@ -475,8 +470,9 @@
   </script>
   {/if}
 
+  {if $smarty.server.REQUEST_URI|strstr:'/feedback'}
   <!-- Wanneer de slider wordt aangepast, toon de waarde dan bij "Uw gekozen cijfer"--> 
-  <script>
+  <script type="text/javascript">
   var slider = document.getElementById("feedback-slider");
   var cijfer = document.getElementById("feedback-cijfer");
   cijfer.innerHTML = slider.value;   
@@ -515,7 +511,7 @@
   </script>
 
   <!-- Feedback pagina wordt niet ondersteund in Internet Explorer popup --> 
-  <script>
+  <script type="text/javascript">
   var internetexplorer = document.getElementById("popup-feedback");  
       
   function isIE() {
@@ -530,6 +526,7 @@
     internetexplorer.style.display = "none";
   }
   </script>
+  {/if}
 
   <!-- Script om select2 in jquery te laten werken -->
   <script type="text/javascript">
@@ -601,9 +598,9 @@
       
   uitschrijfradios.forEach(function(radio) {
     radio.addEventListener('change', function(e) {
-      if (e.target.value === "Uitgeschreven") {
-        nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=uitschrijving&oldvalue=${oldvalue}`;
-      } else if (e.target.value === "3 maanden" || e.target.value === "6 maanden") {
+      if (e.target.value === "Geen") {
+        nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=uitschrijving&oldvalue=${oldvalue}&type=uitschrijving`;
+      } else if (e.target.value === "2 weken" || e.target.value === "1 maand" || e.target.value === "6 maanden") {
         var newvalue = e.target.value;      
         nextpage.value = `https://copernica.voordeeluitjes.nl/uitschrijven?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;
       } else if (e.target.value === "Dagelijks" || e.target.value === "Wekelijks" || e.target.value === "Maandelijks") {
@@ -629,8 +626,8 @@
       
   uitschrijfradios.forEach(function(radio) {
     radio.addEventListener('change', function(e) {
-      if (e.target.value === "Uitgeschreven") {
-        nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=uitschrijving&oldvalue=${oldvalue}`;
+      if (e.target.value === "Geen") {
+        nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=uitschrijving&oldvalue=${oldvalue}&type=uitschrijving`;
       } else if (e.target.value === "2 weken" || e.target.value === "1 maand" || e.target.value === "6 maanden") {
         var newvalue = e.target.value;      
         nextpage.value = `https://copernica.voordeeluitjes.nl/mailvoorkeuren?page=wijziging-pauze&gebeurtenis=${tijdelijkepauze}&newvalue=${newvalue}`;

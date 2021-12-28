@@ -473,13 +473,13 @@
 
   <input type="hidden" name="wizard" value="change"/> 
   <input id="next-page" type="hidden" name="next" value="https://copernica.voordeeluitjes.nl/bedankt?profile={$profile.id}&code={$profile.code}"/> 
-  <input type="hidden" name="check" value="d4f0afec38be22123d5c0ea323023b8df631b5566f6d4f854a28d380e11c9ce4"/> 
+  <input type="hidden" name="check" value="5c47b9dd815face26e83375aa678cdae4ef70b503b5b01889b770b0f8a456b8f"/> 
   <input type="hidden" name="cdmaccount" value="7032"/>
   <input type="hidden" name="database" value="2"/>
   <input type="hidden" name="profile" value="0"/>
   <input type="hidden" name="subprofile" value="0"/>
   <input type="hidden" name="code" value="0"/>
-  <input type="hidden" name="dbfields" value="8,9,55,90,184,240,578"/>
+  <input type="hidden" name="dbfields" value="8,9,55,90,184,240,578,599,600"/>
   <h3 style="padding-top: 0px;">Persoonlijke gegevens</h3>
   <div class="content-block">
     <div class="form-group row col-xs-12">
@@ -505,29 +505,59 @@
   <h3>Mailvoorkeur aanpassen</h3>
   <div class="content-block">
   <h4>Hoe vaak wilt u onze nieuwsbrief ontvangen?</h4>
-    <p class="grey">Wist u dat u gemakkelijk de frequentie kunt aanpassen? Kies er bijvoorbeeld voor om de nieuwsbrief wekelijks of maandelijks te ontvangen. Of kies voor een tijdelijke pauze.</p>
-    <ul class="list-unstyled">
-      <li><input class="close" id="dagelijks" name="dbfield55" type="radio" value="Dagelijks"><label for="dagelijks">Dagelijks {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion">meest gekozen</div>{/if}</label></li>
-      <li><input class="close" id="wekelijks" name="dbfield55" type="radio" value="Wekelijks"><label for="wekelijks">Wekelijks</label></li>
-      <li><input class="close" id="maandelijks" name="dbfield55" type="radio" value="Maandelijks"><label for="maandelijks">Maandelijks</label></li>
-      <li><input class="open" id="geen" name="dbfield55" type="radio" value="{$profile.Frequentie}"><label for="geen">Geen</label></li>
-    </ul>
-    <div class="div-pauze">
-      <div class="form-group row">
-        <div class="col-sm-12 background-pauze">
-          <h4 class="div-pauze-title">Tijdelijk pauzeren</h4>
-          <p>Weet u zeker dat u onze nieuwsbrief niet meer wilt ontvangen? U kunt de nieuwsbrief ook tijdelijk pauzeren.</p>
+  <p class="grey">Wist u dat u gemakkelijk de frequentie kunt aanpassen? Kies er bijvoorbeeld voor om de nieuwsbrief wekelijks of maandelijks te ontvangen. Of kies voor een tijdelijke pauze.</p>
+  <div class="newsletter-preferences-container">
+    <div class="newsletter-preferences-50">
+      <p class="newsletter-preferences-title">Hotels</p>
+      <ul class="list-unstyled">
+        <li><input class="close" id="dagelijks" name="dbfield55" type="radio" value="Dagelijks"><label for="dagelijks">Dagelijks {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion">meest gekozen</div>{/if}</label></li>
+        <li><input class="close" id="wekelijks" name="dbfield55" type="radio" value="Wekelijks"><label for="wekelijks">Wekelijks</label></li>
+        <li><input class="close" id="maandelijks" name="dbfield55" type="radio" value="Maandelijks"><label for="maandelijks">Maandelijks</label></li>
+        <li><input class="open" id="geen" name="dbfield55" type="radio" value="Geen"><label for="geen">Geen</label></li>
+      </ul>
+      <div class="div-pauze">
+        <div class="form-group row">
+          <div class="col-sm-12 background-pauze">
+            <h4 class="div-pauze-title">Tijdelijk pauzeren hotels</h4>
+            <p>Weet u zeker dat u de hotel nieuwsbrief niet meer wilt ontvangen? U kunt de nieuwsbrief ook tijdelijk pauzeren.</p>
             <ul class="list-unstyled">
-            <li><input id="2-weken" name="dbfield240" type="radio" value="2 weken"><label for="2-weken">Nieuwsbrief pauzeren voor 2 weken {if $profile.Frequentie eq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
-            <li><input id="1-maand" name="dbfield240" type="radio" value="1 maand"><label for="1-maand">Nieuwsbrief pauzeren voor 1 maand {if $profile.Frequentie neq "Dagelijks"}<div class="label-persuasion pauze">aanbevolen</div>{/if}</label></li>
-            <li><input id="6-maanden" name="dbfield240" type="radio" value="6 maanden" ><label for="6-maanden">Nieuwsbrief pauzeren voor 6 maanden</label></li>
-            <li><input id="uitschrijven" name="dbfield55" type="radio" value="Geen" class="div-pauze-uitschrijven"><label for="uitschrijven">Nee, Ik wil mij definitief uitschrijven</label>
+              <li><input id="2-weken" class="hide-warning" name="dbfield240" type="radio" value="2 weken"><label for="2-weken">Nieuwsbrief pauzeren voor 2 weken</label></li>
+              <li><input id="1-maand" class="hide-warning" name="dbfield240" type="radio" value="1 maand"><label for="1-maand">Nieuwsbrief pauzeren voor 1 maand</label></li>
+              <li><input id="6-maanden" class="hide-warning" name="dbfield240" type="radio" value="6 maanden" ><label for="6-maanden">Nieuwsbrief pauzeren voor 6 maanden</label></li>
+              <li><input id="uitschrijven" name="dbfield55" type="radio" value="Geen" class="div-pauze-uitschrijven"><label for="uitschrijven">Nee, Ik wil mij definitief uitschrijven</label>
               <div class="div-pauze-uitschrijven-warning">Weet u zeker dat u voortaan de beste hotelaanbiedingen wilt missen?</div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+    <div class="newsletter-preferences-50">
+      <p class="newsletter-preferences-title">Vakantieparken</p>
+      <ul class="list-unstyled">
+        <!--<li><input class="close" id="dagelijksvp" name="dbfield599" type="radio" value="3perweek"><label for="dagelijksvp">Dagelijks {if $profile.Frequentie_vp neq "3perweek"}<div class="label-persuasion">meest gekozen</div>{/if}</label></li>-->
+        <li><input class="close" id="wekelijksvp" name="dbfield599" type="radio" value="Wekelijks"><label for="wekelijksvp">Wekelijks</label></li>
+        <!--<li><input class="close" id="maandelijksvp" name="dbfield599" type="radio" value="Maandelijks"><label for="maandelijksvp">Maandelijks</label></li>-->
+        <li><input class="open" id="geenvp" name="dbfield599" type="radio" value="Geen"><label for="geenvp">Geen</label></li>
+      </ul>
+      <div class="div-pauze">
+        <div class="form-group row">
+          <div class="col-sm-12 background-pauze">
+            <h4 class="div-pauze-title">Tijdelijk pauzeren vakantieparken</h4>
+            <p>Weet u zeker dat u de vakantieparken nieuwsbrief niet meer wilt ontvangen? U kunt de nieuwsbrief ook tijdelijk pauzeren.</p>
+            <ul class="list-unstyled">
+              <li><input id="2-wekenvp" class="hide-warning" name="dbfield600" type="radio" value="2 weken"><label for="2-wekenvp">Nieuwsbrief pauzeren voor 2 weken</label></li>
+              <li><input id="1-maandvp" class="hide-warning" name="dbfield600" type="radio" value="1 maand"><label for="1-maandvp">Nieuwsbrief pauzeren voor 1 maand</label></li>
+              <li><input id="6-maandenvp" class="hide-warning" name="dbfield600" type="radio" value="6 maanden" ><label for="6-maandenvp">Nieuwsbrief pauzeren voor 6 maanden</label></li>
+              <li><input id="uitschrijvenvp" class="div-pauze-uitschrijven" name="dbfield599" type="radio" value="Geen"><label for="uitschrijvenvp">Nee, Ik wil mij definitief uitschrijven</label>
+              <div class="div-pauze-uitschrijven-warning">Weet u zeker dat u voortaan de beste vakantieparkaanbiedingen wilt missen?</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
   <div class="content-block">
     <h4>Wilt u de servicemail ontvangen?</h4>
@@ -552,7 +582,7 @@
   <div class="form-group row col-sm-12"><input type="submit" name="formSubmit" value="voorkeuren opslaan"></div>
 </form>
 <script type="text/javascript">
-    var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=7&document=39&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=8%2C9%2C55%2C90%2C184%2C240%2C578&colfields=&interests=&document=0&account=7032&cdmaccount=7032&check=d4f0afec38be22123d5c0ea323023b8df631b5566f6d4f854a28d380e11c9ce4&notification=';
+    var url = 'https://publisher.copernica.com/index.php?pxd=.p.w.formgenerate.script&pxc=2240459b&_user=37585&_account=7032&template=10&document=57&website=5&_user=37585&_account=7032&subprofile=__SUBPROFILE__&profile=__PROFILE__&code=__CODE__&dbfields=8%2C9%2C55%2C90%2C184%2C240%2C578%2C599%2C600&colfields=&interests=&document=0&account=7032&cdmaccount=7032&check=5c47b9dd815face26e83375aa678cdae4ef70b503b5b01889b770b0f8a456b8f&notification=';
     var code = location.search.match(/code=([\d\w]+)/) ? RegExp.$1 : 0;
     url = url.replace(/__CODE__/, code);
     if (location.search.match(/subprofile=(\d+)/)) 
@@ -571,3 +601,42 @@
 </script>
 {/if}
 {/if}
+
+<script type="text/javascript">
+  var form = document.getElementById("form-preferences");
+  let currentFrequentie = document.getElementById("frequentie").value;
+  let currentFrequentieVP = document.getElementById("frequentie_vp").value;
+  var pushEvent = false;
+  var preferenceHotel;
+  var preferenceVakantiepark;
+  
+  form.addEventListener('submit', function() {
+    if (document.getElementById("uitschrijven").checked === true && currentFrequentie != 'Geen') {
+        preferenceHotel = 'Nee';
+        pushEvent = true;
+    }
+    if (document.getElementById("uitschrijvenvp").checked === true && currentFrequentieVP != 'Geen') {
+        preferenceVakantiepark = 'Nee';
+        pushEvent = true;
+    }
+    if (document.getElementById("dagelijks").checked === true || document.getElementById("wekelijks").checked === true || document.getElementById("maandelijks").checked === true) {
+      if (currentFrequentie == 'Geen') {
+        preferenceHotel = 'Ja';
+        pushEvent = true;
+      }
+    }
+    if (document.getElementById("dagelijksvp").checked === true || document.getElementById("wekelijksvp").checked === true || document.getElementById("maandelijksvp").checked === true) {
+      if (currentFrequentieVP == 'Geen') {
+        preferenceVakantiepark = 'Ja';
+        pushEvent = true;
+      }
+    }
+    if (pushEvent == true) {
+      _sqzl.push({
+        "event": "Newsletter Copernica Change",
+        "custom_email_preference_hotel": preferenceHotel,
+        "custom_email_preference_vakantiepark": preferenceVakantiepark,
+      });
+    }
+  });
+  </script>
