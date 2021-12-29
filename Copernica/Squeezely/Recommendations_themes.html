@@ -1,0 +1,43 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+   <xsl:template match="items">
+      <xsl:call-template name="item" />
+   </xsl:template>
+   <xsl:template name="item">
+      <xsl:for-each select="item">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0;">
+          <tr>
+            <td class="hide-for-small" style="padding-bottom: 20px;">
+              <a style="margin:0;padding:0" target="_blank">
+              <xsl:attribute name="href">
+                https://www.voordeeluitjes.nl<xsl:value-of select="url"/>&#x3F;email={$profile.HashedEmailadres}&amp;atc={$profile.Atc}&amp;utm_source=nieuwsbrief&amp;utm_medium=e-mail&amp;utm_campaign={$document.name}&amp;utm_content=<xsl:value-of select="title"/>-{$profile.Batch}
+              </xsl:attribute>
+                <img alt="" border="0" class="border-round" width="700">
+                <xsl:attribute name="src">
+                  <xsl:value-of select="custom_fields/image_email" />
+                </xsl:attribute>
+                </img>  
+              </a>
+            </td> 
+            <xsl:text disable-output-escaping="yes">
+              <![CDATA[ <!--[if !true]><!--> ]]>
+            </xsl:text>
+            <td class="show-for-small" style="display:none; padding-bottom: 20px;">
+              <a style="margin:0;padding:0" target="_blank">
+              <xsl:attribute name="href">
+                https://www.voordeeluitjes.nl<xsl:value-of select="url"/>&#x3F;email={$profile.HashedEmailadres}&amp;atc={$profile.Atc}&amp;utm_source=nieuwsbrief&amp;utm_medium=e-mail&amp;utm_campaign={$document.name}&amp;utm_content=<xsl:value-of select="title"/>-{$profile.Batch}
+              </xsl:attribute>
+                <img alt="" border="0" class="responsive-img border-round" width="540" height="331">
+                <xsl:attribute name="src">
+                  <xsl:value-of select="custom_fields/image_email_mobile" />
+                </xsl:attribute>
+                </img>
+              </a>
+            </td> 
+            <xsl:text disable-output-escaping="yes">
+              <![CDATA[ <!--<![endif]--> ]]>
+            </xsl:text>
+          </tr>
+        </table>
+      </xsl:for-each>
+   </xsl:template>
+</xsl:stylesheet>
