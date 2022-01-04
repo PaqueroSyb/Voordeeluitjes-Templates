@@ -20,7 +20,6 @@ inputEmail.addEventListener('input', function() {
 });
 
 submitButton.addEventListener('click', submitForm, false);
-
 inputEmail.addEventListener('keydown', function(key) {
   if (key.keyCode == '13') {
     submitForm('Enter key');
