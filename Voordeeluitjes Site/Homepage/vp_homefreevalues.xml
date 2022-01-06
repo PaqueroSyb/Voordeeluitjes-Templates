@@ -9,31 +9,31 @@
     </packageSlug>
     <link><![CDATA[/actie/landal-vakanties]]></link>
     <image><![CDATA[/images/freeValues/vp_topOffer_2021wk48_landal2.jpg]]></image>
-    <info><![CDATA[Een heerlijk verblijf bij Landal GreenParks - al voor <b>99,-</b> p.acco.]]></info>
+    <info><![CDATA[Een heerlijk verblijf bij Landal GreenParks - 4 dagen al voor <b>99,-</b> p.acco.]]></info>
     <description><![CDATA[Profiteer nú]]></description>
     <annotation><![CDATA[excl. toeristenbelasting en administratiekosten.]]></annotation> 
   </OfferItem>
   <!-- Topoffer 2-->
 	<OfferItem>
-    <title><![CDATA[Leuke kerstvakantie deals]]></title>
+    <title><![CDATA[Vroegboek Deals]]></title>
     <packageSlug>
     <![CDATA[kerstvakantie]]>
     </packageSlug>
-    <link><![CDATA[/actie/kerstvakantie-vp]]></link>
-    <image><![CDATA[/images/freeValues/vp_topOffer_2021wk48_kerstvakantie2.jpg]]></image>
-	<info><![CDATA[Boek een fijn vakantiehuis met Kerst of Oud & nieuw - al voor <b>99,-</b> p.acco.]]></info>
+    <link><![CDATA[actie/vroegboekkorting-vakantieparken]]></link>
+    <image><![CDATA[/images/freeValues/vp_topoffer_2022wk01_vroegboek.jpg]]></image>
+	<info><![CDATA[Laat de vakantiepret maar beginnen, boek nu voor later! - 5 dagen al voor <b>59,-</b> p.acco.]]></info>
     <description><![CDATA[Profiteer nú]]></description>
     <annotation><![CDATA[excl. toeristenbelasting en administratiekosten.]]></annotation> 
   </OfferItem>
 <!-- Topoffer 3-->
 	<OfferItem>
-    <title><![CDATA[EuroParcs: luxe resorts]]></title>
+    <title><![CDATA[Vakantieparken Duitsland]]></title>
     <packageSlug>
         <![CDATA[europarcs]]>
     </packageSlug>
-    <link><![CDATA[/actie/europarcs]]></link>
-    <image><![CDATA[/images/freeValues/vp_topOffer_2021wk48_europarcs2.jpg]]></image>
-		<info><![CDATA[Leuke familieparken op de mooiste locaties - 4 dagen al voor <b>149,-</b> p.acco.]]></info>
+    <link><![CDATA[actie/bungalows-duitsland]]></link>
+    <image><![CDATA[/images/freeValues/vp_topoffer_2022wk01_duitsland.jpg]]></image>
+		<info><![CDATA[Ontdek de prachtige Moezel, het mooie Winterberg en meer - 4 dagen al voor <b>89,-</b> p.acco.]]></info>
     <description><![CDATA[Profiteer nú]]></description>
     <annotation><![CDATA[excl. toeristenbelasting en administratiekosten.]]></annotation> 
   </OfferItem>

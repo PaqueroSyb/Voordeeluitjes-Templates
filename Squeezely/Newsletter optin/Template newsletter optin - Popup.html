@@ -123,7 +123,7 @@
     {{ cssPrefix }} a.sqzly-btn.sqzly-btn-fullwidth { width: 100%; }
     {{ cssPrefix }} .sqzly-modal-close{  font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 400; color: #666;  top: 15px; right: 12px; line-height: 1; width: 24px; height: 24px; font-weight: 700; }
     {{ cssPrefix }} .sqzly-description{ padding: 18px 20px; }
-    {{ cssPrefix }} .sqzly-body.discount { color: #252525; padding-top:12px; }
+    {{ cssPrefix }} .sqzly-body.discount { color: #707070; padding-top:12px; }
     {{ cssPrefix }} .count-customers{ color: #0ab21b; line-height: 20px; padding: 0;  text-align: right; margin-top: 12px; font-size: 14px; }
     {{ cssPrefix }} .preferences{ width: 100%; margin-bottom:12px; }
     {{ cssPrefix }} .preferences-title{ font-weight: 700; margin-bottom: 8px; color: #707070;}
@@ -135,6 +135,7 @@
     {{ cssPrefix }} input[type="checkbox"]:before{ content: ""; position: absolute; top: 0; left: 0; background-color: #fff; display: inline-block; box-sizing: border-box; margin: -2px 11px 3px 0px; 
         border: 2px solid #666; border-radius: 2px; width: 18px; height: 18px; transition: border-color .2s,background-color .2s; } 
     {{ cssPrefix }} input[type=checkbox]:checked:before{ background-color: #ec008c; border: 2px solid #ec008c; }
+    {{ cssPrefix }} .color-vp:checked:before{ background-color: #f58220!important; border: 2px solid #f58220!important; }
     {{ cssPrefix }} input[type=checkbox]:checked:after{ content: ""; display:  block; position: absolute; top: -2px; left: 1px; width: 11px; height: 6px; border: solid 2px transparent; border-right: none;
         border-top: none; transform: translate(3px,4px) rotate(-45deg); border-color: #FFF; }
     {{ cssPrefix }} .no-wrap{ flex-wrap: nowrap; position: relative }
@@ -160,6 +161,7 @@
     {{ cssPrefix }} .status-list li:first-child:before, .status-list li:first-child:after{ background: #ec008c !important; }
     {{ cssPrefix }} .status-list li:last-child:after{ width: 0px; }
     {{ cssPrefix }} .status-list li:last-child{ padding-bottom: 0px; }
+    {{ cssPrefix }} .color-vp {background-color: #f58220!important; }
     @media( max-width : 450px ){
         {{ cssPrefix }} .sqzly-top-left, .sqzly-top-center, .sqzly-top-right, .sqzly-center, .sqzly-bottom-left, .sqzly-bottom-center, .sqzly-bottom-right { top: auto; bottom: 10px; left: 10px; right: 10px; }
     }
@@ -234,21 +236,23 @@
                     {% elseif element == 'button' and elementSettings.enabled %}
 
                         <div class="sqzly-fields">
-                            <!-- <div class="preferences">
-                                  <div class="preferences-title">Ik wil aanbiedingen voor:</div>
-                                <div class="checkbox-container">
+                            <!--<div class="preferences">
+                                  <div class="preferences-title">
+                                    Ik wil aanbiedingen voor:
+                                  </div>
+                                  <div class="checkbox-container">
                                     <label>
-                                        <input type="checkbox" id="preference-hotel" checked />
-                                        <span>Hotels</span>
+                                      <input type="checkbox" id="preference-hotel" checked/>
+                                      <span>Hotels</span>
                                     </label>
-                                </div>
-                                <div class="checkbox-container">
+                                  </div>
+                                  <div class="checkbox-container">
                                     <label>
-                                        <input type="checkbox" id="preference-vakantiepark" checked />  
-                                        <span>Vakantieparken</span>
+                                      <input type="checkbox" id="preference-vakantiepark" checked />  
+                                      <span>Vakantieparken</span>
                                     </label>
-                                </div> 
-                            </div> -->
+                                  </div> 
+                                </div>-->
                             <div class="no-wrap">
                             {% for field in fields %}
                                 {% if field.type == 'checkbox' %}

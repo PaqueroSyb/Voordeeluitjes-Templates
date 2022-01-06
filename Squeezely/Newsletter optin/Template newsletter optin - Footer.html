@@ -56,6 +56,7 @@
     {{ cssPrefix }} input[type="checkbox"]:before{ content: ""; position: absolute; top: 0; left: 0; background-color: #fff; display: inline-block; box-sizing: border-box; margin: -2px 11px 3px 0px; 
         border: 2px solid #666; border-radius: 2px; width: 18px; height: 18px; transition: border-color .2s,background-color .2s; } 
     {{ cssPrefix }} input[type=checkbox]:checked:before{ background-color: #ec008c; border: 2px solid #ec008c; }
+    {{ cssPrefix }} .color-vp:checked:before{ background-color: #f58220!important; border: 2px solid #f58220!important; }
     {{ cssPrefix }} input[type=checkbox]:checked:after{ content: ""; display:  block; position: absolute; top: -2px; left: 1px; width: 11px; height: 6px; border: solid 2px transparent; border-right: none;
         border-top: none; transform: translate(3px,4px) rotate(-45deg); border-color: #FFF; }
     {{ cssPrefix }} .input-group{ display: -webkit-flex; display: flex; width: 100%; -webkit-align-items: center; align-items: center; }
@@ -81,7 +82,8 @@
     {{ cssPrefix }} .status-list li:after { content: ""; position: absolute; border-radius: 12px; width: 4px; height: 30px; left: 6px; top: 16px; background: #c5c5c5; }
     {{ cssPrefix }} .status-list li:first-child:before, .status-list li:first-child:after{ background: #ec008c !important; }
     {{ cssPrefix }} .status-list li:last-child:after{ width: 0px; }
-    {{ cssPrefix }} .status-list li:last-child{ padding-bottom: 0px; }
+    {{ cssPrefix }} .status-list li:last-child{ padding-bottom: 0px; }\
+    {{ cssPrefix }} .color-vp {background-color: #f58220!important; }
     @media( max-width : 450px ){
         {{ cssPrefix }} .sqzly-top-left, .sqzly-top-center, .sqzly-top-right, .sqzly-center, .sqzly-bottom-left, .sqzly-bottom-center, .sqzly-bottom-right { top: auto; bottom: 10px; left: 10px; right: 10px; }
     }
