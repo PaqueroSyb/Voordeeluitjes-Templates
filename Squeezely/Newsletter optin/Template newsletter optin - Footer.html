@@ -65,7 +65,7 @@
     {{ cssPrefix }} .error-message.hide{ display: none !important; }
     {{ cssPrefix }} .active-block{  display: block !important; }
     {{ cssPrefix }} .icon-vu-thick-arrow-right{  position: absolute;  color: #FFF; top: 16px;  right: 20px; font-size: 10px; }
-    {{ cssPrefix }} .form-control-feedback{ top: 2px; right: 150px; display: none; }
+    {{ cssPrefix }} .form-control-feedback{ top: 2px; right: 150px; display: none; position: absolute; width: 36px; height: 36px; line-height: 36px; pointer-events: none; z-index: 2; }
     {{ cssPrefix }} .icon-vu-exclamation{ color: #FF5555; }
     {{ cssPrefix }} .icon-vu-check1{ color: #95C121; font-size: 24px; }
     {{ cssPrefix }} .input-invalid input:invalid{ border: 1px solid #FF5555 !important; background: #FF555526 0% 0% no-repeat padding-box; }
@@ -81,6 +81,7 @@
         left: 0px; top: 4px; z-index: 1; }
     {{ cssPrefix }} .status-list li:after { content: ""; position: absolute; border-radius: 12px; width: 4px; height: 30px; left: 6px; top: 16px; background: #c5c5c5; }
     {{ cssPrefix }} .status-list li:first-child:before, .status-list li:first-child:after{ background: #ec008c !important; }
+    {{ cssPrefix }} .status-list .color-vp:first-child:before, .status-list .color-vp:first-child:after{ background: #f58220!important; }
     {{ cssPrefix }} .status-list li:last-child:after{ width: 0px; }
     {{ cssPrefix }} .status-list li:last-child{ padding-bottom: 0px; }
     {{ cssPrefix }} .color-vp {background-color: #f58220!important; }

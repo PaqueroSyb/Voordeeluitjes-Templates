@@ -6,11 +6,15 @@ let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
 let currentPage = window.location.href;
 let preferenceCheckboxes = document.querySelectorAll('input[type=checkbox]');
+let statusList = document.querySelectorAll('.status-list li');
 if (currentPage.indexOf('vakantiepark') !== -1) {
-  submitButton.classList.add('color-vp')
+  submitButton.classList.add('color-vp');
   preferenceCheckboxes.forEach(function (checkbox) {
     checkbox.classList.add('color-vp');
-  })
+  });
+  statusList.forEach(function (list) {
+    list.classList.add('color-vp');
+  });
 }
 
 inputEmail.addEventListener('input', function() {
