@@ -6,11 +6,15 @@ let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
 let currentPage = window.location.href;
 let preferenceCheckboxes = document.querySelectorAll('input[type=checkbox]');
-if (currentPage.indexOf('vakantiepark') !== -1) {
-  submitButton.classList.add('color-vp')
+let statusList = document.querySelectorAll('.status-list li');
+if (currentPage.indexOf('vakantiepark') !== -1 || currentPage.indexOf('bungalow') !== -1 || currentPage.indexOf('chalet') !== -1) {
+  submitButton.classList.add('color-vp');
   preferenceCheckboxes.forEach(function (checkbox) {
     checkbox.classList.add('color-vp');
-  })
+  });
+  statusList.forEach(function (list) {
+    list.classList.add('status-vp');
+  });
 }
 
 inputEmail.addEventListener('input', function() {
@@ -56,8 +60,8 @@ function submitForm(submitElement) {
       "anonymize": "yes",
     });
     if (submitElement == 'Enter key') {
-      _document.querySelector('#sqzl_div-68-68 .szqly-modal-content').classList.add('sqzly-collapse');
-      _document.querySelector('#sqzl_div-68-68 .szqly-thankyou').classList.add('sqzly-in');
+      _document.querySelector('#sqzl_div-68-69 .szqly-modal-content').classList.add('sqzly-collapse');
+      _document.querySelector('#sqzl_div-68-69 .szqly-thankyou').classList.add('sqzly-in');
     }
   }   
 }

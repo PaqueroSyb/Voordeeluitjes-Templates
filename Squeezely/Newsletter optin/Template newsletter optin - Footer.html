@@ -79,12 +79,12 @@
     {{ cssPrefix }} .status-list li{ padding-left: 32px; padding-bottom: 18px; position: relative; }
     {{ cssPrefix }} .status-list li:before{ content: ""; position: absolute; background: #c5c5c5 0 0 no-repeat padding-box; border: 2px solid #fff; border-radius: 12px; width: 16px; height: 16px;
         left: 0px; top: 4px; z-index: 1; }
-    {{ cssPrefix }} .status-list li:after { content: ""; position: absolute; border-radius: 12px; width: 4px; height: 30px; left: 6px; top: 16px; background: #c5c5c5; }
+    {{ cssPrefix }} .status-list li:after { content: ""; position: absolute; border-radius: 12px; width: 4px; height: 30px; left: 8px; top: 16px; background: #c5c5c5; }
     {{ cssPrefix }} .status-list li:first-child:before, .status-list li:first-child:after{ background: #ec008c !important; }
-    {{ cssPrefix }} .status-list .color-vp:first-child:before, .status-list .color-vp:first-child:after{ background: #f58220!important; }
+    {{ cssPrefix }} .status-list .status-vp:first-child:before, .status-list .status-vp:first-child:after{ background: #f58220!important; }
     {{ cssPrefix }} .status-list li:last-child:after{ width: 0px; }
     {{ cssPrefix }} .status-list li:last-child{ padding-bottom: 0px; }
-    {{ cssPrefix }} .color-vp {background-color: #f58220!important; }
+    {{ cssPrefix }} .color-vp{ background-color: #f58220!important; }
     @media( max-width : 450px ){
         {{ cssPrefix }} .sqzly-top-left, .sqzly-top-center, .sqzly-top-right, .sqzly-center, .sqzly-bottom-left, .sqzly-bottom-center, .sqzly-bottom-right { top: auto; bottom: 10px; left: 10px; right: 10px; }
     }
@@ -223,6 +223,3 @@
         </div>
     </div>
 {% endfor %}
-
-
-        

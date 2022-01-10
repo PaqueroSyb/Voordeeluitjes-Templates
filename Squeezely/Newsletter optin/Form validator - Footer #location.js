@@ -13,7 +13,7 @@ if (currentPage.indexOf('vakantiepark') !== -1) {
     checkbox.classList.add('color-vp');
   });
   statusList.forEach(function (list) {
-    list.classList.add('color-vp');
+    list.classList.add('status-vp');
   });
 }
 
