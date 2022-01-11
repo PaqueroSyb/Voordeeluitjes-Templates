@@ -28,7 +28,7 @@ inputEmail.addEventListener('input', function() {
     showErrorMessage.innerText = 'e-mailadres is niet geldig';
   }
   if (emailValue === '') {
-    showErrorMessage.innerText = "dit veld is verplicht";
+    showErrorMessage.innerText = 'dit veld is verplicht';
   }
 });
 
@@ -60,8 +60,8 @@ function submitForm(submitElement) {
       "anonymize": "yes",
     });
     if (submitElement == 'Enter key') {
-      _document.querySelector('#sqzl_div-68-69 .szqly-modal-content').classList.add('sqzly-collapse');
-      _document.querySelector('#sqzl_div-68-69 .szqly-thankyou').classList.add('sqzly-in');
+      _document.querySelector('.sqzly-modal-content').setAttribute('class', 'sqzly-modal-content sqzly-collapse');
+      _document.querySelector('.sqzly-thankyou').setAttribute('class', 'szqly-thankyou sqzly-in');
     }
   }   
 }

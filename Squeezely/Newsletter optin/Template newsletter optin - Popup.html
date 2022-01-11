@@ -12,7 +12,7 @@
 
     {{ cssPrefix }} .sqzly-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #888; opacity: 0.5; z-index: 1;}
     {{ cssPrefix }} .sqzly-modal { position: fixed; min-width: 400px; max-width: 400px; z-index: 9999999; background-color: white; border: 0px solid #ccc;
-        border-radius: .25rem; display: block; padding: 20px; font-weight: 500; color: #333; padding: 0 transition: all ease-in .5s;
+        border-radius: .25rem; display: block; padding: 18px 20px; font-weight: 500; color: #333; transition: all ease-in .5s;
         -webkit-box-shadow: 0 3px 6px rgb(0 0 0 / 16%); box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
         font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 16px; line-height: 19px; animation: sqzly-slide-up 0.4s ease;
     }
@@ -102,7 +102,7 @@
     {{ cssPrefix }} .sqzly-header {  width: 100%; }
     {{ cssPrefix }} .sqzly-modal-image { height: auto; }
     {{ cssPrefix }} .sqzly-modal-image img{ max-width: 100%;  min-width: 100%; }
-    {{ cssPrefix }} .sqzly-modal { padding: 0; border: none;  box-shadow: 0 3px 6px rgb(0 0 0 / 16%); width: 400px; bottom: 60px; left: 30px;  border: 1px solid #c5c5c5; }
+    {{ cssPrefix }} .sqzly-modal { border: none;  box-shadow: 0 3px 6px rgb(0 0 0 / 16%); width: 400px; bottom: 60px; left: 30px;  border: 1px solid #c5c5c5; }
     {{ cssPrefix }} .sqzly-modal-content{ font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; width: 400px; }
     {{ cssPrefix }} .sqzly-modal h3{ font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; color: #252525; font-size: 20px; line-height: 24px; font-weight: bold; margin: 0; }
     {{ cssPrefix }} .sqzly-body{ color: #000; font-size: 16px; font-weight: 400; line-height: 19px; padding: 0px; }
@@ -111,7 +111,6 @@
         background-color:{% if color_1.value %}{{ color_1.value }}{% else %}#2e74f5{% endif %}; font-size: 18px; line-height: 24px; min-width: 144px; padding: 8px 22px 0 0px; }
     {{ cssPrefix }} a.sqzly-btn.sqzly-btn-fullwidth { width: 100%; }
     {{ cssPrefix }} .sqzly-modal-close{  font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 400; color: #666;  top: 15px; right: 12px; line-height: 1; width: 24px; height: 24px; font-weight: 700; }
-    {{ cssPrefix }} .sqzly-description{ padding: 18px 20px; }
     {{ cssPrefix }} .sqzly-body.discount { color: #707070; padding-top:12px; }
     {{ cssPrefix }} .count-customers{ color: #0ab21b; line-height: 20px; padding: 0;  text-align: right; margin-top: 12px; font-size: 14px; }
     {{ cssPrefix }} .preferences{ width: 100%; margin-bottom:12px; }
