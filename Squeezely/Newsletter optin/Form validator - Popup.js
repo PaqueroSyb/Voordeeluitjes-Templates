@@ -1,16 +1,22 @@
 let submitButton = document.querySelector('.sqzly-form-submit');
 let inputEmail = document.querySelector('.sqzly-emailfield');
 let inputContainer = document.querySelector('.sqzly-fields');
+let persoContainer = _document.querySelector('.sqzly-personalization');
+let persoId = persoContainer.querySelector('div').className;
 let emailValue;
 let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
 let currentPage = window.location.href;
 let preferenceCheckboxes = document.querySelectorAll('input[type=checkbox]');
-if (currentPage.indexOf('vakantiepark') !== -1) {
-  submitButton.classList.add('color-vp')
+let statusList = document.querySelectorAll('.status-list li');
+if (currentPage.indexOf('vakantiepark') !== -1 || currentPage.indexOf('bungalow') !== -1 || currentPage.indexOf('chalet') !== -1) {
+  submitButton.classList.add('color-vp');
   preferenceCheckboxes.forEach(function (checkbox) {
     checkbox.classList.add('color-vp');
-  })
+  });
+  statusList.forEach(function (list) {
+    list.classList.add('status-vp');
+  });
 }
 
 inputEmail.addEventListener('input', function() {
@@ -21,12 +27,13 @@ inputEmail.addEventListener('input', function() {
     showErrorMessage.classList.add('hide');
   } else {
     showErrorMessage.classList.remove('hide');
-    showErrorMessage.innerText = 'e-mailadres is niet geldig';
+    showErrorMessage.innerText = persoId;
   }
   if (emailValue === '') {
     showErrorMessage.innerText = "dit veld is verplicht";
   }
 });
+
 
 submitButton.addEventListener('click', submitForm, false);
 inputEmail.addEventListener('keydown', function(key) {
@@ -55,9 +62,9 @@ function submitForm(submitElement) {
     _sqzl.push({
       "anonymize": "yes",
     });
-    }
     if (submitElement == 'Enter key') {
-      _document.querySelector('#sqzl_div-10-129 .szqly-modal-content').classList.add('sqzly-collapse');
-      _document.querySelector('#sqzl_div-10-129 .szqly-thankyou').classList.add('sqzly-in');
+      _document.querySelector('#sqzl_div-10-157 .szqly-modal-content').classList.add('sqzly-collapse');
+      _document.querySelector('#sqzl_div-10-157 .szqly-thankyou').classList.add('sqzly-in');
     }
+  }
 }
