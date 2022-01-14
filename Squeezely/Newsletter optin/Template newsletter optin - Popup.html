@@ -12,7 +12,7 @@
 
     {{ cssPrefix }} .sqzly-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #888; opacity: 0.5; z-index: 1;}
     {{ cssPrefix }} .sqzly-modal { position: fixed; min-width: 400px; max-width: 400px; z-index: 9999999; background-color: white; border: 0px solid #ccc;
-        border-radius: .25rem; display: block; padding: 18px 20px; font-weight: 500; color: #333; transition: all ease-in .5s;
+        border-radius: .25rem; display: block; padding: 0px; font-weight: 500; color: #333; transition: all ease-in .5s;
         -webkit-box-shadow: 0 3px 6px rgb(0 0 0 / 16%); box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
         font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 16px; line-height: 19px; animation: sqzly-slide-up 0.4s ease;
     }
@@ -41,7 +41,7 @@
     {{ cssPrefix }} .sqzly-bottom-center { bottom: 30px; left: 50%; margin-left: -200px; }
     {{ cssPrefix }} .sqzly-bottom-right { bottom: 30px; right: 30px; }
 
-    {{ cssPrefix }} .sqzly-fields {display: flex; margin-top: 17px; position: relative; flex-wrap: wrap;}
+    {{ cssPrefix }} .sqzly-fields {display: flex; margin-top: 17px; position: relative; }
     {{ cssPrefix }} .sqzly-fields label { font-weight: bold; }
     {{ cssPrefix }} .sqzly-fields input[type="text"], .sqzly-fields input[type="email"] { border: 1px solid #707070; color: #707070; font-size: 16px; line-height: 19px; height: 40px; width: 100%; padding: 9px 35px 11px 12px;
         border-radius: 4px 0 0 4px; font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; }
@@ -104,6 +104,7 @@
     {{ cssPrefix }} .sqzly-modal-image img{ max-width: 100%;  min-width: 100%; }
     {{ cssPrefix }} .sqzly-modal { border: none;  box-shadow: 0 3px 6px rgb(0 0 0 / 16%); width: 400px; bottom: 60px; left: 30px;  border: 1px solid #c5c5c5; }
     {{ cssPrefix }} .sqzly-modal-content{ font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; width: 400px; }
+    {{ cssPrefix }} .sqzly-description { padding: 18px 20px; }
     {{ cssPrefix }} .sqzly-modal h3{ font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; color: #252525; font-size: 20px; line-height: 24px; font-weight: bold; margin: 0; }
     {{ cssPrefix }} .sqzly-body{ color: #000; font-size: 16px; font-weight: 400; line-height: 19px; padding: 0px; }
     {{ cssPrefix }} .sqzly-price{ color: #040404; font-size: 14px; font-weight: 500; background: #2ef5e2; display: inline; padding: 6px 10px; border-radius: 4px; position: absolute; top: -15px; left: 28px; }
@@ -126,7 +127,7 @@
     {{ cssPrefix }} .color-vp:checked:before{ background-color: #f58220!important; border: 2px solid #f58220!important; }
     {{ cssPrefix }} input[type=checkbox]:checked:after{ content: ""; display:  block; position: absolute; top: -2px; left: 1px; width: 11px; height: 6px; border: solid 2px transparent; border-right: none;
         border-top: none; transform: translate(3px,4px) rotate(-45deg); border-color: #FFF; }
-    {{ cssPrefix }} .no-wrap{ flex-wrap: nowrap; position: relative }
+    {{ cssPrefix }} .no-wrap{ flex-wrap: nowrap; position: relative; flex-basis: 100%; }
     {{ cssPrefix }} .error-message{ font-size: 11px; line-height: 16px; color: #f55;  margin-top: 3px; position: absolute; display: none; }
     {{ cssPrefix }} .error-message.hide{ display: none !important; }
     {{ cssPrefix }} .active-block{  display: block !important; }
