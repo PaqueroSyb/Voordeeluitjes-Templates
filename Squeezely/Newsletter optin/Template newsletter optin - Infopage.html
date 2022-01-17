@@ -1,0 +1,212 @@
+{# ! NOTE ! #}
+{# Always read this wiki carefully before making/modifing a template : https://squeezely.atlassian.net/wiki/spaces/KB/pages/1484980225/Personalization+template+requirements #}
+
+{% if (designerPreviewMode) or (not variantId) or (not revision) or (not cssPrefixEnabled)  %}
+    {% set cssPrefix = '' %}
+{% else %}
+    {% set cssPrefix %}#sqzl_div-{{ variantId }}-{{ revision }}{% endset %}
+{% endif %}
+
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700,700i&#038;ver=4.9.5' type='text/css' media='all' />
+<style>
+    {{ cssPrefix }} .sqzly-personalization { width: 100%; font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 16px; line-height: 24px; color: #252525; padding: 20px;}
+    {{ cssPrefix }} .sqzly-personalization h3 { font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 22px; border: 0px; }
+    {{ cssPrefix }} .sqzly-fields { margin-top: 10px; }
+    {{ cssPrefix }} .sqzly-fields label { font-weight: bold; }
+    {{ cssPrefix }} .sqzly-fields input[type="checkbox"] { position: relative; top: 1px; margin-bottom: 10px; }
+    {{ cssPrefix }} .sqzly-input { margin-top: 5px; line-height: 1.42857; color: #555555; padding: 6px 12px; min-height: 34px; height: auto; font-size: 14px; border: 1px solid #ccc; width: 100%; margin-bottom: 12px;  font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; }
+    {{ cssPrefix }} .sqzl-clearer { clear: both; }
+    {{ cssPrefix }} .sqzly-header {  width: 100%; }
+
+    {{ cssPrefix }} a.sqzly-btn{ display: inline-block; height: 40px; padding: 8px 22px; border-radius:4px; box-sizing: border-box; text-decoration:none; font-family: Calibri,FTC-Calibri,"Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 16px; font-weight:700;  color: #FFF; background-color: #95C121; text-align:center; box-shadow: 0px 1px 3px rgb(0 0 0 / 26%); cursor: pointer; margin-top: 24px; }
+    {{ cssPrefix }} a.sqzly-btn:hover{ background-color: #7ca400; }
+    {{ cssPrefix }} a.sqzly-btn:active { background-color: #648400;  }
+    {{ cssPrefix }} a.sqzly-btn.sqzly-btn-fullwidth { width: 100%; }
+
+    {{ cssPrefix }} .sqzly-error { border-color: #707070 !important; }
+    {{ cssPrefix }} .sqzly-checkbox-error { color: #eb7053 !important; }
+    {{ cssPrefix }} .sqzly-collapse { display: none !important; }
+    {{ cssPrefix }} .sqzly-thankyou { display: none; }
+    {{ cssPrefix }} .sqzly-thankyou.sqzly-in { display: block; margin-top: 20px; }
+    {{ cssPrefix }} .sqzly-fields label { display: inline-block; margin: 0 0 4px; line-height: 19px; position: relative; }
+    {{ cssPrefix }} input[type="checkbox"].sqzly-checkbox { display: inline !important; width: auto; visibility: visible !important; height: 13px !important; }
+
+    @media all and (max-width:30em){
+        {{ cssPrefix }} a.sqzly-btn{ display:block; margin:0.2em auto; }
+    }
+
+</style>
+
+<style>
+    {{ cssPrefix }} .align-center { text-align: center; }
+
+    /* Email field styling */
+    {{ cssPrefix }} .sqzly-fields input[type="email"] { height: 40px; border: 1px solid #707070; font-size: 16px; line-height: 40px; color: #252525; padding: 0 32px 0 12px; transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s; box-shadow: none; box-sizing: border-box; display: block; outline: none; margin: 0px; border-radius: 4px; }
+    {{ cssPrefix }} .sqzly-fields input[type="email"]:focus { border: 1px solid #00AEEF; outline: none !important; box-shadow: none!important; transition: all 0.15s ease-in-out 0s; }
+    {{ cssPrefix }} .email-valid-container { position: relative; }
+
+    /* Checkbox styling */
+    {{ cssPrefix }} .checkbox-container { position: relative; display: inline-block; margin-top: 20px; }
+    {{ cssPrefix }} .checkbox-container label{ font-weight: 400; cursor: pointer; }
+    {{ cssPrefix }} input[type="checkbox"]:before { content: ""; position: absolute; top: 0!important; left: 0!important; background-color: #fff; display: inline-block; box-sizing: border-box; margin: -2px 11px 3px 0px; border: 2px solid #666; border-radius: 2px; width: 18px; height: 18px; transition: border-color .2s,background-color .2s; } 
+    {{ cssPrefix }} input[type=checkbox]:checked:before { background-color: #ec008c; border: 2px solid #ec008c; }
+    {{ cssPrefix }} .color-vp:checked:before{ background-color: #f58220!important; border: 2px solid #f58220!important; }
+    {{ cssPrefix }} input[type=checkbox]:checked:after { content: ""; display:  block; position: absolute; top: -2px; left: 1px; width: 11px; height: 6px; border: solid 2px transparent; border-right: none; border-top: none; transform: translate(3px,4px) rotate(-45deg); border-color: #FFF; }
+    {{ cssPrefix }} input[type="checkbox"] + span { padding-left: 14px; line-height: 22px; }
+    {{ cssPrefix }} [type="checkbox"]:not(:checked) { left: 0px!important; }
+
+    /* Form validation styling */
+    {{ cssPrefix }} .error-message { display: none; color: #FF5555; font-size: 11px; line-height: 16px; margin-top: 3px;}
+    {{ cssPrefix }} .error-message.hide { display: none !important; }
+    {{ cssPrefix }} .form-control-feedback { top: 27px; right: 8px; display: none; position: absolute; width: 36px; height: 36px; line-height: 36px; pointer-events: none; z-index: 2; }
+    {{ cssPrefix }} .icon-vu-exclamation { color: #FF5555; top: 26px; }
+    {{ cssPrefix }} .icon-vu-check1 { color: #95C121; font-size: 24px; }
+    {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid { border-bottom: 1px solid #95C121 !important; border: 1px solid #707070; }
+    {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid ~ .icon.icon-vu-exclamation.form-control- { display: none!important; }
+    {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid ~ .icon.icon-vu-check1.form-control-feedback { display: block!important; }
+
+    {{ cssPrefix }} .input-invalid input:invalid { border: 1px solid #FF5555 !important; background: #FF555526 0% 0% no-repeat padding-box; }
+    {{ cssPrefix }} .input-invalid .icon.icon-vu-exclamation.form-control-feedback { display: block !important; }
+    {{ cssPrefix }} .input-invalid .error-message { display: block; }
+    {{ cssPrefix }} .input-invalid input[type="email"]:not(:placeholder-shown):valid + .icon-vu-exclamation { display: none!important; }
+
+    /* Thank you page styling */
+    {{ cssPrefix }} .status-list{ margin-top: 12px; margin-bottom: 0px; list-style: none; padding: 0; font-size: 16px; color: #707070; line-height: 19px; position: relative; }
+    {{ cssPrefix }} .status-list li{ padding-left: 32px; padding-bottom: 18px; position: relative; }
+    {{ cssPrefix }} .status-list li:before{ content: ""; position: absolute; background: #c5c5c5 0 0 no-repeat padding-box; border: 2px solid #fff; border-radius: 12px; width: 16px; height: 16px;
+        left: 0px; top: 4px; z-index: 1; }
+    {{ cssPrefix }} .status-list li:after { content: ""; position: absolute; border-radius: 12px; width: 4px; height: 30px; left: 6px; top: 16px; background: #c5c5c5; }
+    {{ cssPrefix }} .status-list li:first-child:before, .status-list li:first-child:after{ background: #ec008c !important; }
+    {{ cssPrefix }} .status-list .status-vp:first-child:before, .status-list .status-vp:first-child:after{ background: #f58220!important; }
+    {{ cssPrefix }} .status-list li:last-child:after{ width: 0px; }
+    {{ cssPrefix }} .status-list li:last-child{ padding-bottom: 0px; }
+    {{ cssPrefix }} .color-vp{ background-color: #f58220!important; }
+
+</style>
+
+{% for parsedItem in items %}
+    <div class="sqzly-modal {{ updateclass }}">
+        <div class="sqzly-modal-content">
+
+            {% for element, elementSettings in elements %}
+
+                {% if element == 'header' and elementSettings.enabled and parsedItem.header %}
+
+                    <div class="sqzly-header" style="margin: {{ elementSettings.margin }}">
+                        {{ parsedItem.header }}
+                    </div>
+                    <div style="clear: both"></div>
+
+                {% elseif element == 'title' and elementSettings.enabled %}
+
+                    <h3 style="margin: {{ elementSettings.margin }};">
+                        {% if parsedItem.title %}
+                            {{ parsedItem.title }}
+                        {% else %}
+                            Title
+                        {% endif %}
+                    </h3>
+
+                {% elseif element == 'image' and elementSettings.enabled %}
+
+                    {% if parsedItem.image %}
+                        <div class="sqzly-modal-image " style="background-image: url('{{ parsedItem.image }}'); margin: {{ elementSettings.margin }}" ></div>
+                    {% else %}
+                        <div class="sqzly-modal-image sqzly-modal-image-placeholder" style="margin: {{ elementSettings.margin }};"></div>
+                    {% endif %}
+
+                {% elseif element == 'body' and elementSettings.enabled %}
+
+                    <div class="sqzly-body" style="margin: {{ elementSettings.margin }};">
+                        {% if parsedItem.body %}
+                            {{ parsedItem.body }}
+                        {% else %}
+                            Enter your own HTML body text here.
+                        {% endif %}
+                    </div>
+
+                {% elseif element == 'button' and elementSettings.enabled %}
+
+                    <div class="sqzly-fields">
+                        {% for field in fields %}
+                            {% if field.required != 1 %}
+                                {% set cssRequired = ' sqzly-not-required' %}
+                            {% else %}
+                                {% set cssRequired = ' sqzly-required' %}
+                            {% endif %}
+                            {% if field.type == 'checkbox' %}
+                                <label>
+                                    <input type="checkbox" data-field-id="{{ field.id }}" class="sqzly-checkbox{{ cssRequired }}"  data-value-checked="{{ field.checkbox_option_checked }}" data-value-unchecked="{{ field.checkbox_option_unchecked }}" />  {{ field.label }}
+                                </label>
+                            {% elseif field.type == 'gender' %}
+                                <label for="sqzly_field_{{ field.id }}" >{{ field.label }}</label><br />
+                                <select class="sqzly-input sqzly-gender{{ cssRequired }}" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}">
+                                    <option value="U"></option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            {% elseif field.type == 'text' %}
+
+                                {% if field.display == 'select' %}
+                                    <label for="sqzly_field_{{ field.id }}" >{{ field.label }}</label><br />
+                                    <select id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-textfield{{ cssRequired }}">
+                                        {% for option in field.select_options %}
+                                            <option value="{{ option }}">{{ option }}</option>
+                                        {% endfor %}
+                                    </select>
+                                {% elseif field.display == 'checkbox' %}
+                                    <label>
+                                        <input type="checkbox" id="sqzly_field_{{ field.id }}" data-value-checked="{{ field.checkbox_option_checked }}" data-value-unchecked="{{ field.checkbox_option_unchecked }}" data-field-id="{{ field.id }}" class="sqzly-checkbox{{ cssRequired }}" />  {{ field.label }}
+                                    </label>
+                                {% elseif field.display == 'hidden' %}
+                                    <input type="hidden" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-hiddenfield{{ cssRequired }}" value="{{ field.hidden_value }}" />
+                                {% else %}
+                                    <label for="sqzly_field_{{ field.id }}" >{{ field.label }}</label><br />
+                                    <input type="text" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-textfield{{ cssRequired }}" placeholder="{{ field.placeholder }}" />
+                                {% endif %}
+
+                            {% elseif field.type == 'date' %}
+                                <label for="sqzly_field_{{ field.id }}" >{{ field.label }}</label><br />
+                                <input type="text" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-datepicker{{ cssRequired }}" />
+                            {% elseif field.type == 'email' %}
+                              <div class="email-valid-container">
+                                <label for="sqzly_field_{{ field.id }}" >{{ field.label }}</label><br />
+                                <input type="email" id="sqzly_field_{{ field.id }}" data-field-id="{{ field.id }}" class="sqzly-input sqzly-emailfield{{ cssRequired }}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="{{ field.placeholder }}" />
+                                <span class="icon icon-vu-exclamation form-control-feedback"></span>
+                                <span class="icon icon-vu-check1 form-control-feedback"></span>
+                              </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        <div class="error-message">
+                          dit veld is verplicht
+                        </div>
+
+                        <div class="checkbox-container">
+                          <label>
+                              <input type="checkbox" id="newsletter-optin" required/>
+                              <span>Ja, ik meld mij aan voor de Voordeeluitjes.nl nieuwsbrief</span>
+                          </label>
+                      </div>
+                    </div>
+
+                    <div class="align-center">
+                      <a href="javascript:" class="sqzly-form-submit sqzly-btn ignore-disable {% if elements.button.full_width %}sqzly-btn-fullwidth{% endif %}">{% if parsedItem.button %}{{ parsedItem.button }}{% else %}CTA text{% endif %}</a>
+                    </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+        <div class="sqzly-thankyou">
+            {% if parsedItem.thankyou %}
+                {{ parsedItem.thankyou }}
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
+
+
+        
