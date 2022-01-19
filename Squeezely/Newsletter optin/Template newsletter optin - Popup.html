@@ -128,8 +128,8 @@
     {{ cssPrefix }} input[type=checkbox]:checked:after{ content: ""; display:  block; position: absolute; top: -2px; left: 1px; width: 11px; height: 6px; border: solid 2px transparent; border-right: none;
         border-top: none; transform: translate(3px,4px) rotate(-45deg); border-color: #FFF; }
     {{ cssPrefix }} .no-wrap{ flex-wrap: nowrap; position: relative; flex-basis: 100%; }
-    {{ cssPrefix }} .error-message{ font-size: 11px; line-height: 16px; color: #f55;  margin-top: 3px; position: absolute; display: none; }
-    {{ cssPrefix }} .error-message.hide{ display: none !important; }
+    {{ cssPrefix }} .error-message-popup{ font-size: 11px; line-height: 16px; color: #f55;  margin-top: 3px; position: absolute; display: none; }
+    {{ cssPrefix }} .error-message-popup.hide{ display: none !important; }
     {{ cssPrefix }} .active-block{  display: block !important; }
     {{ cssPrefix }} .icon-vu-thick-arrow-right{  position: absolute;  color: #FFF; top: 16px;  right: 20px; font-size: 10px; }
     {{ cssPrefix }} .form-control-feedback{ top: 2px; display: none; }
@@ -137,8 +137,8 @@
     {{ cssPrefix }} .icon-vu-check1{ color: #95C121; font-size: 24px; }
     {{ cssPrefix }} .input-invalid input:invalid{ border: 1px solid #FF5555 !important; background: #FF555526 0% 0% no-repeat padding-box; }
     {{ cssPrefix }} .input-invalid .icon.icon-vu-exclamation.form-control-feedback{ display: block !important; }
-    {{ cssPrefix }} .input-invalid + .error-message{ display: block; }
-    {{ cssPrefix }} .input-invalid input[type="email"]:not(:placeholder-shown):valid ~ .error-message{ display: none !important; }
+    {{ cssPrefix }} .input-invalid + .error-message-popup{ display: block; }
+    {{ cssPrefix }} .input-invalid input[type="email"]:not(:placeholder-shown):valid ~ .error-message-popup{ display: none !important; }
     {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid{ border-bottom: 1px solid #95C121 !important; border: 1px solid #707070; }
     {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid ~ .icon.icon-vu-exclamation.form-control-feedback{ display: none !important; }
     {{ cssPrefix }} input[type="email"]:not(:placeholder-shown):valid ~ .icon.icon-vu-check1.form-control-feedback{ display: block !important; }
@@ -288,7 +288,7 @@
                                 <i class="icon-vu-thick-arrow-right"></i>
                             </div>
                         </div>
-                        <div class="error-message">
+                        <div class="error-message-popup">
                             dit veld is verplicht
                         </div>
                         <div class="count-customers">
