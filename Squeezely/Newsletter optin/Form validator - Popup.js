@@ -1,8 +1,9 @@
-let submitButton = _document.querySelector('.sqzly-form-submit');
-let inputEmail = _document.querySelector('.sqzly-emailfield');
-let inputContainer = _document.querySelector('.sqzly-fields');
+let submitButton = document.querySelector('.sqzly-form-submit');
+let inputEmail = document.querySelector('.sqzly-emailfield');
+let inputContainer = document.querySelector('.sqzly-fields');
 let emailValue;
 let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+let showErrorMessage = document.querySelector('.error-message');
 
 // Change action color based on page URL
 let currentPage = window.location.href;
@@ -19,8 +20,7 @@ if (currentPage.indexOf('vakantiepark') !== -1 || currentPage.indexOf('bungalow'
 }
 
 inputEmail.addEventListener('input', function() {
-  let showErrorMessage = _document.querySelector('.error-message');
-  emailValue = _document.querySelector('.sqzly-emailfield').value;
+  emailValue = this.value;
   let emailValid = pattern.test(emailValue);
   if (emailValid === true) {
     showErrorMessage.classList.add('hide');

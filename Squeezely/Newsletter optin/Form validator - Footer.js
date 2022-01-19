@@ -3,6 +3,7 @@ let inputEmail = document.querySelector('.sqzly-emailfield');
 let inputContainer = document.querySelector('.sqzly-fields');
 let emailValue;
 let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+let showErrorMessage = document.querySelector('.error-message');
 
 let currentPage = window.location.href;
 let preferenceCheckboxes = document.querySelectorAll('input[type=checkbox]');
@@ -18,8 +19,7 @@ if (currentPage.indexOf('vakantiepark') !== -1 || currentPage.indexOf('bungalow'
 }
 
 inputEmail.addEventListener('input', function() {
-  let showErrorMessage = document.querySelector('.error-message');
-  emailValue = document.querySelector('.sqzly-emailfield').value;
+  emailValue = this.value;
   let emailValid = pattern.test(emailValue);
   if (emailValid === true) {
     showErrorMessage.classList.add('hide');
