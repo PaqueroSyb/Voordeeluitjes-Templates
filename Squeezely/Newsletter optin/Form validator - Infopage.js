@@ -34,6 +34,8 @@ inputEmail.addEventListener('keydown', function(key) {
 
 function submitForm(submitElement) {
   let emailValid = pattern.test(emailValue);
+  let currentPageName = currentPage.replace('https://www.voordeeluitjes.nl/info/hotels/', '');
+  let newsletterSource = currentPageName.charAt(0).toUpperCase() + currentPageName.slice(1);
   if (emailValid === false) {
     inputContainer.setAttribute('class', 'sqzly-fields input-invalid');
   } else {
@@ -45,7 +47,7 @@ function submitForm(submitElement) {
       "email": emailValue,
       "custom_email_preference_hotel": "Ja",
       "custom_email_batch": "Extern",
-      "custom_email_newsletterSource": "Plustotaal"
+      "custom_email_newsletterSource": newsletterSource
     });
     _sqzl.push({
       "anonymize": "yes",

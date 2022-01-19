@@ -493,6 +493,18 @@ editor="poor"] </p>
 </td></tr> [/loop] [loop name="persuasive-3" min="0" max="1"] <tr><td style="padding-top:10px"><p class="font-content d" style="color:#808285;font-family:'Open Sans',Helvetica,Arial,sans-serif!important;font-size:10px;font-weight:400!important;line-height:20px;margin:0;mso-line-height-rule:exactly;padding:0">[text name="content" editor="poor"]</p>
 </td></tr> [/loop] </table></th></tr></table>
 </td></tr></table>
+</td></tr> [/loop][loop name="cta-block-2" min="0"]{capture assign="url_left"}[text name="url left" editor="poor"]{/capture}{capture assign="url_right"}[text name="url right" editor="poor"]{/capture}<tr><td style="padding-top:20px">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="h" role="presentation" style="background-color:#f9f9f9;border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0;border-radius:4px;"><tr><td style="padding:20px">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0"><tr><td align="center" valign="middle"> <span class="font-content-semi b" style="color:#252525;font-family:'Open Sans',Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:600!important;line-height:27px;margin:0;mso-line-height-rule:exactly;padding:0">[text name="content" editor="poor"]</span>
+</td></tr><tr><td align="center" class="padding-top-10-m" style="padding-top:15px;">
+<table cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0"><tr><td align="center" class="pu padding-right-0-m" style="padding-right:10px;"> <a target="_blank" style="margin:0;padding:0;" href="{$url_left}">[image name="left-desktop" class="hide-for-small" noresize=true]</a>
+[literal]<!--[if !true]><!-->[/literal] <span class="show-for-small responsive-btn" style="display:none;margin:0;padding:0;"><a target="_blank" style="margin:0;padding:0" href="{$url_left}">[image name="left-mobile" noresize=true]</a></span>
+[literal]<!--<![endif]-->[/literal]</td><td align="center" class="pu padding-left-0-m padding-top-15-m" style="padding-left:10px;"> <a target="_blank" style="margin:0;padding:0;" href="{$url_right}">[image name="right-desktop" class="hide-for-small" noresize=true]</a>
+[literal]<!--[if !true]><!-->[/literal] <span class="show-for-small responsive-btn" style="display:none;margin:0;padding:0;"><a target="_blank" style="margin:0;padding:0" href="{$url_right}">[image name="right-mobile" noresize=true]</a></span>
+[literal]<!--<![endif]-->[/literal]
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
 </td></tr> [/loop] [loop name="signature-block" min="0"] <tr><td>
 <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0"><tr><th align="left" class="ou mu" style="padding-top:20px">
 <table cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0"><tr><td width="40" align="left" valign="middle">[image name="icon" width="30" height="30" noresize=true]
