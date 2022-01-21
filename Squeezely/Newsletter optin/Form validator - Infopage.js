@@ -3,6 +3,7 @@ let inputEmail = document.querySelector('.sqzly-emailfield');
 let inputContainer = document.querySelector('.sqzly-fields');
 let emailValue;
 let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+let showErrorMessage = document.querySelector('.error-message');
 
 let currentPage = window.location.href;
 let newsletterCheckbox = document.querySelector('input[type=checkbox]');
@@ -15,7 +16,6 @@ if (currentPage.indexOf('vakantieparken') !== -1) {
 }
 
 inputEmail.addEventListener('input', function() {
-  let showErrorMessage = document.querySelector('.error-message');
   emailValue = document.querySelector('.sqzly-emailfield').value;
   let emailValid = pattern.test(emailValue);
   if (emailValid === true) {

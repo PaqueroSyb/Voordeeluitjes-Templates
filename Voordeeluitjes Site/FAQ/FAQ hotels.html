@@ -336,9 +336,9 @@
         </div>
         <div class="feedback-container">
           <div class="question-text feedback"> Heeft dit u geholpen? </div>
-          <div class="feedback-thumbs"> <img id="thumbs-up" src="https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-up.png" alt="thumbs-up" width="24" height="24" class="feedback-icon"/> <img id="thumbs-down" src="https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-down.png" alt="thumbs-down" width="24" height="24" class="feedback-icon"/> </div>
+          <div class="feedback-thumbs"> <img id="thumbs-up" src="https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-up.png" alt="thumbs-up" width="24" height="24" class="feedback-icon"/> <img id="thumbs-down" src="https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-down.png" alt="thumbs-down" width="24" height="24" class="feedback-icon"/> </div>
           <div class="col-xs-12 form-succesvol">
-            <div id="submit-succesvol" class="question-text feedback succesvol"> <img src="https://www.voordeeluitjes.nl/Images/freeValues/icon-succesvol.jpg" alt="thumbs-up" width="19" height="19"/> Bedankt voor uw feedback! </div>
+            <div id="submit-succesvol" class="question-text feedback succesvol"> <img src="https://images.voordeeluitjes.nl/Images/freeValues/icon-succesvol.jpg" alt="thumbs-up" width="19" height="19"/> Bedankt voor uw feedback! </div>
           </div>
           <div id="form-feedback" class="col-xs-12 form-feedback hide">
             <div id="feedback-text" class="question-text feedback feedback-nopadding"> </div>
@@ -488,26 +488,26 @@ getFeedbackIcons.forEach(function (icon) {
     if (feedbackGiven === false) {
       feedbackForm.setAttribute("class", "col-xs-12 form-feedback");
       if (thumbsUpClicked === true && this.id === thumbsUp.id) {
-        thumbsDown.src = "https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-down.png";
+        thumbsDown.src = "https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-down.png";
         feedbackForm.setAttribute("class", "col-xs-12 form-feedback hide");
         thumbsUpClicked = false;
         document.getElementsByName("dbfield481")[0].value = "";
       } else if (thumbsDownClicked === true && this.id === thumbsDown.id) {
-        thumbsUp.src = "https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-up.png";
+        thumbsUp.src = "https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-up.png";
         feedbackForm.setAttribute("class", "col-xs-12 form-feedback hide");
         thumbsDownClicked = false;
         document.getElementsByName("dbfield481")[0].value = "";
       } else {
         if (this.id === "thumbs-up") {
-          thumbsDown.src = "https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-down-grey.png";
-          thumbsUp.src = "https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-up.png";
+          thumbsDown.src = "https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-down-grey.png";
+          thumbsUp.src = "https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-up.png";
           feedbackText.innerText = "Fijn! Heeft u nog verbeterpunten?";
           feedbackMening.value = "Positief";
           thumbsUpClicked = true;
           thumbsDownClicked = false;
         } else if (this.id === "thumbs-down") {
-          thumbsUp.src = "https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-up-grey.png";
-          thumbsDown.src = "https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-down.png";
+          thumbsUp.src = "https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-up-grey.png";
+          thumbsDown.src = "https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-down.png";
           feedbackText.innerText = "Hoe kunnen we u beter helpen?";
           feedbackMening.value = "Negatief";
           thumbsDownClicked = true;
@@ -527,8 +527,8 @@ document.getElementById('submit-feedback').addEventListener('click', function ()
 function resetForm() {
   feedbackSuccesvol.setAttribute("class", "question-text feedback succesvol");
   feedbackForm.setAttribute("class", "col-xs-12 form-feedback hide");
-  thumbsDown.src = "https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-down.png";
-  thumbsUp.src = "https://www.voordeeluitjes.nl/Images/freeValues/info-thumb-up.png";
+  thumbsDown.src = "https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-down.png";
+  thumbsUp.src = "https://images.voordeeluitjes.nl/Images/freeValues/info-thumb-up.png";
   document.getElementsByName("dbfield481")[0].value = "";
   feedbackGiven = false;
 }
