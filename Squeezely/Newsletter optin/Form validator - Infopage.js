@@ -6,10 +6,8 @@ let pattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 let showErrorMessage = document.querySelector('.error-message');
 
 let currentPage = window.location.href;
-let newsletterCheckbox = document.querySelector('input[type=checkbox]');
 let statusList = _document.querySelectorAll('.status-list li');
 if (currentPage.indexOf('vakantieparken') !== -1) {
-  newsletterCheckbox.classList.add('color-vp');
   statusList.forEach(function (list) {
     list.classList.add('status-vp');
   });
