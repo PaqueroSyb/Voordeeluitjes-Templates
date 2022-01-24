@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include('website/config.php');
 
 $ipOK = false;
 foreach($settings['copernica_ip_whitelist'] as $ipRange){
