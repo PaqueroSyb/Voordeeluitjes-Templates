@@ -41,9 +41,10 @@
                     <tr>
                       <td align="right" class="text-left-m padding-top-15-m padding-bottom-10-m">
                         <a target="_blank" style="margin:0;padding:0;">
-                          <xsl:attribute name="href">
-                            <xsl:value-of select="url"/>
-                          </xsl:attribute>
+                          <xsl:choose>
+                            <xsl:when test="custom_fields/location_type = 'Hotel'"><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/hotel/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:when>
+                            <xsl:otherwise><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/vakantiepark/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:otherwise>
+                          </xsl:choose>
                           <img alt="Voltooi boeking" border="0" width="200" src="voordeeluitjes/Button_DT_1_column_voltooi_boeking.png"/>
                         </a>
                       </td>
@@ -59,9 +60,10 @@
             <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;margin:0;mso-table-lspace:0;mso-table-rspace:0;padding:0;">
               <td valign="top">
                 <a target="_blank">
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="url"/>
-                  </xsl:attribute>
+                  <xsl:choose>
+                   <xsl:when test="custom_fields/location_type = 'Hotel'"><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/hotel/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:when>
+                   <xsl:otherwise><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/vakantiepark/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:otherwise>
+                  </xsl:choose>
                   <xsl:text disable-output-escaping="yes">
                     <![CDATA[ <!--[if true]>
                       <table width="700" align="center" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:seperate;margin:0;mso-table-lspace:0pt;mso-table-rspace:0pt;padding:0;">
