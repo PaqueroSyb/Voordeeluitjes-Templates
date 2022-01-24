@@ -29,6 +29,7 @@ $codeDB = 21;
 $campagne = $_GET["campagne"];
 $type = $_GET["type"];
 $userSubProfileID = $_GET["subprofiel"];
+$userProfileField = $_GET["profielveld"]
 
 // Load lock file
 $fp = fopen("lock.txt", "r+");
@@ -72,7 +73,7 @@ if (flock($fp, LOCK_EX))
 		// Safe code to profile
 		$data = array(
 			"fields" => array(
-				'Canvascadeaucode' =>  $code
+				$userProfileField =>  $code
 			),
 		);
 	
