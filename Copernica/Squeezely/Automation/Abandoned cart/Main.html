@@ -142,10 +142,11 @@
                                                                           </td>
                                                                           <td valign="top">
                                                                              <p class="font-content c" style="color:{$colorInStyle};font-family:Calibri,Helvetica,Arial,sans-serif!important;font-size:16px;font-weight:400!important;line-height:28px;margin:0;mso-line-height-rule:exactly;padding:0;text-decoration:underline;">
-                                                                                <a target="_blank" style="color: {$colorInStyle}; text-decoration: underline;">                            <xsl:choose>
-                                                                                  <xsl:when test="custom_fields/location_type = 'Hotel'"><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/hotel/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:when>
-                                                                                  <xsl:otherwise><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/vakantiepark/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:otherwise>
-                                                                                  </xsl:choose>Bekijk alle details</a>
+                                                                                <a target="_blank" style="color: {$colorInStyle}; text-decoration: underline;">
+                                                                                                              <xsl:choose>
+           <xsl:when test="custom_fields/location_type = 'Hotel'"><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/hotel/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:when>
+           <xsl:otherwise><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/vakantiepark/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:otherwise>
+         </xsl:choose>Bekijk alle details</a>
                                                                              </p>
                                                                           </td>
                                                                        </tr>
@@ -470,9 +471,9 @@
                                                                           <td align="left">
                                                                              <a target="_blank">
                                                                                <xsl:choose>
-                                                                                  <xsl:when test="custom_fields/location_type = 'Hotel'"><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/hotel/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:when>
-                                                                                  <xsl:otherwise><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/vakantiepark/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:otherwise>
-                                                                                </xsl:choose>
+           <xsl:when test="custom_fields/location_type = 'Hotel'"><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/hotel/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:when>
+           <xsl:otherwise><xsl:attribute name="href">https://www.voordeeluitjes.nl/boek/vakantiepark/accommodaties-en-extras&#63;{$eventAbandonedCartUrl[1]}&amp;utm_content=<xsl:value-of select="translate(custom_fields/hotel_name, ' ','-')" />-{$profile.Batch}</xsl:attribute></xsl:otherwise>
+         </xsl:choose>
                                                                                 <img alt="Voltooi boeking" border="0" width="200" src="voordeeluitjes/Button_DT_1_column_voltooi_boeking.png"/>
                                                                              </a>
                                                                           </td>
